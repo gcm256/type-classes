@@ -1,5 +1,6 @@
 # type-classes
 
+<pre>
 fmap = flip (>>=) . (.) return
 
 Proof:
@@ -14,4 +15,5 @@ fmap = \f xs -> xs >>= (\x -> return (f x))           -- Defn of >>=
      = \f -> (flip (>>=)) (((.) return) f)            -- Rewrite with redundant parens, as f (g x)
      = \f -> ((flip (>>=)) . ((.) return )) f         -- Rewrite f (g x) as (f . g) x
      = ((flip (>>=)) . ((.) return ))                 -- Eta-reduction
-     = flip (>>=) . (.) return                        -- Remove redundant parens 
+     = flip (>>=) . (.) return                        -- Remove redundant parens
+</pre>
