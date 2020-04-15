@@ -50,12 +50,7 @@ closeFd stdoutwrite ;
 mapM_ (\fd -> catch (closeFd fd) ((const $ return ()) :: SomeException -> IO ())) closefds ;
 
 -- Start the program
-executeFile cmd True args Nothing}
-                                        waitfunc = do{
-                                        status <- getProcessStatus True False childPID;
-                                        case status of
-                                             Nothing -> fail $ "Error: Nothing form getProcessStatus"
-                                             Just ps -> do{removeCloseFDs closefds [stdinwrite, stdoutread]; return ps}} in do{
+executeFile cmd True args Nothing} in do{
 {-
 - Create two pipes: one to handle 'stdin' and the other for 'stdout'.
 - We do not redirect 'stderr' in this program.
@@ -85,14 +80,12 @@ hClose stdinhdl} ;
 stdouthdl <- fdToHandle stdoutread ;
 
 -- Set up the function to call when ready to wait for the child to exit
-{--
 let waitfunc = do{
 status <- getProcessStatus True False childPID;
 case status of
      Nothing -> fail $ "Error: Nothing form getProcessStatus"
-     Just ps -> do{removeCloseFDs closefds [stdinwrite, stdoutread]; return ps}};
---}
-return $ CommandResult { cmdOutput = hGetContents stdouthdl, getExitStatus = waitfunc } ;
+     Just ps -> do{removeCloseFDs closefds [stdinwrite, stdoutread]; return ps}}
+in return $ CommandResult { cmdOutput = hGetContents stdouthdl, getExitStatus = waitfunc } ;
 }
 
 {--
@@ -182,3 +175,6 @@ ec <- getExitStatus res ;
 case ec of
      Exited ExitSuccess -> return ()
      x -> fail $ "Exited: " ++ show x}
+
+
+main = runIO $ ("ls", ["/Users/kashparida/haskell_code"])
