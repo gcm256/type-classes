@@ -18,7 +18,8 @@ import System.Posix.Types
 - the program name. The list represents the command-line parameters to pass
 - to the command.
 -}
-type SysCommand = (String, [String])
+data SysCommand = SingleCommand (String, [String])
+                | PipeCommand SysCommand SysCommand
 
 -- The result of running any command
 data CommandResult = CommandResult {
@@ -29,15 +30,15 @@ getExitStatus :: IO ProcessStatus -- IO action that yields the exit result
 -- The type for handling global lists of FDs to always close in the clients
 type CloseFDs = MVar [Fd]
 
-class CommandLike a where
+--class CommandLike a where
 {-
 - Given the command and a String representing input, invokes the command.
 - Returns a String representing the output of the command.
 -}
 invoke :: SysCommand -> CloseFDs -> String -> IO CommandResult
 
-instance CommandLike SysCommand where
-invoke (cmd, args) closefds input = let child closefds stdinread stdoutwrite = do{
+--instance CommandLike SysCommand where
+invoke (SingleCommand (cmd, args)) closefds input = let child closefds stdinread stdoutwrite = do{
 -- Copy our pipes over the regular stdin/stdout FDs
 dupTo stdinread stdInput ;
 dupTo stdoutwrite stdOutput ;
@@ -88,25 +89,13 @@ case status of
 in return $ CommandResult { cmdOutput = hGetContents stdouthdl, getExitStatus = waitfunc } ;
 }
 
-{--
--- Define what happens in the child process
-where child closefds stdinread stdoutwrite = do{
--- Copy our pipes over the regular stdin/stdout FDs
-dupTo stdinread stdInput ;
-dupTo stdoutwrite stdOutput ;
+invoke (PipeCommand src dest) closefds input = do{
+res1 <- invoke src closefds input ;
+output1 <- cmdOutput res1 ;
+res2 <- invoke dest closefds output1 ;
+return $ CommandResult {cmdOutput = (cmdOutput res2), getExitStatus = (getEC res1 res2)}}
 
--- Now close the original pipe FDs
-closeFd stdinread ;
-closeFd stdoutwrite ;
 
--- Close all the open FDs we inherited from the parent
-mapM_ (\fd -> catch (closeFd fd) ((const $ return ()) :: SomeException -> IO ())) closefds ;
-
--- Start the program
-executeFile cmd True args Nothing
-}
-
---}
 -- Add FDs to the list of FDs that must be closed post-fork in a child
 addCloseFDs :: CloseFDs -> [Fd] -> IO ()
 addCloseFDs closefds newfds = modifyMVar_ closefds (\oldfds -> return $ oldfds ++ newfds)
@@ -123,25 +112,6 @@ removefd (x:xs) fd
        | fd == x = xs
        | otherwise = x : removefd xs fd
 
-{-
-- Type representing a pipe. A 'PipeCommand' consists of a source and a
-- destination part, both of which must be instance of 'CommandLike'.
--}
-data PipeCommand src dest = PipeCommand src dest
-
--- A convenient function for creating a 'PipeCommand'
-(-|-) :: (CommandLike a, CommandLike b) => a -> b -> PipeCommand a b
-(-|-) = PipeCommand
-
-{--
--- Make 'PipeCommand' runnable as a command
-instance (CommandLike a, CommandLike b) => CommandLike (PipeCommand a b) where
-invoke (PipeCommand src dest) closefds input = do{
-res1 <- invoke src closefds input ;
-output1 <- cmdOutput res1 ;
-res2 <- invoke dest closefds output1 ;
-return $ CommandResult (cmdOutput res2) (getEC res1 res2)}
---}
 
 {-
 - Given two 'CommandResult' items, evaluate the exit codes for both and
@@ -177,4 +147,24 @@ case ec of
      x -> fail $ "Exited: " ++ show x}
 
 
-main = runIO $ ("ls", ["/Users/kashparida/haskell_code"])
+main = runIO $ SingleCommand ("ls", ["/Users/kashparida/haskell_code"])
+
+main2 = runIO $ PipeCommand (SingleCommand ("ls", ["/Users/kashparida/haskell_code"]))
+                            (SingleCommand ("grep", ["Run"]))
+
+main3 = runIO $ PipeCommand (SingleCommand ("ls", ["/Users/kashparida/haskell_code"]))
+                            (PipeCommand (SingleCommand ("grep", ["Run"]))
+                                         (SingleCommand ("wc", [])))
+
+c1 = ("ls", ["-al", "/Users/kashparida/haskell_code"])
+c2 = ("grep", ["Run"])
+c3 = ("wc", [])
+
+-- main4 same as main3, only uses c1, c2, c3
+main4 = runIO $ PipeCommand (SingleCommand c1)
+                            (PipeCommand (SingleCommand c2)
+                                         (SingleCommand c3))
+
+main5 = runIO $ PipeCommand (PipeCommand (SingleCommand c1)
+                                         (SingleCommand c2))
+                            (SingleCommand c3)
