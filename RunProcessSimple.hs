@@ -13,6 +13,9 @@ import System.Posix.Process
 import System.Posix.IO
 import System.Posix.Types
 
+import T1
+import T2
+
 {-
 - The type for running external commands. The first part of the tuple is
 - the program name. The list represents the command-line parameters to pass
