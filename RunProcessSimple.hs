@@ -50,7 +50,12 @@ closeFd stdoutwrite ;
 mapM_ (\fd -> catch (closeFd fd) ((const $ return ()) :: SomeException -> IO ())) closefds ;
 
 -- Start the program
-executeFile cmd True args Nothing} in do{
+executeFile cmd True args Nothing}
+                                        waitfunc = do{
+                                        status <- getProcessStatus True False childPID;
+                                        case status of
+                                             Nothing -> fail $ "Error: Nothing form getProcessStatus"
+                                             Just ps -> do{removeCloseFDs closefds [stdinwrite, stdoutread]; return ps}} in do{
 {-
 - Create two pipes: one to handle 'stdin' and the other for 'stdout'.
 - We do not redirect 'stderr' in this program.
@@ -87,7 +92,7 @@ case status of
      Nothing -> fail $ "Error: Nothing form getProcessStatus"
      Just ps -> do{removeCloseFDs closefds [stdinwrite, stdoutread]; return ps}};
 --}
-return $ CommandResult { cmdOutput = hGetContents stdouthdl, getExitStatus = undefined } ;
+return $ CommandResult { cmdOutput = hGetContents stdouthdl, getExitStatus = waitfunc } ;
 }
 
 {--
