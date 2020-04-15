@@ -34,65 +34,81 @@ class CommandLike a where
 - Given the command and a String representing input, invokes the command.
 - Returns a String representing the output of the command.
 -}
-invoke :: a -> CloseFDs -> String -> IO CommandResult
+invoke :: SysCommand -> CloseFDs -> String -> IO CommandResult
 
 instance CommandLike SysCommand where
-invoke (cmd, args) closefds input = do{
+invoke (cmd, args) closefds input = let child closefds stdinread stdoutwrite = do{
+-- Copy our pipes over the regular stdin/stdout FDs
+dupTo stdinread stdInput ;
+dupTo stdoutwrite stdOutput ;
+
+-- Now close the original pipe FDs
+closeFd stdinread ;
+closeFd stdoutwrite ;
+
+-- Close all the open FDs we inherited from the parent
+mapM_ (\fd -> catch (closeFd fd) ((const $ return ()) :: SomeException -> IO ())) closefds ;
+
+-- Start the program
+executeFile cmd True args Nothing} in do{
 {-
 - Create two pipes: one to handle 'stdin' and the other for 'stdout'.
 - We do not redirect 'stderr' in this program.
 -}
-(stdinread , stdinwrite ) <- createPipe;
-(stdoutread, stdoutwrite) <- createPipe;
+(stdinread , stdinwrite ) <- createPipe ;
+(stdoutread, stdoutwrite) <- createPipe ;
 
 {-
 - Add the parent FDs to this list because we always need to close them
 - in the clients
 -}
-addCloseFDs closefds [stdinwrite, stdoutread];
+addCloseFDs closefds [stdinwrite, stdoutread] ;
 
 -- Grab the closed FDs list and fork the child
-childPID <- withMVar closefds (\fds -> forkProcess $ child fds stdinread stdoutwrite);
+childPID <- withMVar closefds (\fds -> forkProcess $ child fds stdinread stdoutwrite) ;
 
 -- On the parent, close the client-side FDs
-closeFd stdinread;
-closeFd stdoutwrite;
+closeFd stdinread ;
+closeFd stdoutwrite ;
 
 -- Write the input to the command
-stdinhdl <- fdToHandle stdinwrite;
-forkIO $ do{ hPutStr stdinhdl input};
-hClose stdinhdl;
+stdinhdl <- fdToHandle stdinwrite ;
+forkIO $ do{ hPutStr stdinhdl input ;
+hClose stdinhdl} ;
 
 -- Prepare to receive output from the command
-stdouthdl <- fdToHandle stdoutread;
+stdouthdl <- fdToHandle stdoutread ;
 
 -- Set up the function to call when ready to wait for the child to exit
+{--
 let waitfunc = do{
 status <- getProcessStatus True False childPID;
 case status of
      Nothing -> fail $ "Error: Nothing form getProcessStatus"
      Just ps -> do{removeCloseFDs closefds [stdinwrite, stdoutread]; return ps}};
-
-return $ CommandResult { cmdOutput = hGetContents stdouthdl, getExitStatus = waitfunc }
+--}
+return $ CommandResult { cmdOutput = hGetContents stdouthdl, getExitStatus = undefined } ;
 }
 
+{--
 -- Define what happens in the child process
 where child closefds stdinread stdoutwrite = do{
 -- Copy our pipes over the regular stdin/stdout FDs
-dupTo stdinread stdInput;
-dupTo stdoutwrite stdOutput;
+dupTo stdinread stdInput ;
+dupTo stdoutwrite stdOutput ;
 
 -- Now close the original pipe FDs
-closeFd stdinread;
-closeFd stdoutwrite;
+closeFd stdinread ;
+closeFd stdoutwrite ;
 
 -- Close all the open FDs we inherited from the parent
-mapM_ (\fd -> catch (closeFd fd) ((const $ return ()) :: SomeException -> IO ()));
-closefds}
+mapM_ (\fd -> catch (closeFd fd) ((const $ return ()) :: SomeException -> IO ())) closefds ;
 
 -- Start the program
 executeFile cmd True args Nothing
+}
 
+--}
 -- Add FDs to the list of FDs that must be closed post-fork in a child
 addCloseFDs :: CloseFDs -> [Fd] -> IO ()
 addCloseFDs closefds newfds = modifyMVar_ closefds (\oldfds -> return $ oldfds ++ newfds)
@@ -103,7 +119,7 @@ removeCloseFDs closefds removethem = modifyMVar_ closefds (\fdlist -> return $ p
                                      where procfdlist fdlist [] = fdlist
                                            procfdlist fdlist (x:xs) = procfdlist (removefd fdlist x) xs
 
--- Want to remove only the first occurance of any given fd
+-- Want to remove only the first occurrence of any given fd
 removefd [] _ = []
 removefd (x:xs) fd
        | fd == x = xs
@@ -119,13 +135,15 @@ data PipeCommand src dest = PipeCommand src dest
 (-|-) :: (CommandLike a, CommandLike b) => a -> b -> PipeCommand a b
 (-|-) = PipeCommand
 
+{--
 -- Make 'PipeCommand' runnable as a command
 instance (CommandLike a, CommandLike b) => CommandLike (PipeCommand a b) where
 invoke (PipeCommand src dest) closefds input = do{
-res1 <- invoke src closefds input;
-output1 <- cmdOutput res1;
-res2 <- invoke dest closefds output1;
+res1 <- invoke src closefds input ;
+output1 <- cmdOutput res1 ;
+res2 <- invoke dest closefds output1 ;
 return $ CommandResult (cmdOutput res2) (getEC res1 res2)}
+--}
 
 {-
 - Given two 'CommandResult' items, evaluate the exit codes for both and
@@ -135,27 +153,27 @@ return $ CommandResult (cmdOutput res2) (getEC res1 res2)}
 -}
 getEC :: CommandResult -> CommandResult -> IO ProcessStatus
 getEC src dest = do{
-                 sec <- getExitStatus src;
-                 dec <- getExitStatus dest;
+                 sec <- getExitStatus src ;
+                 dec <- getExitStatus dest ;
                  case sec of
                       Exited ExitSuccess -> return dec
                       x -> return x}
 
 -- Execute a 'CommandLike'
-runIO :: CommandLike a => a -> IO ()
-runIO cmd = do
+runIO :: SysCommand -> IO ()
+runIO cmd = do{
 -- Initialize our closefds list
-closefds <- newMVar []
+closefds <- newMVar [] ;
 
 -- Invoke the command
-res <- invoke cmd closefds []
+res <- invoke cmd closefds [] ;
 
 -- Process its output
-output <- cmdOutput res
-putStr output
+output <- cmdOutput res ;
+putStr output ;
 
 -- Wait for termination and get exit status
-ec <- getExitStatus res
+ec <- getExitStatus res ;
 case ec of
      Exited ExitSuccess -> return ()
-     x -> fail $ "Exited: " ++ show x
+     x -> fail $ "Exited: " ++ show x}
