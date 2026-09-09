@@ -17,3 +17,32 @@ fmap = \f xs -> xs >>= (\x -> return (f x))           -- Defn of >>=
      = ((flip (>>=)) . ((.) return))                  -- Eta-reduction
      = flip (>>=) . (.) return                        -- Remove redundant parens
 </pre>
+
+## Relationship between Field, Ring, Abelian Group, Group, Monoid, Semi-group
+
+Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+)$ ⟹ Monoid $(+)$ ⟹ Semigroup $(+)$
+
+## Summary of Logic
+
+### \[Logical foundation\] What kind of reasoning?
+* Classical Logic (Propositional Logic, First Order Logic (FOL), HOL)
+* Intuitionistic Logic (Constructive Logic (Brouwer))
+
+### \[Structural discipline\] How may assumptions be used?
+* Structural(Ordinary)
+* Substructural Logic(Linear Logic)
+
+### \[Expressive logical extensions\] What extra concepts/operators?
+* Modal Logic
+* Temporal Logic (LTL, CTL, CTL*)
+
+### \[Semantics\] What gives meaning to the logic?
+* Heyting Algebras
+* Boolean Algebras
+* Kripke models
+
+### \[Proof system\] How do we formally derive proofs?
+* Hilbert
+* Natural Deduction
+* Sequent Calculus (Gentzen)
+
