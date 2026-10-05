@@ -173,14 +173,14 @@ What can the system quantify over?
 
 ## Type-Dependency & Proof Calculus
 
-| Type/proposition dependency | Meaning | Typical calculus |
-|---|---|---|
-| Non-dependent | Types do not depend on terms | STLC |
-| Polymorphic | Quantification over types | System F |
-| Higher-kinded | Types/type operators can be higher-order | Fω |
-| Dependent | Types can depend on terms | Dependent λ-calculus / Martin-Löf Type Theory |
-| Higher-order + dependent | Higher-order type abstraction and term-dependent types | Calculus of Constructions (CoC) |
-| Higher-order + dependent + inductive | Above + inductive types/constructions | Calculus of Inductive Constructions (CIC) |
+| Type/proposition dependency | Meaning | Typical calculus | Feature added | Main capability |
+|---|---|---|---|---|
+| Non-dependent | Types do not depend on terms | STLC | - | Terms depend on terms |
+| Polymorphic | Quantification over types | System F | Polymorphism | Terms can depend on types |
+| Higher-kinded | Types/type operators can be higher-order | Fω | Type Constructors aka type-level functions | Types can depend on types |
+| Dependent | Types can depend on terms | Dependent λ-calculus / Martin-Löf Type Theory | Dependent types | Types can depend on terms and types |
+| Higher-order + dependent | Higher-order type abstraction and term-dependent types | Calculus of Constructions (CoC) | Dependent types | Types can depend on terms and types |
+| Higher-order + dependent + inductive | Above + inductive types/constructions | Calculus of Inductive Constructions (CIC) | inductive types + universes | CoC + datatypes/proofs |
 
 ##  Curry–Howard Mapping 
 
