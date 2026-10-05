@@ -175,22 +175,64 @@ What can the system quantify over?
 
 | Type/proposition dependency | Meaning | Typical calculus | Feature added | Main capability |
 |---|---|---|---|---|
-| Non-dependent | Types do not depend on terms | STLC | - | Terms depend on terms |
-| Polymorphic | Quantification over types | System F | Polymorphism | Terms can depend on types |
-| Higher-kinded | Types/type operators can be higher-order | Fω | Type Constructors aka type-level functions | Types can depend on types |
-| Dependent | Types can depend on terms | Dependent λ-calculus / Martin-Löf Type Theory | Dependent types | Types can depend on terms and types |
-| Higher-order + dependent | Higher-order type abstraction and term-dependent types | Calculus of Constructions (CoC) | Dependent types | Types can depend on terms and types |
-| Higher-order + dependent + inductive | Above + inductive types/constructions | Calculus of Inductive Constructions (CIC) | inductive types + universes | CoC + datatypes/proofs |
+| Non-dependent | No dependence between Types and Terms | STLC | None(Baseline) | Terms can depend on terms only $(*, *)$ |
+| Polymorphic | Quantification over types. Terms can be parametrized by types. | System F | Type abstraction (∀) | Terms can depend on types $(\Box, \*), (*, *)$ |
+| Higher-kinded | Types/type operators can be higher-order. Types can be parametrized by types. | Fω | Type Constructors aka type-level functions | Types can depend on types $(\Box, \Box), (*, *)$ |
+| Dependent | Types can be parametrized by terms | Dependent λ-calculus (λP / LF) | Dependent types (Π-types) | Types can depend on terms $(\*, \Box), (*, *)$ |
+| Dependent + Inductive | Term-dependent types with native data structures and universes | Martin-Löf Type Theory (MLTT) | In addition to Dependent types (Π-types): Dependent pairs (Σ-types), Identity-types, Inductive trees (W-types) + Predicative Universes | Types can depend on terms + Native mathematical induction. Does not fit the Barendregt $(\text{sort}_1, \text{sort}_2)$ Lambda Cube notation. |
+| Higher-order + dependent | Polymorphic + Higher-kinded + Dependent | Calculus of Constructions (CoC) | Full Lambda Cube integration | Terms/Types can depend on Terms/Types $(*/\Box, */\Box)$ |
+| Higher-order + dependent + inductive | CoC extended with inductive data types and universes | Calculus of Inductive Constructions (CIC) | Inductive types + Predicative Universes (replacing the $\Box$ of CoC) + Impredicative `Prop` (replacing the $\ast$ of CoC) | CoC + Native data structures + Consistent mathematical proofs |
+
+> [!IMPORTANT]
+> Standard MLTT does not cleanly fit the Barendregt $(\text{sort}_1, \text{sort}_2)$ Lambda Cube notation.
+> The Lambda Cube is strictly bounded by two specific sorts: $\ast$ (the universe of terms/types) and $\Box$ (the universe of kinds).
+> MLTT breaks this geometry because it uses an **infinite, cumulative hierarchy of universes** (𝒰₀, 𝒰₁, 𝒰₂, …).
+> Because it lacks a single, absolute top sort like $\Box$ and rejects global impredicativity, it cannot be modeled as a simple corner of the standard 3-axis cube.
+>
+> **MLTT Universes vs. CIC Predicative Universes:**
+> 
+> Both MLTT and the Calculus of Inductive Constructions (CIC) use a matching **infinite, cumulative, stratified** hierarchy of Predicative Universes (𝒰₀, 𝒰₁, 𝒰₂, …) (often called **`Type0`** or `Set`,
+>  **`Type1`**,**`Type2`**, etc. in programming syntax) to prevent Russel-style paradoxes.
+> 
+> **The main difference:** CIC adds one extra, special universe that MLTT refuses to include: an **impredicative** universe called `Prop` (used for mathematical propositions).
+> MLTT disallows such "Impredicative Polymorphism" and remains strictly predicative throughout its entire universe structure.
+>
+> When looking at the above table's classification system (which follows Barendregt's Lambda Cube),
+> "Higher-order" specifically refers to systems like System F and Fω that have **impredicative, parametric polymorphism** (∀ X. T).
+> 
+> - **System F / CoC / CIC:** You can write a function that works for absolutely every type that will ever exist, including the type of the function itself (impredicativity).
+>
+> - **MLTT:** To avoid paradoxes while including inductive types, MLTT rejects this kind of global impredicativity. Instead, it uses a stratified hierarchy of **Universes**
+>   (𝒰₀, 𝒰₁, …). A type in universe 𝒰₀ cannot quantify over 𝒰₀ itself; it must step up to 𝒰₁.
+> 
+
 
 ##  Curry–Howard Mapping 
 
 | Logic | Type-theoretic / λ-calculus counterpart |
 |---|---|
 | Intuitionistic propositional logic | STLC |
-| Second-order intuitionistic propositional logic | System F |
-| Higher-order polymorphic type theory | Fω |
-| First-order intuitionistic logic | Representable in dependent type theory |
-| Dependent intuitionistic type theory | Dependent λ-calculus / Martin-Löf Type Theory |
-| Higher-order dependent intuitionistic type theory | Calculus of Constructions (CoC) |
-| Dependent type theory + inductive constructions | Calculus of Inductive Constructions (CIC) |
+| Second-order intuitionistic propositional logic (Polymorphic) | System F |
+| Higher-order intuitionistic propositional logic (Higher-kinded) | Fω |
+| First-Order Predicate Logic (Minimal Fragment) (only $\forall, \to$) | Dependent λ-calculus (**λP** / LF). <br> • **$\Pi$-types** only = **($\forall, \to$)** |
+| Full First-Order Intuitionistic Logic (All connectives, no arithmetic/induction) | **λP extended** <br> • **$\Pi$-types** (already in λP), <br> • **$\Sigma$-types** = ($\land$, $\exists$), <br> • **Sum-types**(**$+$**) = ($\lor$), <br> • **$\mathbf{0}$** = ($\bot$ / **`False`**), <br> • **$\mathbf{1}$** = ($\top$ / **`True`**) |
+| Full First-Order Intuitionistic Logic with Native Induction and Arithmetic (∀, ∃) | Martin-Löf Type Theory (MLTT) |
+| Higher-Order Predicate Logic (∀ over types and predicates) | Calculus of Constructions (CoC) |
+| Full Higher-Order Intuitionistic Logic with Inductive Definitions | Calculus of Inductive Constructions (CIC) |
 
+## Appendix and References[^1][^2][^3][^4][^5][^6][^7][^8][^9][^10][^11][^12][^13][^14]
+
+[^1]: https://en.wikipedia.org/wiki/Lambda_cube
+[^2]: https://en.wikipedia.org/wiki/Intuitionistic_type_theory#Martin-Löf_type_theories
+[^3]: https://en.wikipedia.org/wiki/Template:Foundations-footer
+[^4]: https://en.wikipedia.org/wiki/Template:Non-classical_logic
+[^5]: https://en.wikipedia.org/wiki/Curry-Howard_correspondence
+[^6]: https://archive-pml.github.io/martin-lof/pdfs/Bibliopolis-Book-retypeset-1984.pdf
+[^7]: [The collected works of Per Martin-Löf](https://archive-pml.github.io/)
+[^8]: https://en.wikipedia.org/wiki/Template:Logic
+[^9]: https://en.wikipedia.org/wiki/Template:Mathematical_logic
+[^10]: https://wiki.haskell.org/index.php?title=Typeclassopedia
+[^11]: https://en.wikipedia.org/wiki/Template:Formal_semantics
+[^12]: https://en.wikipedia.org/wiki/Template:Programming_paradigms_navbox
+[^13]: https://en.wikipedia.org/wiki/Template:Design_patterns
+[^14]: :play_or_pause_button: [Chris Casinghino - Making Dependent Types Practical](https://youtu.be/_2jrmgO_Gq0)
