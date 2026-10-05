@@ -175,10 +175,11 @@ What can the system quantify over?
 
 | Type/proposition dependency | Meaning | Typical calculus | Feature added | Main capability |
 |---|---|---|---|---|
-| Non-dependent | No dependence between Types and Terms | STLC | None(Baseline) | Terms can depend on terms only $(*, *)$ |
-| Polymorphic | Quantification over types. Terms can be parametrized by types. | System F | Type abstraction (∀) | Terms can depend on types $(\Box, \*), (*, *)$ |
-| Higher-kinded | Types/type operators can be higher-order. Types can be parametrized by types. | Fω | Type Constructors aka type-level functions | Types can depend on types $(\Box, \Box), (*, *)$ |
-| Dependent | Types can be parametrized by terms | Dependent λ-calculus (λP / LF) | Dependent types (Π-types) | Types can depend on terms $(\*, \Box), (*, *)$ |
+| Non-dependent | No dependence between Types and Terms | **STLC** (**$\lambda \to$**) | None(Baseline) | Terms can depend on terms only $(*, *)$ |
+| Polymorphic | Quantification over types. Terms can be parametrized by types. | **System F** (**$\lambda 2$**) | Type abstraction (∀) | Terms can depend on types/terms $(\Box/\*, \*)$ |
+| Higher-kinded | Types/type operators can be higher-order. Types can be parametrized by types. | **Fω** (**$\lambda 2 + \lambda\underline{\omega}$**) | Type Constructors aka type-level functions | Types can depend on types $(\Box, \Box)$. (In addition to **System F** capability $(\Box/\*, \*)$ ) |
+| Dependent | Types can be parametrized by terms | Dependent λ-calculus (**λP** / LF) | Dependent types (Π-types) | Types/terms can depend on terms $(\*, \Box/\*)$ |
+| Dependent + Polymorphic | Types can be parametrized by terms. Terms can be parametrized by types. | Second-Order (Polymorphic) Dependent λ-calculus (**λP2** / **PRED2**)[^15] | Dependent types (Π-types) & Type abstraction (∀) | Types can depend on terms $(\*, \Box)$. (In addition to **System F** capability $(\Box/\*, \*)$ ) |
 | Dependent + Inductive | Term-dependent types with native data structures and universes | Martin-Löf Type Theory (MLTT) | In addition to Dependent types (Π-types): Dependent pairs (Σ-types), Identity-types, Inductive trees (W-types) + Predicative Universes | Types can depend on terms + Native mathematical induction. Does not fit the Barendregt $(\text{sort}_1, \text{sort}_2)$ Lambda Cube notation. |
 | Higher-order + dependent | Polymorphic + Higher-kinded + Dependent | Calculus of Constructions (CoC) | Full Lambda Cube integration | Terms/Types can depend on Terms/Types $(*/\Box, */\Box)$ |
 | Higher-order + dependent + inductive | CoC extended with inductive data types and universes | Calculus of Inductive Constructions (CIC) | Inductive types + Predicative Universes (replacing the $\Box$ of CoC) + Impredicative `Prop` (replacing the $\ast$ of CoC) | CoC + Native data structures + Consistent mathematical proofs |
@@ -211,14 +212,79 @@ What can the system quantify over?
 
 | Logic | Type-theoretic / λ-calculus counterpart |
 |---|---|
-| Intuitionistic propositional logic | STLC |
+| Intuitionistic propositional logic (aka Zeroth-order Propositional Logic aka Zeroth-order Predicate Logic) | STLC |
+| ~~First-Order intuitionistic propositional logic~~ | No such logic. "Propositional" means there are no quantifiers over **individuals**, whereas "first-order" means there are. |
 | Second-order intuitionistic propositional logic (Polymorphic) | System F |
 | Higher-order intuitionistic propositional logic (Higher-kinded) | Fω |
-| First-Order Predicate Logic (Minimal Fragment) (only $\forall, \to$) | Dependent λ-calculus (**λP** / LF). <br> • **$\Pi$-types** only = **($\forall, \to$)** |
-| Full First-Order Intuitionistic Logic (All connectives, no arithmetic/induction) | **λP extended** <br> • **$\Pi$-types** (already in λP), <br> • **$\Sigma$-types** = ($\land$, $\exists$), <br> • **Sum-types**(**$+$**) = ($\lor$), <br> • **$\mathbf{0}$** = ($\bot$ / **`False`**), <br> • **$\mathbf{1}$** = ($\top$ / **`True`**) |
-| Full First-Order Intuitionistic Logic with Native Induction and Arithmetic (∀, ∃) | Martin-Löf Type Theory (MLTT) |
+| First-Order Predicate Logic (Minimal Fragment) (only $\forall, \to$) | First-Order Dependent λ-calculus (**λP** / LF)[^15]. <br> • **$\Pi$-types** only = **($\forall, \to$)** |
+| Full First-Order Intuitionistic Logic (All connectives, no native arithmetic/induction) | **λP extended** <br> • **$\Pi$-types** (already in λP), <br> • **$\Sigma$-types** = ($\land$, $\exists$), <br> • **Sum-types**(**$+$**) = ($\lor$), <br> • **$\mathbf{0}$** = ($\bot$ / **`False`**), <br> • **$\mathbf{1}$** = ($\top$ / **`True`**) |
+| Full First-Order Intuitionistic Logic with Native Induction and Arithmetic (∀, ∃) | Martin-Löf Type Theory (MLTT) **without Universes** **$\dagger$** |
+| Second-Order Predicate Logic | Second-Order (Polymorphic) Dependent λ-calculus (**λP2** / **PRED2**)[^15] |
 | Higher-Order Predicate Logic (∀ over types and predicates) | Calculus of Constructions (CoC) |
 | Full Higher-Order Intuitionistic Logic with Inductive Definitions | Calculus of Inductive Constructions (CIC) |
+| Higher-Order Intuitionistic (Constructive) Mathematics (Heyting Arithmetic) with Universes | Standard Martin-Löf Type Theory (MLTT) |
+
+> [!IMPORTANT]
+> **$\dagger$** 
+> Restricting Martin-Löf Type Theory (MLTT) by removing all type universes does not introduce impredicativity. The resulting system remains strictly predicative.
+
+## Decidability / Computability
+
+### Strong-normalization (SN)
+
+For an arbitrary λ-term $M$, in an arbitrary Type-System, let:
+
+$\text{SN}(M) \equiv \text{ Every reduction sequence starting from } M \text{ terminates.}$
+
+The **General** problem **"Is $\text{SN}(M)$ True?"** is **Undecidable**.
+
+> [!CAUTION]
+> Are there particular type-systems for which **SN** is **Decidable**?
+> 
+> Answer: Yes. Strong Normalization (SN) is decidable for all systems within the Lambda Cube, as well as standard Dependent Type Theories (like MLTT and CIC), and Pure Type Systems.
+> 
+> Reason:
+> - For all Type Systems within the Lambda Cube, **The Strong Normalization Theorem** have been structurally and mathematically proven.
+> - For Pure Type Systems & Dependent Type Systems, modern constructive type theories enforce strict structural termination checks (like ensuring recursive calls are
+>   only made on strictly smaller sub-components), the system ensures that both type-checking and strong normalization remain fully decidable.
+>   
+> There are of course other Type-Systems whose SN status are **Undecidable**.
+> - eg: SN status of Intersection Type Systems as a whole is Undecidable. (Even if the SN status of a given a well-typed SN term in this system is decidable.)
+
+* **Strong-normalization (SN)**: All paths lead to termination.
+* **Weak-normalization (WN)**: At least one path leads to termination.
+* **Non-WN** / **Non-termination**: No path leads to termination.
+
+> [!NOTE]
+> * Pure type-systems (eg STLC, System F, Fω, λP / LF, CoC, MLTT, CIC etc) are **Strongly-normalizing**.
+>   * Strong-normalization $\implies$ (**ONE-WAY-ONLY**) Weak-normalization
+>     * So, Strong-normalization $\subset$ (**PROPER**) Weak-normalization
+>   * Weak-normalization $\implies$ (**ONE-WAY-ONLY**) **Only total** (No partial) functions allowed.
+>   * Hence, by transitivity, Strong-normalization $\implies$ (**ONE-WAY-ONLY**) **Only total** (No partial) functions allowed.
+>   
+> * Type-System of Haskell is **System FC** (Fω + Coercions)
+>   * Coercions = First-class type equality proofs
+>   *  **System FC** allows **partial functions**. Hence, Haskell the language, is non-WN, even if it has terms that are SN (terms that always terminate) or WN (terms that terminate only by lazy-evaluation eg `head [1, infiniteLoop]`)
+>   *  Hence a Haskell program may not terminate.
+>   *  But: Since Coq uses CIC, a Coq program will always terminate. And Coq only allows total functions.
+
+### Type-related Computations
+
+| Type-System	| Type-Checking	| Definitional-equality[^16]	| Type-Inference[^17]  |
+| ----         | ----              | ----                        | -----                |
+| STLC	     | ✅ Decidable	     | ✅ Decidable	               | ✅ Decidable         |
+| System F	| ✅ Decidable*	| ✅ Decidable	               | ❌ Undecidable       |
+| Fω	          | ✅ Decidable*	| ✅ Decidable	               | ❌ Undecidable       |
+| λP / LF      | ✅ Decidable*	| ✅ Decidable	               | ❌ Undecidable       |
+| CoC	     | ✅ Decidable*	| ✅ Decidable	               | ❌ Undecidable       |
+| MLTT	     | ✅ Decidable**	| ✅ Decidable**	          | ❌ Undecidable       |
+| CIC	     | ✅ Decidable**	| ✅ Decidable**	          | ❌ Undecidable       |
+| GHC Haskell	| ❌ Undecidable	| ❌ Undecidable	          | ❌ Undecidable       |
+
+
+\* Assuming the explicitly typed formulation.
+
+\*\* For standard, well-behaved versions with a decidable conversion procedure and strictly positive inductives/universe rules.
 
 ## Appendix and References[^1][^2][^3][^4][^5][^6][^7][^8][^9][^10][^11][^12][^13][^14]
 
@@ -236,3 +302,6 @@ What can the system quantify over?
 [^12]: https://en.wikipedia.org/wiki/Template:Programming_paradigms_navbox
 [^13]: https://en.wikipedia.org/wiki/Template:Design_patterns
 [^14]: :play_or_pause_button: [Chris Casinghino - Making Dependent Types Practical](https://youtu.be/_2jrmgO_Gq0)
+[^15]: https://en.wikipedia.org/wiki/Dependent_type#First_order_dependent_type_theory
+[^16]: Definitional-equality (aka Type-conversion: Are two terms definitionally equal?)
+[^17]: Type-Inference (aka Type-inhabitation)
