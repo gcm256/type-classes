@@ -134,18 +134,25 @@ What can the system quantify over?
 
 ## Logical-Order & Type-Dependency
 
+See also: [Curry-Howard Mapping](curry-howard-mapping)
+
 | Level | What is allowed to depend on what? | Typical example |
 |---|---|---|
-| Propositional Logic | No quantification over individuals or propositions/types; propositions are atomic units | STLC |
-| First-order Logic | Quantification over individuals/terms | First-order intuitionistic logic |
-| Second-order-propositional Logic | Quantification over propositions/types | System F |
-| Second-order-predicate Logic | Quantification over individuals and predicates/relations | Richer dependent/higher-order type systems |
-| Higher-order Logic | Quantification over higher-order predicates/functions/types (eg over predicates of predicates, etc.) using higher-order quantification/type operators | Fω / higher-order type systems |
-| Dependent Types | Types/propositions may depend on terms | Dependent λ-calculus / MLTT |
-| Higher-order Dependent Types | Types depend on terms and higher-order/type-level abstraction is available | Calculus of Constructions (CoC) |
-| Higher-order Dependent Inductive Types | Above plus inductive types/constructions | CIC |
+| L0️⃣: Propositional Logic | No quantification over individuals or propositions/types; propositions are atomic units | STLC |
+| L1️⃣: First-order (Predicate) Logic | Quantification over individuals/terms (Dependent typing) | First-Order Dependent type-systems eg λP / LF, λP extended, Martin-Löf Type Theory (MLTT) without Universes |
+| L1️⃣: Second-order-propositional Logic | Quantification over propositions/types | System F |
+| L2️⃣: Second-order-predicate Logic | Quantification over individuals (Dependent typing) and over predicates/relations | Richer/higher-order Dependent type-systems eg Second-Order (Polymorphic) Dependent λ-calculus (λP2 / PRED2) |
+| L2️⃣: Higher-order-propositional Logic | Quantification over higher-order predicates/functions/types (eg over predicates of predicates, etc.) using higher-order quantification/type operators | Fω / higher-order type systems |
+| L3️⃣: Higher-order-predicate Logic | Types depend on terms (Dependent typing) and on higher-order/type-level abstraction is available | Calculus of Constructions (CoC) |
+| L4️⃣: Full Higher-order Logic with Inductive Definitions | CoC features plus inductive types/constructions | CIC |
+| L5️⃣: Higher-order Mathematics (Logic + Arithmetic) | Dependent typing + native data-structures for logic and math + Universes | MLTT |
 
 > [!IMPORTANT]
+> :sparkle: **Predicate Logic** (of any Order > 0) requires **Dependent-typing**. Propositional Logic (of any Order) doesn't require Dependent-typing.
+>
+> :high_brightness: Logics at the same Level are on different axes, hence not comparable. Eg L1️⃣: First-order (Predicate) Logic and L1️⃣: Second-order-propositional Logic are
+> not comparable since the former is along the x-axis and the latter along the y-axis of the Lambda Cube. Similarly, λP2 (λP+λ2) and Fω (λ2+λ⍹) are both L2️⃣.
+> 
 > Second-order predicate logic and second-order propositional logic are different logical formalisms, not simply successive levels of one hierarchy. However, a dependent type theory
 > capable of representing second-order predicate logic has capabilities that System F lacks, particularly term-dependent types and quantification over predicates of individuals.
 > The type-theoretic counterpart of 2nd-Order predicate logic can be richer than that of 2nd-order propositional logic even though the two source logics aren't naturally ordered by
@@ -180,7 +187,7 @@ What can the system quantify over?
 | Higher-kinded | Types/type operators can be higher-order. Types can be parametrized by types. | **Fω** (**$\lambda 2 + \lambda\underline{\omega}$**) | Type Constructors aka type-level functions | Types can depend on types $(\Box, \Box)$. (In addition to **System F** capability $(\Box/\*, \*)$ ) |
 | Dependent | Types can be parametrized by terms | Dependent λ-calculus (**λP** / LF) | Dependent types (Π-types) | Types/terms can depend on terms $(\*, \Box/\*)$ |
 | Dependent + Polymorphic | Types can be parametrized by terms. Terms can be parametrized by types. | Second-Order (Polymorphic) Dependent λ-calculus (**λP2** / **PRED2**)[^15] | Dependent types (Π-types) & Type abstraction (∀) | Types can depend on terms $(\*, \Box)$. (In addition to **System F** capability $(\Box/\*, \*)$ ) |
-| Dependent + Inductive | Term-dependent types with native data structures and universes | Martin-Löf Type Theory (MLTT) | In addition to Dependent types (Π-types): Dependent pairs (Σ-types), Identity-types, Inductive trees (W-types) + Predicative Universes | Types can depend on terms + Native mathematical induction. Does not fit the Barendregt $(\text{sort}_1, \text{sort}_2)$ Lambda Cube notation. |
+| Higher-order + dependent + inductive | Term-dependent types with native data structures and universes | Martin-Löf Type Theory (MLTT) | In addition to Dependent types (Π-types): Dependent pairs (Σ-types), Identity-types, Inductive trees (W-types) + Predicative Universes | Types can depend on terms + Native mathematical induction. Does not fit the Barendregt $(\text{sort}_1, \text{sort}_2)$ Lambda Cube notation. |
 | Higher-order + dependent | Polymorphic + Higher-kinded + Dependent | Calculus of Constructions (CoC) | Full Lambda Cube integration | Terms/Types can depend on Terms/Types $(*/\Box, */\Box)$ |
 | Higher-order + dependent + inductive | CoC extended with inductive data types and universes | Calculus of Inductive Constructions (CIC) | Inductive types + Predicative Universes (replacing the $\Box$ of CoC) + Impredicative `Prop` (replacing the $\ast$ of CoC) | CoC + Native data structures + Consistent mathematical proofs |
 
