@@ -134,7 +134,7 @@ What can the system quantify over?
 
 ## Logical-Order & Type-Dependency
 
-See also: [Curry-Howard Mapping](#curry-howard-mapping)
+See also: [Curry-Howard Mapping](#curryhoward-mapping)
 
 | Level | What is allowed to depend on what? | Typical example |
 |---|---|---|
