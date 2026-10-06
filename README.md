@@ -105,13 +105,45 @@ where the result can have cardinality: 0, 1, or many.
 | Individual | `Alice`, `42` | An object in the domain |
 | Term | `x`, `42`, `f(x)` | Syntactic expression denoting an individual |
 | Function | `f` | Maps individuals to individuals |
-| Predicate | `Human`, `Even`, `Loves` | Property/relation of individuals |
-| Proposition | `Human(Alice)`, `2+2=4` | Something that can be true or false |
+| Predicate $\ddagger$ | `Human`, `Even`, `Loves` | Property/relation of individuals. An $n$-ary Predicate is a function from $n$ Terms to a Proposition (or, à la Currying, an $n$-ary Predicate is a function from a Term to a $n-1$-ary Predicate). So a unary Predicate has type (`Term` $\to$ `Proposition`), a binary Proposition has type (`Term` $\to$ `Term` $\to$ `Proposition`) and so on. |
+| Proposition | `Human(Alice)`, `2+2=4` | Something that can be `True` or `False`. Proposition is the result when **all** the specific `Term` arguments are supplied to the Predicate. A Proposition is in fact a $0$-ary Predicate. |
 | Propositional variable | `P`, `Q` | Variable ranging over propositions |
 | Predicate variable | `P`, `R` | Variable ranging over predicates/relations |
 | Type | `Nat`, `Bool`, `A` | Class/category of terms |
 | Type variable | `X`, `Y` | Variable ranging over types |
 | Dependent type | `Vec(A,n)` | A type whose definition depends on a term |
+
+> [!NOTE]
+> $\ddagger$ A unary Predicate is sometimes called a **Property**. Because the (unary) Predicate $P(x)$ is a property of Term $x$.
+>
+> A binary Predicate is sometimes called a **Relation**. Because the (binary) Predicate $P(x,y)$ is a relation between Terms $x$ and $y$.
+>
+> Sometimes (2+)-ary Predicates are also called as Relations.
+> 
+> And as we saw, a $0$-ary Predicate is nothing but a **Proposition**.
+>
+> **Kind** decides Arity. **Quantification** decides Order.
+> 
+> **Kinds** (aka "types of types" aka meta-templates or factories used to build predicates, propositions, and functions.) are classified as:
+> - `Type` / `Prop` $\equiv$ Base-Kind $\equiv$ Simple-Type $\equiv$ $0$-ary Predicate $\equiv$ **Proposition**
+> - `Term` → `Type` $\equiv$ Dependent-Type $\equiv$ Unary Predicate $\equiv$ **Property**
+> - `Term` → `Term` → `Type` $\equiv$ Dependent-Type $\equiv$ Binary Predicate $\equiv$ **Relation**
+> - `Term` → ... → `Term` → `Type` $\equiv$ Dependent-Type $\equiv$ $n$-ary Predicate
+> - `Type` → `Type` $\equiv$ Functions of Propositions $\equiv$ Unary Logical Connective $\equiv$ Unary Boolean Function $\equiv$ Unary **Higher-Order Predicate**
+> - `Type` → `Type` → `Type` $\equiv$ Functions of Propositions $\equiv$ Binary Logical Connective $\equiv$ Binary Boolean Function $\equiv$ Binary **Higher-Order Predicate**
+> - `Type` → ... → `Type` → `Type` $\equiv$ Functions of Propositions $\equiv$ $n$-ary Logical Connective $\equiv$ $n$-ary Boolean Function $\equiv$ $n$-ary **Higher-Order Predicate**
+>
+> 
+> Distinction between **Dependent Types** (all args not supplied, hence live at the Kind level) &
+> **Dependently Typed Terms** (all args supplied aka fully saturated, hence live at the Term level).
+> 
+
+| $\underbrace{\text{Arity}}_\downarrow \mid \text{Order} \to$ | Zeroth-order | First-order | Second-order | Higher-order |
+| ----                                                         | ----         | ----        | ----         | ----         |
+| Propositional ($0$-ary Predicate)                            |              |             |              |              |
+| Predicate ($n$-ary Predicate, $n \ge 1$)                     |              |             |              |              |
+
+
 
 ```
 What can the system quantify over?
@@ -136,19 +168,20 @@ What can the system quantify over?
 
 See also: [Curry-Howard Mapping](#curryhoward-mapping)
 
-| Level | What is allowed to depend on what? | Typical example |
+| Level | What is allowed to depend/quantify on what? | Typical example |
 |---|---|---|
-| L0️⃣: Propositional Logic | No quantification over individuals or propositions/types; propositions are atomic units | STLC |
-| L1️⃣: First-order (Predicate) Logic | Quantification over individuals/terms (Dependent typing) | First-Order Dependent type-systems eg λP / LF, λP extended, Martin-Löf Type Theory (MLTT) without Universes |
-| L1️⃣: Second-order-propositional Logic | Quantification over propositions/types | System F |
-| L2️⃣: Second-order-predicate Logic | Quantification over individuals (Dependent typing) and over predicates/relations | Richer/higher-order Dependent type-systems eg Second-Order (Polymorphic) Dependent λ-calculus (λP2 / PRED2) |
-| L2️⃣: Higher-order-propositional Logic | Quantification over higher-order predicates/functions/types (eg over predicates of predicates, etc.) using higher-order quantification/type operators | Fω / higher-order type systems |
-| L3️⃣: Higher-order-predicate Logic | Types depend on terms (Dependent typing) and on higher-order/type-level abstraction is available | Calculus of Constructions (CoC) |
-| L4️⃣: Full Higher-order Logic with Inductive Definitions | CoC features plus inductive types/constructions | CIC |
-| L5️⃣: Higher-order Mathematics (Logic + Arithmetic) | Dependent typing + native data-structures for logic and math + Universes | MLTT |
+| L0️⃣: Propositional Logic | No quantification over individuals or propositions/types; propositions are atomic units. | STLC |
+| L1️⃣: First-order (Predicate) Logic | Quantification over individuals/terms (Dependent typing). | First-Order Dependent type-systems eg λP / LF, λP extended, Martin-Löf Type Theory (MLTT) without Universes |
+| L1️⃣: Second-order-propositional Logic | Quantification over propositions/types. | System F |
+| L2️⃣: Second-order-predicate Logic | Quantification over individuals/terms (Dependent typing) and over predicates. | Richer/higher-order Dependent type-systems eg Second-Order (Polymorphic) Dependent λ-calculus (λP2 / PRED2) |
+| L2️⃣: Higher-order-propositional Logic | Quantification over higher-order propositions by abstracting over logical-connectives (aka boolean-functions aka functions-of-propositions aka Higher-order-predicates) using higher-order quantification/type operators. | Fω / higher-order type systems |
+| L3️⃣: Higher-order-predicate Logic | Quantification over Dependently-typed Terms as well as over higher-order/type-level abstractions (kinds). | Calculus of Constructions (CoC) |
+| L4️⃣: Full Higher-order Logic with Inductive Definitions | CoC features plus inductive types/constructions. | CIC |
+| L5️⃣: Higher-order Mathematics (Logic + Arithmetic) | Dependent typing + native data-structures for logic and math + Universes. | MLTT |
 
 > [!IMPORTANT]
-> :sparkle: **Predicate Logic** (of any Order > 0) requires **Dependent-typing**. Propositional Logic (of any Order) doesn't require Dependent-typing.
+> :sparkle: In Type Theory, a **Predicate** (of any arity ≥ 1) *is* (nothing but) a **Dependent-Type**. Hence, **Predicate Logic** (of any Order ≥ 1) requires **Dependent-typing**.
+> Propositional Logic (of any Order) doesn't require Dependent-typing.
 >
 > :high_brightness: Logics at the same Level are on different axes, hence not comparable. Eg L1️⃣: First-order (Predicate) Logic and L1️⃣: Second-order-propositional Logic are
 > not comparable since the former is along the x-axis and the latter along the y-axis of the Lambda Cube. Similarly, λP2 (λP+λ2) and Fω (λ2+λ⍹) are both L2️⃣.
@@ -223,7 +256,7 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 | ~~First-Order intuitionistic propositional logic~~ | No such logic. "Propositional" means there are no quantifiers over **individuals**, whereas "first-order" means there are. |
 | Second-order intuitionistic propositional logic (Polymorphic) | System F |
 | Higher-order intuitionistic propositional logic (Higher-kinded) | Fω |
-| First-Order Predicate Logic (Minimal Fragment) (only $\forall, \to$) | First-Order Dependent λ-calculus (**λP** / LF)[^15]. <br> • **$\Pi$-types** only = **($\forall, \to$)** |
+| First-Order (Predicate) Logic (Minimal Fragment) (only $\forall, \to$) | First-Order Dependent λ-calculus (**λP** / LF)[^15]. <br> • **$\Pi$-types** only = **($\forall, \to$)** |
 | Full First-Order Intuitionistic Logic (All connectives, no native arithmetic/induction) | **λP extended** <br> • **$\Pi$-types** (already in λP), <br> • **$\Sigma$-types** = ($\land$, $\exists$), <br> • **Sum-types**(**$+$**) = ($\lor$), <br> • **$\mathbf{0}$** = ($\bot$ / **`False`**), <br> • **$\mathbf{1}$** = ($\top$ / **`True`**) |
 | Full First-Order Intuitionistic Logic with Native Induction and Arithmetic (∀, ∃) | Martin-Löf Type Theory (MLTT) **without Universes** **$\dagger$** |
 | Second-Order Predicate Logic | Second-Order (Polymorphic) Dependent λ-calculus (**λP2** / **PRED2**)[^15] |
