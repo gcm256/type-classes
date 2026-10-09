@@ -12,7 +12,7 @@ See: [^15][^16]
 - Morpheme
 - Sememe
 - Toneme
-- Tagneme
+- Tagmeme
 - Glosseme
 
 
@@ -22,15 +22,24 @@ See: [^15][^16]
 
 ### Inflection[^20]
 
-- Conjugation: Inflection of verbs (Tinganta / तिङन्तम्)[^19]
-- Declension: Inflection of nominals (Subanta / सुबन्तम्)[^18]
+- **Conjugation:** Inflection of verbs (Tinganta / तिङन्तम्)[^19]
+- **Declension:** Inflection of nominals (Subanta / सुबन्तम्)[^18]
 
 ## Phonetics[^1][^2]
 
-- Sibilant
+- Fricative: Friction in airflow.
+  - Affricate: Stop + Fricative
+- Plosive: Neither fricative nor Affricate eg क, ख etc.
+- Sibilant: The hissing sound of a consonant. Sibilants can only be either fricative or affricate.
+  - Sibilant fricative: स, श, ष
+  - Sibilant affricate: च, छ, ज, झ
+  - Non-sibilant fricative: Friction in airflow, but no hissing sound. Denoted by using a Nukta (dot) diacritic (़) Eg ख़, ग़ etc
+    - Anything non-sibilant with a Visarga (ः) eg तः
+    - Also, ह
+  - Non-sibilant affricate: Very rare. Eg क्ख़ (क् + ख़) etc.
 - Aspirated
-- Fricative
-- Afficate
+  - Column-2 and Column-4 consonants eg (ख, घ), (छ, झ), (ठ, ढ), (थ, ध), (फ, भ).
+  - Col-1 and Col-3 consonants are Unaspirated.
 
 ## Appendix and References
 
@@ -54,11 +63,11 @@ See: [^3][^4][^5][^6][^7][^8][^9][^10][^11][^12][^13][^14][^17]
 [^16]: ⏯️ [Richards - Linguistics (2022)](https://www.youtube.com/playlist?list=PLmsIjFudc1l0baz7D-oRF1jc1F1kDfGm8)
 
 [^18]: https://en.wikipedia.org/wiki/Sanskrit_nominals \
-https://dharmawiki.org/index.php/Subanta_(%E0%A4%B8%E0%A5%81%E0%A4%AC%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%AE%E0%A5%8D) \
-https://sa.wikipedia.org/wiki/%E0%A4%B8%E0%A5%81%E0%A4%AC%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%AE%E0%A5%8D
+https://dharmawiki.org/index.php/Subanta_(सुबन्तम्) \
+https://sa.wikipedia.org/wiki/सुबन्तम्
 [^19]: https://en.wikipedia.org/wiki/Sanskrit_verbs \
-https://dharmawiki.org/index.php/Tinganta_(%E0%A4%A4%E0%A4%BF%E0%A4%99%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%AE%E0%A5%8D)
-[^20]: https://sa.wikipedia.org/wiki/%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83:%E0%A4%B8%E0%A4%82%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A5%83%E0%A4%A4%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%95%E0%A4%B0%E0%A4%A3%E0%A4%AE%E0%A5%8D \
+https://dharmawiki.org/index.php/Tinganta_(तिङन्तम्)
+[^20]: https://sa.wikipedia.org/wiki/वर्गः:संस्कृतव्याकरणम् \
 https://en.wikipedia.org/wiki/Sanskrit_grammar
 
 [^17]: https://en.wikipedia.org/wiki/Formal_language
