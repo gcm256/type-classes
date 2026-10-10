@@ -29,25 +29,42 @@ See: [^15][^16]
 
 - Fricative: Friction in airflow.
   - Affricate: Stop + Fricative
-- Plosive: Neither fricative nor Affricate eg क, ख etc.
-- Sibilant: The hissing sound of a consonant. Sibilants can only be either fricative or affricate.
-  - Sibilant fricative: स, श, ष
-  - Sibilant affricate: च, छ, ज, झ
-  - Non-sibilant fricative: Friction in airflow, but no hissing sound. Denoted by using a Nukta (dot) diacritic (़) Eg ख़, ग़ etc
+- Plosive: Neither Fricative nor Affricate eg क, ख etc.
+- Sibilant: The hissing sound of a consonant. Sibilants can only be either Fricative or Affricate.
+  - Sibilant Fricative: स, श, ष
+  - Sibilant Affricate: च, छ, ज, झ
+  - Non-sibilant Fricative: Friction in airflow, but no hissing sound. Denoted by using a Nukta (dot) diacritic (़) Eg ख़, ग़ etc
     - Anything non-sibilant with a Visarga (ः) eg तः
     - Also, ह
-  - Non-sibilant affricate: Very rare. Eg क्ख़ (क् + ख़) etc.
-- Aspirated
-  - Column-2 and Column-4 consonants eg (ख, घ), (छ, झ), (ठ, ढ), (थ, ध), (फ, भ).
-  - Col-1 and Col-3 consonants are Unaspirated.
+  - Non-sibilant Affricate: Very rare. Eg क्ख़ (क् + ख़) etc.
+
+### The Master Cross-Reference Matrix
+This matrix categorizes the entire core Devanagari script, standard Nukta additions, and structural edge cases (Sindhi Implosives and Ingressive Clicks) strictly by Airstream, Phonation, and Manner, omitting the place of articulation completely.
+
+| Airstream Mechanism | Phonation (Voicing) | Manner of Articulation | Included Characters / Alphabet Set |
+|---|---|---|---|
+| Pulmonic Egressive (Standard Outward) | Voiceless | Plosive | क, ख, ट, ठ, त, थ, प, फ, क़ $[q]$ |
+| | | Affricate | च, छ |
+| | | Fricative (Sibilant) | श, ष, स, ज़ |
+| | | Fricative (Non-Sibilant) | ख़, फ़, ः (Visarga - post-vocalic release) |
+| | Voiced | Plosive | ग, घ, ड, ढ, द, ध, ब, भ |
+| | | Affricate | ज, झ |
+| | | Fricative (Non-Sibilant) | ह, ग़ |
+| | | Nasal | ङ, ञ, ण, न, म, ं (Anusvara), ँ (Chandrabindu) |
+| | | Approximant / Semivowel | य, व |
+| | | Vibrant (Trill / Lateral) | र, ल |
+| | | Flap | ड़ (Unaspirated), ढ़ (Aspirated) |
+| | | Vowels (All Monophthongs/Diphthongs) | अ, आ, इ, ई, उ, ऊ, ऋ, ॠ, ऌ, ए, ऐ, ओ, औ |
+| Ingressive Implosive (Inward Throat Vacuum) | Voiced | Plosive | ग॒, ज॒, ड॒, ब॒ (Specialized Sindhi Characters) |
+| Ingressive Click (Inward Mouth Vacuum) | Voiceless / Voiced | Fricative / Lateral Click | None in Devanagari (Found in Xhosa, Zulu, Damin) |
+
 
 #### Example
 
-Ordering of Articulation: 
-Voicing: Voiced (✅/❌), \
-Asp: Aspirated (✅/❌), \
-Plosive/Fricative\[Sibilant\]/Affricate\[Sibilant\] (P/F\[s\]/A\[s\]), \
-Sonorance: Nasal/Rhotic-Liquid-Tap-Flap/Rhotic-Liquid-Trill/Lateral-Liquid/Vowel/Semivowel (N/R/Rr/L/V/V*),\
+**Ordering of Articulation:** \
+Voicing: Voiced/Voiceless (✅/❌), \
+Aspiration: Aspirated/Unaspirated (✅/❌), \
+Plosive/Fricative\[Sibilant\]/Affricate\[Sibilant\]/Nasal/Rhotic-Liquid-Tap-Flap/Rhotic-Liquid-Trill/Lateral-Liquid/Vowel/Semivowel (P/F\[s\]/A\[s\]/N/R/Rr/L/V/V*), \
 Airstream: Ingressive aka Non-Egressive (🟦)
 
 | अ | आ | इ | ई | उ | ऊ |
@@ -55,18 +72,33 @@ Airstream: Ingressive aka Non-Egressive (🟦)
 | ए <br> (अ/आ + इ/ई) | ऐ <br> (अ/आ + ए) | ओ <br> (अ/आ + उ/ऊ) | औ <br> (अ/आ + ओ) | ऋ, ॠ | ऌ |
 
 
-| क (❌, ❌, P) <br> क़ (❌, ❌, P) <br> <ins>क़</ins> (❌, ❌, F) | च (❌, ❌, As) | ट (❌, ❌, P) | त (❌, ❌, P) | प (❌, ❌, P) |
+| क (❌, ❌, P) <br> क़ (❌, ❌, P) <br> <ins>क़</ins> (❌, ❌, F) | च (❌, ❌, As) <br><br><br> | ट (❌, ❌, P) <br><br><br> | त (❌, ❌, P) <br><br><br> | प (❌, ❌, P) <br><br><br> |
 |:---|:---|:---|:---|:---|
-| ख (❌, ✅, P) <br> ख़ (❌, ✅, F) <br> क्ख़ (❌, ✅, A) | छ (❌, ✅, As) | ठ  (❌, ✅, P) | थ (❌, ✅, P) | फ (❌, ✅, P) <br> फ़ (❌, ✅, F) |
-| ग (✅, ❌, P) <br> ग़ (✅, ❌, F) <br> ग॒ (✅, ❌, P, 🟦) | ज (✅, ❌, As) <br> ज़ (✅, ❌, Fs) <br> ज॒ (✅, ❌, As, 🟦) | ड (✅, ❌, P) <br> ड़ (✅, ❌, P, R) <br> ड॒ (❌, ❌, P, 🟦) | द (✅, ❌, P) | ब (✅, ❌, P) <br> ब॒ (✅, ❌, P, 🟦) |
-| घ (✅, ✅, P) | झ (✅, ✅, As) | ढ (✅, ✅, P) <br> ढ़ (✅, ✅, P, R) | ध (✅, ✅, P) | भ (✅, ✅, P) |
-| ङ (✅, ❌, P, N) | ञ (✅, ❌, P, N) | ण (✅, ❌, P, N) | न (✅, ❌, P, N) | म (✅, ❌, P, N) |
-| य (✅, ❌, P, V*) | र (✅, ❌, P, Rr) | ल (✅, ❌, P, L) | व (✅, ❌, P, V*) |   |
+| ख (❌, ✅, P) <br> ख़ (❌, ✅, F) <br> क्ख़ (❌, ✅, A) | छ (❌, ✅, As) <br><br><br> | ठ  (❌, ✅, P) <br><br><br> | थ (❌, ✅, P) <br><br><br> | फ (❌, ✅, P) <br> फ़ (❌, ✅, F) <br><br> |
+| ग (✅, ❌, P) <br> ग़ (✅, ❌, F) <br> ग॒ (✅, ❌, P, 🟦) | ज (✅, ❌, As) <br> ज़ (✅, ❌, Fs) <br> ज॒ (✅, ❌, As, 🟦) | ड (✅, ❌, P) <br> ड़ (✅, ❌, R) <br> ड॒ (✅, ❌, P, 🟦) | द (✅, ❌, P) <br><br><br> | ब (✅, ❌, P) <br><br> ब॒ (✅, ❌, P, 🟦) |
+| घ (✅, ✅, P) <br><br> | झ (✅, ✅, As) <br><br> | ढ (✅, ✅, P) <br> ढ़ (✅, ✅, R) | ध (✅, ✅, P) <br><br> | भ (✅, ✅, P) <br><br> |
+| ङ (✅, ❌, N) | ञ (✅, ❌, N) | ण (✅, ❌, N) | न (✅, ❌, N) | म (✅, ❌, N) |
+| य (✅, ❌, V*) | र (✅, ❌, Rr) | ल (✅, ❌, L) | व (✅, ❌, V*) |   |
 | श (❌, ✅, Fs) | ष (❌, ✅, Fs) | स (❌, ✅, Fs) |  |   |
 | ह (✅, ✅, F) | | | | |
 | ं (✅, ❌, P, N) | ँ (✅, ❌, P, N) | ः (❌, ❌, P, F) | | |
 
-
+> [!NOTE]
+> Ingressive ie non-Egressive sounds, by definition, cannot be Aspirated.
+> - Because non-Egressive means air is drawn in. But Aspirated requires a high-volume outward puff of air, which contradicts non-Egression.
+>
+> Ingressive ie non-Egressive sounds in Indic languages only occur in Sindhi.
+> - The characters ग॒, ज॒, ड॒, ब॒ are specialized Devanagari characters for Plosive non-Egressive sounds occurring in Sindhi language.
+>   - Airstream is Ingressive ie non-Egressive, ie air is drawn/sucked/gulped in and flows inward, instead of outward.
+>   - They are all Plosive (ie Stop Consonants).
+> - There are no non-Plosive non-Egressive sounds (that are used in actual words) in Indic languages, or any other major languages except some African and Indigenous Australian languages.
+>   - Non-Plosive non-Egressive sounds will sound like:
+>     - Clicks. 
+>     - The "tsk-tsk" sound of disapproval.
+>     - Snoring (when the snorer breathes in).
+>   - Even if not in actual words, still we do use "tsk-tsk" paraliguistically to express an emotion, and clicks eg to urge on horses and cattle.
+> - All other Indic language characters and sounds are Egressive where air is pushed out and flows outward.
+>   
 
 ## Appendix and References
 
