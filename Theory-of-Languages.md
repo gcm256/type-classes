@@ -44,9 +44,9 @@ This matrix categorizes the entire core Devanagari script, standard Nukta additi
 
 | Airstream Mechanism | Phonation (Voicing) | Aspiration Profile | Manner of Articulation | Included Characters / Alphabet Set |
 | :--- | :--- | :--- | :--- | :--- |
-| **Pulmonic Egressive** *(Outward Lung Air)* | **Voiceless** | **Unaspirated** | Plosive | क, ट, त, प, क़ [q] |
+| **Pulmonic Egressive** *(Outward Lung Air)* | **Voiceless** | **Unaspirated** | Plosive | क, ट, त, प, क़ *( [q] )* |
 | | | | Affricate | च |
-| | | | Fricative | ज़ |
+| | | | Fricative | ज़, क़ *( [χ] / <ins>क़</ins> )* |
 | | | **Aspirated** | Plosive | ख, ठ, थ, फ |
 | | | | Affricate | छ |
 | | | | Fricative (Sibilant) | श, ष, स |
@@ -56,7 +56,7 @@ This matrix categorizes the entire core Devanagari script, standard Nukta additi
 | | | | Fricative | ग़ |
 | | | | Nasal | ङ, ञ, ण, न, म, ं *(Anusvara)*, ँ *(Chandrabindu)* |
 | | | | Approximant / Semivowel| य, व |
-| | | | Vibrant (Trill / Lateral)| र, ल |
+| | | | Vibrant (Trill / Lateral)| र, ल, ळ |
 | | | | Flap | ड़ |
 | | | | Vowels (All Vowels) | अ, आ, इ, ई, उ, ऊ, ऋ, ॠ, ऌ, ए, ऐ, ओ, औ |
 | | | **Aspirated** *(Breathy)*| Plosive | घ, ढ, ध, भ |
@@ -88,7 +88,7 @@ Airstream: Ingressive aka Non-Egressive (🟦)
 | र (✅, ❌, Rr) | ल (✅, ❌, L) | ळ (✅, ❌, L) | य (✅, ❌, V*) | व (✅, ❌, V*) |
 | श (❌, ✅, Fs) | ष (❌, ✅, Fs) | स (❌, ✅, Fs) |  |   |
 | ह (✅, ✅, F) | | | | |
-| ं (✅, ❌, P, N) | ँ (✅, ❌, P, N) | ः (❌, ❌, P, F) | | |
+| ं (✅, ❌, N) | ँ (✅, ❌, N) | ः (❌, ❌, F) | | |
 
 > [!NOTE]
 > Ingressive ie non-Egressive sounds, by definition, cannot be Aspirated.
