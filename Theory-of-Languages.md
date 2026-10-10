@@ -41,27 +41,34 @@ See: [^15][^16]
 ### The Master Cross-Reference Matrix
 This matrix categorizes the entire core Devanagari script, standard Nukta additions, and structural edge cases (Sindhi Implosives and Ingressive Clicks) strictly by Airstream, Phonation, and Manner, omitting the place of articulation completely.
 
-| Airstream Mechanism | Phonation (Voicing) | Manner of Articulation | Included Characters / Alphabet Set |
-|---|---|---|---|
-| Pulmonic Egressive (Standard Outward) | Voiceless | Plosive | क, ख, ट, ठ, त, थ, प, फ, क़ $[q]$ |
-| | | Affricate | च, छ |
-| | | Fricative (Sibilant) | श, ष, स, ज़ |
-| | | Fricative (Non-Sibilant) | ख़, फ़, ः (Visarga - post-vocalic release) |
-| | Voiced | Plosive | ग, घ, ड, ढ, द, ध, ब, भ |
-| | | Affricate | ज, झ |
-| | | Fricative (Non-Sibilant) | ह, ग़ |
-| | | Nasal | ङ, ञ, ण, न, म, ं (Anusvara), ँ (Chandrabindu) |
-| | | Approximant / Semivowel | य, व |
-| | | Vibrant (Trill / Lateral) | र, ल |
-| | | Flap | ड़ (Unaspirated), ढ़ (Aspirated) |
-| | | Vowels (All Monophthongs/Diphthongs) | अ, आ, इ, ई, उ, ऊ, ऋ, ॠ, ऌ, ए, ऐ, ओ, औ |
-| Ingressive Implosive (Inward Throat Vacuum) | Voiced | Plosive | ग॒, ज॒, ड॒, ब॒ (Specialized Sindhi Characters) |
-| Ingressive Click (Inward Mouth Vacuum) | Voiceless / Voiced | Fricative / Lateral Click | None in Devanagari (Found in Xhosa, Zulu, Damin) |
 
+| Airstream Mechanism | Phonation (Voicing) | Aspiration Profile | Manner of Articulation | Included Characters / Alphabet Set |
+| :--- | :--- | :--- | :--- | :--- |
+| **Pulmonic Egressive** *(Outward Lung Air)* | **Voiceless** | **Unaspirated** | Plosive | क, ट, त, प, क़ [q] |
+| | | | Affricate | च |
+| | | | Fricative | ज़ |
+| | | **Aspirated** | Plosive | ख, ठ, थ, फ |
+| | | | Affricate | छ |
+| | | | Fricative (Sibilant) | श, ष, स |
+| | | | Fricative (Non-Sibilant)| ख़, फ़, ः *(Visarga)* |
+| | **Voiced** | **Unaspirated** | Plosive | ग, ड, द, ब |
+| | | | Affricate | ज |
+| | | | Fricative | ग़ |
+| | | | Nasal | ङ, ञ, ण, न, म, ं *(Anusvara)*, ँ *(Chandrabindu)* |
+| | | | Approximant / Semivowel| य, व |
+| | | | Vibrant (Trill / Lateral)| र, ल |
+| | | | Flap | ड़ |
+| | | | Vowels (All Vowels) | अ, आ, इ, ई, उ, ऊ, ऋ, ॠ, ऌ, ए, ऐ, ओ, औ |
+| | | **Aspirated** *(Breathy)*| Plosive | घ, ढ, ध, भ |
+| | | | Affricate | झ |
+| | | | Fricative (Glottal) | ह |
+| | | | Flap | ढ़ |
+| **Ingressive Implosive** *(Inward Throat Vacuum)* | **Voiced** | **Unaspirated** | Plosive | ग॒, ज॒, ड॒, ब॒ *(Sindhi Implosives)* |
+| **Ingressive Click** *(Inward Mouth Vacuum)* | **Voiceless / Voiced**| **Unaspirated / Aspirated**| Fricative / Lateral Click| *None in Devanagari* *(e.g., Xhosa Clicks)* |
 
 #### Example
 
-**Ordering of Articulation:** \
+**Ordering of Articulation[^1][^2]:** \
 Voicing: Voiced/Voiceless (✅/❌), \
 Aspiration: Aspirated/Unaspirated (✅/❌), \
 Plosive/Fricative\[Sibilant\]/Affricate\[Sibilant\]/Nasal/Rhotic-Liquid-Tap-Flap/Rhotic-Liquid-Trill/Lateral-Liquid/Vowel/Semivowel (P/F\[s\]/A\[s\]/N/R/Rr/L/V/V*), \
@@ -78,7 +85,7 @@ Airstream: Ingressive aka Non-Egressive (🟦)
 | ग (✅, ❌, P) <br> ग़ (✅, ❌, F) <br> ग॒ (✅, ❌, P, 🟦) | ज (✅, ❌, As) <br> ज़ (✅, ❌, Fs) <br> ज॒ (✅, ❌, As, 🟦) | ड (✅, ❌, P) <br> ड़ (✅, ❌, R) <br> ड॒ (✅, ❌, P, 🟦) | द (✅, ❌, P) <br><br><br> | ब (✅, ❌, P) <br><br> ब॒ (✅, ❌, P, 🟦) |
 | घ (✅, ✅, P) <br><br> | झ (✅, ✅, As) <br><br> | ढ (✅, ✅, P) <br> ढ़ (✅, ✅, R) | ध (✅, ✅, P) <br><br> | भ (✅, ✅, P) <br><br> |
 | ङ (✅, ❌, N) | ञ (✅, ❌, N) | ण (✅, ❌, N) | न (✅, ❌, N) | म (✅, ❌, N) |
-| य (✅, ❌, V*) | र (✅, ❌, Rr) | ल (✅, ❌, L) | व (✅, ❌, V*) |   |
+| र (✅, ❌, Rr) | ल (✅, ❌, L) | ळ (✅, ❌, L) | य (✅, ❌, V*) | व (✅, ❌, V*) |
 | श (❌, ✅, Fs) | ष (❌, ✅, Fs) | स (❌, ✅, Fs) |  |   |
 | ह (✅, ✅, F) | | | | |
 | ं (✅, ❌, P, N) | ँ (✅, ❌, P, N) | ः (❌, ❌, P, F) | | |
