@@ -76,7 +76,7 @@ Here is exactly how the **WebAuthn / FIDO2** protocol stops a spoofed site at th
 When you first create a Passkey for a legitimate site (e.g., `incometax.gov.in`), the website sends its unique identifier, called the **Relying Party ID (RP ID)**, 
 which corresponds exactly to its real domain name.
 
-Your phone or computer's security hardware chip (like the TPM or Secure Enclave) takes this domain name and creates a unique cryptographic key pair explicitly bound 
+Your phone or computer's security hardware chip (like the TPM or Secure Enclave) takes this domain name and creates a **unique cryptographic key pair** explicitly bound 
 to `incometax.gov.in`. The private key never leaves your device's chip.
 
 ### 2. The Browser's Hardware Gatekeeping (Authentication)
