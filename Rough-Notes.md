@@ -83,7 +83,7 @@ to `incometax.gov.in`. The private key never leaves your device's chip.
 
 When you try to log in later, the website must send a cryptographic challenge. Here is where the spoofed site fails:
 - **The Phishing Scenario:** You accidentally land on a fake site like `incometax-govt.in`. The hacker's fake page requests a Passkey login.
-- **The OS Intervention:** The request is handled directly by your device's underlying Operating System (Windows, Android, iOS, or macOS) via the browser. The browser looks at the address bar, reads the _actual_ domain (`incometax-govt.in`), and queries your secure chip: _"Do we have a private key matching incometax-govt.in?"_
+- **The OS Intervention:** The request is handled directly by your device's underlying Operating System (Windows, Android, iOS, or macOS) via the browser. The browser looks at the address bar, reads the _actual_ domain (`incometax-govt.in`), and queries your secure chip: _"Do we have a private key matching `incometax-govt.in`?"_
 - **The Refusal:** Your secure chip checks its internal vault. It finds keys for the real site, but **zero keys matching the fake domain**. The browser immediately throws an error and refuses to even pop up your fingerprint or face unlock prompt.
 
 
@@ -131,7 +131,7 @@ The webpage hands this challenge to your browser. At this exact microsecond, the
 The browser passes both the challenge and the domain name down to your phone or laptop's security chip.
 
 - **If it's the Real Site (`realbank.com`):** The chip looks at the domain, finds the matching private key, asks you to scan your fingerprint/face to unlock it, and then uses that private key to cryptographically "sign" the challenge. It sends this signature back to the server, and you are logged in.
-- **If it's a Fake Site (fakebank.com):** The chip looks at the domain string `fakebank.com`. It checks its vault, sees that **no key pair exists for this domain**, and immediately aborts the process. The script dies right there. Your phone never prompts you for a fingerprint, and no signature is ever generated or sent back to the hacker's server.
+- **If it's a Fake Site (`fakebank.com`):** The chip looks at the domain string `fakebank.com`. It checks its vault, sees that **no key pair exists for this domain**, and immediately aborts the process. The script dies right there. Your phone never prompts you for a fingerprint, and no signature is ever generated or sent back to the hacker's server.
 
 ### Summary
 
@@ -325,7 +325,7 @@ What if the website just has a single button that says **"Sign in with Passkey"*
 This is the real magic of modern Passkeys, technically called **Resident Keys**. In this scenario, the lookup happens **in reverse—on your device first, not on the server**.
 
 1. **The Server Sends a Blind Challenge:** When you click "Sign in with Passkey," the server does not know who you are yet. It simply generates a completely generic, blank mathematical challenge and sends it to your browser along with its domain name (`realbank.com`).
-2. **The Browser Interrogates Your Device:** Your browser passes this domain name down to your phone or laptop’s secure chip and asks: _"Do we have any keys saved for realbank.com?"_
+2. **The Browser Interrogates Your Device:** Your browser passes this domain name down to your phone or laptop’s secure chip and asks: _"Do we have any keys saved for `realbank.com`?"_
 3. **The Device Shows You a List:** Your phone looks inside its secure mapping table. If you have multiple accounts at that bank, your phone’s operating system will pop up a native menu on your screen: _"Which account do you want to use? \[Account A\] or \[Account B\]?"_
 4. **The Signature + Credential ID Bundle:** You tap the account you want and scan your fingerprint. Your phone's chip does two things:
    - It signs the challenge using the private key for that specific account.
