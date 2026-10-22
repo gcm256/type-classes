@@ -1,3 +1,112 @@
+# Rough Notes
+
+## Basis of Everything in the Universe
+
+- **Language**
+- **Logic**
+- **Mind**
+
+---
+
+## Favorite Areas of Mathematics
+
+1. **Geometry**
+  - Triangle Chromogeometry[^3]
+  - Triangle Centers & Transforms (eg Isogonal Conjugates, Isotomic Conjugates, Cyclocevian Conjugates etc)
+  - Triangle Curves, Triangle Conics, Triangle Cubics
+  - Quadrics
+
+2. Algebraic Geometry
+  - Elliptic Curves (over **Fields** ie `E(K)`)
+  - Algebraic Curves
+  - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
+
+3. Type Theory, Category Theory.
+
+4. QFT. Particle Physics. Symmetry Groups[^4] (Abstract Algebra, Group Theory). Astronomy/Cosmology. Special & General Relativity.
+  - Lie Algebras & Lie Groups
+    - They are different:
+      - A Lie Group is a Group.
+      - A Lie Algebra = A Vector Space (ie an Abelian Group under `(+)`  plus  a Field)  +  Lie Bracket $[\cdot, \cdot]$.
+  - Boolean Algebras
+  - Heyting Algebras
+  - Tensors, Spinors
+  - Quaternions
+
+
+[^1]: https://bhavana.org.in/special-values-of-zeta-functions/
+[^2]: https://mathworld.wolfram.com/RiemannZetaFunction.html
+[^3]: ⏯️ [Rational trigonometry, generalized triangle geometry and four-fold incenter symmetry](https://youtu.be/PR0viqKG7-U) \
+⏯️ [How Chromogeometry transcends Klein's Erlangen Program for Planar Geometries| N J Wildberger](https://youtu.be/LaTTqgchO2o) \
+⏯️ [The three-fold symmetry of chromogeometry | Rational Geometry Math Foundations 141 | NJ Wildberger](https://youtu.be/8QK6jn8JU0I) \
+⏯️ [Chromogeometry and nine-point circles | WildTrig: Intro to Rational Trigonometry | N J Wildberger](https://youtu.be/c6ApR8ptUOE) \
+**Playlists:** \
+[Math - Chromogeometry](https://www.youtube.com/playlist?list=PLsRvhcI3lNd6krVEAn8PGTFNAA1pg9uh6) \
+[DAK Chromogeometry](https://www.youtube.com/playlist?list=PLeV-0tFYTT3H3JS-kxBTnCbY7f3HIkYPp)
+[^4]: [Chemical Applications of Symmetry and Group Theory](https://www.youtube.com/playlist?list=PLj_Alq7xw30knZPTpa9whzqiSn_RZHGWP) \
+[Chemical Applications of Symmetry and Group Theory by CH 37: IIT TIRUPATI 01: Chemistry & Others](https://www.youtube.com/playlist?list=PL237gzZYZw7G6Z4tovX9jRxYQgZcoNv3V) \
+[Symmetry and Group Theory by NPTEL-NOC IITM](https://www.youtube.com/playlist?list=PLyqSpQzTE6M8LWVPnGF6PfUcTDrGiPkuY) \
+[Symmetry and Group Theory by NPTEL IIT Bombay](https://www.youtube.com/playlist?list=PLOzRYVm0a65eOFUUrwIEA4ZCSu9M9iyzQ)
+
+---
+
+## Study of Symmetry Groups
+
+**Group Theory** is the true (abstract) umbrella area that _defines_ and _classifies_ (all kinds of) symmetries. 
+
+**Representation Theory (RT)** is the (exact & powerful) framework we use to actually _compute_ and _work_ with symmetries. 
+But RT works for only **Linear**/**Rigid** symmetries.
+
+> [!NOTE]
+> **Representation Theory** represents an abstract algebraic structure/system of objects more concretely by describing its elements by **matrices** and their **algebraic operations** 
+> (for example, matrix addition, matrix multiplication), ie, by **linear transformations** of **vector spaces**.
+>
+> So Representation Theory is the ultimate tool for Linear Symmetries. But when a symmetry becomes too fluid (infinite-dimensional topology) or too bent (non-linear transformations),
+> the rigid matrix containers of Representation Theory break, forcing mathematicians to step outside vector spaces entirely and rely purely on Topology and Differential Geometry.
+
+Symmetry Groups like $SU(n)$ (aka _Special Unitary Groups_) eg $SU(2)$, $SU(3)$ etc, are **Lie Groups**.
+- Just like Heyting Algebras and Boolean Algebras provide the structural rules for logic (Classical and Intuitionistic respectively), Lie groups and Lie Algebras provide the
+  structural rules for _continuous_ symmetries.
+
+Symmetry Groups occur in the following areas of study:
+
+1. Abstract Algebra (under Group Theory) & Combinatorics (Discrete Symmetries)
+2. Lie Theory & Particle Physics (Continuous Symmetries)
+3. Differential Geometry & Mechanics (Geometric Preservation)
+4. Topology & Geometry (Shape and Twist Preservation)
+5. Relativity & Cosmology (Spacetime Symmetries)
+
+> [!NOTE]
+> (3), (4), (5) above, _can_ have both Discrete and Continuous Symmetries, but predominantly have Continuous Symmetries.
+> 
+
+
+```
+                       [ ALL SYMMETRY GROUPS ]
+                                  |
+         +------------------------+------------------------+
+         |                                                 |
+         |                                                 |
+ [ DISCRETE / ALGEBRAIC ]                       [ CONTINUOUS / GEOMETRIC ]
+         |                                                 |
+         |                                                 |
+         +-----------------+                               +-----------------+
+         |                 |                               |                 |
+         |                 |                               |                 |
+  [ Finite Simple ]  [ Geometric ]                   [ Finite-Dim ]   [ Infinite-Dim ]
+    - Cyclic          - Dihedral                       (Lie Groups)     - Homeo(M)
+    - Alternating     - Space Groups                   - SU(n), SO(n)   - Diff(M)
+    - Sporadic (Monster)                               - Exceptional    - Symp(M)
+                                                         (E8, G2)       - Gauge Groups
+``` 
+
+### Books:
+1. "Group Theory in a Nutshell for Physicists" by Anthony Zee.
+2. "Abstract Algebra" by David S. Dummit and Richard M. Foote.
+3. ["Fearful Symmetry: The Search for Beauty in Modern Physics"](https://books.google.mk/books?id=Xq1mCgAAQBAJ) by Anthony Zee.
+
+---
+
 Wrt: "Term → Type is an Order-2 Kind", Term -> Type is First-order, no?
 
 Wrt: "What actually separates Propositional Logic from Predicate Logic is whether terms/individuals are allowed to parameterize types at all.", But Propositional means 0-arity, correct?
