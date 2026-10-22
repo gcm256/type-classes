@@ -69,7 +69,7 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 
 ## Specification of a Logic
 
-**Specification** of a logic, is the **Quintuple** with the following elements: **([1](#l-1), [2](l-2), [4](#l-4), [5](#l-5), [7](#l-7))**
+**Specification** of a logic, is the **Quintuple** with the following elements: **([1](#l-1), [2](#l-2), [4](#l-4), [5](#l-5), [7](#l-7))**
 
 And then, **Specification ⟶ {type/proof calculi satisfying it}**
 
