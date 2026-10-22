@@ -217,7 +217,7 @@ Instead of introducing a new group, the Higgs represents the math of **subtracti
 It acts like a wedge that forces a large, unified symmetry group to split apart, leaving behind a smaller, 
 leftover group (which is why the electroweak force split into electromagnetism and the weak force).
 
-Mathematically, it takes a large group $G$ ($SU(2) \times U(1)$) and maps out how it collapses down to a smaller subgroup $H$ (the $U(1)$ of electromagnetism).
+Mathematically, it takes a large group $G$ ( $SU(2) \times U(1)$ ) and maps out how it collapses down to a smaller subgroup $H$ (the $U(1)$ of electromagnetism).
 - In abstract algebra, this is studied using **coset spaces ($G/H$)**. The specific ways the group can break define the fields.
 
 **Result:** Splitting of a large force group into a smaller leftover group.
@@ -298,7 +298,7 @@ To give you the most accurate tool for your notebook, here is the complete, fina
 
 | $\underbrace{\text{Arity}}_\downarrow \mid \text{Order} \to$ | Zeroth-order | First-order | Second-order | Higher-order |
 |---|---|---|---|---|
-| Propositional ($0$-ary Predicate) | $\lambda\to$ (Simply Typed $\lambda$-Calculus) • No quantifiers allowed • Only static propositional constants (e.g., $P \to Q$). | Not Applicable (Requires a Term layer to exist in the syntax for first-order quantification). | $\lambda 2$ (System F / SOPL) • Quantifies over Type • Binds 0-ary propositional variables: $\forall P : \text{Type}$. | $\lambda\omega$ (System F$\omega$ / HOPL) • Quantifies over Type \to Type • Binds logical connectives/boolean functions: $\forall F : \text{Type} \to \text{Type}$. |
+| Propositional ($0$-ary Predicate) | $\lambda\to$ (Simply Typed $\lambda$-Calculus) • No quantifiers allowed • Only static propositional constants (e.g., $P \to Q$). | Not Applicable (Requires a Term layer to exist in the syntax for first-order quantification). | $\lambda 2$ (System F / SOPL) • Quantifies over Type • Binds 0-ary propositional variables: $\forall P : \text{Type}$. | $\lambda\omega$ (System $\text{F}\omega$ / HOPL) • Quantifies over Type \to Type • Binds logical connectives/boolean functions: $\forall F : \text{Type} \to \text{Type}$. |
 | Predicate ($n$-ary Predicate, $n \ge 1$) | Not Applicable (Requires term variables to saturate the internal $n$-ary predicate functions). | $\lambda P$ (Logical Framework LF) • Quantifies over Term • Binds individual objects: $\forall x : \text{Term}$. • Predicates (Term \to Type) are static constants. | $\lambda P2$ (Second-Order Predicate) • Quantifies over Term \to Type • Binds unary properties / sets of individuals: $\forall P : \text{Term} \to \text{Type}$. | $\lambda P\omega$ / CoC (Calculus of Constructions) • Quantifies over Kinds • Binds meta-predicates / properties of predicates: $\forall \mathcal{X} : (\text{Term} \to \text{Type}) \to \text{Type}$. |
 
 If you want to debug or test the boundary lines of this formulation further, let me know:
