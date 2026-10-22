@@ -28,13 +28,13 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 
 | Dimension	                         | Question                                           |	Examples |
 | ----                                  | ----                                               | ----     |
-| 1. Logical foundation / principles	| What notion of validity/reasoning?	             | Classical, Intuitionistic, Minimal |
-| 2. Structural discipline / rules	     | How may assumptions be used?	                  | Structural, Linear, Affine, Relevant |
+| <a id="l-1"></a>1. Logical foundation / principles	| What notion of validity/reasoning?	             | Classical, Intuitionistic, Minimal |
+| <a id="l-2"></a>2. Structural discipline / rules	     | How may assumptions be used?	                  | Structural, Linear, Affine, Relevant |
 | 3. Logical extensions	               | What additional operators/concepts?	             | Modal, Temporal, etc. |
-| 4. Logical order / expressiveness	| What can propositions quantify over?	             | Propositional → First-order → Second-order → Higher-order |
-| 5. Dependent type expressiveness	     | Can types/propositions depend on terms, types etc? | Dependent Type Theory, Simple, polymorphic, higher-kinded |
+| <a id="l-4"></a>4. Logical order / expressiveness	| What can propositions quantify over?	             | Propositional → First-order → Second-order → Higher-order |
+| <a id="l-5"></a>5. Dependent type expressiveness	     | Can types/propositions depend on terms, types etc? | Dependent Type Theory, Simple, polymorphic, higher-kinded |
 | 6. Semantics	                         | What gives the system meaning?	                  | Boolean algebras, Heyting algebras, Kripke models, categorical semantics, etc. |
-| 7. Proof calculus	                    | How are proofs derived and presented?	             | Hilbert, Natural Deduction, Sequent Calculus |
+| <a id="l-7"></a>7. Proof calculus	                    | How are proofs derived and presented?	             | Hilbert, Natural Deduction, Sequent Calculus |
 | 8. Computational/proof-term calculus	| What computational objects correspond to proofs?   | Combinatory logic, λ-calculus, dependent λ-calculus |
 
 ### Boolean Algebras and Heyting Algebras
@@ -69,7 +69,7 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 
 ## Specification of a Logic
 
-**Specification** of a logic, is the **Quintuple** with the following elements: **(1, 2, 4, 5, 7)**
+**Specification** of a logic, is the **Quintuple** with the following elements: **([1](#l-1), [2](l-2), [4](#l-4), [5](#l-5), [7](#l-7))**
 
 And then, **Specification ⟶ {type/proof calculi satisfying it}**
 
