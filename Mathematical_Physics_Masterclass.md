@@ -39,9 +39,20 @@ Representation Theory works flawlessly for **linear and rigid symmetries** (like
 
 A continuous symmetry generates two completely separate algebraic spaces linked together by calculus rather than plain algebra:
 
-* **Lie Group**: The curved geometric surface (a manifold) representing the *actual transformations* or locations (e.g., standard 3D rotations $SO(3)$). Symmetries are combined via curved geometric multiplication.
+* **Lie Group**: The curved geometric surface (a manifold) representing the *actual transformations* or locations (e.g., standard 3D rotations `SO(3)`). Symmetries are combined via curved geometric multiplication.
 * **Lie Algebra**: The perfectly flat sheet of paper balancing exactly at the identity element of the Lie Group (the *tangent space*). It contains the *velocities or directions* of the transformations. Because it is flat, it is fundamentally a **Vector Space** whose internal addition operates linearly ($2\text{ mph} + 3\text{ mph} = 5\text{ mph}$).
-* **The Exponential Map**: The calculus-based bridge ($	ext{exp}$) that wraps the flat velocities of the Lie Algebra back around the curved manifold of the Lie Group.
+* **The Exponential Map**: The calculus-based bridge ($\exp$) that wraps the flat velocities of the Lie Algebra back around the curved manifold of the Lie Group.
+
+
+### Visual Summary: How $\exp(v)$ Bridges the Gap
+
+
+| Space	                 | Mathematical Nature	        | Visual Representation	                               | Element                      |
+|----                    |----                          |----                                                  |----                          |
+| Lie Algebra	           | Linear, flat vector space	  | The flat tangent plane	                             | Straight velocity vector (v) |
+| The Bridge ($\exp$)    | Exponential Map	            | The act of wrapping the straight line onto the curve | $\exp(v)$                    |
+| Lie Group	             | Non-linear, curved manifold	| The smooth surface of the sphere	                   | Final position on the curve  |
+
 
 ---
 
