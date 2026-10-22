@@ -10,29 +10,65 @@
 
 ## Favorite Areas of Mathematics
 
-1. **Geometry**
-  - Triangle Chromogeometry[^3]
-  - Triangle Centers & Transforms (eg Isogonal Conjugates, Isotomic Conjugates, Cyclocevian Conjugates etc)
-  - Triangle Curves, Triangle Conics, Triangle Cubics
-  - Quadrics
+1. **Geometry**:
+    - Triangle Chromogeometry[^3]
+    - Triangle Centers & Transforms (eg Isogonal Conjugates, Isotomic Conjugates, Cyclocevian Conjugates etc)
+    - Triangle Curves, Triangle Conics, Triangle Cubics
+    - Quadrics
 
-2. Algebraic Geometry
-  - Elliptic Curves (over **Fields** ie `E(K)`)
-  - Algebraic Curves
-  - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
+2. **Algebraic Geometry**:
+    - Elliptic Curves (over **Fields** ie `E(K)`)
+    - Algebraic Curves
+    - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
 
-3. Type Theory, Category Theory.
+3. **Type Theory** $\underbrace{\text{Curry-Howard Isomorphism}}_\equiv$ **Category Theory**:
+    - Boolean Algebras
+    - Heyting Algebras
 
-4. QFT. Particle Physics. Symmetry Groups[^4] (Abstract Algebra, Group Theory). Astronomy/Cosmology. Special & General Relativity.
-  - Lie Algebras & Lie Groups
-    - They are different:
-      - A Lie Group is a Group.
-      - A Lie Algebra = A Vector Space (ie an Abelian Group under `(+)`  plus  a Field)  +  Lie Bracket $[\cdot, \cdot]$.
-  - Boolean Algebras
-  - Heyting Algebras
-  - Tensors, Spinors
-  - Quaternions
+4. **QFT**, **Particle Physics**[^5], **Symmetry Groups**[^4] (Abstract Algebra, Group Theory), **Astronomy/Cosmology**, **Special & General Relativity**:
+    - Lie Algebras & Lie Groups
+      - They are different:
+        - A Lie Group is a Group.
+        - A Lie Algebra = A Vector Space (ie an Abelian Group under `(+)`  plus  a Field)  +  Lie Bracket $[\cdot, \cdot]$.
+    - Tensors, Spinors
+    - Quaternions
 
+----
+
+## Relationship between Field, Ring, Abelian Group, Group, Monoid, Semi-group, Set:
+
+Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+)$ ⟹ Monoid $(+)$ ⟹ Semigroup $(+)$ ⟹ Set
+
+### Vector Space
+
+**Vector Space** = An **Abelian Group $(+)$** (Vectors)  _and_  A **Field $(+, \times)$** (Scalars)
+
+```
+  [ THE SINGLE-SET TOWER ]                          [ THE TWO-SET TOWER ]
+  (All operations happen inside the SAME set)       (Operations cross between two different universes)
+                      
+       Field (x, y ∈ F)                            Vector Space
+          │                                        ┌───────────┐
+          ▼                                        │  Vectors  │ (Abelian Group)
+        Ring                                       └─────┬─────┘
+          │                                              │ ◄── (Glued by Scalar Multiplication)
+          ▼                                        ┌─────┴─────┐        
+        Group                                      │  Scalars  │ (Field)
+          │                                        └───────────┘
+          ▼
+         Set
+```
+
+## Theories:
+
+> [!NOTE]
+> - Type Theory
+> - Category Theory
+> - Group Theory
+> - Field Theory
+> - Representation Theory
+> - Gauge Theory
+> - Perturbation Theory
 
 [^1]: https://bhavana.org.in/special-values-of-zeta-functions/
 [^2]: https://mathworld.wolfram.com/RiemannZetaFunction.html
@@ -47,6 +83,13 @@
 [Chemical Applications of Symmetry and Group Theory by CH 37: IIT TIRUPATI 01: Chemistry & Others](https://www.youtube.com/playlist?list=PL237gzZYZw7G6Z4tovX9jRxYQgZcoNv3V) \
 [Symmetry and Group Theory by NPTEL-NOC IITM](https://www.youtube.com/playlist?list=PLyqSpQzTE6M8LWVPnGF6PfUcTDrGiPkuY) \
 [Symmetry and Group Theory by NPTEL IIT Bombay](https://www.youtube.com/playlist?list=PLOzRYVm0a65eOFUUrwIEA4ZCSu9M9iyzQ)
+[^5]: https://en.wikipedia.org/wiki/Symmetry_group \
+https://en.wikipedia.org/wiki/Spacetime_symmetries \
+https://en.wikipedia.org/wiki/Mathematical_formulation_of_the_Standard_Model \
+https://en.wikipedia.org/wiki/Gauge_theory \
+https://en.wikipedia.org/wiki/Gauge_boson \
+https://en.wikipedia.org/wiki/Force_carrier \
+https://en.wikipedia.org/wiki/Virtual_particle
 
 ---
 
@@ -100,11 +143,109 @@ Symmetry Groups occur in the following areas of study:
                                                          (E8, G2)       - Gauge Groups
 ``` 
 
-### Books:
-1. "Group Theory in a Nutshell for Physicists" by Anthony Zee.
-2. "Abstract Algebra" by David S. Dummit and Richard M. Foote.
-3. ["Fearful Symmetry: The Search for Beauty in Modern Physics"](https://books.google.mk/books?id=Xq1mCgAAQBAJ) by Anthony Zee.
+### Books 📚:
+1. 📖 "Group Theory in a Nutshell for Physicists" by Anthony Zee.
+2. 📖 "Abstract Algebra" by David S. Dummit and Richard M. Foote.
+3. 📘 ["Fearful Symmetry: The Search for Beauty in Modern Physics"](https://books.google.mk/books?id=Xq1mCgAAQBAJ) by Anthony Zee.
 
+---
+
+## Gauge Theory
+
+ Gauge Theory = Group Theory + Differential Geometry + QFT
+ - Group Theory: Represents the Symmetry Groups indicating the Force Types. Result: Properties/Rules wrt _what can happen_.
+  - `U(1)`: Elecromagnetism
+  - `SU(2)`: Weak Nuclear Force
+  - `SU(3)`: Strong Nuclear Force
+  - `SO(1,3)`: Gravity
+- Differential Geometry: Represents the geometric structure of spacetime. Result: Force-carriers (Photon, W/Z boson, gluon, graviton).
+- QFT: Represents the actual Physical Energy thrown into this mix. Result: Matter particles.
+
+
+Here is a clean, comprehensive summary tracking how abstract logic, geometric structures, and physical forces connect across the fields we discussed.
+
+### The Unified Blueprint of Symmetry, Geometry, and Forces
+
+
+| Component / Layer	      | Abstract Algebra (The Logic)                      | Differential Geometry (The Arena)              | Quantum Field Theory (The Physics)               |
+|----                     |----                                               |----                                            |----                                              |
+| Electromagnetism (EM)	  | $U(1)$ Group _(1D Complex Rotations)_	          | Principal $U(1)$-Bundle over Spacetime	       | **Photon** field _(Spin-1 Vector Boson)_         |
+| Weak Force	          | $SU(2)$ Group _(2D Complex Unitary Matrices)_	  | Principal $SU(2)$-Bundle over Spacetime 	   | **W & Z Boson** fields _(Spin-1 Vector Bosons)_  |
+| Strong Force	          | $SU(3)$ Group _(3D Complex Unitary Matrices)_	  | Principal $SU(3)$-Bundle over Spacetime	       | **Gluon** fields _(Spin-1 Vector Bosons)_        |
+| Gravity (Einstein View) |	$\text{Diff}(M)$ Group _(Infinite-Dim Topology)_  | Metric tensor warping a 4D smooth Manifold	   | _Classical continuum_ _(No native particles)_    |
+| Gravity (Gauge View)	  | $SO(1,3)$ Group _(Lorentz Spacetime Symmetries)_  | Frame Bundle / Spin Connection over Spacetime  | **Graviton** field _(Spin-2 Tensor Boson)_       |
+| Matter Particles	      | Matrix Representations (Identity badges)	      | Sections of Associated Vector Bundles	       | **Quark / Lepton** fields _(Spin-1/2 Fermions)_  |
+| The Higgs Boson         | $SU(2) \times U(1)$ **Symmetry Breaking** _(Coset space quotienting: `G/H`)_ | Sections of an **Associated Complex Scalar Bundle** with a non-zero vacuum state | **Higgs field/particle** _(Spin-0 Scalar Boson; generates mass via Yukawa couplings)_ |
+
+#### Core Structural Roles (How the Pieces Interact)
+
+- Group Theory: Acts as the Architect, defining the abstract symmetry group that dictates what internal rules and conservation laws must be obeyed.
+- Representation Theory: Acts as the Translator, converting the abstract group actions into linear transformations (matrices) acting on Vector Spaces.
+- Differential Geometry: Acts as the Arena, promoting global symmetries into fluid, local gauge symmetries across a curved space-time manifold.
+- Quantum Field Theory: Acts as the Physics Engine, converting geometric connections and field ripples into physical, observable particles (bosons and fermions).
+
+#### Is the Higgs Boson a Force-Carrier?
+
+No, the Higgs Boson is not a gauge force-carrier, but it _does_ generate an attractive force.
+To understand where it sits in your unified blueprint, we have to look at its spin and its relation to symmetry:
+
+##### The Force Type: A "Yukawa" Force
+
+Standard forces (like EM or the strong force) are **Gauge Forces** mediated by **Spin-1 Vector Bosons**.
+The Higgs boson is fundamentally different because it has **Spin-0** (it is a _scalar boson_). 
+Because it is a scalar, it generates a non-gauge force called a **Yukawa interaction**. 
+This manifests as a highly specialized, incredibly short-ranged attractive force between massive particles.
+
+##### The Symmetry Group: The Broken Symmetry
+
+The Higgs boson does not have its own force group. Instead, it acts as the **cosmic anchor** that breaks an existing gauge symmetry.
+
+Before the Higgs field turns on, the Electroweak sector of the universe possesses a pristine, unified gauge symmetry: **$SU(2) \times U(1)$**.
+
+- When the Higgs field acquires energy, it undergoes **Spontaneous Symmetry Breaking**.
+- It shatters the pristine $SU(2) \times U(1)$ symmetry down into a smaller, leftover symmetry: the **$U(1)$ of Electromagnetism**.
+- In doing so, it drags the $SU(2)$ gauge bosons through its field, slowing them down and giving them mass (creating the heavy **W and Z bosons**), while leaving the photon perfectly massless.
+
+
+##### Unpacking the Higgs Boson Row in Above Table
+
+###### 1. Abstract Algebra: The Logic of Symmetry Breaking
+
+The logic of the Higgs isn't a new standalone group, but a process called **Spontaneous Symmetry Breaking**. 
+
+Instead of introducing a new group, the Higgs represents the math of **subtraction**. 
+It acts like a wedge that forces a large, unified symmetry group to split apart, leaving behind a smaller, 
+leftover group (which is why the electroweak force split into electromagnetism and the weak force).
+
+Mathematically, it takes a large group $G$ ($SU(2) \times U(1)$) and maps out how it collapses down to a smaller subgroup $H$ (the $U(1)$ of electromagnetism).
+- In abstract algebra, this is studied using **coset spaces ($G/H$)**. The specific ways the group can break define the fields.
+
+**Result:** Splitting of a large force group into a smaller leftover group.
+
+###### 2. Differential Geometry: The Scalar Arena
+
+While force-carriers are the _grid lines_ (connections) of space, the Higgs is like a **universal fluid** filling the room. 
+It gives space a permanent background value, meaning "empty space" is never truly empty.
+
+Unlike gauge bosons, which are the _connections_ (the grid lines) of space, the Higgs is a **scalar field**.
+- In differential geometry, it is represented as a smooth section of a **complex vector bundle** draped over spacetime.
+  The geometry of the Higgs is famous for its "Mexican hat" potential energy shape,
+  which forces the universe's empty vacuum to maintain a constant, non-zero geometric value everywhere.
+
+**Result:** A universal background fluid/field filling every point in space.
+
+###### 3. Quantum Field Theory: The Particle Dynamics
+
+When you ripple that universal fluid, ie when QFT quantizes this scalar field, it gives us the physical **Higgs boson**. 
+Because it is a **Spin-0 Scalar**, it does not possess any directional spin alignment (unlike the directional arrows of photons or gravitons), 
+and so it doesn't push or pull particles across space like a normal force.
+Instead, its ripples interact directly with quarks and leptons, slowing them down and manifesting physically as **mass**.
+This "cosmic drag" which particles experience when passing through it, is perceived as mass.
+
+**Result:** The Higgs particle (Spin-0 Scalar Boson; acts as a cosmic drag that generates mass).
+
+---
+==
 ---
 
 Wrt: "Term → Type is an Order-2 Kind", Term -> Type is First-order, no?
