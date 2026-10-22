@@ -18,9 +18,9 @@ fmap = \f xs -> xs >>= (\x -> return (f x))           -- Defn of >>=
      = flip (>>=) . (.) return                        -- Remove redundant parens
 </pre>
 
-## Relationship between Field, Ring, Abelian Group, Group, Monoid, Semi-group
+## Relationship between Field, Ring, Abelian Group, Group, Monoid, Semi-group, Set:
 
-Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+)$ ⟹ Monoid $(+)$ ⟹ Semigroup $(+)$
+Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+)$ ⟹ Monoid $(+)$ ⟹ Semigroup $(+)$ ⟹ Set
 
 ## Summary of Logic
 
@@ -36,6 +36,36 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 | 6. Semantics	                         | What gives the system meaning?	                  | Boolean algebras, Heyting algebras, Kripke models, categorical semantics, etc. |
 | 7. Proof calculus	                    | How are proofs derived and presented?	             | Hilbert, Natural Deduction, Sequent Calculus |
 | 8. Computational/proof-term calculus	| What computational objects correspond to proofs?   | Combinatory logic, λ-calculus, dependent λ-calculus |
+
+### Boolean Algebras and Heyting Algebras
+
+#### **Boolean Algebras** model Classical Logic.
+
+#### **Heyting Algebras** model Intuitionistic Logic.
+
+#### **Boolean Algebras** are a special case of **Heyting Algebras**
+
+Boolean Algebras = Heyting Algebras + The Law of Excluded Middle (ie `p || !p == True` ie $p \lor \neg p = \top$)
+
+#### Why Boolean/Heyting Algebra"s" in Plural?
+
+The same rules of the Algebra can be applied to different domains/sets with different number/range of elements, including continuous and infinite.
+So for each set of elements where the Algebra rules operate, the resulting Algebra is labelled differently as a separate distinct Algebra. Hence plural.
+
+> [!IMPORTANT]
+> It is a common misconception that Boolean Algebra operates on only $2$ elements $\\{ 1,0 \\}$ or `{True, False}` or $\\{ \top, \bot \\}$.
+> It can operate on any set with any number of elements.
+>
+> It is just that the $2$-element version (called **𝟚**) is Canonical, and all other versions (all other Boolean Algebras) have a **homomorphism** (ie can be (unidirectionally) mapped) 
+> to the Canonical **𝟚** Boolean Algebra.
+>
+> Same is the case with Heyting Algebras as well.
+>
+> Hence:
+>
+> - All **Boolean Algebras** correspond to the same **Classical Logic**.
+> - All **Heyting Algebras** correspond to the same **Intuitionistic Logic**.
+
 
 ## Specification of a Logic
 
