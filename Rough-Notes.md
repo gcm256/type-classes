@@ -21,27 +21,53 @@
     - Algebraic Curves
     - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
 
-3. **Type Theory** $\underbrace{\text{Curry-Howard Isomorphism}}_\equiv$ **Category Theory**:
-    - Boolean Algebras
-    - Heyting Algebras
+3. **Type Theory** $\underbrace{\text{Curry-Howard Isomorphism}}_\equiv$ [**Category Theory**](https://en.wikipedia.org/wiki/Template:Category_theory):
+    - [Boolean Algebras](https://ncatlab.org/nlab/show/Boolean+algebra)
+    - [Heyting Algebras](https://ncatlab.org/nlab/show/Heyting+algebra)
 
 4. **QFT**, **Particle Physics**[^5], **Symmetry Groups**[^4] (Abstract Algebra, Group Theory), **Astronomy/Cosmology**, **Special & General Relativity**:
-    - Lie Algebras & Lie Groups
+    - [Lie Algebras](https://ncatlab.org/nlab/show/Lie+algebra) & Lie [Groups](https://ncatlab.org/nlab/show/Lie+group)
       - They are different:
-        - A Lie Group is a Group.
-        - A Lie Algebra = A Vector Space (ie an Abelian Group under `(+)`  plus  a Field)  +  Lie Bracket $[\cdot, \cdot]$.
+        - A **Lie Group** is a Group.
+        - A [**Lie Algebra**](https://ncatlab.org/nlab/show/category+of+Lie+algebras) = A [**Vector Space**](#vector-space) + **Lie Bracket** operation $[\cdot, \cdot]$ \
+          where, $[X,Y] = XY - YX$
+    - QFT ≡ (Special) Relativistic QM ≡ Special Relativity (Sp Rel) + Quantum Mechanics (QM)
     - Tensors, Spinors
     - Quaternions
 
 ----
 
-## Relationship between Field, Ring, Abelian Group, Group, Monoid, Semi-group, Set:
+## The Global Landscape of Algebraic Structures
+
+Symmetry and mathematical structures are built up like layers of an onion. 
+We move down the primary hierarchy by forgetting rules ([**forgetful functors**](https://en.wikipedia.org/wiki/Forgetful_functor)) 
+and up by specializing with stricter axioms eg sometimes using [**(Left) Adjoint Functors**](https://en.wikipedia.org/wiki/Adjoint_functors) of the forgetful functors.
+
+### Relationship between Field, Ring, Abelian Group, Group, Monoid, Semi-group, Set:
 
 Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+)$ ⟹ Monoid $(+)$ ⟹ Semigroup $(+)$ ⟹ Set
 
+- To go from Field to Set, we essentially use two Forgetful Functors: Property Strippers and Structure Strippers.
+  - We apply only one of them for each step, as needed (shown below):
+```
+[Field] ──(Property)──> [Ring] ──(Structure)──> [Abelian Group] ──(Property)──> [Group] 
+                                                                                   │
+[Set] <──(Structure)── [Semigroup] <──(Structure)── [Monoid] <──(Structure)────────┘
+```
+- To go back (from Set to Field), we again use two Functors: [Reflector Functors](https://en.wikipedia.org/wiki/Reflective_subcategory) and [Free Functors](https://en.wikipedia.org/wiki/Free_object#Free_functor).
+  - They are the [Left Adjoint Functors](https://en.wikipedia.org/wiki/Adjoint_functors#Adjunctions_in_full), respectively,
+    of (the Forgetful Functors) Property Strippers and Structure Strippers.
+  - To go back also, we apply only one of them for each step, as needed (shown below): 
+```
+[Set] ──(Free)──> [Semigroup] ──(Free)──> [Monoid] ──(Free)──> [Group] 
+                                                                  │
+                                                             (Reflector)
+[Field] <──(Reflector)── [Ring] <──(Free)── [Abelian Group] <─────┘
+```
+
 ### Vector Space
 
-**Vector Space** = An **Abelian Group $(+)$** (Vectors)  _and_  A **Field $(+, \times)$** (Scalars)
+**Vector Space** = **$\underbrace{\text{ An Abelian Group } G(+)}_{(Vectors)}$**  _and_  **$\underbrace{\text{ A Field } F(+, \times)}_{(Scalars)}$**
 
 ```
   [ THE SINGLE-SET TOWER ]                          [ THE TWO-SET TOWER ]
@@ -50,11 +76,20 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
        Field (x, y ∈ F)                            Vector Space
           │                                        ┌───────────┐
           ▼                                        │  Vectors  │ (Abelian Group)
-        Ring                                       └─────┬─────┘
+         Ring                                      └─────┬─────┘
           │                                              │ ◄── (Glued by Scalar Multiplication)
           ▼                                        ┌─────┴─────┐        
-        Group                                      │  Scalars  │ (Field)
+     Abelian Group                                 │  Scalars  │ (Field)
           │                                        └───────────┘
+          ▼
+        Group
+          │
+          ▼
+        Monoid
+          │
+          ▼
+      Semigroup
+          │
           ▼
          Set
 ```
@@ -63,11 +98,13 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 
 > [!NOTE]
 > - Type Theory
-> - Category Theory
-> - Group Theory
+> - [Category Theory](https://mathworld.wolfram.com/topics/CategoryTheory.html)
+>   - See also: https://ncatlab.org/nlab/show/geometric+functor
+> - [Group Theory](https://ncatlab.org/nlab/show/group+theory)
+>   - See also: https://ncatlab.org/nlab/show/geometric+group+theory 
 > - Field Theory
 > - Representation Theory
-> - Gauge Theory
+> - [Gauge Theory](https://ncatlab.org/nlab/show/gauge+theory)
 > - Perturbation Theory
 
 [^1]: https://bhavana.org.in/special-values-of-zeta-functions/
@@ -79,7 +116,8 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 **Playlists:** \
 [Math - Chromogeometry](https://www.youtube.com/playlist?list=PLsRvhcI3lNd6krVEAn8PGTFNAA1pg9uh6) \
 [DAK Chromogeometry](https://www.youtube.com/playlist?list=PLeV-0tFYTT3H3JS-kxBTnCbY7f3HIkYPp)
-[^4]: [Chemical Applications of Symmetry and Group Theory](https://www.youtube.com/playlist?list=PLj_Alq7xw30knZPTpa9whzqiSn_RZHGWP) \
+[^4]: [Five lectures on supersymmetry](https://ncatlab.org/nlab/show/Five+lectures+on+supersymmetry) \
+[Chemical Applications of Symmetry and Group Theory](https://www.youtube.com/playlist?list=PLj_Alq7xw30knZPTpa9whzqiSn_RZHGWP) \
 [Chemical Applications of Symmetry and Group Theory by CH 37: IIT TIRUPATI 01: Chemistry & Others](https://www.youtube.com/playlist?list=PL237gzZYZw7G6Z4tovX9jRxYQgZcoNv3V) \
 [Symmetry and Group Theory by NPTEL-NOC IITM](https://www.youtube.com/playlist?list=PLyqSpQzTE6M8LWVPnGF6PfUcTDrGiPkuY) \
 [Symmetry and Group Theory by NPTEL IIT Bombay](https://www.youtube.com/playlist?list=PLOzRYVm0a65eOFUUrwIEA4ZCSu9M9iyzQ)
@@ -89,7 +127,8 @@ https://en.wikipedia.org/wiki/Mathematical_formulation_of_the_Standard_Model \
 https://en.wikipedia.org/wiki/Gauge_theory \
 https://en.wikipedia.org/wiki/Gauge_boson \
 https://en.wikipedia.org/wiki/Force_carrier \
-https://en.wikipedia.org/wiki/Virtual_particle
+https://en.wikipedia.org/wiki/Virtual_particle \
+https://ncatlab.org/nlab/all_pages
 
 ---
 
@@ -114,7 +153,7 @@ Symmetry Groups like $SU(n)$ (aka _Special Unitary Groups_) eg $SU(2)$, $SU(3)$ 
 Symmetry Groups occur in the following areas of study:
 
 1. Abstract Algebra (under Group Theory) & Combinatorics (Discrete Symmetries)
-2. Lie Theory & Particle Physics (Continuous Symmetries)
+2. [Lie Theory](https://ncatlab.org/nlab/show/Lie+theory) & Particle Physics (Continuous Symmetries)
 3. Differential Geometry & Mechanics (Geometric Preservation)
 4. Topology & Geometry (Shape and Twist Preservation)
 5. Relativity & Cosmology (Spacetime Symmetries)
@@ -161,11 +200,41 @@ Symmetry Groups occur in the following areas of study:
 - Differential Geometry: Represents the geometric structure of spacetime. Result: Force-carriers (Photon, W/Z boson, gluon, graviton).
 - QFT: Represents the actual Physical Energy thrown into this mix. Result: Matter particles.
 
+### Useful Analogy
 
-Here is a clean, comprehensive summary tracking how abstract logic, geometric structures, and physical forces connect across the fields we discussed.
+#### Gauge Theory as a Play
+
+> [!TIP]
+> 
+> ----
+> Gauge Theory: A Play
+> 
+> ----
+> - Group Theory: The Script / Screenplay of the Play.
+> - Differential Geometry: The Stage for the Play (along with the Theater space, Set-design layout, Audio equipment, Lighting).
+> - Particles: The Characters of the Play.
+>   - Matter Particles (Fermions): Main Characters of the Play.
+>   - Force-carrier particles aka Gauge Bosons (Bosons): Supporting Characters of the Play.
+> - Energy: Skilled Actors to be recruited for the Play. 
+> - QFT: The Acting Troupe. It provides the skilled actors (ie Energy) who transform into characters (ie Partciles) once they perform on the Stage as per the Script).
+> ----
+
+So: 
+
+$$
+\text{ Gauge Theory (The Play) } = 
+\begin{cases}
+    & \text{ Group Theory (The Script / Screenplay of the Play) } & \\
+	& \quad \quad \quad \quad + & \\
+	& \text{ Spacetime-Differential-Geometry (The Stage \\& Theater) } & \\
+	& \quad \quad \quad \quad + & \\
+	& \text{ QFT (The Acting Troupe) } &
+\end{cases}
+$$
 
 ### The Unified Blueprint of Symmetry, Geometry, and Forces
 
+Here is a clean, comprehensive summary tracking how abstract logic, geometric structures, and physical forces connect across the fields.
 
 | Component / Layer	      | Abstract Algebra (The Logic)                      | Differential Geometry (The Arena)              | Quantum Field Theory (The Physics)               |
 |----                     |----                                               |----                                            |----                                              |
