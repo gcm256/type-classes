@@ -39,12 +39,12 @@ See: [^15][^16]
   - Non-sibilant Affricate: Very rare. Eg क्ख़ (क् + ख़) etc.
 
 ### The Master Cross-Reference Matrix
-This matrix categorizes the entire core Devanagari script, standard Nukta additions, and structural edge cases (Sindhi Implosives and Ingressive Clicks) strictly by Airstream, Phonation, and Manner, omitting the place of articulation completely.
+This matrix categorizes the entire core Devanagari script, standard Nukta additions, and structural edge cases (Sindhi Implosives and Ingressive Clicks) strictly by Airstream, Phonation, and Manner, omitting the [place of articulation](https://en.wikipedia.org/wiki/Place_of_articulation) completely.
 
 
 | Airstream Mechanism | Phonation (Voicing) | Aspiration Profile | Manner of Articulation | Included Characters / Alphabet Set |
 | :--- | :--- | :--- | :--- | :--- |
-| **Pulmonic Egressive** *(Outward Lung Air)* | **Voiceless** | **Unaspirated** | Plosive | क, ट, त, प, क़ *( [q] )* |
+| **Pulmonic Egressive** *(Outward Lung Air)* | **Voiceless** | **Unaspirated** | Plosive | क *( [k] )*, ट, त, प, क़ *( [q] )* |
 | | | | Affricate | च |
 | | | | Fricative | ज़, क़ *( [χ] / <ins>क़</ins> )* |
 | | | **Aspirated** | Plosive | ख, ठ, थ, फ |
@@ -79,7 +79,7 @@ Airstream: Ingressive aka Non-Egressive (🟦)
 | ए <br> (अ/आ + इ/ई) | ऐ <br> (अ/आ + ए) | ओ <br> (अ/आ + उ/ऊ) | औ <br> (अ/आ + ओ) | ऋ, ॠ | ऌ |
 
 
-| क (❌, ❌, P) <br> क़ (❌, ❌, P) <br> <ins>क़</ins> (❌, ❌, F) | च (❌, ❌, As) <br><br><br> | ट (❌, ❌, P) <br><br><br> | त (❌, ❌, P) <br><br><br> | प (❌, ❌, P) <br><br><br> |
+| क (❌, ❌, P)† <br> क़ (❌, ❌, P)† <br> <ins>क़</ins> (❌, ❌, F)‡ | च (❌, ❌, As) <br><br><br> | ट (❌, ❌, P) <br><br><br> | त (❌, ❌, P) <br><br><br> | प (❌, ❌, P) <br><br><br> |
 |:---|:---|:---|:---|:---|
 | ख (❌, ✅, P) <br> ख़ (❌, ✅, F) <br> क्ख़ (❌, ✅, A) | छ (❌, ✅, As) <br><br><br> | ठ  (❌, ✅, P) <br><br><br> | थ (❌, ✅, P) <br><br><br> | फ (❌, ✅, P) <br> फ़ (❌, ✅, F) <br><br> |
 | ग (✅, ❌, P) <br> ग़ (✅, ❌, F) <br> ग॒ (✅, ❌, P, 🟦) | ज (✅, ❌, As) <br> ज़ (✅, ❌, Fs) <br> ज॒ (✅, ❌, As, 🟦) | ड (✅, ❌, P) <br> ड़ (✅, ❌, R) <br> ड॒ (✅, ❌, P, 🟦) | द (✅, ❌, P) <br><br><br> | ब (✅, ❌, P) <br><br> ब॒ (✅, ❌, P, 🟦) |
@@ -89,6 +89,10 @@ Airstream: Ingressive aka Non-Egressive (🟦)
 | श (❌, ✅, Fs) | ष (❌, ✅, Fs) | स (❌, ✅, Fs) |  |   |
 | ह (✅, ✅, F) | | | | |
 | ं (✅, ❌, N) | ँ (✅, ❌, N) | ः (❌, ❌, F) | | |
+
+† Even if both क *( [k] )* and क़ *( [q] )* both have same aerodynamic features (Voiceless, Unaspirated, Plosive, Egressive), they only differ in the 
+[place of articulation](https://en.wikipedia.org/wiki/Place_of_articulation). क is **velar**, क़ is **uvular**. \
+‡ Place of articulation of <ins>क़</ins> *( [χ] )* is also **uvular**, like क़ *( [q] )*, but the difference is that <ins>क़</ins> *( [χ] )* is Fricative, not Plosive.
 
 > [!NOTE]
 > Ingressive ie non-Egressive sounds, by definition, cannot be Aspirated.
