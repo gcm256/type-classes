@@ -191,8 +191,8 @@ Symmetry Groups occur in the following areas of study:
 
 ## Gauge Theory
 
- Gauge Theory = Group Theory + Differential Geometry + QFT
- - Group Theory: Represents the Symmetry Groups indicating the Force Types. Result: Properties/Rules wrt _what can happen_.
+Gauge Theory = Group Theory + Differential Geometry + QFT
+- Group Theory: Represents the Symmetry Groups indicating the Force Types. Result: Properties/Rules wrt _what can happen_.
   - `U(1)`: Elecromagnetism
   - `SU(2)`: Weak Nuclear Force
   - `SU(3)`: Strong Nuclear Force
@@ -200,14 +200,12 @@ Symmetry Groups occur in the following areas of study:
 - Differential Geometry: Represents the geometric structure of spacetime. Result: Force-carriers (Photon, W/Z boson, gluon, graviton).
 - QFT: Represents the actual Physical Energy thrown into this mix. Result: Matter particles.
 
-### Useful Analogy
-
-#### Gauge Theory as a Play
+### Useful Analogy of Gauge Theory as a Play:
 
 > [!TIP]
 > 
 > ----
-> Gauge Theory: A Play
+> #### Gauge Theory: A Play
 > 
 > ----
 > - Group Theory: The Script / Screenplay of the Play.
@@ -225,9 +223,9 @@ $$
 \text{ Gauge Theory (The Play) } = 
 \begin{cases}
     & \text{ Group Theory (The Script / Screenplay of the Play) } & \\
-	& \quad \quad \quad \quad + & \\
+	& \qquad \qquad + & \\
 	& \text{ Spacetime-Differential-Geometry (The Stage \\& Theater) } & \\
-	& \quad \quad \quad \quad + & \\
+	& \qquad \qquad + & \\
 	& \text{ QFT (The Acting Troupe) } &
 \end{cases}
 $$
