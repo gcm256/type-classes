@@ -37,35 +37,6 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 | <a id="l-7"></a>7. Proof calculus	                    | How are proofs derived and presented?	             | Hilbert, Natural Deduction, Sequent Calculus |
 | 8. Computational/proof-term calculus	| What computational objects correspond to proofs?   | Combinatory logic, λ-calculus, dependent λ-calculus |
 
-### Boolean Algebras and Heyting Algebras
-
-#### **Boolean Algebras** model Classical Logic.
-
-#### **Heyting Algebras** model Intuitionistic Logic.
-
-#### **Boolean Algebras** are a special case of **Heyting Algebras**
-
-Boolean Algebras = Heyting Algebras + The Law of Excluded Middle (ie `p || !p == True` ie $p \lor \neg p = \top$)
-
-#### Why Boolean/Heyting Algebra"s" in Plural?
-
-The same rules of the Algebra can be applied to different domains/sets with different number/range of elements, including continuous and infinite.
-So for each set of elements where the Algebra rules operate, the resulting Algebra is labelled differently as a separate distinct Algebra. Hence plural.
-
-> [!IMPORTANT]
-> It is a common misconception that Boolean Algebra operates on only $2$ elements $\\{ 1,0 \\}$ or `{True, False}` or $\\{ \top, \bot \\}$.
-> It can operate on any set with any number of elements.
->
-> It is just that the $2$-element version (called **𝟚**) is Canonical, and all other versions (all other Boolean Algebras) have a **homomorphism** (ie can be (unidirectionally) mapped) 
-> to the Canonical **𝟚** Boolean Algebra.
->
-> Same is the case with Heyting Algebras as well.
->
-> Hence:
->
-> - All **Boolean Algebras** correspond to the same **Classical Logic**.
-> - All **Heyting Algebras** correspond to the same **Intuitionistic Logic**.
-
 
 ## Specification of a Logic
 
@@ -127,6 +98,76 @@ where the result can have cardinality: 0, 1, or many.
 * Hilbert ↔ Typed Combinatory Logic
 * Natural Deduction ↔ Typed λ-calculus
 * Sequent Calculus (Gentzen) ↔ Cut-elimination / computational calculi
+
+----
+----
+
+### Boolean Algebras and Heyting Algebras:
+
+#### **Boolean Algebras** model Classical Logic.
+
+#### **Heyting Algebras** model Intuitionistic Logic.
+
+#### **Boolean Algebras** are a special case/class of **Heyting Algebras**
+
+Boolean Algebras = Heyting Algebras + The Law of Excluded Middle (ie `p || !p == True` ie $p \lor \neg p = \top$)
+
+#### Why Boolean/Heyting Algebra"s" in Plural?
+
+BAs and HAs can technically have different (meanings or definitions of) operations (but always obeying _same core rules (**Axioms**)_ 
+eg Commutativity, Associativity, Distributivity, De Morgan's laws) 
+and the operations can be applied to different domains/sets with different number/range of elements, including continuous and infinite elements 
+eg any set $S ⊆ ℝ$ is also allowed for a BA/HA.
+
+So for each set of elements where the Algebra rules operate, the resulting Algebra is labelled differently as a separate distinct Algebra. Hence plural.
+
+#### What Distinguishes Two Boolean Algebras (BAs):
+
+1. BAs can be Finite or Infinite (by cardinality of their set of elements).
+2. For Finite BAs:
+     - Operations, their definitions, meanings etc _CANNOT_ be different (ie _MUST_ be _identical_) for any two finite BAs, regardless of cardinality.
+     - Cardinality of a Finite BA is _always_ a power of $2$ ($2^n, n ≥ 0$).
+     - Finite BAs with equal cardinalities are **isomorphic**, hence need not be labelled separately.
+     - The only aspect that distinguishes two finite BAs is unequal cardinalities. They'll be labelled as different BAs.
+3. For Infinite BAs:
+     - Operations, their definitions, meanings etc are same across infinite BAs _if and only if_ the **structure** of their element sets are same..
+     - Two infinite BAs are **isomorphic** _if and only if_ the **structure** of their element sets are same.
+
+#### What Distinguishes Two Heyting Algebras (HAs):
+
+- Two HAs are different if _at least one_ of the following holds:
+  - Their operations, or, their definitions, or meanings, are different.
+  - The nature of the relationship structure inside their element sets are different, even if cardinalities are equal.
+  - The cardinality of their element sets are different.
+
+> [!IMPORTANT]
+> It is a common misconception that Boolean Algebra operates on only $2$ elements $\\{ 1,0 \\}$ or `{True, False}` or $\\{ \top, \bot \\}$.
+> It can operate on any set with any number of elements.
+>
+> It is just that the $2$-element version (called **𝟚**) is Canonical, and all other versions (all other Boolean Algebras) have a **homomorphism** (ie can be (unidirectionally) mapped) 
+> to the Canonical **𝟚** Boolean Algebra.
+>
+> Same is the case with Heyting Algebras as well. Even though Heyting algebras are a much broader and more general class than Boolean algebras,
+> every non-trivial Heyting algebra can still be mapped homomorphically to **$\mathbf{2}$ ($\{0, 1\}$)**.
+>
+> **$\mathbf{2}$ ($\{0, 1\}$)** is the **ultimate Canonical universal landing pad** or "shadow" of all logic.
+> No matter how infinitely complex, continuous, or non-classical an algebra (a BA, an HA, or any other algebra) is, you can always project it down into a **binary choice**
+> (`True`/`False`) while respecting its internal structural laws.
+>
+> Hence:
+>
+> - All **Boolean Algebras** correspond to the same **Classical Logic**.
+>
+> But even though **Intuitionistic Logic** is the logic that is _valid across all Heyting algebras universally_,
+> and it is the "lowest common denominator" logic that applies to every single HA:
+> - All **Heyting Algebras** _DO NOT_ correspond to the same **Intuitionistic Logic**. Because:
+>   - Individual Heyting algebras can satisfy stronger (extra) laws.
+>     - eg a BA (which is also an HA) has en extra law (Law of Excluded Middle ie $p \lor \neg p = \top$), and corresponds to **Classical Logic**.
+>   - Other HAs satisfy various **intermediate logics** (logics that sit strictly between intuitionistic logic and classical logic).
+>   - While intuitionistic logic is the core logic of _all_ HAs collectively, individual HAs can represent many different intermediate logics depending on their internal shape.
+
+----
+----
 
 ## Terminology: Individual, Term, Proposition, Predicate
 
