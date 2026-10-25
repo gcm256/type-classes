@@ -224,8 +224,12 @@ Gauge Theory = Group Theory + Differential Geometry + QFT
 > - Particles: The Characters of the Play.
 >   - Matter Particles (Fermions): Main Characters of the Play.
 >   - Force-carrier particles aka Gauge Bosons (Bosons): Supporting Characters of the Play.
-> - Energy: Skilled Actors to be recruited for the Play. 
-> - QFT: The Acting Troupe. It provides the skilled actors (ie Energy) who transform into characters (ie Partciles) once they perform on the Stage as per the Script).
+>   - Higgs-particle aka Higgs-boson (Boson): A special Character (eg Narrator?, Background Singer?, Voice-over Artist?)
+> - Energy: Skilled Actors to be recruited for the Play.
+> - Fields: A varied and generic set of Costumes/Masks (pre-existing independent of the Script) that an Actor (ie Energy packet) fits into / actuates / activates,
+>   to become a Character (ie Particle).
+> - QFT: The Acting Troupe. It provides the skilled Actors (ie Energy packets) who activate the Masks (Fields) and transform into dynamic, interacting Characters (ie Particles)
+>   once they perform on the Stage as per the Script.
 > ----
 
 So: 
