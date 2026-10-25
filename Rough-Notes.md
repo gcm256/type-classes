@@ -36,8 +36,19 @@
     - Quaternions
 
 ----
+==
+----
 
-## The Global Landscape of Algebraic Structures
+## Table of Contents
+* [1. Notes: Symmetry Group Algebra, QFT, Higgs](#i-1)
+* [2. Notes: Type Theory - Order & Arity of Logics](#i-2)
+* [3. Notes: FIDO & Passkeys](#i-3)
+
+----
+== 
+----
+
+## <a name="i-1"></a> The Global Landscape of Algebraic Structures
 
 Symmetry and mathematical structures are built up like layers of an onion. 
 We move down the primary hierarchy by forgetting rules ([**forgetful functors**](https://en.wikipedia.org/wiki/Forgetful_functor)) 
@@ -273,7 +284,6 @@ Before the Higgs field turns on, the Electroweak sector of the universe possesse
 - It shatters the pristine $SU(2) \times U(1)$ symmetry down into a smaller, leftover symmetry: the **$U(1)$ of Electromagnetism**.
 - In doing so, it drags the $SU(2)$ gauge bosons through its field, slowing them down and giving them mass (creating the heavy **W and Z bosons**), while leaving the photon perfectly massless.
 
-
 ##### Unpacking the Higgs Boson Row in Above Table
 
 ###### 1. Abstract Algebra: The Logic of Symmetry Breaking
@@ -315,7 +325,7 @@ This "cosmic drag" which particles experience when passing through it, is percei
 ==
 ---
 
-## Q: Wrt: "Term → Type is an Order-2 Kind", Term -> Type is First-order, no? Wrt: "What actually separates Propositional Logic from Predicate Logic is whether terms/individuals are allowed to parameterize types at all.", But Propositional means 0-arity, correct?
+## <a name="i-2"></a> Q: Wrt: "Term → Type is an Order-2 Kind", Term -> Type is First-order, no? Wrt: "What actually separates Propositional Logic from Predicate Logic is whether terms/individuals are allowed to parameterize types at all.", But Propositional means 0-arity, correct?
 
 --
 
@@ -375,10 +385,11 @@ If you want to debug or test the boundary lines of this formulation further, let
 
 https://share.google/aimode/vkz72PWBbDEb2HWLx (Chat created on 07 OCT, expired after 7 days ie on 14 OCT)
 
+----
 ==
----
+----
 
-## Q: Why does a Passkey refuses to log in to a fake/spoofed site? Does it do hostname verification by another way than usual HTTPS?
+## <a name="i-3"></a> Q: Why does a Passkey refuses to log in to a fake/spoofed site? Does it do hostname verification by another way than usual HTTPS?
 
 Yes, a Passkey refuses to log in because it performs domain verification that is deeply embedded in the browser and operating system hardware, making it entirely independent of standard HTTPS checks.
 
