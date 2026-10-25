@@ -2,21 +2,62 @@
 
 See: [^15][^16]
 
-## Linguistic Units
+## Linguistic Units (LU)
 
 - Grapheme
-- Phoneme
-  - Viseme (The smallest visible distinct mouth-shape when producing a Phoneme). Phoneme → Viseme mapping is strictly Many-One, since multiple Phonemes
-    can be produced by the same visible mouth-shape, but multiple visible mouth-shapes cannot really produce the same phoneme.
-- Lexeme
+- [Phone](https://en.wikipedia.org/wiki/Phone_(phonetics)): LU of [Phonetics](https://en.wikipedia.org/wiki/Phonetics)
+  (Area: [Descriptive Linguistics](https://en.wikipedia.org/wiki/Descriptive_linguistics))
+- [Phoneme](https://en.wikipedia.org/wiki/Phoneme): LU of [Phonology](https://en.wikipedia.org/wiki/Phonology)
+  (Area: [Theoretical Linguistics](https://en.wikipedia.org/wiki/Theoretical_linguistics))
+  - [Viseme](https://en.wikipedia.org/wiki/Viseme) (The smallest visible distinct mouth-shape when producing a Phoneme).
+    Phoneme → Viseme mapping is strictly Many-One, since multiple Phonemes can be produced by the same visible mouth-shape,
+    but multiple visible mouth-shapes cannot really produce the same phoneme.
+- [Lexeme](https://en.wikipedia.org/wiki/Lexeme)
 - Morpheme
 - Sememe
 - Toneme
 - Tagmeme
 - Glosseme
 
-
 ## Morphology
+
+[**Morphology**](https://en.wikipedia.org/wiki/Morphology_(linguistics)) is the study of **_Grammatical-rules-based_** [Word Formation](https://en.wikipedia.org/wiki/Word_formation).
+
+Examples of common methods of Rules-based word formation are:
+- [Morphological derivation](https://en.wikipedia.org/wiki/Morphological_derivation)
+- [Inflection](https://en.wikipedia.org/wiki/Inflection)
+
+These two methods use [Affixes](https://en.wikipedia.org/wiki/Affix) to modify existing root words to form new words
+according to the Grammatical rules and and fit them in the sentence structure, so that the resulting text is correct and valid in that language.
+
+Word Formation by any other means that lie outside the language's grammar is not included in morphology.
+For example:
+- Creating new Lexemes
+- Abbreviations & acronyms
+- Portmanteaus
+- [Nonce words](https://en.wikipedia.org/wiki/Nonce_word)
+- [Pseudowords](https://en.wikipedia.org/wiki/Pseudoword)
+- [Protologisms](https://en.wikipedia.org/wiki/Protologism)
+- Neologisms
+- Slangs
+- Memes
+
+> [!NOTE]
+> - Computer Languages _DO NOT_ have morphology, since their tokens (identifiers, variables, punctuations, symbols, keywords, reserved words etc) aren't modified.
+>   They are static and don't change. They are only sequenced in the body/text of the program/code as per the syntax rules of the programming language.
+>   Even identifiers and variable names, although governed by lexical rules of the programming language, fall under _new lexeme creation_, and hence do not constitute a morphology.
+>
+> - So for Computer Languages, the phases of compilation are (in given order):
+>   
+>   Lexical Analysis (Lexing) → Syntax Analysis (Parsing) → Semantic Analysis (includes Type-Checking for Typed-languages) → Code Generation
+>
+> - But for Natural Languages, morphology is the _extra_ phase of grammar that sits as a bridge, between Lexing and Parsing.
+>
+> - Morphology = How a _word_ is built and modified eg via inflection, suffix, prefix etc.
+> - Syntax / Parsing = How a _sentence_ or a larger body of text is formed, parsed and understood.
+
+> [!TIP]
+>  :high_brightness::sparkle: Morphology is grammar applied _"inside"_ the words. While Parsing is grammar applied _"outside"_ the words. :sparkle::high_brightness:
 
 ### Root vs Stem
 
@@ -24,6 +65,25 @@ See: [^15][^16]
 
 - **Conjugation:** Inflection of verbs (Tinganta / तिङन्तम्)[^19]
 - **Declension:** Inflection of nominals (Subanta / सुबन्तम्)[^18]
+
+## [Linguistic Typology (LT)](https://en.wikipedia.org/wiki/Linguistic_typology)
+
+LT is the study of all ways of classifying languages.
+
+See https://en.wikipedia.org/wiki/Template:Linguistic_typology_topics
+
+### [Morphological Typology (MT)](https://en.wikipedia.org/wiki/Morphological_typology)
+
+MT is a sub-area of LT, and uses morphology to classify languages.
+
+Morphological classification of Languages:
+- Analytic
+  - Isolating
+- Synthetic
+  - Fusional
+  - Agglutinative
+  - Polysynthetic
+  - Oligosynthetic
 
 ## Phonetics[^1][^2]
 
@@ -117,7 +177,9 @@ See: [^3][^4][^5][^6][^7][^8][^9][^10][^11][^12][^13][^14][^17]
 
 [^1]: https://en.wikipedia.org/wiki/Template:Articulation_navbox
 [^2]: https://en.wikipedia.org/wiki/Template:IPA_navigation
-[^3]: https://en.wikipedia.org/wiki/Portal:Linguistics
+[^3]: https://en.wikipedia.org/wiki/Portal:Linguistics \
+https://en.wikipedia.org/wiki/Template:Linguistics \
+https://en.wikipedia.org/wiki/Template:Historical_linguistics
 [^4]: https://en.wikipedia.org/wiki/Zero_(linguistics)
 [^5]: https://en.wikipedia.org/wiki/Linguistics
 [^6]: https://en.wikipedia.org/wiki/Functional_linguistics
@@ -140,85 +202,100 @@ https://dharmawiki.org/index.php/Tinganta_(तिङन्तम्)
 [^20]: https://sa.wikipedia.org/wiki/वर्गः:संस्कृतव्याकरणम् \
 https://en.wikipedia.org/wiki/Sanskrit_grammar
 
-[^17]: https://en.wikipedia.org/wiki/Formal_language
-https://en.wikipedia.org/wiki/Category:Formal_languages
-https://en.wikipedia.org/wiki/Category:Constructed_languages
-https://en.wikipedia.org/wiki/Ithkuil
-https://en.wikipedia.org/wiki/List_of_constructed_languages
-https://en.wikipedia.org/wiki/Constructed_language
-https://en.wikipedia.org/wiki/Engineered_language
-https://en.wikipedia.org/wiki/Controlled_natural_language
-https://en.wikipedia.org/wiki/Controlled_vocabulary
-https://en.wikipedia.org/wiki/Simplified_Technical_English
-https://en.wikipedia.org/wiki/Linguistic_relativity
-https://en.wikipedia.org/wiki/Hopi_time_controversy
-https://en.wikipedia.org/wiki/Linguistic_determinism
-https://en.wikipedia.org/wiki/Language_and_thought
-https://en.wikipedia.org/wiki/Experimental_language
-https://en.wikipedia.org/wiki/List_of_constructed_languages#Engineered_languages
-https://en.wikipedia.org/wiki/Lists_of_languages
-https://en.wikipedia.org/wiki/Programming_language
-https://en.wikipedia.org/wiki/Synthetic_language
-https://en.wikipedia.org/wiki/Analytic_language
-https://en.wikipedia.org/wiki/Isolating_language
-https://en.wikipedia.org/wiki/Polysynthetic_language
-https://en.wikipedia.org/wiki/Morphological_typology
-https://en.wikipedia.org/wiki/Linguistic_typology
-https://en.wikipedia.org/wiki/Agglutinative_language
-https://en.wikipedia.org/wiki/Zero-marking_language
-https://en.wikipedia.org/wiki/Word_order
-https://en.wikipedia.org/wiki/Semantics
-https://en.wikipedia.org/wiki/Formal_grammar
-https://en.wikipedia.org/wiki/Unrestricted_grammar
-https://en.wikipedia.org/wiki/Recursively_enumerable_language
-https://en.wikipedia.org/wiki/Context-free_grammar
-https://en.wikipedia.org/wiki/Recursive_grammar
-https://en.wikipedia.org/wiki/Morphology_(linguistics)
-https://en.wikipedia.org/wiki/Morpheme
-https://en.wikipedia.org/wiki/Grammatical_category
-https://en.wikipedia.org/wiki/Word_formation
-https://en.wikipedia.org/wiki/Apophony
-https://en.wikipedia.org/wiki/Universal_grammar
-https://en.wikipedia.org/wiki/Phoneme
-https://en.wikipedia.org/wiki/Glyph
-https://en.wikipedia.org/wiki/Grapheme
-https://en.wikipedia.org/wiki/Typography
-https://en.wikipedia.org/wiki/Lexicology
-https://en.wikipedia.org/wiki/Formal_semantics_(natural_language)
-https://en.wikipedia.org/wiki/Semantics_of_logic
-https://en.wikipedia.org/wiki/Language
-https://en.wikipedia.org/wiki/Allophone
-https://en.wikipedia.org/wiki/Semantic_class
-https://en.wikipedia.org/wiki/Kenning
-https://en.wikipedia.org/wiki/Syntax
-https://en.wikipedia.org/wiki/Syntax-semantics_interface
-https://en.wikipedia.org/wiki/Head-marking_language
-https://en.wikipedia.org/wiki/Dependency_grammar
-https://en.wikipedia.org/wiki/Word_stem
-https://en.wikipedia.org/wiki/Sandhi
-https://en.wikipedia.org/wiki/Inflection
-https://en.wikipedia.org/wiki/Grammatical_conjugation
-https://en.wikipedia.org/wiki/Declension
-https://en.wikipedia.org/wiki/Grammatical_relation
-https://en.wikipedia.org/wiki/Affix
-https://en.wikipedia.org/wiki/Bound_and_free_morphemes
-https://en.wikipedia.org/wiki/Separable_verb
-https://en.wikipedia.org/wiki/Word_family
-https://en.wikipedia.org/wiki/Content_word
-https://en.wikipedia.org/wiki/Lemma_(morphology)
-https://en.wikipedia.org/wiki/Sanskrit_compound
-https://en.wikipedia.org/wiki/Writing_system
-https://en.wikipedia.org/wiki/Abjad
-https://en.wikipedia.org/wiki/Abugida
-https://en.wikipedia.org/wiki/List_of_constructed_scripts
-https://en.wikipedia.org/wiki/Constructed_writing_system
-https://en.wikipedia.org/wiki/Asemic_writing
+[^17]: https://en.wikipedia.org/wiki/Formal_language \
+https://en.wikipedia.org/wiki/Category:Formal_languages \
+https://en.wikipedia.org/wiki/Category:Constructed_languages \
+https://en.wikipedia.org/wiki/Ithkuil \
+https://en.wikipedia.org/wiki/List_of_constructed_languages \
+https://en.wikipedia.org/wiki/Constructed_language \
+https://en.wikipedia.org/wiki/Engineered_language \
+https://en.wikipedia.org/wiki/Controlled_natural_language \
+https://en.wikipedia.org/wiki/Controlled_vocabulary \
+https://en.wikipedia.org/wiki/Simplified_Technical_English \
+https://en.wikipedia.org/wiki/Linguistic_relativity \
+https://en.wikipedia.org/wiki/Hopi_time_controversy \
+https://en.wikipedia.org/wiki/Linguistic_determinism \
+https://en.wikipedia.org/wiki/Language_and_thought \
+https://en.wikipedia.org/wiki/Experimental_language \
+https://en.wikipedia.org/wiki/List_of_constructed_languages#Engineered_languages \
+https://en.wikipedia.org/wiki/Lists_of_languages \
+https://en.wikipedia.org/wiki/Programming_language \
+**Phonetics**: \
+https://en.wikipedia.org/wiki/Phonetics \
+https://en.wikipedia.org/wiki/Descriptive_linguistics \
+**Phonology**: \
+https://en.wikipedia.org/wiki/Phonology \
+https://en.wikipedia.org/wiki/Theoretical_linguistics \
+https://en.wikipedia.org/wiki/Distinctive_feature \
+https://en.wikipedia.org/wiki/Sound_change \
+https://en.wikipedia.org/wiki/Vowel_harmony \
+https://en.wikipedia.org/wiki/Articulatory_phonology \
+**Morphology** & **Grammar**: \
+https://en.wikipedia.org/wiki/Word_formation \
+https://en.wikipedia.org/wiki/Morphology_(linguistics) \
+https://en.wikipedia.org/wiki/Morpheme \
+https://en.wikipedia.org/wiki/Analytic_language \
+https://en.wikipedia.org/wiki/Isolating_language \
+https://en.wikipedia.org/wiki/Synthetic_language \
+https://en.wikipedia.org/wiki/Fusional_language \
+https://en.wikipedia.org/wiki/Agglutinative_language \
+https://en.wikipedia.org/wiki/Polysynthetic_language \
+https://en.wikipedia.org/wiki/Agglutination \
+https://en.wikipedia.org/wiki/Morphological_typology \
+https://en.wikipedia.org/wiki/Linguistic_typology \
+https://en.wikipedia.org/wiki/Zero-marking_language \
+https://en.wikipedia.org/wiki/Word_order \
+https://en.wikipedia.org/wiki/Semantics \
+https://en.wikipedia.org/wiki/Formal_grammar \
+https://en.wikipedia.org/wiki/Unrestricted_grammar \
+https://en.wikipedia.org/wiki/Recursively_enumerable_language \
+https://en.wikipedia.org/wiki/Context-free_grammar \
+https://en.wikipedia.org/wiki/Recursive_grammar \
+https://en.wikipedia.org/wiki/Grammatical_category \
+https://en.wikipedia.org/wiki/Apophony \
+https://en.wikipedia.org/wiki/Universal_grammar \
+https://en.wikipedia.org/wiki/Phoneme \
+https://en.wikipedia.org/wiki/Glyph \
+https://en.wikipedia.org/wiki/Grapheme \
+https://en.wikipedia.org/wiki/Lexicology \
+https://en.wikipedia.org/wiki/Template:Lexicology \
+https://en.wikipedia.org/wiki/Formal_semantics_(natural_language) \
+https://en.wikipedia.org/wiki/Semantics_of_logic \
+https://en.wikipedia.org/wiki/Language \
+https://en.wikipedia.org/wiki/Allophone \
+https://en.wikipedia.org/wiki/Semantic_class \
+https://en.wikipedia.org/wiki/Kenning \
+https://en.wikipedia.org/wiki/Syntax \
+https://en.wikipedia.org/wiki/Syntax-semantics_interface \
+https://en.wikipedia.org/wiki/Head-marking_language \
+https://en.wikipedia.org/wiki/Dependency_grammar \
+https://en.wikipedia.org/wiki/Word_stem \
+https://en.wikipedia.org/wiki/Sandhi \
+https://en.wikipedia.org/wiki/Inflection \
+https://en.wikipedia.org/wiki/Grammatical_conjugation \
+https://en.wikipedia.org/wiki/Declension \
+https://en.wikipedia.org/wiki/Grammatical_relation \
+https://en.wikipedia.org/wiki/Affix \
+https://en.wikipedia.org/wiki/Bound_and_free_morphemes \
+https://en.wikipedia.org/wiki/Separable_verb \
+https://en.wikipedia.org/wiki/Word_family \
+https://en.wikipedia.org/wiki/Content_word \
+https://en.wikipedia.org/wiki/Lemma_(morphology) \
+https://en.wikipedia.org/wiki/Sanskrit_compound \
+https://en.wikipedia.org/wiki/Null-subject_language \
+https://en.wikipedia.org/wiki/T-V_distinction \
+**Writing System aka Script**: \
+https://en.wikipedia.org/wiki/Template:Writing_systems \
+https://en.wikipedia.org/wiki/Writing_system \
+https://en.wikipedia.org/wiki/Template:List_of_writing_systems \
+https://en.wikipedia.org/wiki/Typography \
+https://en.wikipedia.org/wiki/Template:Typography \
+https://en.wikipedia.org/wiki/Abjad \
+https://en.wikipedia.org/wiki/Abugida \
+https://en.wikipedia.org/wiki/List_of_constructed_scripts \
+https://en.wikipedia.org/wiki/Constructed_writing_system \
+https://en.wikipedia.org/wiki/Asemic_writing \
 https://bharatiscript.com/
-https://en.wikipedia.org/wiki/Null-subject_language
-https://en.wikipedia.org/wiki/Vowel_harmony
-https://en.wikipedia.org/wiki/Phonology
-https://en.wikipedia.org/wiki/Agglutination
-https://en.wikipedia.org/wiki/T-V_distinction
 
 
 
