@@ -146,6 +146,7 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 https://en.wikipedia.org/wiki/Spacetime_symmetries \
 https://en.wikipedia.org/wiki/Mathematical_formulation_of_the_Standard_Model \
 https://en.wikipedia.org/wiki/Template:Standard_model_of_particle_physics \
+https://en.wikipedia.org/wiki/Template:Standard_model_of_physics \
 https://en.wikipedia.org/wiki/Template:Particles \
 https://en.wikipedia.org/wiki/Gauge_theory \
 https://en.wikipedia.org/wiki/Gauge_boson \
@@ -264,15 +265,15 @@ $$
 
 Here is a clean, comprehensive summary tracking how abstract logic, geometric structures, and physical forces connect across the fields.
 
-| Component / Layer	      | Abstract Algebra (The Logic)                      | Differential Geometry (The Arena)             | Quantum Field Theory (The Physics)                |
-|----                     |----                                               |----                                           |----                                               |
-| Electromagnetism (EM)	  | $U(1)$ Group _(1D Complex Rotations)_	          | Principal $U(1)$-Bundle over Spacetime	      | `U(1)` (**Photon**) field _(Spin-1 Vector Boson)_ |
-| Weak Force	          | $SU(2)$ Group _(2D Complex Unitary Matrices)_	  | Principal $SU(2)$-Bundle over Spacetime 	  | `SU(2)` (**W & Z Boson**) field _(Spin-1 Vector Bosons)_ |
-| Strong Force	          | $SU(3)$ Group _(3D Complex Unitary Matrices)_	  | Principal $SU(3)$-Bundle over Spacetime	      | `SU(3)` (**Gluon**) field _(Spin-1 Vector Bosons)_       |
-| Gravity (Einstein View) |	$\text{Diff}(M)$ Group _(Infinite-Dim Topology)_  | Metric tensor warping a 4D smooth Manifold	  | _Classical continuum_ _(No native particles)_    |
-| Gravity (Gauge View)	  | $SO(1,3)$ Group _(Lorentz Spacetime Symmetries)_  | Frame Bundle / Spin Connection over Spacetime | **Graviton** field _(Spin-2 Tensor Boson)_       |
-| Matter Particles	      | Matrix Representations (Identity badges)	      | Sections of Associated Vector Bundles	      | **Quark / Lepton** fields _(Spin-1/2 Fermions)_  |
-| The Higgs Boson         | $SU(2) \times U(1)$ **Symmetry Breaking** _(Coset space quotienting: `G/H`)_ | Sections of an **Associated Complex Scalar Bundle** with a non-zero vacuum state | **Higgs field/particle** _(Spin-0 Scalar Boson; the Higgs Field is always present and active everywhere and generates mass via Yukawa couplings; the Higgs particle aka Higgs Boson is the ripple in the Higgs Field when a large amount of Energy hits and quantizes it. The Higgs Field (not Higgs particle/Boson) generates what we call mass.)_ |
+| Component / Layer	      | Abstract Algebra (The Logic)                      | Differential Geometry (The Arena)             | Quantum Field Theory (The Physics)                   |
+|----                     |----                                               |----                                           |----                                                  |
+| Electromagnetism (EM)	  | $U(1)$ Group _(1D Complex Rotations)_	          | Principal $U(1)$-Bundle over Spacetime	     | The `U(1)` (**Photon**) field _(Spin-1 Vector Boson)_ |
+| Weak Force	          | $SU(2)$ Group _(2D Complex Unitary Matrices)_	  | Principal $SU(2)$-Bundle over Spacetime | The `SU(2)` (**W/Z Boson**) field _(Spin-1 Vector Bosons)_ |
+| Strong Force	          | $SU(3)$ Group _(3D Complex Unitary Matrices)_	  | Principal $SU(3)$-Bundle over Spacetime	    | The `SU(3)` (**Gluon**) field _(Spin-1 Vector Bosons)_ |
+| Gravity (Einstein View) |	$\text{Diff}(M)$ Group _(Infinite-Dim Topology)_  | Metric tensor warping a 4D smooth Manifold	  | _Classical continuum_ _(No native particles)_        |
+| Gravity (Gauge View)	  | $SO(1,3)$ Group _(Lorentz Spacetime Symmetries)_  | Frame Bundle / Spin Connection over Spacetime | The **Graviton** field _(Spin-2 Tensor Boson)_       |
+| Matter Particles	      | Matrix Representations (Identity badges)	      | Sections of Associated Vector Bundles	      | **6 Quark & 6 Lepton** fields _(Spin-1/2 Fermions)_  |
+| The Higgs Boson         | $SU(2) \times U(1)$ **Symmetry Breaking** _(Coset space quotienting: `G/H`)_ | Sections of an **Associated Complex Scalar Bundle** with a non-zero vacuum state | The **Higgs** field _(Spin-0 Scalar Boson; the Higgs Field is always present and active everywhere and causes mass via Yukawa/Gauge couplings; the Higgs particle aka Higgs Boson is the ripple in the Higgs Field when a large amount of Energy hits and quantizes it. The Higgs Field (not Higgs particle/Boson) causes what we call mass.)_ |
 
 #### Core Structural Roles (How the Pieces Interact)
 
@@ -301,7 +302,12 @@ Before the Higgs field turns on, the Electroweak sector of the universe possesse
 
 - When the Higgs field acquires energy, it undergoes **Spontaneous Symmetry Breaking**.
 - It shatters the pristine $SU(2) \times U(1)$ symmetry down into a smaller, leftover symmetry: the **$U(1)$ of Electromagnetism**.
-- In doing so, it drags the $SU(2)$ gauge bosons through its field, slowing them down and giving them mass (creating the heavy **W and Z bosons**), while leaving the photon perfectly massless.
+- In doing so, it drags the $SU(2)$ gauge bosons through its field, slowing them down and giving them mass (creating the heavy **W and Z bosons**),
+  while leaving the photon perfectly massless.
+
+> [!IMPORTANT]
+> 🔆 Technically, the Higgs Field **_sets_** the mass of particles. And it _sets_ the mass of the photon and the gluons to zero.
+> It does not _give_ them mass, or _generate_ mass. 🔆
 
 ##### Unpacking the Higgs Boson Row in Above Table
 
@@ -362,26 +368,46 @@ Particles (of all kinds including all fermions, all bosons) are created when the
 - [`SU(3)` gauge field](https://en.wikipedia.org/wiki/Gluon_field) + energy + color shift = gluon(s) of type(s) that conserve color.
   - The color-config (color distribution) on the LHS determines (via color conservation laws) which (ie **identities**) of the 8 gluons will be produced.
   - The energy determines (via energy conservation) how many (ie **quantities**) of the gluons will be produced.
-- `SU(2)` gauge field + energy + weak-isospin shift = W/Z boson(s) of type(s) that conserve both charge and weak-isospin.
+- `SU(2)` gauge field + energy + weak-isospin (aka flavor) shift = W/Z boson(s) of type(s) that conserve both charge and flavor (weak-isospin).
 - Quarks & Leptons: Matter Field + Energy + Fermion Number Alignment = Fermion-Antifermion Pairs. Quarks immediately combine and re-arrange to form Hadrons (Baryons/Mesons).
   - Mass barrier & Pauli principle apply; color symmetry determines quark variations
   - There are 12 distinct matter fields: 6 distinct quark fields, 6 distinct lepton fields.
-    - Each matter particle (Up-quark, Down-quark, Tauon, Tau-neutrino etc) forms from its own parent matter field.
+    - Each matter particle (eg Up-quark, Down-quark, Tauon, Tau-neutrino etc) forms from its own parent matter field.
 - Higgs field + energy = Higgs boson(s)
 
 So the Higgs Field _does_ create a particle—its own particle, the Higgs particle aka Higgs Boson. This is the only type of particle the Higgs Field creates.
 
 > [!TIP]
-> `SU(n)` results in `n² - 1` boson (force-carrier) states and `n` fermion (matter) states.
+> `SU(n)` results in `n² - 1` boson (force-carrier) types and `n` fermion (matter) states.
 >
 > Hence: \
-> For `SU(3)` (**Color Field**), matter has 3 **color** states (R, G, B). Only Quarks have color, Leptons don't. \
-> For `SU(2)` (**Weak Field**), matter has 2 **weak-isospin** states: Up/Down for Quarks, Neutrino/non-neutrino for Leptons.
+> For `SU(3)` (**Color Field**), force-carriers are of 8 types (**the 8 gluons**), and matter has 3 **color** states: (`R`, `G`, `B`). Only Quarks have color, Leptons don't. 
+> - Color states, when present (ie for Quarks), are temporary coverings, and do not determine **identity** of the Quark.
+>   - Think of **color** as a shirt worn by a Quark, where, it constantly exchanges the shirt for new ones. But it _MUST_ always wear _a_ shirt.
+>   - In contrast, Leptons are always shirt-less.
+> 
+> For `SU(2)` (**Weak Field**), force-carriers are of 3 types (**$W^+$, $W^+$, $Z^0$**), and matter has 2 **flavor (weak-isospin)** states:
+> ($+\frac{1}{2}$ aka Up-type, $-\frac{1}{2}$ aka Down-type).
+> - Flavor states are always present for both Quarks and Leptons, and Flavor determines the **identity** of the Quark/Lepton.
+> 
+> ❇️ **The 3 Matter Generations:**
+> - Gen 1: Up/Down quarks, Electron-neutrino/Electron leptons.
+> - Gen 2: Charm/Strange quarks, Muon-neutrino/Muon leptons.
+> - Gen 3: Top/Bottom quarks, Tau-neutrino/Tauon leptons.
 >
+> For each of the 3 matter Generations:
+> - A Quark carries a _static_ `SU(2)` **flavor** (aka weak-isospin) & a _dynamic_ `SU(3)` **color**.
+>   - The Up (Charm/Top for Gen 2/3) Quark carries $+\frac{1}{2}$ flavor. The Down (Strange/Bottom for Gen 2/3) Quark carries $-\frac{1}{2}$ flavor.
+> - A Lepton carries a _static_ `SU(2)` **flavor** & no **color**.
+>   - The neutrino Lepton carries $+\frac{1}{2}$ flavor. The non-neutrino Lepton carries $-\frac{1}{2}$ flavor.
+> 
+> 🔆🔆 Matter Generations are not part of any known model/theory like the [Standard Model](https://en.wikipedia.org/wiki/Template:Standard_model_of_particle_physics) or QFT.
+> The existence of generations is not predicted, derived, or constrained by the underlying math, but an empirical fact.
+> Also we know for a fact (experimentally) that there are exactly 3 Matter Generations, no more can be possible. 🔆🔆
+> 
 > - Fundamental Matter Particles = Only fermions (Quarks and Leptons).
 > - All matter particles have mass.
 > - Mass particles = All fundamental matter particles (all fermions) + The massed bosons (ie all bosons except the gluons and the photon).
-
 
 #### Q3: Can the Higgs Boson interact with another Higgs Boson?
 
@@ -392,26 +418,25 @@ Massless Particles (via loops): Two Photons ($\gamma\gamma$) or two Gluons ($gg$
 
 > [!TIP]
 > ❇️ Since energy is fungible, an interaction (aka collision) is just instant recalculation and redistribution of the combined energy, momentum, and quantum traits of the input
-> particles. The resultants are decided by conservation laws, and the recalculation instantly splits that combined energy back out into new particles.
+> particles. The resultants are decided by conservation laws, and the recalculation instantly splits (redistributes) that combined energy back out into new particles.
 
 #### Q4: Can the Higgs Boson interact with itself?
 
 Yes. In two ways:
 
-1. Virtual Fluctuation (Temporary quantum loops): A Single Higgs Boson Can Spontaneously Split (Self-Interaction in Transit)
+1. Virtual Fluctuation (Temporary quantum loops): A Single Higgs Boson Can Spontaneously Split (Self-Interaction in Transit). But then they _MUST_ merge back into one.
 
    As a single Higgs boson travels through space, it interacts with its own nature.
    It can briefly fluctuate into two virtual Higgs bosons, which then merge back into one.
-   It is called **Higgs Triple and Quartic Self-Coupling**. This happens only if it has immense, artificial kinetic energy.
+   This process falls under **Higgs Triple and Quartic Self-Coupling**, and happens only if it has immense, artificial kinetic energy.
 
    > The **Triple** and and **Quartic** describe the number of Higgs fields that meet at a single interaction point (a vertex) in the underlying physics equations.
    > They don't denote the number of particles existing during the virtual loop.
 
-3. Real Decay (Permanent transformation): It permanently decays into other, lighter particles (like a bottom quark and an anti-bottom quark).
+3. Real Decay (Permanent transformation): It permanently decays into other, lighter particles (like a bottom quark and an anti-bottom quark for example).
    Once this happens, the Higgs boson is completely gone.
 
-   This is called **Yukawa Coupling** (when interacting with quarks/leptons) or **Gauge Coupling** (when interacting with W/Z bosons).
-
+   This process falls under **Yukawa Coupling** (when decaying into quarks/leptons) or **Gauge Coupling** (when decaying into W/Z bosons).
 
 #### Q5: Can the Higgs Boson interact with the Higgs Field?
 
