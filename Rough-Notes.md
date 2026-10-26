@@ -387,7 +387,7 @@ So the Higgs Field _does_ create a particle—its own particle, the Higgs partic
 >   - In contrast, Leptons are always shirt-less.
 > 
 > For `SU(2)` (**Weak Field**), force-carriers are of 3 types (**$W^+$, $W^+$, $Z^0$**), and matter has 2 **flavor (weak-isospin)** states:
-> ($+\frac{1}{2}$ aka Up-type, $-\frac{1}{2}$ aka Down-type).
+> ($+\frac{1}{2}$ aka Up-type aka Up-flavor, $-\frac{1}{2}$ aka Down-type aka Down-flavor).
 > - Flavor states are always present for both Quarks and Leptons, and Flavor determines the **identity** of the Quark/Lepton.
 > 
 > ❇️ **The 3 Matter Generations:**
@@ -395,17 +395,38 @@ So the Higgs Field _does_ create a particle—its own particle, the Higgs partic
 > - Gen 2: Charm/Strange quarks, Muon-neutrino/Muon leptons.
 > - Gen 3: Top/Bottom quarks, Tau-neutrino/Tauon leptons.
 >
+> Eg a Strange quark is a 2nd Gen $-\frac{1}{2}$/Down-flavor/Down-type quark, a Tau-neutrino lepton is a 3rd Gen $+\frac{1}{2}$/Up-flavor/Up-type lepton etc.
+> 
+> ✨✨ **Flavor Mixing:** Quarks and leptons can transition between generations via the weak force. ✨✨
+> 
 > For each of the 3 matter Generations:
 > - A Quark carries a _static_ `SU(2)` **flavor** (aka weak-isospin) & a _dynamic_ `SU(3)` **color**.
 >   - The Up (Charm/Top for Gen 2/3) Quark carries $+\frac{1}{2}$ flavor. The Down (Strange/Bottom for Gen 2/3) Quark carries $-\frac{1}{2}$ flavor.
+>   - An anti-Quark is isomorphic to a quark. We use the terms anti-flavor & anti-color instead of flavor & color.
 > - A Lepton carries a _static_ `SU(2)` **flavor** & no **color**.
 >   - The neutrino Lepton carries $+\frac{1}{2}$ flavor. The non-neutrino Lepton carries $-\frac{1}{2}$ flavor.
-> 
+>   - An anti-Lepton is isomorphic to a Lepton, and is also (anti-)color-less. Here again, we use the term anti-flavor instead of flavor.
+>
 > 🔆🔆 Matter Generations are not part of any known model/theory like the [Standard Model](https://en.wikipedia.org/wiki/Template:Standard_model_of_particle_physics) or QFT.
 > The existence of generations is not predicted, derived, or constrained by the underlying math, but an empirical fact.
 > Also we know for a fact (experimentally) that there are exactly 3 Matter Generations, no more can be possible. 🔆🔆
 > 
-> - Fundamental Matter Particles = Only fermions (Quarks and Leptons).
+> - Fundamental/Elementary Matter Particles = Only fermions (Quarks and Leptons).
+> - Each Generation has only a set of 4 Fundamental/Elementary Matter Particles—2 quarks & 2 leptons:
+>   {Up-flavor quark, Down-flavor quark, Up-flavor (neutrino) lepton, Down-flavor (non-neutrino) lepton}
+> - Total distinct fermion/antifermion states per generation = 2 (flavors) * (3 (quark-color-states) + 1 (lepton-colorless-only-state)) * 2 (particle/antiparticle state) = 16.
+> - 16*3 = 48 fermion/antifermion states for all generations.
+> - The 48 states are simply the total number of field components dictated by the symmetry group representations multiplied by 3 repeating templates.
+>   They exist as a blank canvas, without mass and mixing. Mass and mixing are the paint splashed onto that canvas afterward by the Higgs field and weak interactions!
+> - Even if the 48 states are **completely massless and unmixed**, we still multiplied by 3 because nature printed the exact same 16-state structural blueprint three times.
+>     - Mass is an _external_ consequence that happens later. It is injected into the theory dynamically when the Higgs field acquires its vacuum expectation value,
+>       turning on the **Yukawa couplings** ($m = yv$). You can change the Yukawa coupling values to anything you want (or even set them to zero), and the 48 states
+>       would still exist with the exact same quantum numbers.
+>     - Mixing is a Relational Matrix (Not a State Property). Mixing (like the CKM matrix for quarks) doesn't change the number of states or their definitions.
+>       - Mixing describes a mismatch: the states that feel the weak force cleanly (the "weak eigenstates") don't perfectly line up with the states that have
+>         definite masses (the "mass eigenstates").
+>       - Mixing is just a rotation matrix describing how quarks transition from one generation to another when they decay.
+>         It is a relationship between the states, not a property baked into the 48 count itself.
 > - All matter particles have mass.
 > - Mass particles = All fundamental matter particles (all fermions) + The massed bosons (ie all bosons except the gluons and the photon).
 
