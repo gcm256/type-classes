@@ -211,7 +211,78 @@ Symmetry Groups occur in the following areas of study:
 2. 📖 "Abstract Algebra" by David S. Dummit and Richard M. Foote.
 3. 📘 ["Fearful Symmetry: The Search for Beauty in Modern Physics"](https://books.google.mk/books?id=Xq1mCgAAQBAJ) by Anthony Zee.
 
----
+
+### Symmetry Groups References:
+
+- https://en.wikipedia.org/wiki/Template:Group_theory_sidebar
+- https://en.wikipedia.org/wiki/List_of_spacetimes
+- https://en.wikipedia.org/wiki/Diffeomorphism
+  - https://en.wikipedia.org/wiki/Diffeomorphism#Diffeomorphism_group
+- https://en.wikipedia.org/wiki/Template:Manifolds
+
+- https://en.wikipedia.org/wiki/Symmetry_(physics)#Conservation_laws_and_symmetry
+- https://en.wikipedia.org/wiki/Symmetry_(physics)#Spacetime_and_internal
+- https://en.wikipedia.org/wiki/Spacetime_symmetries
+- https://en.wikipedia.org/wiki/Symmetry_in_mathematics#Symmetry_in_abstract_algebra
+- https://en.wikipedia.org/wiki/Symmetry_group
+- https://en.wikipedia.org/wiki/Symmetric_group
+- https://en.wikipedia.org/wiki/Continuous_symmetry
+- https://en.wikipedia.org/wiki/Discrete_symmetry
+
+- https://en.wikipedia.org/wiki/Presentation_of_a_group
+  - https://en.wikipedia.org/wiki/Presentation_of_a_group#finitely_presented
+- https://en.wikipedia.org/wiki/Group_representation
+- https://en.wikipedia.org/wiki/Representation_theory_of_finite_groups
+- https://en.wikipedia.org/wiki/Representations_of_classical_groups
+  - https://en.wikipedia.org/wiki/Representations_of_classical_Lie_groups
+
+- https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups
+  - https://en.wikipedia.org/wiki/Finite_group
+  - https://en.wikipedia.org/wiki/Cyclic_group
+  - https://en.wikipedia.org/wiki/Symplectic_group
+  - https://en.wikipedia.org/wiki/Simple_group
+  - https://en.wikipedia.org/wiki/Fundamental_group
+  - https://en.wikipedia.org/wiki/Modular_group
+  - https://en.wikipedia.org/wiki/Free_group
+  - https://en.wikipedia.org/wiki/Finitely_generated_group
+  - https://en.wikipedia.org/wiki/Automorphism_group
+  - https://en.wikipedia.org/wiki/Pariah_group
+
+- https://en.wikipedia.org/wiki/List_of_finite_simple_groups
+- https://en.wikipedia.org/wiki/List_of_small_groups
+
+- https://en.wikipedia.org/wiki/Linear_group
+- https://en.wikipedia.org/wiki/General_linear_group
+  - https://en.wikipedia.org/wiki/Special_linear_group
+  - https://en.wikipedia.org/wiki/SL2(R) / https://en.wikipedia.org/wiki/PSL(2,R)
+  - https://en.wikipedia.org/wiki/Unitary_group
+    - https://en.wikipedia.org/wiki/Special_unitary_group
+      - https://en.wikipedia.org/wiki/Representation_theory_of_SU(2)
+  - https://en.wikipedia.org/wiki/Projective_linear_group
+    - https://en.wikipedia.org/wiki/Projective_special_linear_group
+      - https://en.wikipedia.org/wiki/PSL(2,7)
+- https://en.wikipedia.org/wiki/Orthogonal_group
+  - https://en.wikipedia.org/wiki/Indefinite_orthogonal_group
+  - https://en.wikipedia.org/wiki/3D_rotation_group
+  - https://en.wikipedia.org/wiki/Special_orthogonal_group
+  - https://en.wikipedia.org/wiki/SO(3)
+  - https://en.wikipedia.org/wiki/Rotation_group_SO(3)
+
+- https://en.wikipedia.org/wiki/Covering_group#Universal_covering_group
+- https://en.wikipedia.org/wiki/Maximal_compact_subgroup
+
+- https://en.wikipedia.org/wiki/Supersymmetry
+- https://en.wikipedia.org/wiki/Template:Supersymmetry_topics
+- https://en.wikipedia.org/wiki/Holomorphic_function
+- https://en.wikipedia.org/wiki/Conformal_map
+- https://en.wikipedia.org/wiki/Modular_form
+  - https://en.wikipedia.org/wiki/Modular_form#Modular_functions
+    - https://en.wikipedia.org/wiki/J-invariant
+- https://en.wikipedia.org/wiki/Tensor_representation
+- https://en.wikipedia.org/wiki/Schur_functor
+- https://en.wikipedia.org/wiki/Higgs_mechanism
+
+----
 
 ## Gauge Theory
 
