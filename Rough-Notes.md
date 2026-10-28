@@ -37,13 +37,28 @@
 
 > [!TIP]
 > Symmetry \
-> Geometry \
-> Abstract Algebra
+> [Geometry](https://en.wikipedia.org/wiki/Template:General_geometry) \
+> [Abstract Algebra](https://en.wikipedia.org/wiki/List_of_abstract_algebra_topics)
 >
-> Algebra = Geometry in textual form. \
-> Geometry = Algebra in pictorial form. 
+> [Algebra](https://en.wikipedia.org/wiki/Template:Algebra) = Geometry in textual form. \
+> [Geometry](https://en.wikipedia.org/wiki/Template:Geometry) = Algebra in pictorial form. 
 >
 > **Symmetry in Geometry $\rightleftharpoons$ Symmetry in Algebra**
+
+## All of the following are related:
+
+- Algebraic Geometry.
+- ECC Finite Field.
+- Finite Group.
+- Simple Group.
+- Galois Theory.
+- Symmetry Group.
+- Lie Group.
+- QFT, Tensor, Spinor, Quaternions.
+- Automorphism group.
+- Category theory.
+
+(Automorphism groups are studied in a general way in the field of category theory.)
 
 ----
 ==
@@ -58,7 +73,7 @@
 == 
 ----
 
-## <a name="i-1"></a> The Global Landscape of Algebraic Structures
+## <a name="i-1"></a> The Global Landscape of [Algebraic Structures](https://en.wikipedia.org/wiki/Template:Algebraic_structures)
 
 Symmetry and mathematical structures are built up like layers of an onion. 
 We move down the primary hierarchy by forgetting rules ([**forgetful functors**](https://en.wikipedia.org/wiki/Forgetful_functor)) 
@@ -114,6 +129,50 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
           ▼
          Set
 ```
+
+### Algebraic Maps
+
+A **structure-preserving** map between two algebraic-structures of the same type is called a [**Homomorphism**](https://en.wikipedia.org/wiki/Homomorphism).
+
+> [!WARNING]
+> Not to be confused with [Holomorphism](https://en.wikipedia.org/wiki/Holomorphism) or [Homeomorphism](https://en.wikipedia.org/wiki/Homeomorphism).
+
+Following are the sub-types of Homomorphism:
+
+```
+                [ Homomorphism ]  (The general baseline: f: G -> H)
+                /      |       \
+               /       |        \  (Restrict target: H = G)
+              /        |         \
+   (Add 1-1) /    (Add Onto)      \
+            v          v           v
+    [Monomorphism] [Epimorphism] [Endomorphism] (f: G -> G)
+            \          /           |
+             \        /            | (Upgrade to bijective)
+              v      v             v
+          [Isomorphism] ------> [Automorphism] (Bijective f: G -> G)
+                        (H = G)
+```
+
+> [!NOTE]
+> - For an Endomorphism: (**1-1 ⟺ onto**) **iff** the algebraic structure has **_finite_ dimensions** (regardless of whether the number of elements in it is finite or inifinite).  
+>   - Iff an algebraic structure has finite dimension(s):
+>     - Once an Endomorphism is 1-1, it has to be onto as well.
+>     - Once an Endomorphism is onto, it has to be 1-1 as well. The result will be same, an Automorphism.
+>   - Infinite dimensions $\implies$ (**one-way-only** ie $\nLeftarrow$) infinite number of elements. (If the dimension is infinite, the number of elements can never be finite.)
+> - **Linear map** aka a **Linear transformation**: A Homomorphism of Vector Spaces.
+> - [**Morphism**](https://en.wikipedia.org/wiki/Morphism): A Category Theory generalization of Homomorphism.
+
+<!-- GitHub LaTeX NOTE: $\nLeftarrow$ & $\not\Leftarrow$ render correctly as ⇍ but $\not\impliedby$ does not render correctly -->
+
+#### For examples see: [Difference between epimorphism, isomorphism, endomorphism and automorphism (with examples)](https://math.stackexchange.com/questions/1510769/)
+
+#### [Difference between bijection and isomorphism](https://math.stackexchange.com/questions/54232/difference-between-bijection-and-isomorphism):
+
+The difference is that an isomorphism is not just any bijective map. It must be a bijective linear map 
+(ie, it must preserve the addition and scalar multiplication of the vector space).
+ie, isomorphism is more restrictive than bijective.
+Every isomorphism is bijective, but not the converse.
 
 ## Theories:
 
@@ -215,10 +274,13 @@ Symmetry Groups occur in the following areas of study:
 ### Symmetry Groups References:
 
 - https://en.wikipedia.org/wiki/Template:Group_theory_sidebar
+- https://en.wikipedia.org/wiki/Template:Group_navbox
 - https://en.wikipedia.org/wiki/List_of_spacetimes
 - https://en.wikipedia.org/wiki/Diffeomorphism
   - https://en.wikipedia.org/wiki/Diffeomorphism#Diffeomorphism_group
 - https://en.wikipedia.org/wiki/Template:Manifolds
+
+----
 
 - https://en.wikipedia.org/wiki/Symmetry_(physics)#Conservation_laws_and_symmetry
 - https://en.wikipedia.org/wiki/Symmetry_(physics)#Spacetime_and_internal
@@ -229,6 +291,8 @@ Symmetry Groups occur in the following areas of study:
 - https://en.wikipedia.org/wiki/Continuous_symmetry
 - https://en.wikipedia.org/wiki/Discrete_symmetry
 
+----
+
 - https://en.wikipedia.org/wiki/Presentation_of_a_group
   - https://en.wikipedia.org/wiki/Presentation_of_a_group#finitely_presented
 - https://en.wikipedia.org/wiki/Group_representation
@@ -236,31 +300,69 @@ Symmetry Groups occur in the following areas of study:
 - https://en.wikipedia.org/wiki/Representations_of_classical_groups
   - https://en.wikipedia.org/wiki/Representations_of_classical_Lie_groups
 
+----
+
+- [**Group**](https://en.wikipedia.org/wiki/Group_(mathematics)) ≡ (is aka) [**Abstract group**](https://en.wikipedia.org/wiki/Abstract_group)
+  - [**Topological group**](https://en.wikipedia.org/wiki/Topological_group)
+    - https://en.wikipedia.org/wiki/Continuous_group
+    - https://en.wikipedia.org/wiki/Discrete_group
+  - [**Homotopy group**](https://en.wikipedia.org/wiki/Homotopy_group)
+    - https://en.wikipedia.org/wiki/Fundamental_group
+
+----
+
+- [Homeomorphism group](https://en.wikipedia.org/wiki/Homeomorphism_group) ≡ (up to isomorphism) [Automorphism group](https://en.wikipedia.org/wiki/Automorphism_group)
+
+----
+
+- Let **TG** be the set of all Topological groups.
+- Let **HG** be the set of all Homotopy groups.
+- Let **HomeoG** be the set of all Homeomorphism groups.
+- Let **AutoG** be the set of all Automorphism groups.
+- Let **FSG** be the set of all Finite Simple Groups. Then, up to isomorphism:
+  - **FSG $\subset$ **HomeoG** $\equiv$ **AutoG** $\subset$ TG $\cap$ HG**
+
+----
+
 - https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups
   - https://en.wikipedia.org/wiki/Finite_group
   - https://en.wikipedia.org/wiki/Cyclic_group
   - https://en.wikipedia.org/wiki/Symplectic_group
   - https://en.wikipedia.org/wiki/Simple_group
-  - https://en.wikipedia.org/wiki/Fundamental_group
-  - https://en.wikipedia.org/wiki/Modular_group
-  - https://en.wikipedia.org/wiki/Free_group
   - https://en.wikipedia.org/wiki/Finitely_generated_group
-  - https://en.wikipedia.org/wiki/Automorphism_group
   - https://en.wikipedia.org/wiki/Pariah_group
+  - https://en.wikipedia.org/wiki/Sporadic_group
 
 - https://en.wikipedia.org/wiki/List_of_finite_simple_groups
 - https://en.wikipedia.org/wiki/List_of_small_groups
+
+----
 
 - https://en.wikipedia.org/wiki/Linear_group
 - https://en.wikipedia.org/wiki/General_linear_group
   - https://en.wikipedia.org/wiki/Special_linear_group
   - https://en.wikipedia.org/wiki/SL2(R) / https://en.wikipedia.org/wiki/PSL(2,R)
+
   - https://en.wikipedia.org/wiki/Unitary_group
     - https://en.wikipedia.org/wiki/Special_unitary_group
       - https://en.wikipedia.org/wiki/Representation_theory_of_SU(2)
   - https://en.wikipedia.org/wiki/Projective_linear_group
     - https://en.wikipedia.org/wiki/Projective_special_linear_group
-      - https://en.wikipedia.org/wiki/PSL(2,7)
+      - https://en.wikipedia.org/wiki/PSL(2,R)
+        - https://en.wikipedia.org/wiki/Fuchsian_group
+          - https://en.wikipedia.org/wiki/PSL(2,Z) aka https://en.wikipedia.org/wiki/Modular_group
+            - https://en.wikipedia.org/wiki/PSL(2,7)
+
+----
+
+Up to isomorphism, the FSG portion of PSL(2,ℤ) (Modular Group) is strictly & _exactly_ the PSL(2, $F_p$), where $p$ is a prime ≥ 5.
+
+----
+
+- https://en.wikipedia.org/wiki/Free_object#List_of_free_objects
+  - https://en.wikipedia.org/wiki/Free_group
+    - https://en.wikipedia.org/wiki/Free_abelian_group
+
 - https://en.wikipedia.org/wiki/Orthogonal_group
   - https://en.wikipedia.org/wiki/Indefinite_orthogonal_group
   - https://en.wikipedia.org/wiki/3D_rotation_group
@@ -268,8 +370,12 @@ Symmetry Groups occur in the following areas of study:
   - https://en.wikipedia.org/wiki/SO(3)
   - https://en.wikipedia.org/wiki/Rotation_group_SO(3)
 
+----
+
 - https://en.wikipedia.org/wiki/Covering_group#Universal_covering_group
 - https://en.wikipedia.org/wiki/Maximal_compact_subgroup
+
+----
 
 - https://en.wikipedia.org/wiki/Supersymmetry
 - https://en.wikipedia.org/wiki/Template:Supersymmetry_topics
