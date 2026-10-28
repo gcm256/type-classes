@@ -169,7 +169,7 @@ Following are the sub-types of Homomorphism:
 
 #### [Difference between bijection and isomorphism](https://math.stackexchange.com/questions/54232/difference-between-bijection-and-isomorphism):
 
-The difference is that an isomorphism is not just any bijective map. It must be a bijective linear map 
+The difference is that an isomorphism is not just any bijective map. Isomorphism is a bijective linear map 
 (ie, it must preserve the addition and scalar multiplication of the vector space).
 ie, isomorphism is more restrictive than bijective.
 Every isomorphism is bijective, but not the converse.
@@ -303,6 +303,8 @@ Symmetry Groups occur in the following areas of study:
 ----
 
 - [**Group**](https://en.wikipedia.org/wiki/Group_(mathematics)) ≡ (is aka) [**Abstract group**](https://en.wikipedia.org/wiki/Abstract_group)
+  - https://en.wikipedia.org/wiki/Algebraic_group
+    - https://en.wikipedia.org/wiki/Arithmetic_group
   - [**Topological group**](https://en.wikipedia.org/wiki/Topological_group)
     - https://en.wikipedia.org/wiki/Continuous_group
     - https://en.wikipedia.org/wiki/Discrete_group
@@ -311,35 +313,67 @@ Symmetry Groups occur in the following areas of study:
 
 ----
 
-- [Homeomorphism group](https://en.wikipedia.org/wiki/Homeomorphism_group) ≡ (up to isomorphism) [Automorphism group](https://en.wikipedia.org/wiki/Automorphism_group)
+- https://en.wikipedia.org/wiki/Compact_group
+- https://en.wikipedia.org/wiki/Locally_compact_group
+- https://en.wikipedia.org/wiki/Locally_compact_quantum_group
+- https://en.wikipedia.org/wiki/Topological_abelian_group
+
+- https://en.wikipedia.org/wiki/Covering_group#Universal_covering_group
+- https://en.wikipedia.org/wiki/Maximal_compact_subgroup
 
 ----
 
-- Let **TG** be the set of all Topological groups.
-- Let **HG** be the set of all Homotopy groups.
-- Let **HomeoG** be the set of all Homeomorphism groups.
-- Let **AutoG** be the set of all Automorphism groups.
-- Let **FSG** be the set of all Finite Simple Groups. Then, up to isomorphism:
-  - **FSG $\subset$ **HomeoG** $\equiv$ **AutoG** $\subset$ TG $\cap$ HG**
+- [Homeomorphism group](https://en.wikipedia.org/wiki/Homeomorphism_group) $\cong$ (≡ up to isomorphism) [Automorphism group](https://en.wikipedia.org/wiki/Automorphism_group)
+
+----
+
+- Let **{TG}** be the set of all Topological groups.
+- Let **{HG}** be the set of all Homotopy groups.
+- Let **{HomeoG}** be the set of all Homeomorphism groups.
+- Let **{AutoG}** be the set of all Automorphism groups.
+- Let **{FSG}** be the set of all Finite Simple Groups. Then, up to isomorphism:
+  - **{FSG} $\subset$ **{HomeoG}** $\cong$ **{AutoG}** $\subset$ TG $\cap$ {HG}**
 
 ----
 
 - https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups
   - https://en.wikipedia.org/wiki/Finite_group
   - https://en.wikipedia.org/wiki/Cyclic_group
+    - https://en.wikipedia.org/wiki/Trivial_group
+  - https://en.wikipedia.org/wiki/Alternating_group
   - https://en.wikipedia.org/wiki/Symplectic_group
   - https://en.wikipedia.org/wiki/Simple_group
   - https://en.wikipedia.org/wiki/Finitely_generated_group
   - https://en.wikipedia.org/wiki/Pariah_group
   - https://en.wikipedia.org/wiki/Sporadic_group
+  - https://en.wikipedia.org/wiki/Exceptional_group == https://en.wikipedia.org/wiki/Exceptional_simple_Lie_group
+    (Five exceptional cases of simple Lie groups, labeled
+    [G₂](https://en.wikipedia.org/wiki/G2_(mathematics)),
+    [F₄](https://en.wikipedia.org/wiki/F4_(mathematics)),
+    [E₆](https://en.wikipedia.org/wiki/E6_(mathematics)),
+    [E₇](https://en.wikipedia.org/wiki/E7_(mathematics)), and [E₈](https://en.wikipedia.org/wiki/E8_(mathematics))) ⊂ https://en.wikipedia.org/wiki/Simple_Lie_group
 
-- https://en.wikipedia.org/wiki/List_of_finite_simple_groups
+- https://en.wikipedia.org/wiki/Template:Lie_groups
+- https://en.wikipedia.org/wiki/Table_of_Lie_groups
+
+- https://en.wikipedia.org/wiki/Dihedral_group
+- https://en.wikipedia.org/wiki/Dicyclic_group
+- https://en.wikipedia.org/wiki/Binary_cyclic_group
+
+- https://en.wikipedia.org/wiki/Point_group
+- https://en.wikipedia.org/wiki/Isometry_group
+- https://en.wikipedia.org/wiki/Space_group
+
+- https://en.wikipedia.org/wiki/Spin_group
+
+- [List of FSGs](https://en.wikipedia.org/wiki/List_of_finite_simple_groups)
 - https://en.wikipedia.org/wiki/List_of_small_groups
 
 ----
 
-- https://en.wikipedia.org/wiki/Linear_group
-- https://en.wikipedia.org/wiki/General_linear_group
+- https://en.wikipedia.org/wiki/Geometric_transformation
+- https://en.wikipedia.org/wiki/Linear_group aka https://en.wikipedia.org/wiki/Matrix_group
+- https://en.wikipedia.org/wiki/General_linear_group $\cong$ (≡ up to isomorphism) The group of all Isomorphisms (Bijective Linear Maps/Transformations).
   - https://en.wikipedia.org/wiki/Special_linear_group
   - https://en.wikipedia.org/wiki/SL2(R) / https://en.wikipedia.org/wiki/PSL(2,R)
 
@@ -355,7 +389,21 @@ Symmetry Groups occur in the following areas of study:
 
 ----
 
-Up to isomorphism, the FSG portion of PSL(2,ℤ) (Modular Group) is strictly & _exactly_ the PSL(2, $F_p$), where $p$ is a prime ≥ 5.
+Up to isomorphism, the {FSG} portion of PSL(2,ℤ) (Modular Group) is strictly & _exactly_ the PSL(2, $F_p$), where $p$ is a prime ≥ 5. ie:
+
+**{FSG} $\cap$ PSL(2,ℤ) $\cong$ PSL(2, $F_p$)** where $p$ is a prime ≥ 5
+
+----
+
+- https://en.wikipedia.org/wiki/Infinite_group
+- https://en.wikipedia.org/wiki/Profinite_group
+- https://en.wikipedia.org/wiki/Residually_finite_group
+- https://en.wikipedia.org/wiki/P-group
+- https://en.wikipedia.org/wiki/Regular_p-group
+- https://en.wikipedia.org/wiki/Elementary_group
+- https://en.wikipedia.org/wiki/Elementary_abelian_group
+
+- https://en.wikipedia.org/wiki/Quantum_group
 
 ----
 
@@ -369,11 +417,6 @@ Up to isomorphism, the FSG portion of PSL(2,ℤ) (Modular Group) is strictly & _
   - https://en.wikipedia.org/wiki/Special_orthogonal_group
   - https://en.wikipedia.org/wiki/SO(3)
   - https://en.wikipedia.org/wiki/Rotation_group_SO(3)
-
-----
-
-- https://en.wikipedia.org/wiki/Covering_group#Universal_covering_group
-- https://en.wikipedia.org/wiki/Maximal_compact_subgroup
 
 ----
 
