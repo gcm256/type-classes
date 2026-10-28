@@ -332,7 +332,7 @@ Symmetry Groups occur in the following areas of study:
 - Let **{HomeoG}** be the set of all Homeomorphism groups.
 - Let **{AutoG}** be the set of all Automorphism groups.
 - Let **{FSG}** be the set of all Finite Simple Groups. Then, up to isomorphism:
-  - **{FSG} $\subset$ **{HomeoG}** $\cong$ **{AutoG}** $\subset$ TG $\cap$ {HG}**
+  - **{FSG} $\subset$ **{HomeoG}** $\cong$ **{AutoG}** $\subset$ {TG} $\cap$ {HG}**
 
 ----
 
@@ -341,7 +341,6 @@ Symmetry Groups occur in the following areas of study:
   - https://en.wikipedia.org/wiki/Cyclic_group
     - https://en.wikipedia.org/wiki/Trivial_group
   - https://en.wikipedia.org/wiki/Alternating_group
-  - https://en.wikipedia.org/wiki/Symplectic_group
   - https://en.wikipedia.org/wiki/Simple_group
   - https://en.wikipedia.org/wiki/Finitely_generated_group
   - https://en.wikipedia.org/wiki/Pariah_group
@@ -372,20 +371,27 @@ Symmetry Groups occur in the following areas of study:
 ----
 
 - https://en.wikipedia.org/wiki/Geometric_transformation
-- https://en.wikipedia.org/wiki/Linear_group aka https://en.wikipedia.org/wiki/Matrix_group
+- https://en.wikipedia.org/wiki/Gauge_group
+- https://en.wikipedia.org/wiki/Symplectic_group
+  - https://en.wikipedia.org/wiki/Paramodular_group
+- https://en.wikipedia.org/wiki/Metaplectic_group
+- https://en.wikipedia.org/wiki/Heisenberg_group
+
+- https://en.wikipedia.org/wiki/Linear_group (aka https://en.wikipedia.org/wiki/Matrix_group) & https://en.wikipedia.org/wiki/Projective_linear_group
 - https://en.wikipedia.org/wiki/General_linear_group $\cong$ (≡ up to isomorphism) The group of all Isomorphisms (Bijective Linear Maps/Transformations).
   - https://en.wikipedia.org/wiki/Special_linear_group
   - https://en.wikipedia.org/wiki/SL2(R) / https://en.wikipedia.org/wiki/PSL(2,R)
+- https://en.wikipedia.org/wiki/Projective_general_linear_group
 
-  - https://en.wikipedia.org/wiki/Unitary_group
-    - https://en.wikipedia.org/wiki/Special_unitary_group
+  - https://en.wikipedia.org/wiki/Unitary_group & https://en.wikipedia.org/wiki/Projective_unitary_group
+    - https://en.wikipedia.org/wiki/Special_unitary_group & https://en.wikipedia.org/wiki/Projective_unitary_group#Projective_special_unitary_group
       - https://en.wikipedia.org/wiki/Representation_theory_of_SU(2)
-  - https://en.wikipedia.org/wiki/Projective_linear_group
-    - https://en.wikipedia.org/wiki/Projective_special_linear_group
-      - https://en.wikipedia.org/wiki/PSL(2,R)
-        - https://en.wikipedia.org/wiki/Fuchsian_group
-          - https://en.wikipedia.org/wiki/PSL(2,Z) aka https://en.wikipedia.org/wiki/Modular_group
-            - https://en.wikipedia.org/wiki/PSL(2,7)
+  
+  - https://en.wikipedia.org/wiki/Projective_special_linear_group
+    - https://en.wikipedia.org/wiki/PSL(2,R)
+      - https://en.wikipedia.org/wiki/Fuchsian_group
+        - https://en.wikipedia.org/wiki/PSL(2,Z) aka https://en.wikipedia.org/wiki/Modular_group
+          - https://en.wikipedia.org/wiki/PSL(2,7)
 
 ----
 
@@ -411,10 +417,10 @@ Up to isomorphism, the {FSG} portion of PSL(2,ℤ) (Modular Group) is strictly &
   - https://en.wikipedia.org/wiki/Free_group
     - https://en.wikipedia.org/wiki/Free_abelian_group
 
-- https://en.wikipedia.org/wiki/Orthogonal_group
+- https://en.wikipedia.org/wiki/Orthogonal_group & https://en.wikipedia.org/wiki/Projective_orthogonal_group
   - https://en.wikipedia.org/wiki/Indefinite_orthogonal_group
   - https://en.wikipedia.org/wiki/3D_rotation_group
-  - https://en.wikipedia.org/wiki/Special_orthogonal_group
+  - https://en.wikipedia.org/wiki/Special_orthogonal_group & https://en.wikipedia.org/wiki/Projective_special_orthogonal_group
   - https://en.wikipedia.org/wiki/SO(3)
   - https://en.wikipedia.org/wiki/Rotation_group_SO(3)
 
