@@ -17,7 +17,10 @@
     - Quadrics
 
 2. **Algebraic Geometry**:
-    - Elliptic Curves (over **Fields** ie `E(K)`)
+    - Elliptic Curves
+      - Over **Infinite Fields** eg over ℚ, ℝ, ℂ, an arbitrary infinite Field $K$ etc. EC Points may be finite or infinite in number, and always form an abelian group.
+      - Over **Finite Fields** eg over a Galois Field $F_p$ etc. EC Points are finite in number, and always form an abelian group.
+      - Over non-Fields eg over the Ring ℤ etc. EC Points do not form a group, let alone an abelian group.
     - Algebraic Curves
     - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
 
@@ -48,7 +51,7 @@
 ## All of the following are related:
 
 - Algebraic Geometry.
-- ECC Finite Field.
+- ECC over Finite Field.
 - Finite Group.
 - Simple Group.
 - Galois Theory.
@@ -155,7 +158,7 @@ Following are the sub-types of Homomorphism:
 ```
 
 > [!NOTE]
-> - For an Endomorphism: (**1-1 ⟺ onto**) **iff** the algebraic structure has **_finite_ dimensions** (regardless of whether the number of elements in it is finite or inifinite).  
+> - For an Endomorphism: (**1-1 ⟺ onto**) **iff** the algebraic structure has **_finite_ dimensions** (regardless of whether the number of elements in it is finite or infinite).  
 >   - Iff an algebraic structure has finite dimension(s):
 >     - Once an Endomorphism is 1-1, it has to be onto as well.
 >     - Once an Endomorphism is onto, it has to be 1-1 as well. The result will be same, an Automorphism.
@@ -293,33 +296,44 @@ Symmetry Groups occur in the following areas of study:
 
 ----
 
+- https://en.wikipedia.org/wiki/Supersymmetry
+- https://en.wikipedia.org/wiki/Template:Supersymmetry_topics
+- https://en.wikipedia.org/wiki/Holomorphic_function
+- https://en.wikipedia.org/wiki/Conformal_map
+- https://en.wikipedia.org/wiki/Modular_form
+  - https://en.wikipedia.org/wiki/Modular_form#Modular_functions
+    - https://en.wikipedia.org/wiki/J-invariant
+- https://en.wikipedia.org/wiki/Tensor_representation
+- https://en.wikipedia.org/wiki/Schur_functor
+- https://en.wikipedia.org/wiki/Higgs_mechanism
+
+----
+
 - https://en.wikipedia.org/wiki/Presentation_of_a_group
   - https://en.wikipedia.org/wiki/Presentation_of_a_group#finitely_presented
 - https://en.wikipedia.org/wiki/Group_representation
 - https://en.wikipedia.org/wiki/Representation_theory_of_finite_groups
+- https://en.wikipedia.org/wiki/Representation_theory_of_SU(2)
 - https://en.wikipedia.org/wiki/Representations_of_classical_groups
   - https://en.wikipedia.org/wiki/Representations_of_classical_Lie_groups
 
 ----
 
+#### Some Groups, Group-Families, Types of Groups: Their Hierarchy and Relationships
+
 - [**Group**](https://en.wikipedia.org/wiki/Group_(mathematics)) ≡ (is aka) [**Abstract group**](https://en.wikipedia.org/wiki/Abstract_group)
   - https://en.wikipedia.org/wiki/Algebraic_group
-    - https://en.wikipedia.org/wiki/Arithmetic_group
+    - https://en.wikipedia.org/wiki/Linear_algebraic_group
+      - https://en.wikipedia.org/wiki/Arithmetic_group
   - [**Topological group**](https://en.wikipedia.org/wiki/Topological_group)
     - https://en.wikipedia.org/wiki/Continuous_group
     - https://en.wikipedia.org/wiki/Discrete_group
+    - https://en.wikipedia.org/wiki/Compact_group
+    - https://en.wikipedia.org/wiki/Locally_compact_group
+    - https://en.wikipedia.org/wiki/Topological_abelian_group
+    - https://en.wikipedia.org/wiki/Maximal_compact_subgroup
   - [**Homotopy group**](https://en.wikipedia.org/wiki/Homotopy_group)
     - https://en.wikipedia.org/wiki/Fundamental_group
-
-----
-
-- https://en.wikipedia.org/wiki/Compact_group
-- https://en.wikipedia.org/wiki/Locally_compact_group
-- https://en.wikipedia.org/wiki/Locally_compact_quantum_group
-- https://en.wikipedia.org/wiki/Topological_abelian_group
-
-- https://en.wikipedia.org/wiki/Covering_group#Universal_covering_group
-- https://en.wikipedia.org/wiki/Maximal_compact_subgroup
 
 ----
 
@@ -336,28 +350,24 @@ Symmetry Groups occur in the following areas of study:
 
 ----
 
-- https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups
-  - https://en.wikipedia.org/wiki/Finite_group
-  - https://en.wikipedia.org/wiki/Cyclic_group
-    - https://en.wikipedia.org/wiki/Trivial_group
-  - https://en.wikipedia.org/wiki/Alternating_group
-  - https://en.wikipedia.org/wiki/Simple_group
-  - https://en.wikipedia.org/wiki/Finitely_generated_group
-  - https://en.wikipedia.org/wiki/Pariah_group
-  - https://en.wikipedia.org/wiki/Sporadic_group
-  - https://en.wikipedia.org/wiki/Exceptional_group == https://en.wikipedia.org/wiki/Exceptional_simple_Lie_group
-    (Five exceptional cases of simple Lie groups, labeled
-    [G₂](https://en.wikipedia.org/wiki/G2_(mathematics)),
-    [F₄](https://en.wikipedia.org/wiki/F4_(mathematics)),
-    [E₆](https://en.wikipedia.org/wiki/E6_(mathematics)),
-    [E₇](https://en.wikipedia.org/wiki/E7_(mathematics)), and [E₈](https://en.wikipedia.org/wiki/E8_(mathematics))) ⊂ https://en.wikipedia.org/wiki/Simple_Lie_group
+- https://en.wikipedia.org/wiki/Geometric_transformation
+- https://en.wikipedia.org/wiki/Gauge_group
+- https://en.wikipedia.org/wiki/Symplectic_group
+  - https://en.wikipedia.org/wiki/Paramodular_group
+- https://en.wikipedia.org/wiki/Metaplectic_group
+- https://en.wikipedia.org/wiki/Heisenberg_group
+- https://en.wikipedia.org/wiki/Quantum_group
+- https://en.wikipedia.org/wiki/Compact_quantum_group
+  - https://en.wikipedia.org/wiki/Locally_compact_quantum_group
 
-- https://en.wikipedia.org/wiki/Template:Lie_groups
-- https://en.wikipedia.org/wiki/Table_of_Lie_groups
+----
 
+- https://en.wikipedia.org/wiki/Covering_group#Universal_covering_group
 - https://en.wikipedia.org/wiki/Dihedral_group
 - https://en.wikipedia.org/wiki/Dicyclic_group
 - https://en.wikipedia.org/wiki/Binary_cyclic_group
+
+----
 
 - https://en.wikipedia.org/wiki/Point_group
 - https://en.wikipedia.org/wiki/Isometry_group
@@ -365,28 +375,47 @@ Symmetry Groups occur in the following areas of study:
 
 - https://en.wikipedia.org/wiki/Spin_group
 
+----
+
+- https://en.wikipedia.org/wiki/P-group
+  - https://en.wikipedia.org/wiki/Regular_p-group
+- https://en.wikipedia.org/wiki/Elementary_group
+  - https://en.wikipedia.org/wiki/Elementary_abelian_group
+
+----
+
+- https://en.wikipedia.org/wiki/Infinite_group
+- https://en.wikipedia.org/wiki/Profinite_group
+- https://en.wikipedia.org/wiki/Residually_finite_group
+- https://en.wikipedia.org/wiki/Finitely_generated_group
+- https://en.wikipedia.org/wiki/Finite_group
+  - https://en.wikipedia.org/wiki/Simple_group
+    - https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups
+      - https://en.wikipedia.org/wiki/Cyclic_group
+        - https://en.wikipedia.org/wiki/Trivial_group
+      - https://en.wikipedia.org/wiki/Alternating_group
+      - https://en.wikipedia.org/wiki/Sporadic_group
+        - https://en.wikipedia.org/wiki/Pariah_group
+      - https://en.wikipedia.org/wiki/Simple_Lie_group / https://en.wikipedia.org/wiki/Template:Lie_groups / https://en.wikipedia.org/wiki/Table_of_Lie_groups
+        - https://en.wikipedia.org/wiki/Exceptional_group == https://en.wikipedia.org/wiki/Exceptional_simple_Lie_group
+          (Five exceptional cases of simple Lie groups, labeled
+          [G₂](https://en.wikipedia.org/wiki/G2_(mathematics)),
+          [F₄](https://en.wikipedia.org/wiki/F4_(mathematics)),
+          [E₆](https://en.wikipedia.org/wiki/E6_(mathematics)),
+          [E₇](https://en.wikipedia.org/wiki/E7_(mathematics)), and [E₈](https://en.wikipedia.org/wiki/E8_(mathematics))) ⊂ https://en.wikipedia.org/wiki/Simple_Lie_group
+
 - [List of FSGs](https://en.wikipedia.org/wiki/List_of_finite_simple_groups)
 - https://en.wikipedia.org/wiki/List_of_small_groups
 
 ----
 
-- https://en.wikipedia.org/wiki/Geometric_transformation
-- https://en.wikipedia.org/wiki/Gauge_group
-- https://en.wikipedia.org/wiki/Symplectic_group
-  - https://en.wikipedia.org/wiki/Paramodular_group
-- https://en.wikipedia.org/wiki/Metaplectic_group
-- https://en.wikipedia.org/wiki/Heisenberg_group
-
 - https://en.wikipedia.org/wiki/Linear_group (aka https://en.wikipedia.org/wiki/Matrix_group) & https://en.wikipedia.org/wiki/Projective_linear_group
 - https://en.wikipedia.org/wiki/General_linear_group $\cong$ (≡ up to isomorphism) The group of all Isomorphisms (Bijective Linear Maps/Transformations).
   - https://en.wikipedia.org/wiki/Special_linear_group
   - https://en.wikipedia.org/wiki/SL2(R) / https://en.wikipedia.org/wiki/PSL(2,R)
-- https://en.wikipedia.org/wiki/Projective_general_linear_group
-
+  - https://en.wikipedia.org/wiki/Projective_general_linear_group
   - https://en.wikipedia.org/wiki/Unitary_group & https://en.wikipedia.org/wiki/Projective_unitary_group
     - https://en.wikipedia.org/wiki/Special_unitary_group & https://en.wikipedia.org/wiki/Projective_unitary_group#Projective_special_unitary_group
-      - https://en.wikipedia.org/wiki/Representation_theory_of_SU(2)
-  
   - https://en.wikipedia.org/wiki/Projective_special_linear_group
     - https://en.wikipedia.org/wiki/PSL(2,R)
       - https://en.wikipedia.org/wiki/Fuchsian_group
@@ -401,41 +430,14 @@ Up to isomorphism, the {FSG} portion of PSL(2,ℤ) (Modular Group) is strictly &
 
 ----
 
-- https://en.wikipedia.org/wiki/Infinite_group
-- https://en.wikipedia.org/wiki/Profinite_group
-- https://en.wikipedia.org/wiki/Residually_finite_group
-- https://en.wikipedia.org/wiki/P-group
-- https://en.wikipedia.org/wiki/Regular_p-group
-- https://en.wikipedia.org/wiki/Elementary_group
-- https://en.wikipedia.org/wiki/Elementary_abelian_group
-
-- https://en.wikipedia.org/wiki/Quantum_group
-
-----
-
 - https://en.wikipedia.org/wiki/Free_object#List_of_free_objects
   - https://en.wikipedia.org/wiki/Free_group
     - https://en.wikipedia.org/wiki/Free_abelian_group
 
 - https://en.wikipedia.org/wiki/Orthogonal_group & https://en.wikipedia.org/wiki/Projective_orthogonal_group
   - https://en.wikipedia.org/wiki/Indefinite_orthogonal_group
-  - https://en.wikipedia.org/wiki/3D_rotation_group
   - https://en.wikipedia.org/wiki/Special_orthogonal_group & https://en.wikipedia.org/wiki/Projective_special_orthogonal_group
-  - https://en.wikipedia.org/wiki/SO(3)
-  - https://en.wikipedia.org/wiki/Rotation_group_SO(3)
-
-----
-
-- https://en.wikipedia.org/wiki/Supersymmetry
-- https://en.wikipedia.org/wiki/Template:Supersymmetry_topics
-- https://en.wikipedia.org/wiki/Holomorphic_function
-- https://en.wikipedia.org/wiki/Conformal_map
-- https://en.wikipedia.org/wiki/Modular_form
-  - https://en.wikipedia.org/wiki/Modular_form#Modular_functions
-    - https://en.wikipedia.org/wiki/J-invariant
-- https://en.wikipedia.org/wiki/Tensor_representation
-- https://en.wikipedia.org/wiki/Schur_functor
-- https://en.wikipedia.org/wiki/Higgs_mechanism
+  - https://en.wikipedia.org/wiki/SO(3) aka https://en.wikipedia.org/wiki/Rotation_group_SO(3) aka https://en.wikipedia.org/wiki/3D_rotation_group
 
 ----
 
@@ -443,7 +445,7 @@ Up to isomorphism, the {FSG} portion of PSL(2,ℤ) (Modular Group) is strictly &
 
 Gauge Theory = Group Theory + Differential Geometry + QFT
 - Group Theory: Represents the Symmetry Groups indicating the Force Types. Result: Properties/Rules wrt _what can happen_.
-  - `U(1)`: Elecromagnetism
+  - `U(1)`: Electromagnetism
   - `SU(2)`: Weak Nuclear Force
   - `SU(3)`: Strong Nuclear Force
   - `SO(1,3)`: Gravity
@@ -596,7 +598,7 @@ Particles (of all kinds including all fermions, all bosons) are created when the
   - The energy determines (via energy conservation) how many (ie **quantities**) of the gluons will be produced.
 - `SU(2)` gauge field + energy + weak-isospin (aka flavor) shift = W/Z boson(s) of type(s) that conserve both charge and flavor (weak-isospin).
 - Quarks & Leptons: Matter Field + Energy + Fermion Number Alignment = Fermion-Antifermion Pairs. Quarks immediately combine and re-arrange to form Hadrons (Baryons/Mesons).
-  - Mass barrier & Pauli principle apply; color symmetry determines quark variations
+  - Mass barrier & Pauli principle apply; color symmetry determines quark variations.
   - There are 12 distinct matter fields: 6 distinct quark fields, 6 distinct lepton fields.
     - Each matter particle (eg Up-quark, Down-quark, Tauon, Tau-neutrino etc) forms from its own parent matter field.
 - Higgs field + energy = Higgs boson(s)
@@ -607,12 +609,12 @@ So the Higgs Field _does_ create a particle—its own particle, the Higgs partic
 > `SU(n)` results in `n² - 1` boson (force-carrier) types and `n` fermion (matter) states.
 >
 > Hence: \
-> For `SU(3)` (**Color Field**), force-carriers are of 8 types (**the 8 gluons**), and matter has 3 **color** states: (`R`, `G`, `B`). Only Quarks have color, Leptons don't. 
+> For `SU(3)` (**Color Field / Strong Force Field**), force-carriers are of 8 types (**the 8 gluons**), and matter has 3 **color** states: (`R`, `G`, `B`). Only Quarks have color, Leptons don't. 
 > - Color states, when present (ie for Quarks), are temporary coverings, and do not determine **identity** of the Quark.
 >   - Think of **color** as a shirt worn by a Quark, where, it constantly exchanges the shirt for new ones. But it _MUST_ always wear _a_ shirt.
 >   - In contrast, Leptons are always shirt-less.
 > 
-> For `SU(2)` (**Weak Field**), force-carriers are of 3 types (**$W^+$, $W^+$, $Z^0$**), and matter has 2 **flavor (weak-isospin)** states:
+> For `SU(2)` (**Weak Force Field**), force-carriers are of 3 types (**$W^+$, $W^+$, $Z^0$**), and matter has 2 **flavor (weak-isospin)** states:
 > ($+\frac{1}{2}$ aka Up-type aka Up-flavor, $-\frac{1}{2}$ aka Down-type aka Down-flavor).
 > - Flavor states are always present for both Quarks and Leptons, and Flavor determines the **identity** of the Quark/Lepton.
 > 
@@ -665,7 +667,7 @@ Massless Particles (via loops): Two Photons ($\gamma\gamma$) or two Gluons ($gg$
 
 > [!TIP]
 > ❇️ Since energy is fungible, an interaction (aka collision) is just instant recalculation and redistribution of the combined energy, momentum, and quantum traits of the input
-> particles. The resultants are decided by conservation laws, and the recalculation instantly splits (redistributes) that combined energy back out into new particles.
+> particles. The resultants are decided by conservation laws, and the recalculation instantly splits (redistributes) that combined energy back out into/as new particles.
 
 #### Q4: Can the Higgs Boson interact with itself?
 
