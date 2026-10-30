@@ -19,7 +19,7 @@
 2. **Algebraic Geometry**:
     - Elliptic Curves
       - Over **Infinite Fields** eg over ℚ, ℝ, ℂ, an arbitrary infinite Field $K$ etc: EC Points may be finite or infinite in number, and always form an abelian group.
-      - Over **Finite Fields** eg over a Galois Field $F_p$ etc: EC Points are finite in number, and always form an abelian group.
+      - Over **Finite Fields** eg over a Galois Field $F_p$, $F_q$ etc: EC Points are finite in number, and always form an abelian group.
       - Over non-Fields eg over the Ring ℤ etc: EC Points do not form a group, let alone an abelian group.
     - Algebraic Curves
     - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
@@ -145,7 +145,7 @@ Since:
 
 Because: They miss a critical requirement of a vector space: a compatible way for elements of the field $K$ to scale the points in the group.
 
-##### 🔆Q🔆: And for the restricted case when $K$ is a _finite_ field eg $F_p$, can we not then multiply and scale the points of the EC using the elements of $F_p$?
+##### 🔆Q🔆: And for the restricted case when $K$ is a _finite_ field‡ eg $F_p$ ($p$ may be prime or non-prime), can we not then multiply and scale the points of the EC using the elements of $F_p$?
 
 ❇️A❇️: No. Even over a finite field $F_p$, the points of $E(F_p)$ still do not form a vector space over $F_p$, at least not _all_ the points.
 
@@ -166,6 +166,32 @@ Because $p \cdot P \neq 𝒪$ for most points, the field's arithmetic clashes wi
 So only the remaining points (if any) of the EC, will form a vector space.
 
 While the _entire_ curve isn't a vector space, we can construct vector spaces if we isolate those specific points called **torsion points**.
+
+> [!IMPORTANT]
+> ‡ **Classification Theorem of Finite Fields (aka E. H. Moore's Theorem)**: Any possible Field is a Finite Field (aka Galois Field) **if and only if** it is expressible as
+> (isomorphic to) a Galois Field $F_q$, for some $q$ of the form $p^m$, where $p$ is prime and $m$ is a positive integer, including $1$.
+>
+> The fields are called **Prime Fields** when $m=1$ (eg $F_5$ ie when $q$ is prime), and **Extension Fields** otherwise (eg $F_{2^8}$ or $F_9$ etc,
+> ie when $q$ is some other prime power).
+
+> [!NOTE]
+> If we try to turn an elliptic curve $E(F_q)$ into a vector space over its defining field $F_q$, the exact same mathematical traps appear,
+> regardless of whether $q$ is prime or a prime power:
+>
+> **1. The Characteristic Constraint:** Every finite field $F_{p^m}$ has an underlying characteristic $p$.
+> This means if we add the field's multiplicative identity $1$ to itself $p$ times, we get $0$. Therefore, vector space axioms would still force
+> $p \cdot P = 𝒪$ for every point.
+>
+> **2. The Divisibility Rule:** Since by definition order of point $P$ (aka $\text{ Ord }(P) $) is the _smallest_ of all multiplicands which take $P$ to $𝒪$,
+> $p \cdot P = 𝒪$ means that the **order of every point must divide the characteristic $p$**.
+>
+> **3. The Geometric Failure:** An elliptic curve simply cannot hold that many $p$-torsion points. Over _any_ field of characteristic $p$,
+> the $p$-torsion subgroup $E[p]$ has a size of either $p$ (if the curve is ordinary) or $1$ (if the curve is supersingular).
+> When $q \neq p$, it can never match the size of the entire curve, which Hasse's Theorem dictates is roughly around $q$ points.
+> Even when $q = p$ and the numbers align perfectly (Size of Curve = Size of Field = $p$), we will hit the deeper, unyielding architectural roadblock:
+> the fundamental incompatibility of the scalar multiplication rules between the curve and its ambient field. The **distributive law**, required for
+> vector spaces, will not work for the curve ie $(a \cdot b) \cdot P$ and $a \cdot (b \cdot P)$ won't be always equal. This is because, the $a \cdot b$
+> on the LHS (computed on the ambient field via modular arithmetic), when applied on $P$, may not match the RHS (first applying $b$, then $a$).
 
 ----
 
