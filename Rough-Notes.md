@@ -18,9 +18,9 @@
 
 2. **Algebraic Geometry**:
     - Elliptic Curves
-      - Over **Infinite Fields** eg over ℚ, ℝ, ℂ, an arbitrary infinite Field $K$ etc. EC Points may be finite or infinite in number, and always form an abelian group.
-      - Over **Finite Fields** eg over a Galois Field $F_p$ etc. EC Points are finite in number, and always form an abelian group.
-      - Over non-Fields eg over the Ring ℤ etc. EC Points do not form a group, let alone an abelian group.
+      - Over **Infinite Fields** eg over ℚ, ℝ, ℂ, an arbitrary infinite Field $K$ etc: EC Points may be finite or infinite in number, and always form an abelian group.
+      - Over **Finite Fields** eg over a Galois Field $F_p$ etc: EC Points are finite in number, and always form an abelian group.
+      - Over non-Fields eg over the Ring ℤ etc: EC Points do not form a group, let alone an abelian group.
     - Algebraic Curves
     - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
 
@@ -133,6 +133,42 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
          Set
 ```
 
+#### 🔆🔆 Do Elliptic Curves form Vector Spaces? 🔆🔆
+
+Since:
+1. A Vector Space (VS) is a combo of an abelian group $G$ and a field $F$, and,
+2. An Elliptic Curve $E(K)$ over a field $K$, also consists of points forming an abelian group,
+
+##### 🔆Q🔆: What kind of VS do the points of $E(K)$ together with $K$ form?
+
+❇️A❇️: The points of an elliptic curve $E(K)$ and the field $K$ _DO NOT_ form a vector space.
+
+Because: They miss a critical requirement of a vector space: a compatible way for elements of the field $K$ to scale the points in the group.
+
+##### 🔆Q🔆: And for the restricted case when $K$ is a _finite_ field eg $F_p$, can we not then multiply and scale the points of the EC using the elements of $F_p$?
+
+❇️A❇️: No. Even over a finite field $F_p$, the points of $E(F_p)$ still do not form a vector space over $F_p$, at least not _all_ the points.
+
+Because: Let 𝒪 be the point at infinity of the EC. Then, for _every_ point $P$ on $E(F_p)$ we need $p \cdot P = 𝒪$ (since $p \equiv 0 \pmod{p}$ for $F_p$).
+For this to be true, **every point on the curve would have to have an order that divides $p$**. 
+(Recall that Order of an EC point $P$, is the smallest integer $n$ such that $n \cdot P = 𝒪$).
+
+By Hasse's Theorem, the total number of points $\\#E(F_p)$ is roughly around $p + 1$ (strictly within $p + 1 \pm 2\sqrt{p}$).
+It is almost never exactly $p$ or a multiple of $p$. By Lagrange's theorem (see 💡), the order of a point must divide the total number of points $\\#E(F_p)$, not the characteristic $p$.
+(Thus for any $E(F_p)$, Lagrange's Theorem also implies $\forall P \in E(F_p): \\#E(F_p) \cdot P = 𝒪$).
+
+💡 Lagrange's Theorem states that for any finite group $G$, the size (order) of any subgroup $H$ must cleanly divide the total size of the group $G$. 💡
+
+In algebraic geometry, the maximum number of points that can satisfy $p \cdot P = 𝒪$ over an ordinary curve in characteristic $p$, is exactly $p$ points 
+(and for supersingular curves, it's just 1 point—the point at infinity itself). The curve simply does not have enough $p$-torsion points to fill out the whole group.
+
+Because $p \cdot P \neq 𝒪$ for most points, the field's arithmetic clashes with the curve's geometric addition. 
+So only the remaining points (if any) of the EC, will form a vector space.
+
+While the _entire_ curve isn't a vector space, we can construct vector spaces if we isolate those specific points called **torsion points**.
+
+----
+
 ### Algebraic Maps
 
 A **structure-preserving** map between two algebraic-structures of the same type is called a [**Homomorphism**](https://en.wikipedia.org/wiki/Homomorphism).
@@ -176,6 +212,8 @@ The difference is that an isomorphism is not just any bijective map. Isomorphism
 (ie, it must preserve the addition and scalar multiplication of the vector space).
 ie, isomorphism is more restrictive than bijective.
 Every isomorphism is bijective, but not the converse.
+
+----
 
 ## Theories:
 
@@ -414,6 +452,14 @@ Symmetry Groups occur in the following areas of study:
   - https://en.wikipedia.org/wiki/Special_linear_group
   - https://en.wikipedia.org/wiki/SL2(R) / https://en.wikipedia.org/wiki/PSL(2,R)
   - https://en.wikipedia.org/wiki/Projective_general_linear_group
+
+  🔆 Recall that: An **Orthogonal** matrix is a **real square matrix** $Q$ such that $Q^TQ = I = QQ^T$
+  - https://en.wikipedia.org/wiki/Orthogonal_group & https://en.wikipedia.org/wiki/Projective_orthogonal_group
+    - https://en.wikipedia.org/wiki/Indefinite_orthogonal_group
+    - https://en.wikipedia.org/wiki/Special_orthogonal_group & https://en.wikipedia.org/wiki/Projective_special_orthogonal_group
+    - https://en.wikipedia.org/wiki/SO(3) aka https://en.wikipedia.org/wiki/Rotation_group_SO(3) aka https://en.wikipedia.org/wiki/3D_rotation_group
+
+  🔆 Recall that: An **Unitary** matrix is a **complex square matrix** $U$ such that $U^\*U = I = UU^\*$
   - https://en.wikipedia.org/wiki/Unitary_group & https://en.wikipedia.org/wiki/Projective_unitary_group
     - https://en.wikipedia.org/wiki/Special_unitary_group & https://en.wikipedia.org/wiki/Projective_unitary_group#Projective_special_unitary_group
   - https://en.wikipedia.org/wiki/Projective_special_linear_group
@@ -433,11 +479,6 @@ Up to isomorphism, the {FSG} portion of PSL(2,ℤ) (Modular Group) is strictly &
 - https://en.wikipedia.org/wiki/Free_object#List_of_free_objects
   - https://en.wikipedia.org/wiki/Free_group
     - https://en.wikipedia.org/wiki/Free_abelian_group
-
-- https://en.wikipedia.org/wiki/Orthogonal_group & https://en.wikipedia.org/wiki/Projective_orthogonal_group
-  - https://en.wikipedia.org/wiki/Indefinite_orthogonal_group
-  - https://en.wikipedia.org/wiki/Special_orthogonal_group & https://en.wikipedia.org/wiki/Projective_special_orthogonal_group
-  - https://en.wikipedia.org/wiki/SO(3) aka https://en.wikipedia.org/wiki/Rotation_group_SO(3) aka https://en.wikipedia.org/wiki/3D_rotation_group
 
 ----
 
