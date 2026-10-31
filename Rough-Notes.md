@@ -145,7 +145,7 @@ Since:
 
 Because: They miss a critical requirement of a vector space: a compatible way for elements of the field $K$ to scale the points in the group.
 
-##### 🔆Q🔆: And for the restricted case when $K$ is a _finite_ field‡ eg $F_p$ ($p$ may be prime or non-prime), can we not then multiply and scale the points of the EC using the elements of $F_p$?
+##### 🔆Q🔆: And for the restricted case when $K$ is a _finite_ field[‡](#moores-theorem) eg $F_p$ ($p$ may be prime or non-prime), can we not then multiply and scale the points of the EC using the elements of $F_p$?
 
 ❇️A❇️: No. Even over a finite field $F_p$, the points of $E(F_p)$ still do not form a vector space over $F_p$, at least not _all_ the points.
 
@@ -170,12 +170,9 @@ For this to be true, **every point on the curve would have to have an order that
 > $$
 
 By Hasse's Theorem, the total number of points $\\#E(F_p)$ is roughly around $p + 1$ (strictly within $p + 1 \pm 2\sqrt{p}$).
-It is almost never exactly $p$ or a multiple of $p$. By Lagrange's theorem (see 💡), the order of a point must divide the total number of points $\\#E(F_p)$, not the characteristic $p$.
-(Thus for any $E(F_p)$, Lagrange's Theorem also implies $\forall P \in E(F_p): \\#E(F_p) \cdot P = 𝒪$).
+It is almost never exactly $p$ or a multiple of $p$. By Lagrange's Theorem[†](#lagranges-theorem), the order of a point must divide the total number of 
+points $\\#E(F_p)$, not the characteristic $p$. (Thus for any $E(F_p)$, Lagrange's Theorem also implies $\forall P \in E(F_p): \\#E(F_p) \cdot P = 𝒪$).
 
-💡 [Lagrange's Theorem](https://en.wikipedia.org/wiki/Lagrange's_theorem_(group_theory)) states that for any finite group $G$, 
-   $H$ is a [subgroup](https://en.wikipedia.org/wiki/Subgroup) $\implies$ (**one-way-only** ie $\nLeftarrow$) the size (order) of $H$ 
-   must cleanly divide the total size of the group $G$. 💡
 
 In algebraic geometry, the maximum number of points that can satisfy $p \cdot P = 𝒪$ over an ordinary curve in characteristic $p$, is exactly $p$ points 
 (and for supersingular curves, it's just 1 point—the point at infinity itself). The curve simply does not have enough $p$-torsion points to fill out the whole group.
@@ -186,11 +183,61 @@ So only the remaining points (if any) of the EC, will form a vector space.
 While the _entire_ curve isn't a vector space, we can construct vector spaces if we isolate those specific points called **torsion points**.
 
 > [!IMPORTANT]
-> ‡ **Classification Theorem of Finite Fields (aka E. H. Moore's Theorem)**: Any possible Field is a Finite Field (aka Galois Field) **if and only if** it is expressible as
+> ### Theorems:
+> 
+> <a id="moores-theorem"></a> ‡ **Classification Theorem of Finite Fields (aka E. H. Moore's Theorem)**: Any possible Field is a Finite Field
+> (aka Galois Field) **if and only if** it is expressible as
 > (isomorphic to) a Galois Field $F_q$, for some $q$ of the form $p^m$, where $p$ is prime and $m \in ℤ^+$.
 >
 > The fields are called **Prime Fields** when $m=1$ (eg $F_5$ ie when $q$ is prime), and **Extension Fields** otherwise (eg $F_{2^8}$ or $F_9$ etc,
 > ie when $q$ is some other prime power).
+>
+> ----
+> 
+> <a id="lagranges-theorem"></a> † **[Lagrange's Theorem](https://en.wikipedia.org/wiki/Lagrange's_theorem_(group_theory))**: For any finite group $G$, 
+> $H$ is a [subgroup](https://en.wikipedia.org/wiki/Subgroup) of size (order) $h$ $\implies$ (**one-way-only** ie $\nLeftarrow$) $h$ divides Ord($G$).
+>
+> Statement of "Converse of Lagrange's Theorem" (aka CLT or Weak-CLT): For any finite group $G$, $h$ is a divisor of Ord($G$) $\implies$ $G$ has _at least one_
+> **subgroup** $H$ of order $h$.
+>
+> Statement of Strong-CLT: For any finite group $G$, $h$ is a divisor of Ord($G$) $\implies$ $G$ has a _unique_ **subgroup** $H$ of order $h$.
+>
+> 🔆 Neither Weak-CLT nor Strong-CLT are not true in general. However there are partial versions of Weak-CLT eg Cauchy's Theorem, Sylow's Theorem, Hall's Theorem etc.
+>
+> **[Cauchy's Theorem, a partial Weak-CLT](https://en.wikipedia.org/wiki/Cauchy's_theorem_(group_theory))**: For any finite group $G$, $p$ is a **_prime_** divisor
+> of Ord($G$) $\implies$ $G$ has _at least one_ **element** $x$ of order $p$, ie, $G$ has a cyclic subgroup $\langle x \rangle$ of order $p$.
+> - Weak because: It only guarantees the existence of at least one element in $G$ of order $p$ (and therefore _at least one_ cyclic _subgroup_ of order $p$).
+>   It makes no promises about uniqueness.
+> - Partial because: It holds for only prime divisors of Ord($G$).
+>
+> ----
+> 
+> The following statements of **Strong-CLT** are equivalent (1 $\iff$ 2 $\iff$ 3):
+> 1. A _finite_ group $G$ is **cyclic**.
+> 2. $G$ has a _unique_ subgroup of order $d$, for each and every divisor $d$ of Ord($G$).
+> 3. $G$ has _exactly_ $\phi(d)$ elements of order $d$, for each and every divisor $d$ of Ord($G$).
+>
+> Note that:
+> - If Strong-CLT were true, any finite group would be cyclic, which isn't the case.
+> - Since Strong-CLT forces the parent group $G$ to be cyclic, any subgroup $H \le G$ must also be cyclic (since **every subgroup of a cyclic group is automatically cyclic**).
+>   Furthermore, if we isolate a specific divisor $d$, the unique subgroup $H_{d}$ of that order will contain exactly $\phi(d)$ elements of order $d$, meaning
+>   it is generated by any one of those elements.
+> 
+> ----
+>
+> For any divisor (even just one divisor, let alone every divisor) $d$ of Ord($G$), where $d > 2$:
+> Having **_unique subgroup_** of order $d$ neither implies, nor is implied by, having **_unique element_** of order $d$.
+>
+> Because: When $d > 2$ ie $\phi(d) > 1$, elements of higher orders always come in pairs or groups.
+> A unique subgroup will have _multiple_ elements, and a unique single element is mathematically impossible.
+>
+> ----
+> 
+> Cauchy's Theorem isolates only (and all) the prime divisors $p$ of Ord($G$) and guarantees the _existence_ of at least one element in $G$ of order $p$ (and therefore at least
+> one cyclic subgroup of order $p$). It makes no promises about uniqueness.
+>
+> ----
+
 
 > [!NOTE]
 > If we try to turn an elliptic curve $E(F_q)$ into a vector space over its defining field $F_q$, the exact same mathematical traps appear,
