@@ -247,9 +247,9 @@ The below table lists what fields create what Type-{1-4, 8} EC Groups, and their
 As we saw above in Moore's Theorem, Finite Fields are exactly the Galois Fields $F_{p^m}$ where $p$ is a prime and $m \in ℤ^+$. 
 
 For practical convenience, we have subdivided them as:
-- **Prime Fields** ($m = 1 \text{ AND } p ≠ 2$)
-- **Binary Fields** ($p = 2$)
-- **Extension Fields** (otherwise)
+- **Prime Fields** ($m = 1$)
+- **Binary Fields** ($m ≠ 1 \text{ AND } p = 2$)
+- **Extension Fields** (otherwise: $m ≠ 1 \text{ AND } p > 2$)
 
 | $\underbrace{\text{EC-group Type}}_\downarrow \mid \text{Field } K \to$ | $F_p$ (Prime) | $F_{p^m}$ (Extension) | $F_{2^m}$ (Binary) | Infinite |
 |----   |----   |----   |----   |----   |
