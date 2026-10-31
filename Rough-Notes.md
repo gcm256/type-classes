@@ -215,16 +215,16 @@ While the _entire_ curve isn't a vector space, we can construct vector spaces if
 
 ### Types of Groups / EC Groups
 
-| Finitely-generated | Finite | Cyclic | Example         | Let's label them as Type-{1-8} |
-|----               |----    |----    |----              |----                            |
-| ✅                | ✅      | ✅     | $(ℤ_n, +_n)$     | Type-1                         |
-| ✅                | ✅      | ❌     | $ℤ_2 \times ℤ_2$ | Type-2                         |
-| ✅                | ❌      | ✅     | $(ℤ, +)$         | Type-3                         |
-| ✅                | ❌      | ❌     | $ℤ \times ℤ$     | Type-4                         |
-| ❌                | ✅      | ✅     | NOT POSSIBLE     | Type-5 DOESN'T EXIST           |
-| ❌                | ✅      | ❌     | NOT POSSIBLE     | Type-6 DOESN'T EXIST           |
-| ❌                | ❌      | ✅     | NOT POSSIBLE     | Type-7 DOESN'T EXIST           |
-| ❌                | ❌      | ❌     | $(ℚ, +)$         | Type-8                         |
+| Finitely-generated | Finite | Cyclic  | Example          | Let's label them as Type-{1-8} |
+|----                |----    |----     |----              |----                            |
+| ✅                 | ✅      | ✅      | $(ℤ_n, +_n)$     | Type-1                         |
+| ✅                 | ✅      | ❌      | $ℤ_2 \times ℤ_2$ | Type-2                         |
+| ✅                 | ❌      | ✅      | $(ℤ, +)$         | Type-3                         |
+| ✅                 | ❌      | ❌      | $ℤ \times ℤ$     | Type-4                         |
+| ❌                 | ✅      | ✅      | DOESN'T EXIST    | Type-5 NOT POSSIBLE            |
+| ❌                 | ✅      | ❌      | DOESN'T EXIST    | Type-6 NOT POSSIBLE            |
+| ❌                 | ❌      | ✅      | DOESN'T EXIST    | Type-7 NOT POSSIBLE            |
+| ❌                 | ❌      | ❌      | $(ℚ, +)$         | Type-8                         |
 
 > [!IMPORTANT]
 > Type-5,6,7 are NOT POSSIBLE. Because: \
