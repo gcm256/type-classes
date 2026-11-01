@@ -803,7 +803,7 @@ So the Higgs Field _does_ create a particle—its own particle, the Higgs partic
 >   - Think of **color** as a shirt worn by a Quark, where, it constantly exchanges the shirt for new ones. But it _MUST_ always wear _a_ shirt.
 >   - In contrast, Leptons are always shirt-less.
 > 
-> For `SU(2)` (**Weak Force Field**), force-carriers are of 3 types (**$W^+$, $W^+$, $Z^0$**), and matter has 2 **flavor (weak-isospin)** states:
+> For `SU(2)` (**Weak Force Field**), force-carriers are of 3 types (**$W^+$, $W^-$, $Z^0$**), and matter has 2 **flavor (weak-isospin)** states:
 > ($+\frac{1}{2}$ aka Up-type aka Up-flavor, $-\frac{1}{2}$ aka Down-type aka Down-flavor).
 > - Flavor states are always present for both Quarks and Leptons, and Flavor determines the **identity** of the Quark/Lepton.
 > 
