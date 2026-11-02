@@ -295,6 +295,21 @@ While the _entire_ curve isn't a vector space, we can construct vector spaces if
 >
 > Any **infinite cyclic** group $\cong$ $(ℤ, +)$ \
 > ie $(ℤ, +)$ is the _only_ **infinite cyclic** group, up to isomorphism.
+>
+> ----
+> #### Difference between Finite Ring $ℤ_n$ and Finite Field $F_n$
+> 
+> $ℤ_n$ (integers modulo $n$, more formally written as ℤ/<i>n</i>ℤ) **_is not_** the same as $F_n$ (finite/Galois field, which exists if and only if
+> $n$ is a prime or a prime power[‡](#moores-theorem))
+> - So, while $ℤ_n$ exists for any positive integer $n$, and also we _can_ have $F_2$, $F_3$, $F_4$, $F_5$, $F_7$ $F_8$, $F_9$, $F_{11}$ etc,
+>   we _cannot_ have $F_6$, $F_{10}$, $F_{12}$ etc.
+>   - That is why we usually write $F_q$ instead of $F_n$ to highlight that $q$ is strictly of the form $p^m$ and not just _any_ positive integer.
+> - $ℤ_n(+_n, \times_n)$, being a Ring, need not have multiplicative inverses ie inverses for the $2^{nd}$ operation.
+>   But $F_q(+, \times)$, being a Field, must have multiplicative inverses for all non-zero elements.
+>   See [What are the differences between rings, groups, and fields](https://math.stackexchange.com/questions/75)
+>   -  When $q$ is a prime power (but not itself prime), $F_q$ uses polynomial operations. And we use [Polynomial Extended Euclidean Algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Polynomial_extended_Euclidean_algorithm) to find multiplicative inverses of its non-zero elements.
+> - Finally, $ℤ_n$ ie ℤ/<i>n</i>ℤ is same as (isomorphic to, or structurally identical to) $F_n$ **if and only if** $n$ itself is a prime number.
+> ----
 
 ### Cryptographic Strength Comparison between EC Group Types
 
