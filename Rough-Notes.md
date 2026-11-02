@@ -297,9 +297,9 @@ While the _entire_ curve isn't a vector space, we can construct vector spaces if
 > ie $(ℤ, +)$ is the _only_ **infinite cyclic** group, up to isomorphism.
 >
 > ----
-> #### Difference between Finite Ring $ℤ_n$ and Finite Field $F_n$
+> ### Difference between the Finite Modular Ring $ℤ_n$ and the Finite Field $F_n$
 > 
-> $ℤ_n$ (integers modulo $n$, more formally written as ℤ/<i>n</i>ℤ) **_is not_** the same as $F_n$ (finite/Galois field, which exists if and only if
+> $ℤ_n$ (integers modulo $n$, more formally written as ℤ/<i>n</i>ℤ) is **_NOT_** the same as $F_n$ (finite/Galois field, which exists if and only if
 > $n$ is a prime or a prime power[‡](#moores-theorem))
 > - So, while $ℤ_n$ exists for any positive integer $n$, and also we _can_ have $F_2$, $F_3$, $F_4$, $F_5$, $F_7$ $F_8$, $F_9$, $F_{11}$ etc,
 >   we _cannot_ have $F_6$, $F_{10}$, $F_{12}$ etc.
