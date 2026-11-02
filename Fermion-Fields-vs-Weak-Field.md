@@ -20,7 +20,7 @@ it is fundamentally hardwired into the structure of the **Electroweak Lagrangian
 The confusion here comes down to a fundamental distinction in Quantum Field Theory (QFT): the difference between **existing as an independent quantum field** 
 and **interacting via a gauge force**.
 
-Here is why a matter particle (fermion) is created by its own parent fermion field rather than the Weak Force Field, even though that fermion possesses weak-isospin.
+Here is why a matter particle (fermion) is created by its own parent fermion field without any role of the Weak Force Field, even though that fermion possesses weak-isospin.
 
 ---
 
@@ -61,6 +61,6 @@ the electromagnetic field (photons).
 
 ### Summary
 
-Think of the 12 matter fields as **independent musical instruments**, and the Weak Force Field as a **harmony rule** that dictates how certain instruments can duet or morph into one another (e.g., transforming a neutrino into an electron). An instrument can be played (a particle created) purely through its own strings, without needing the harmony rule to bring the instrument into existence.
+Think of the 12 matter fields as **independent musical instruments**, and the Weak Force Field as a **harmony rule** that dictates how certain instruments can duet or morph into one another (e.g., transforming a neutrino into an electron). An instrument can be played (a particle created) purely through its own strings, without needing the harmony rule.
 
 
