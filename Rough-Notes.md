@@ -308,7 +308,7 @@ While the _entire_ curve isn't a vector space, we can construct vector spaces if
 >   But $F_q(+, \times)$, being a Field, must have multiplicative inverses for all non-zero elements.
 >   See [What are the differences between rings, groups, and fields](https://math.stackexchange.com/questions/75)
 >   -  When $q$ is a prime power (but not itself prime), $F_q$ uses polynomial operations. And we use [Polynomial Extended Euclidean Algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Polynomial_extended_Euclidean_algorithm) to find multiplicative inverses of its non-zero elements.
-> - Finally, $ℤ_n$ ie ℤ/<i>n</i>ℤ is same as (isomorphic to, or structurally identical to) $F_n$ **if and only if** $n$ itself is a prime number.
+> - Finally, $ℤ_n$ ie ℤ/<i>n</i>ℤ is same as (ie isomorphic to, or structurally identical to) $F_n$ **if and only if** $n$ itself is a prime number.
 > ----
 
 ### Cryptographic Strength Comparison between EC Group Types
@@ -622,7 +622,9 @@ Symmetry Groups occur in the following areas of study:
     - https://en.wikipedia.org/wiki/Special_orthogonal_group & https://en.wikipedia.org/wiki/Projective_special_orthogonal_group
     - https://en.wikipedia.org/wiki/SO(3) aka https://en.wikipedia.org/wiki/Rotation_group_SO(3) aka https://en.wikipedia.org/wiki/3D_rotation_group
 
-  🔆 Recall that: An **Unitary** matrix is a **complex square matrix** $U$ such that $U^\*U = I = UU^\*$
+  🔆 Recall that: An **Unitary** matrix is a **complex square matrix** $U$ such that $\overline{U}^TU = I = U\overline{U}^T$ (Note: When $U$ is real, this reduces to orthogonal
+  since for real values, $U$ and the conjugate $\overline{U}$ are equal.)\
+  ($\overline{U}^T$ is sometimes written as $U^\*$ or $U^\dagger$)
   - https://en.wikipedia.org/wiki/Unitary_group & https://en.wikipedia.org/wiki/Projective_unitary_group
     - https://en.wikipedia.org/wiki/Special_unitary_group & https://en.wikipedia.org/wiki/Projective_unitary_group#Projective_special_unitary_group
   - https://en.wikipedia.org/wiki/Projective_special_linear_group
