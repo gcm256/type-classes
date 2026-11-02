@@ -1,4 +1,4 @@
-## Question: Why Weak Force Field isn't involved in interactions with fermion outputs, even if fermions always carry weak-isospin?
+## Question: Why Weak Force Field isn't involved in fermion creation (ie interactions with fermions as outputs), even if fermions always carry weak-isospin?
 
 As per notes:
 
