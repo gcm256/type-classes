@@ -886,7 +886,7 @@ It is called **Higgs self-interaction**.
 Yes. The Higgs Field _does_ interact with itself constantly, but it has already settled into a state of perfect, lazy balance called the "Vacuum Expectation Value" (VEV).
 This is the exact reason why the universe is stable, rather than a chaotic, non-stop explosion of self-generating matter.
 
-#### Q7: Why Weak Force Field isn't involved in interactions with fermion outputs, even if fermions always carry weak-isospin?
+#### Q7: Why Weak Force Field isn't involved in fermion creation (ie interactions with fermions as outputs), even if fermions always carry weak-isospin?
 
 Because weak-isospin is also a Quantum Number. A fermion field (represented by a Dirac Spinor Field) has chiral components ($\psi_L$ and $\psi_R$) that determine 
 a fermion's weak-isospin Quantum Number. For details see [Fermion-Fields-vs-Weak-Field.md](Fermion-Fields-vs-Weak-Field.md)
