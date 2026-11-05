@@ -707,7 +707,7 @@ Here is a clean, comprehensive summary tracking how abstract logic, geometric st
 | Strong Force	          | $SU(3)$ Group _(3D Complex Unitary Matrices)_	  | Principal $SU(3)$-Bundle over Spacetime	    | The `SU(3)` (**Gluon**) field _(Spin-1 Vector Bosons)_ |
 | Gravity (Einstein View) |	$\text{Diff}(M)$ Group _(Infinite-Dim Topology)_  | Metric tensor warping a 4D smooth Manifold	  | _Classical continuum_ _(No native particles)_        |
 | Gravity (Gauge View)	  | $SO(1,3)$ Group _(Lorentz Spacetime Symmetries)_  | Frame Bundle / Spin Connection over Spacetime | The **Graviton** field _(Spin-2 Tensor Boson)_       |
-| Matter Particles	      | Matrix Representations (Identity badges)	      | Sections of Associated Vector Bundles	      | **6 Quark & 6 Lepton** fields _(Spin-1/2 Fermions)_  |
+| Matter Particles	      | Matrix Representations (Identity badges)	      | Sections of Associated Vector Bundles	      | **6 Quark & 6 Lepton** fields _(Spin-1/2 [Spinor](https://github.com/gcm256/type-classes/blob/master/Fermion-Fields-vs-Weak-Field.md) Fermions)_  |
 | The Higgs Boson         | $SU(2) \times U(1)$ **Symmetry Breaking** _(Coset space quotienting: `G/H`)_ | Sections of an **Associated Complex Scalar Bundle** with a non-zero vacuum state | The **Higgs** field _(Spin-0 Scalar Boson; the Higgs Field is always present and active everywhere and causes mass via Yukawa/Gauge couplings; the Higgs particle aka Higgs Boson is the ripple in the Higgs Field when a large amount of Energy hits and quantizes it. The Higgs Field (not Higgs particle/Boson) causes what we call mass.)_ |
 
 #### Core Structural Roles (How the Pieces Interact)
