@@ -221,10 +221,11 @@ While the _entire_ curve isn't a vector space, we can construct vector spaces if
 >
 > ----
 > 
-> The following statements of **Strong-CLT** are equivalent (1 $\iff$ 2 $\iff$ 3):
-> 1. A _finite_ group $G$ is **cyclic**.
-> 2. $G$ has a _unique_ subgroup of order $d$, for each and every divisor $d$ of Ord($G$).
-> 3. $G$ has _exactly_ $\phi(d)$ elements of order $d$, for each and every divisor $d$ of Ord($G$).
+> The following statements of **Strong-CLT** are equivalent (1 $\iff$ 2 $\iff$ 3 $\iff$ 4):
+> 1. **Strong-CLT** holds.
+> 2. A _finite_ group $G$ is **cyclic**.
+> 3. $G$ has a _unique_ subgroup of order $d$, for each and every divisor $d$ of Ord($G$).
+> 4. $G$ has _exactly_ $\phi(d)$ elements of order $d$, for each and every divisor $d$ of Ord($G$).
 >
 > Note that:
 > - If Strong-CLT were true, any finite group would be cyclic, which isn't the case.
