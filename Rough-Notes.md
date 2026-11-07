@@ -22,8 +22,7 @@
       - Over **Infinite Fields** eg over ℚ, ℝ, ℂ, an arbitrary infinite Field $K$ etc: EC Points may be finite or infinite in number, and always form an abelian group.
       - Over **Finite Fields** eg over a Galois Field $F_p$, $F_q$ etc: EC Points are finite in number, and always form an abelian group.
       - Over non-Fields eg over the Ring ℤ etc: EC Points do not form a group, let alone an abelian group.
-    - [Curves](https://en.wikipedia.org/wiki/Template:Spirals)
-	- [Algebraic Curves](https://en.wikipedia.org/wiki/Template:Algebraic_curves_navbox)
+	- [Algebraic Curves](https://en.wikipedia.org/wiki/Template:Algebraic_curves_navbox) / [Curves](https://en.wikipedia.org/wiki/Template:Spirals)
       - [List of Curves](https://en.wikipedia.org/wiki/List_of_curves)
       - [Gallery of Curves](https://en.wikipedia.org/wiki/Gallery_of_curves)
       - [Plane Curve](https://en.wikipedia.org/wiki/Plane_curve)
@@ -31,14 +30,13 @@
       - [Dual Curve](https://en.wikipedia.org/wiki/Dual_curve)
       - [Space Curve](https://en.wikipedia.org/wiki/Curve#Space_curve)
       - [Differential Transforms Of Plane Curves](https://en.wikipedia.org/wiki/Template:Differential_transforms_of_plane_curves)
-    - [L-function Topics](https://en.wikipedia.org/wiki/Template:L-functions-footer)
+    - [L-function](https://mathworld.wolfram.com/L-Function.html) / [L-function Topics](https://en.wikipedia.org/wiki/Template:L-functions-footer)
       - [Examples of L-functions](https://en.wikipedia.org/wiki/L-function#Examples)
-    - [L-function](https://mathworld.wolfram.com/L-Function.html)
-    - [General Zeta Functions](https://mathworld.wolfram.com/ZetaFunction.html)
-    - [Examples of Zeta Functions](https://en.wikipedia.org/wiki/Zeta_function)
-    - [The Hasse-Weil L-function L(E,s) of an Elliptic Curve](https://mathworld.wolfram.com/Hasse-WeilL-Function.html) aka
+      - [General Zeta Functions](https://mathworld.wolfram.com/ZetaFunction.html)
+      - [Examples of Zeta Functions](https://en.wikipedia.org/wiki/Zeta_function)
+      - [The Hasse-Weil L-function L(E,s) of an Elliptic Curve](https://mathworld.wolfram.com/Hasse-WeilL-Function.html) aka
       [Hasse–Weil zeta function](https://en.wikipedia.org/wiki/Hasse-Weil_zeta_function) 
-    - [Arithmetic Zeta Function](https://en.wikipedia.org/wiki/Arithmetic_zeta_function)
+      - [Arithmetic Zeta Function](https://en.wikipedia.org/wiki/Arithmetic_zeta_function)
     - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
 
 3. **Type Theory** $\underbrace{\text{Curry-Howard Isomorphism}}_\equiv$ [**Category Theory**](https://en.wikipedia.org/wiki/Template:Category_theory):
@@ -51,9 +49,9 @@
         - A **Lie Group** is a Group.
         - A [**Lie Algebra**](https://ncatlab.org/nlab/show/category+of+Lie+algebras) = A [**Vector Space**](#vector-space) + **Lie Bracket** operation $[\cdot, \cdot]$ \
           where, $[X,Y] = XY - YX$
-    - QFT ≡ (Special) Relativistic QM ≡ Special Relativity (Sp Rel) + Quantum Mechanics (QM)
-    - [Tensors](https://en.wikipedia.org/wiki/Template:Tensors), Spinors
-    - Quaternions
+    - QFT ≡ Quantum FT ≡ QM + Sp Rel ≡ (Special) Relativistic QM
+    - UFT ≡ Unified FT ≡ QM + Gen Rel ≡ Quantum Gravity
+    - [Tensors](https://en.wikipedia.org/wiki/Template:Tensors), Spinors, Quaternions
 
 > [!TIP]
 > Symmetry \
