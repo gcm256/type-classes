@@ -1,20 +1,14 @@
 # Classification of Decision Problems by Decidability & Complexity
 
 
-This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$
+$$
+\text{RE} \supsetneq \text{R} \supsetneq \text{EXPTIME} \supsetneq \text{PSPACE} \supseteq \text{PP} \supseteq 
+\begin{cases}
+\text{BQP} \supseteq \text{BPP} \supseteq \text{ZPP} \supseteq \text{P} = \text{co-P} & \qquad \text{(The Quantum/Random Branch)} \\
+\text {PH} \supseteq (\text{NP} \stackrel{?}{=} \text{co-NP}) \supseteq \text{P} = \text{co-P} & \qquad \text{(The Non-Deterministic Branch)}
+\end{cases}
+$$
 
-
-<!--
-$ \text{ RE } \supset \text{ R } \supset \text{ EXPTIME } $
--->
-
-<!--
-$`\text{RE} \supset \text{R} \supset \text{EXPTIME} \supset \text{PSPACE} \supseteq \text{PP} \supseteq \text{BQP} \supseteq \text{BPP} \supseteq \text{ZPP} \supseteq \text{P} = \text{co-P}`$
--->
-
-<!--
-$\text{PP} \supseteq \text {PH} \supseteq (\text{NP} \stackrel{?}{=} \text{co-NP}) \supseteq \text{P} = \text{co-P}$
--->
 
 What is believed (but not proven):
 
@@ -37,10 +31,10 @@ What is believed (but not proven):
         │                               │
    (The Quantum/Random Branch)     (The Non-Deterministic Branch)
         │                               │
-      BQP                             PH (Polynomial Hierarchy)
+      BQP                             PH (Polynomial Hierarchy) (Level 2: Σ₂P, Π₂P), (Level 3: Σ₃P, Π₃P), ..., (Level k: ΣₖP, ΠₖP) [For each k: By defn, co-ΣₖP = ΠₖP]
         ▲                               ▲
         │                               │
-      BPP                             NP ≟ co-NP
+      BPP                             NP ≟ co-NP (Level 1: Σ₁P (aka NP) ≟ Π₁P (aka co-NP))
         ▲                               │
         │                               │
       ZPP                               │
@@ -48,11 +42,19 @@ What is believed (but not proven):
         └───────────────┬───────────────┘
                         │
                         ▲
-              P (Polynomial Time) = co-P
-                 (The Common Root)
+              P (Polynomial Time) = co-P (Level 0: Σ₀P (aka P) = Π₀P (aka co-P))
+                (The Common Root)
 ```
 
-Types of [Computational Problems](https://en.wikipedia.org/wiki/Computational_problem):
+## Theorem: $\text{PH} \subseteq \text{PP}$
+
+1. By Toda's Theorem: $\text{PH} \subseteq \text{P}^{\text{PP}}$
+
+2. By Beigel–Reingold–Spielman closure theorem for $\text{PP}$: $\text{P}^{\text{PP}} = \text{PP}$
+
+Therefore, from (1) and (2): $\text{PH} \subseteq \text{P}^{\text{PP}} \implies \text{PH} \subseteq \text{PP}$
+
+## Types of [Computational Problems](https://en.wikipedia.org/wiki/Computational_problem):
 - https://en.wikipedia.org/wiki/Decision_problem
   - https://en.wikipedia.org/wiki/Primality_testing
 - https://en.wikipedia.org/wiki/Search_problem
@@ -64,6 +66,8 @@ Types of [Computational Problems](https://en.wikipedia.org/wiki/Computational_pr
 - https://en.wikipedia.org/wiki/Promise_problem
 
 ----
+
+## Appendix and References
 
 - https://en.wikipedia.org/wiki/List_of_data_structures
 - https://en.wikipedia.org/wiki/List_of_algorithms
