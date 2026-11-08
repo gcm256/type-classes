@@ -30,6 +30,12 @@
       - [Dual Curve](https://en.wikipedia.org/wiki/Dual_curve)
       - [Space Curve](https://en.wikipedia.org/wiki/Curve#Space_curve)
       - [Differential Transforms Of Plane Curves](https://en.wikipedia.org/wiki/Template:Differential_transforms_of_plane_curves)
+      - [Polar Curve](https://en.wikipedia.org/wiki/Polar_curve)
+      - [Reciprocation](https://en.wikipedia.org/wiki/Reciprocation_(geometry)) & [Reciprocal Curve](https://mathworld.wolfram.com/ReciprocalCurve.html) /
+        [Inversion](https://mathworld.wolfram.com/Inversion.html) & [Inverse Curve](https://mathworld.wolfram.com/InverseCurve.html) /
+        [Inversion in Geometry](https://en.wikipedia.org/wiki/Inversive_geometry)
+      - [Involution in Geometry](https://en.wikipedia.org/wiki/Involution_(mathematics)#Projective_geometry)
+      - [Reciprocation](https://mathworld.wolfram.com/Reciprocation.html) & [Duality Principle](https://mathworld.wolfram.com/DualityPrinciple.html)
     - [L-function](https://mathworld.wolfram.com/L-Function.html) / [L-function Topics](https://en.wikipedia.org/wiki/Template:L-functions-footer)
       - [Examples of L-functions](https://en.wikipedia.org/wiki/L-function#Examples)
       - [General Zeta Functions](https://mathworld.wolfram.com/ZetaFunction.html)
