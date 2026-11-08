@@ -1,6 +1,56 @@
 # Classification of Decision Problems by Decidability & Complexity
 
-RE >> R(Recursive)/Decidable >> PSPACE >? (PP =? NP =? co-NP) >? BQP >? BPP >? ZPP >? P
+
+This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$
+
+
+<!--
+$ \text{ RE } \supset \text{ R } \supset \text{ EXPTIME } $
+-->
+
+<!--
+$`\text{RE} \supset \text{R} \supset \text{EXPTIME} \supset \text{PSPACE} \supseteq \text{PP} \supseteq \text{BQP} \supseteq \text{BPP} \supseteq \text{ZPP} \supseteq \text{P} = \text{co-P}`$
+-->
+
+<!--
+$\text{PP} \supseteq \text {PH} \supseteq (\text{NP} \stackrel{?}{=} \text{co-NP}) \supseteq \text{P} = \text{co-P}$
+-->
+
+What is believed (but not proven):
+
+```
+                       RE (Recursively Enumerable)
+                        ▲
+                        │
+                        R (Decidable)
+                        ▲
+                        │
+                     EXPTIME
+                        ▲
+                        │
+                     PSPACE ◄────────────── (Space Boundary)
+                        ▲
+                        │
+                       PP (Probabilistic Polynomial / Counting)
+                        ▲
+        ┌───────────────┴───────────────┐
+        │                               │
+   (The Quantum/Random Branch)     (The Non-Deterministic Branch)
+        │                               │
+      BQP                             PH (Polynomial Hierarchy)
+        ▲                               ▲
+        │                               │
+      BPP                             NP ≟ co-NP
+        ▲                               │
+        │                               │
+      ZPP                               │
+        │                               │
+        └───────────────┬───────────────┘
+                        │
+                        ▲
+              P (Polynomial Time) = co-P
+                 (The Common Root)
+```
 
 Types of [Computational Problems](https://en.wikipedia.org/wiki/Computational_problem):
 - https://en.wikipedia.org/wiki/Decision_problem
