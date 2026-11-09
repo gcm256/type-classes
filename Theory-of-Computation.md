@@ -3,10 +3,14 @@
 
 $$
 \text{RE} \supsetneq \text{R} \supsetneq \text{EXPTIME} \supsetneq \text{PSPACE} \supseteq \text{PP} \supseteq 
-\begin{cases}
-\text{BQP} \supseteq \text{BPP} \supseteq \text{ZPP} \supseteq \text{P} = \text{co-P} & \qquad \text{(The Quantum/Random Branch)} \\
-\text {PH} \supseteq (\text{NP} \stackrel{?}{=} \text{co-NP}) \supseteq \text{P} = \text{co-P} & \qquad \text{(The Non-Deterministic Branch)}
-\end{cases}
+\begin{Bmatrix*}[l|c|c|c|c|c|c|c|c|c|c|c|r]
+\text{BQP} & & & & & & & \supseteq & (\text{BPP} = \text{co-BPP}) & \supseteq & (\text{RP} \stackrel{?}{=} \text{co-RP})  & & & \qquad \text{(The Quantum/Random Branch)} \\
+\text {PH} & & & & & & & \supseteq & (\text{Σ₂P} ∩ \text{Π₂P}) & \supseteq & (\text{BPP} = \text{co-BPP}) & & \\
+\text {PH} & \supseteq & \text{ΣₖP} & \supseteq & \cdots & \supseteq & \text{Σ₃P} & \supseteq & \text{Σ₂P} & \supseteq & \text{NP} & \supseteq & \text{RP} & \qquad \text{(The Non-Deterministic Branch)} \\
+& & & & & & & & & & \stackrel{?}{=} & & \stackrel{?}{=} \\
+\text {PH} & \supseteq & \text{ΠₖP} & \supseteq & \cdots & \supseteq & \text{Π₃P} & \supseteq & \text{Π₂P} & \supseteq & \text{co-NP} & \supseteq & \text{co-RP} & \qquad \text{(The Non-Deterministic Branch)}
+\end{Bmatrix*}
+\supseteq (\text{ZPP ≝ RP ∩ co-RP}) \supseteq (\text{P} = (\text{co-P})
 $$
 
 
@@ -28,22 +32,39 @@ What is believed (but not proven):
                        PP (Probabilistic Polynomial / Counting)
                         ▲
         ┌───────────────┴───────────────┐
+        |                               |
+   (The Quantum/Random Branch)     (The Non-Deterministic Branch)                               
         │                               │
-   (The Quantum/Random Branch)     (The Non-Deterministic Branch)
-        │                               │
-      BQP                             PH (Polynomial Hierarchy) (Level 2: Σ₂P, Π₂P), (Level 3: Σ₃P, Π₃P), ..., (Level k: ΣₖP, ΠₖP) [For each k: By defn, co-ΣₖP = ΠₖP]
-        ▲                               ▲
-        │                               │
-      BPP                             NP ≟ co-NP (Level 1: Σ₁P (aka NP) ≟ Π₁P (aka co-NP))
-        ▲                               │
-        │                               │
-      ZPP                               │
-        │                               │
-        └───────────────┬───────────────┘
-                        │
-                        ▲
-              P (Polynomial Time) = co-P (Level 0: Σ₀P (aka P) = Π₀P (aka co-P))
-                (The Common Root)
+        |                           PH (Polynomial Hierarchy) [For each k: By defn, co-ΣₖP = ΠₖP]
+        |                               |    \
+        |                               ΣₖP  ΠₖP   (Level k: ΣₖP, ΠₖP)
+      BQP                               ▲     ▲ 
+        ▲                               |     |
+        │                               .     .
+        |                               .     .
+        |                               Σ₃P  Π₃P   (Level 3: Σ₃P, Π₃P)
+        │                               ▲     ▲
+        |                               |     |
+        |            ┌───────────────▶︎  Σ₂P  Π₂P  (Level 2: Σ₂P, Π₂P)
+        |            |                  ▲     ▲
+        |            |                  |     |
+        |  ┌───▶︎ Σ₂P ∩ Π₂P              NP ≟ co-NP (Level 1: Σ₁P (aka NP) ≟ Π₁P (aka co-NP))
+        | /                             ▲     ▲
+        │/                              │     │
+      BPP = co-BPP                      |     |
+        ▲                               |     |
+        |                               |     |
+        └────────────────────────────── RP ≟ co-RP
+        └─────────────────────────────────────┘
+                                        ▲     ▲
+                                         \   /
+                                          ZPP ≝ RP ∩ co-RP
+                                           ▲
+                                           |
+                                           │
+                                           ▲
+                                           P (Polynomial Time) = co-P (Level 0: Σ₀P (aka P) = Π₀P (aka co-P))
+                                      (The Common Root)
 ```
 
 ## Theorem: $\text{PH} \subseteq \text{PP}$
@@ -83,6 +104,14 @@ Therefore, from (1) and (2): $\text{PH} \subseteq \text{P}^{\text{PP}} \implies 
 - https://en.wikipedia.org/wiki/Decision_problem
 - https://en.wikipedia.org/wiki/Decidability_(logic)
 - https://en.wikipedia.org/wiki/Undecidable_problem
+
+----
+
+- https://en.wikipedia.org/wiki/ZPP_(complexity)
+- https://en.wikipedia.org/wiki/RP_(complexity)
+- https://en.wikipedia.org/wiki/BPP_(complexity)
+- https://en.wikipedia.org/wiki/Polynomial_hierarchy
+- https://en.wikipedia.org/wiki/Exponential_hierarchy
 
 ----
 
