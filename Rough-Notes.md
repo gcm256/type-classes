@@ -40,8 +40,8 @@
       - [Examples of L-functions](https://en.wikipedia.org/wiki/L-function#Examples)
       - [General Zeta Functions](https://mathworld.wolfram.com/ZetaFunction.html)
       - [Examples of Zeta Functions](https://en.wikipedia.org/wiki/Zeta_function)
-      - [The Hasse-Weil L-function L(E,s) of an Elliptic Curve](https://mathworld.wolfram.com/Hasse-WeilL-Function.html) aka
-      [Hasse–Weil zeta function](https://en.wikipedia.org/wiki/Hasse-Weil_zeta_function) 
+      - [The Hasse-Weil L-function L(E,s) of an Elliptic Curve](https://mathworld.wolfram.com/Hasse-WeilL-Function.html) &
+      [Hasse–Weil zeta function](https://en.wikipedia.org/wiki/Hasse-Weil_zeta_function) $Z_{E/ℚ}(s)$
       - [Arithmetic Zeta Function](https://en.wikipedia.org/wiki/Arithmetic_zeta_function)
     - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
 
@@ -524,8 +524,8 @@ Symmetry Groups occur in the following areas of study:
 - https://en.wikipedia.org/wiki/Template:Complex_analysis_sidebar
 - https://en.wikipedia.org/wiki/Holomorphic_function / https://mathworld.wolfram.com/AnalyticFunction.html
   - https://en.wikipedia.org/wiki/Analyticity_of_holomorphic_functions
-  - https://en.wikipedia.org/wiki/Meromorphic_function
-  - https://en.wikipedia.org/wiki/Conformal_map
+  - [Meromorphic function](https://en.wikipedia.org/wiki/Meromorphic_function) = Holomorphic at all but some domain points that are poles.
+  - [Conformal map](https://en.wikipedia.org/wiki/Conformal_map): Holomorphic function is conformal at any point where it has non-zero derivative.
 - https://en.wikipedia.org/wiki/Antiholomorphic_function / https://en.wikipedia.org/wiki/Antianalytic_function
 - https://en.wikipedia.org/wiki/Modular_form
   - https://en.wikipedia.org/wiki/Modular_form#Modular_functions
