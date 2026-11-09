@@ -19,3 +19,32 @@
 | **Localizations ($ℤ_{(p)}$)** | Local Ring | Zooms in on a single prime $p$ by making all denominators coprime to $p$ invertible, stripping away other prime factors. |
 | **Adele Rings ($𝔸_K$)** | Topological Ring | Glues all local fields ($ℚ_p$ and ℝ/ℂ) together to study global-local arithmetic simultaneously. |
 | **Non-Commutative Rings** (e.g., Hurwitz Quaternions) | Non-Commutative Domain | Multiplication order matters ($AB \neq BA$); requires specialized frameworks for left- and right-factorization and primality. |
+
+
+## Generalization of [Reciprocity Laws](https://en.wikipedia.org/wiki/Reciprocity_law)
+
+[Langlands Conjectures](https://mathworld.wolfram.com/LanglandsProgram.html) ⊃ [Artin's Reciprocity Theorem](https://mathworld.wolfram.com/ArtinsReciprocityTheorem.html) 
+⊃ [Hasse Eisenstein-Kummer Reciprocity](https://en.wikipedia.org/wiki/Eisenstein_reciprocity) ⊃ [Quadratic Reciprocity Theorem](https://mathworld.wolfram.com/QuadraticReciprocity.html)
+
+## Appendix and References
+
+- [Reciprocity Laws](https://link.springer.com/chapter/10.1007/978-3-662-12893-0_11)
+- [Classical Reciprocity Laws](https://www.asiapacific-mathnews.com/04/0404/0005_0009.pdf)
+- https://www.sciencedirect.com/topics/mathematics/reciprocity-law
+- https://www.math.columbia.edu/~calebji/Reciprocity_laws.pdf
+- https://www.math.columbia.edu/~calebji/expository.html
+- https://en.wikipedia.org/wiki/Langlands_program
+- https://en.wikipedia.org/wiki/Artin_reciprocity
+- https://math.stackexchange.com/questions/4485824
+- https://math.stackexchange.com/questions/265392
+- https://kconrad.math.uconn.edu/blurbs/
+- https://kconrad.math.uconn.edu/blurbs/gradnumthy/cfthistory.pdf
+- https://euclid.colorado.edu/~grant/publications/publications.html
+- https://euclid.colorado.edu/~grant/publications/kummer.pdf
+- [Hensel's lemma](https://en.wikipedia.org/wiki/Hensel%27s_lemma)
+- https://mathworld.wolfram.com/HenselsLemma.html
+- https://www.geeksforgeeks.org/dsa/hensels-lemma/
+
+### Directed Reading Programs
+- [Columbia University Math Directed Reading Program (DRP)](https://www.math.columbia.edu/programs-math/undergraduate-program/undergraduate-research/drp/)
+- [Stanford Math Directed Reading Program](https://mathdrp.stanford.edu/)
