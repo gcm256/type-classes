@@ -1,0 +1,43 @@
+name: Auto-Generate Diagram SVG
+
+on:
+  push:
+    branches:
+      - main  # Change to 'master' if your default branch is master
+    paths:
+      - '**.py'  # Runs whenever any Python script changes
+
+permissions:
+  contents: write  # Allows the action to commit changes back to the repo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout your repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # 3. Install required libraries (e.g., matplotlib)
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install matplotlib
+
+      # 4. Run your python script to generate the SVG
+      # (Replace 'complexity_classes.py' with your actual script filename)
+      - name: Run diagram script
+        run: python complexity_classes.py
+
+      # 5. Automatically commit and push the updated SVG if it changed
+      - name: Commit updated SVG
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-generated updated complexity diagram SVG [skip ci]"
+          file_pattern: "*.svg"
