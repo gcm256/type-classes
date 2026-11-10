@@ -23,8 +23,28 @@
 
 ## Generalization of [Reciprocity Laws](https://en.wikipedia.org/wiki/Reciprocity_law)
 
-[Langlands Conjectures](https://mathworld.wolfram.com/LanglandsProgram.html) ⊃ [Artin's Reciprocity Theorem](https://mathworld.wolfram.com/ArtinsReciprocityTheorem.html) 
-⊃ [Hasse Eisenstein-Kummer Reciprocity](https://en.wikipedia.org/wiki/Eisenstein_reciprocity) ⊃ [Quadratic Reciprocity Theorem](https://mathworld.wolfram.com/QuadraticReciprocity.html)
+[Langlands Reciprocity](https://mathworld.wolfram.com/LanglandsProgram.html) ⊃ [Artin's Reciprocity Theorem](https://mathworld.wolfram.com/ArtinsReciprocityTheorem.html) 
+⊃ [Hasse Eisenstein-Kummer Reciprocity](https://en.wikipedia.org/wiki/Eisenstein_reciprocity) ⊃ [Rational Reciprocity Law](https://en.wikipedia.org/wiki/Rational_reciprocity_law) 
+⊃ [Quadratic Reciprocity Theorem](https://mathworld.wolfram.com/QuadraticReciprocity.html)
+
+- **[Quadratic Reciprocity Theorem](https://mathworld.wolfram.com/QuadraticReciprocityTheorem.html)**: States solvability conditions of $x^2 \equiv p \pmod{q}$
+  and $x^2 \equiv q \pmod{p}$ _only_ when $p$ and $q$ are **_distinct odd primes_**.
+  - They are both solvable or both unsolvable unless both $p$ and $q$ leave remainder $3$ when divided by $4$ (in which case one of the congruences is solvable and the other is not).
+- **Rational Reciprocity Law**: States solvability conditions of $x^n \equiv p \pmod{q}$ and pre-conditions involving $p$ and $q$ for an $n$ such that $n$ is a power of $2$. Eg:
+  - **$(n = 2)$** (This is Quadratic Reciprocity): Gives $P_1$ as the required precondition proposition involving $p$ and $q$. Gives $C_1$ such that
+    if $P_1=$`True` then $C_1$ is the condition for solvability.
+  - **$(n = 4)$**: Gives $P_2$ as the required precondition proposition involving $p$ and $q$. Gives $C_2$ such that if $P_2=$`True` then $C_2$ is the condition for solvability.
+  - **$(n = 8)$**: Gives $P_3$ as the required precondition proposition involving $p$ and $q$. Gives $C_3$ such that if $P_3=$`True` then $C_3$ is the condition for solvability.
+  - **$(n = 2^k)$**: Gives $P_k$ as the required precondition proposition involving $p$ and $q$. Gives $C_k$ such that if $P_k=$`True` then $C_k$ is the condition for solvability.
+  - and so on.
+- **Hasse Eisenstein-Kummer Reciprocity**: States solvability conditions of $x^n \equiv p \pmod{q}$ when $p$ and $q$ are restricted to cyclotomic fields and $n=𝓵$ is a prime power.
+- **Artin's Reciprocity Theorem**: Extends reciprocity laws to _all_ **abelian** extensions of _any_ number field (which covers all power residue laws for any $n$)
+  eg General Galois groups of extension fields.
+- **[Langlands Reciprocity](https://en.wikipedia.org/wiki/Langlands_program#Reciprocity)**: Generalization of Artin reciprocity to **non-Abelian** Galois extensions of number fields.
+  - A set of conjectures (many are proven, some are active research areas) about deep connections between:
+    - Abstract Algebra (Galois Theory, Field Theory, Group Theory, Number Theory),
+    - Analysis (Automorphic Forms), and
+    - [Geometry](https://en.wikipedia.org/wiki/Langlands_program#Geometric_conjectures) (See [Geometric Langlands Program](https://handwiki.org/wiki/Geometric_Langlands_correspondence))
 
 ## Appendix and References
 
