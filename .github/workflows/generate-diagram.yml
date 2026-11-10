@@ -3,9 +3,10 @@ name: Auto-Generate Diagram SVG
 on:
   push:
     branches:
-      - main  # Change to 'master' if your default branch is master
+      - master  # Change to 'master' or 'main' as per your default branch is master or main respectively.
     paths:
       - '**.py'  # Runs whenever any Python script changes
+  workflow_dispatch: # <-- Allows manual triggering from the GitHub web UI
 
 permissions:
   contents: write  # Allows the action to commit changes back to the repo
