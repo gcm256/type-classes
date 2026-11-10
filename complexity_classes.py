@@ -1,29 +1,57 @@
 import matplotlib.pyplot as plt
+import matplotlib.patches as patches
 
-fig, ax = plt.subplots(figsize=(8, 8))
+# Create a square figure canvas
+fig, ax = plt.subplots(figsize=(9, 9))
 
 # 1. PSPACE (Outer container)
-pspace = plt.Circle((0, 0), 3.5, color='#e1bee7', ec='#7b1fa2', lw=2, alpha=0.3, label='PSPACE')
+pspace = patches.Circle(
+    (0, 0), 4.0, 
+    facecolor='#f3e5f5', edgecolor='#7b1fa2', linewidth=2, alpha=0.3
+)
+ax.add_patch(pspace)
+ax.text(0, 3.5, 'PSPACE', fontsize=13, fontweight='bold', ha='center', color='#7b1fa2')
+
 # 2. BPP (Nested inside PSPACE)
-bpp = plt.Circle((0, -0.3), 2.5, color='#bbdefb', ec='#1565c0', lw=2, alpha=0.4, label='BPP')
-# 3. Intersecting RP and coRP inside BPP
-rp = plt.Circle((-0.8, -0.6), 1.2, color='#c8e6c9', ec='#2e7d32', lw=2, alpha=0.5, label='RP')
-corp = plt.Circle((0.8, -0.6), 1.2, color='#ffe0b2', ec='#ef6c00', lw=2, alpha=0.5, label='coRP')
+bpp = patches.Circle(
+    (0, -0.2), 3.0, 
+    facecolor='#e3f2fd', edgecolor='#1565c0', linewidth=2, alpha=0.4
+)
+ax.add_patch(bpp)
+ax.text(0, 2.3, 'BPP', fontsize=12, fontweight='bold', ha='center', color='#1565c0')
 
-for patch in [pspace, bpp, rp, corp]:
-    ax.add_patch(patch)
+# 3. RP and coRP (Overlapping subsets inside BPP)
+rp = patches.Circle(
+    (-1.0, -0.5), 1.6, 
+    facecolor='#c8e6c9', edgecolor='#2e7d32', linewidth=1.5, alpha=0.5
+)
+corp = patches.Circle(
+    (1.0, -0.5), 1.6, 
+    facecolor='#ffe0b2', edgecolor='#ef6c00', linewidth=1.5, alpha=0.5
+)
+ax.add_patch(rp)
+ax.add_patch(corp)
 
-# Labels
-ax.text(0, 2.8, 'PSPACE', fontsize=12, fontweight='bold', ha='center', color='#7b1fa2')
-ax.text(0, 1.5, 'BPP', fontsize=11, fontweight='bold', ha='center', color='#1565c0')
-ax.text(-0.8, -0.3, 'RP', fontsize=10, ha='center')
-ax.text(0.8, -0.3, 'coRP', fontsize=10, ha='center')
-ax.text(0, -0.7, 'ZPP / P', fontsize=9, fontweight='bold', ha='center', color='black')
+# Labels for RP and coRP
+ax.text(-1.7, 0.4, 'RP', fontsize=10, fontweight='bold', color='#2e7d32')
+ax.text(1.5, 0.4, 'coRP', fontsize=10, fontweight='bold', color='#ef6c00')
 
-ax.set_xlim(-4, 4)
-ax.set_ylim(-4, 4)
+# 4. Intersection Region (ZPP / P in the overlap of RP and coRP)
+zpp = patches.Ellipse(
+    (0, -0.6), 1.0, 0.8, 
+    facecolor='#fff9c4', edgecolor='#fbc02d', linewidth=1.5, alpha=0.7
+)
+ax.add_patch(zpp)
+ax.text(0, -0.6, 'ZPP / P', fontsize=9, fontweight='bold', ha='center', color='#827717')
+
+# Layout configuration
+ax.set_xlim(-5, 5)
+ax.set_ylim(-5, 5)
 ax.set_aspect('equal')
 plt.axis('off')
 
-# Save as SVG to track in Git and render on GitHub
+# Save directly as an SVG vector file
 plt.savefig('complexity_classes.svg', format='svg', bbox_inches='tight')
+plt.close()
+
+print("Generated complexity_classes.svg successfully!")
