@@ -119,9 +119,52 @@ Therefore, from (1) and (2): $\text{PH} \subseteq \text{P}^{\text{PP}} \implies 
 - https://en.wikipedia.org/wiki/Template:Number-theoretic_algorithms
   - https://en.wikipedia.org/wiki/Miller-Rabin_primality_test
 - https://en.wikipedia.org/wiki/Template:Industrial_and_applied_mathematics
+- https://en.wikipedia.org/wiki/Probabilistic_algorithm
+- https://en.wikipedia.org/wiki/Template:Probabilistic
+- https://en.wikipedia.org/wiki/Randomized_algorithm
+- https://en.wikipedia.org/wiki/Approximation_algorithm
+- https://en.wikipedia.org/wiki/Template:Parsers
+- https://en.wikipedia.org/wiki/Template:Optimization_algorithms
+- [Smallest-circle problem](https://en.wikipedia.org/wiki/Smallest-circle_problem)
+- [Moser's circle problem](https://en.wikipedia.org/wiki/Moser%27s_circle_problem)
+- https://en.wikipedia.org/wiki/Mathematical_optimization#Major_subfields
+- https://en.wikipedia.org/wiki/Template:Evolutionary_computation
+- https://en.wikipedia.org/wiki/Template:Graph_traversal_algorithms
+- https://en.wikipedia.org/wiki/Template:Artificial_intelligence_algorithms
+- https://en.wikipedia.org/wiki/Template:Decision_theory
+- https://en.wikipedia.org/wiki/Template:Game_theory
 
 ----
 
 - https://en.wikipedia.org/wiki/Template:Strings
 - https://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm
 - https://en.wikipedia.org/wiki/Rabin-Karp_algorithm
+
+----
+
+- https://en.wikipedia.org/wiki/Probabilistic_method
+- https://en.wikipedia.org/wiki/Algorithmic_probability
+- https://en.wikipedia.org/wiki/Probabilistic_analysis_of_algorithms
+- https://en.wikipedia.org/wiki/Algorithmic_information_theory
+- https://en.wikipedia.org/wiki/Template:Statistics
+- https://en.wikipedia.org/wiki/Probabilistic_encryption
+
+----
+
+- [Operations Research](https://en.wikipedia.org/wiki/Operations_research)
+- https://en.wikipedia.org/wiki/LP-type_problem
+- https://en.wikipedia.org/wiki/Linear_programming
+- https://en.wikipedia.org/wiki/Nonlinear_programming
+- https://en.wikipedia.org/wiki/Computational_geometry#See_also
+- https://en.wikipedia.org/wiki/Template:Systems_engineering
+- [Systems Theory](https://en.wikipedia.org/wiki/Systems_theory)
+- https://en.wikipedia.org/wiki/Template:Systems_science
+- https://en.wikipedia.org/wiki/Template:Complex_systems
+- https://en.wikipedia.org/wiki/Template:Complex_systems_topics
+- https://en.wikipedia.org/wiki/Complex_system#See_also
+- https://en.wikipedia.org/wiki/Nonlinear_system
+- https://en.wikipedia.org/wiki/Complex_adaptive_system
+- [Cybernetics](https://en.wikipedia.org/wiki/Cybernetics)
+- https://en.wikipedia.org/wiki/Template:Cybernetics
+- https://en.wikipedia.org/wiki/Template:Mathematical_programming
+- https://en.wikipedia.org/wiki/Template:Areas_of_mathematics
