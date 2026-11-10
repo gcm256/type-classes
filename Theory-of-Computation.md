@@ -13,6 +13,11 @@ $$
 \supseteq (\text{ZPP ≝ RP ∩ co-RP}) \supseteq (\text{P} = (\text{co-P})
 $$
 
+----
+
+![Complexity Classes Hierarchy](./complexity_classes.svg)
+
+----
 
 What is believed (but not proven):
 
