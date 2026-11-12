@@ -22,7 +22,42 @@ fmap = \f xs -> xs >>= (\x -> return (f x))           -- Defn of >>=
 
 Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+)$ ⟹ Monoid $(+)$ ⟹ Semigroup $(+)$ ⟹ Set
 
-## Summary of Logic
+## Summary of [Logic](https://www.rbjones.com/rbjpub/logic/cl/index.htm)
+
+[Formal Logic](https://en.wikipedia.org/wiki/Template:Non-classical_logic) & [Proof-Theory / Proof-System](https://en.wikipedia.org/wiki/Template:Mathematical_logic)
+$\cong$ 
+Model of Computation & [Type-Theory / Type-System](https://ncatlab.org/nlab/show/type+theory) 
+$\cong$ 
+Category-Theory
+
+𝝺-Calculus $\cong$ Combinatory-Logic $\cong$ Turing-Machine $\cong$ $\mu$-recursive (or partial recursive) functions $\cong$ RE sets 
+
+Domain Characterization:
+A set $A \subseteq ℕ$ is RE if and only if there exists a partial recursive function $f$ such that $A = \text{dom}(f)$.
+
+Range Characterization:
+A set $A \subseteq ℕ$ is RE if and only if there exists a partial recursive function $g$ such that $A = \text{range}(g)$. 
+(And if $A$ is non-empty, $g$ can always be chosen to be a total recursive function).
+
+Domain Characterization & Range Characterization are equivalent. Both conditions are **individually necessary and sufficient** characterizations of a Recursively Enumerable (RE) set.
+
+### Lambda-Cube
+
+- 𝝺→  $\qquad$ STLC (Terms can depend on Terms. No other dependency allowed.)
+- 2   $\qquad$ Add Parametric Polymorphism (Terms can depend on Types)
+- 𝞈̲   $\qquad$ Add Type Constructor (Types can depend on Types)
+- P   $\qquad$ Add Dependent Types (Types can depend on Terms)
+
+| Logic | Name of Logic                         | Type     |
+|----   |----                                   |----      |
+| PROP  | proposition logic                     | λ→       |
+| PROP2 | second-order proposition logic        | λ2 (F)   |
+| PROPω̲ | weakly higher-order proposition logic | λω̲       |
+| PROPω | higher-order proposition logic        | λω (Fω)  |
+| PRED  | predicate logic                       | λP       |
+| PRED2 | second-order predicate logic          | λP2      |
+| PREDω̲ | weakly higher-order predicate logic   | λPω̲      |
+| PREDω | higher-order predicate logic          | λPω (CC) |
 
 ### Taxonomy
 
@@ -35,7 +70,7 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 | <a id="l-5"></a>5. Dependent type expressiveness	     | Can types/propositions depend on terms, types etc? | Dependent Type Theory, Simple, polymorphic, higher-kinded |
 | 6. Semantics	                         | What gives the system meaning?	                  | Boolean algebras, Heyting algebras, Kripke models, categorical semantics, etc. |
 | <a id="l-7"></a>7. Proof calculus	                    | How are proofs derived and presented?	             | Hilbert, Natural Deduction, Sequent Calculus |
-| 8. Computational/proof-term calculus	| What computational objects correspond to proofs?   | Combinatory logic, λ-calculus, dependent λ-calculus |
+| 8. Computational/proof-term calculus	| What computational objects correspond to proofs?   | [Combinatory logic](https://en.wikipedia.org/wiki/Combinatory_logic#See_also), λ-calculus, dependent λ-calculus |
 
 
 ## Specification of a Logic
@@ -383,7 +418,7 @@ The **General** problem **"Is $\text{SN}(M)$ True?"** is **Undecidable**.
 >   * Coercions = First-class type equality proofs
 >   *  **System FC** allows **partial functions**. Hence, Haskell the language, is non-WN, even if it has terms that are SN (terms that always terminate) or WN (terms that terminate only by lazy-evaluation eg `head [1, infiniteLoop]`)
 >   *  Hence a Haskell program may not terminate.
->   *  But: Since Coq uses CIC, a Coq program will always terminate. And Coq only allows total functions.
+>   *  But: Since Coq uses CIC, a Coq program will always terminate. And Coq _only_ allows [total functions](https://en.wikipedia.org/wiki/Total_functional_programming).
 
 ### Type-related Computations
 
