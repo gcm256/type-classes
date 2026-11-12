@@ -36,7 +36,7 @@
         [Inversion in Geometry](https://en.wikipedia.org/wiki/Inversive_geometry)
       - [Involution in Geometry](https://en.wikipedia.org/wiki/Involution_(mathematics)#Projective_geometry)
       - [Reciprocation](https://mathworld.wolfram.com/Reciprocation.html) & [Duality Principle](https://mathworld.wolfram.com/DualityPrinciple.html)
-    - [L-function](https://mathworld.wolfram.com/L-Function.html) / [L-function Topics](https://en.wikipedia.org/wiki/Template:L-functions-footer)
+    - [L-function](https://mathworld.wolfram.com/L-Function.html)[^6] / [L-function Topics](https://en.wikipedia.org/wiki/Template:L-functions-footer)
       - [Examples of L-functions](https://en.wikipedia.org/wiki/L-function#Examples)
       - [General Zeta Functions](https://mathworld.wolfram.com/ZetaFunction.html)
       - [Examples of Zeta Functions](https://en.wikipedia.org/wiki/Zeta_function)
@@ -232,7 +232,8 @@ While the _entire_ curve isn't a vector space, we can construct vector spaces if
 >
 > Statement of Strong-CLT: For any finite group $G$, $h$ is a divisor of Ord($G$) $\implies$ $G$ has a _unique_ **subgroup** $H$ of order $h$.
 >
-> 🔆 Neither Weak-CLT nor Strong-CLT are not true in general. However there are partial versions of Weak-CLT eg Cauchy's Theorem, Sylow's Theorem, Hall's Theorem etc.
+> 🔆 Neither Weak-CLT nor Strong-CLT are not true in general. However there are partial versions of Weak-CLT eg [Cauchy's Theorem](https://planetmath.org/CauchysTheorem),
+> Sylow's Theorem, Hall's Theorem etc.
 >
 > **[Cauchy's Theorem, a partial Weak-CLT](https://en.wikipedia.org/wiki/Cauchy's_theorem_(group_theory))**: For any finite group $G$, $p$ is a **_prime_** divisor
 > of Ord($G$) $\implies$ $G$ has _at least one_ **element** $x$ of order $p$, ie, $G$ has a cyclic subgroup $\langle x \rangle$ of order $p$.
@@ -438,6 +439,9 @@ https://en.wikipedia.org/wiki/Gauge_boson \
 https://en.wikipedia.org/wiki/Force_carrier \
 https://en.wikipedia.org/wiki/Virtual_particle \
 https://ncatlab.org/nlab/all_pages
+[^6]: [L-functions](https://magma.maths.usyd.edu.au/magma/info/topic_num_thy_lfun) \
+[Dirichlet L-series](https://planetmath.org/dirichletlseries) \
+[L-series of an elliptic curve](https://planetmath.org/lseriesofanellipticcurve)
 
 ---
 
@@ -732,12 +736,106 @@ Here is a clean, comprehensive summary tracking how abstract logic, geometric st
 | Strong Force	          | $SU(3)$ Group _(3D Complex Unitary Matrices)_	  | Principal $SU(3)$-Bundle over Spacetime	    | The `SU(3)` (**Gluon**) field _(Spin-1 Vector Bosons)_ |
 | Gravity (Einstein View) |	$\text{Diff}(M)$ Group _(Infinite-Dim Topology)_  | Metric tensor warping a 4D smooth Manifold	  | _Classical continuum_ _(No native particles)_        |
 | Gravity (Gauge View)	  | $SO(1,3)$ Group _(Lorentz Spacetime Symmetries)_  | Frame Bundle / Spin Connection over Spacetime | The **Graviton** field _(Spin-2 Tensor Boson)_       |
-| Matter Particles	      | Matrix Representations (Identity badges)	      | Sections of Associated Vector Bundles	      | **6 Quark & 6 Lepton** fields _(Spin-1/2 [Spinor](https://github.com/gcm256/type-classes/blob/master/Fermion-Fields-vs-Weak-Field.md) Fermions[§](#fermion-eq-unpaired-spinor))_  |
+| Matter Particles	      | Matrix Representations (Identity badges)	      | Sections of Associated Vector Bundles	      | **6 Quark & 6 Lepton**[§§](#fermion-chirality) fields _(Spin-1/2 [Spinor](https://github.com/gcm256/type-classes/blob/master/Fermion-Fields-vs-Weak-Field.md) Fermions[§](#fermion-eq-unpaired-spinor))_  |
 | The Higgs Boson         | $SU(2) \times U(1)$ **Symmetry Breaking** _(Coset space quotienting: `G/H`)_ | Sections of an **Associated Complex Scalar Bundle** with a non-zero vacuum state | The **Higgs** field _(Spin-0 Scalar Boson; the Higgs Field is always present and active everywhere and causes mass via Yukawa/Gauge couplings; the Higgs particle aka Higgs Boson is the ripple in the Higgs Field when a large amount of Energy hits and quantizes it. The Higgs Field (not Higgs particle/Boson) causes what we call mass.)_ |
 
 > [!NOTE]
-> <a id="fermion-eq-unpaired-spinor"></a> § Fermions (or any object with half-integer spin) / Fermion-fields are represented as spinors / spinor-fields with _odd_ number of spinors.
+> <a id="fermion-eq-unpaired-spinor"></a> § Fermions (or any object with half-integer spin) / [Fermion-fields](https://en.wikipedia.org/wiki/Fermionic_field)
+> are represented as spinors / spinor-fields with _odd_ number of spinors.
 > See https://github.com/gcm256/geometry/blob/main/Geometric-algebra-Spinors-Quaternions.md#spacetime-tensor-even-total-spinors-balanced-handedness-vs-internal-tensors-even-but-unbalanced-vs-spinor-tensors-odd-total-spinors-hence-unbalanced
+
+> [!WARNING]
+> <a id="fermion-chirality"></a> §§ Technically, we count the [chiral fields for fermions](https://en.wikipedia.org/wiki/Chirality_(physics)#An_application_in_particle_physics).
+> Fermion chiral fields are Weyl field operators in the Lagrangian.
+>
+> When physicists casually say "there are 12 fundamental matter fields" (6 quarks and 6 leptons), they are using shorthand for the 12 **mass flavors** we observe
+> in low-energy experiments (Up, Down, Charm, Strange, Top, Bottom, Electron, Muon, Tau, and their three neutrinos).
+>
+> However, at the fundamental level of the Standard Model's raw equations (the Lagrangian _before_ the Higgs field turns on), **nature does not recognize those 12 combined fields**.
+> Instead, it builds the universe out of separate **chiral components (Weyl fields)**.
+>
+> ----
+> 
+> **Per Generation:**
+> 1. **Left-Handed Lepton Doublet:** $(\nu_L, e_L)$ $\rightarrow$ Counts as **2** fields.
+> 2. **Right-Handed Charged Lepton:** $e_R$ $\rightarrow$ Counts as **1** field. _(Note: Standard Model minimal version leaves out a right-handed neutrino)_.
+> 3. **Left-Handed Quark Doublet:** $(u_L, d_L)$ $\rightarrow$ Counts as **2** fields, but each comes in **3 colors** (Red, Green, Blue), giving $2 \times 3 =$ **6 fields**.
+> 4. **Right-Handed Up Quark:** $u_R$ (3 colors) $\rightarrow$ **3 fields**.
+> 5. **Right-Handed Down Quark:** $d_R$ (3 colors) $\rightarrow$ **3 fields**.
+> 
+> That is **15 separate chiral fields per generation**. Multiply that across 3 generations, and the raw Standard Model Lagrangian is actually built out of
+> **45 distinct chiral fermion fields** before the Higgs field stitches them together into the 12 familiar mass particles we see.
+>
+> ----
+> Why Separate Fields for Red, Green, and Blue? Because, in the mathematics of Quantum Field Theory (QFT), **color _is_ an active charge that dictates how a
+> particle interacts with the strong force**. The mathematics of $SU(3)$ requires any fundamental quark field to exist as a 3-component vector in "color space" (Red, Green, Blue).
+>
+> Even though a red up quark ($u_R$) and a blue up quark ($u_R$) have the exact same mass and electric charge, **they couple differently to the 8 gluon fields** because
+> gluons carry color-anticolor charges. When writing down the equations of motion (the Lagrangian), the math requires a separate field component
+> for each independent degree of freedom that can carry color.
+>
+> ----
+> 
+> **QFT and the Standard Model do _not_ mathematically derive or predict that there must be 3 generations**.
+>
+> If you look at the raw mathematical structure of the gauge group $SU(3) \times SU(2) \times U(1)$ and anomaly cancellation requirements, the math simply says:
+> _"Here is a valid blueprint/template for a fermion generation."_ **So, how do Generations 2 and 3 get into the theory?**
+>
+> **The Standard Model is a Template, Not a Calculator for Generations**
+> 
+> **The Blueprint (Gen 1):** Theoretical physicists built the electroweak and strong force math based on the particles they initially discovered (Up, Down, Electron, Neutrino).
+> That gave them the **Generation 1 template**.
+>
+> **Experimental Discovery:** Later, when experiments discovered the muon, the strange quark, the charm quark, etc., physicists realized
+> they were exact structural carbon copies of Generation 1—just much heavier.
+>
+> **Manual Insertion (Empirical Input):** Because QFT allows you to copy-paste fermion multiplets without breaking the math, physicists **manually added** two duplicate copies of
+> the Generation 1 template into the Lagrangian to account for the heavier particles we observed.
+>
+> **What QFT _Does_ Predict vs. What It Doesn't**
+> 
+> **What QFT _doesn't_ do:** It cannot calculate _why_ there are three generations, nor can it predict their masses.
+> Those are arbitrary "free parameters" (numbers we have to measure in a lab and plug into the equations by hand).
+>
+> **What QFT _does_ do:** Once you tell the theory _"Hey, there are 3 copies of this template,"_ the math immediately dictates **how they must behave**—how they mix
+> via the CKM and PMNS matrices, how they interact with the Higgs field, and how anomalies cancel out.
+>
+> ----
+> 
+> **Summary**:
+> - **Colors (R, G, B):** Treated as separate fields because the $SU(3)$ strong force requires three internal vector components for color charges to calculate gluon interactions properly.
+> - **Generations (2 & 3):** The theory doesn't generate them automatically; the Standard Model provides the _template_, and
+>   physicists plugged the extra generations into the math because experiments proved they exist!
+>
+> The exact **count** (the 3 generations, giving us 12 mass flavors or 45 chiral fields) comes **purely empirically from observation**,
+> even though the _blueprint_ for what those fields look like is dictated by mathematics.
+>
+> - The Blueprint is Theoretical (The "Shape" of the Fields)
+>   - What fields exist and how they interact? Dictated by theoretical symmetry groups and mathematics.
+> - The Count is Empirical (The "Number of Copies")
+>   - How many copies (generations / total fields) there are? Purely empirical data handed to us by the universe through experiments!
+>
+> ----
+> 
+> 🔆🔆 The 15 chiral fields already fully account for both matter and antimatter. Antimatter does not require a separate set of fields;
+> it is already embedded inside those exact same 15 field operators. A QFT field operator is **complex-valued** and it does not need a separate field entry in the Lagrangian for
+> the antiparticle; it is already bundled into the same field. The 15 chiral fields cover all the distinct ways matter and antimatter interact with
+> the Standard Model's gauge groups based on their chirality. 🔆🔆
+>
+> 🔆🔆 Counting _physical particle states_ is fundamentally different from counting underlying _quantum fields_.
+> _What exists as a physical species in a detector_ is ${\color{red}\text{different}}$ from _how the mathematics is written in the Lagrangian_. 🔆🔆
+>     
+> | Concept | What It Measures	| Does It Separate Particles & Antiparticles?	| Count per Generation |
+> |----     |----               |----                                           |----                  |
+> | Particle States	| Distinct physical species you can detect and collide in a lab	| Yes (they are separate entries on the ledger)	| **16 _states_** (8 particles + 8 antiparticles) |
+> | Chiral Fields   | Independent mathematical building blocks (Weyl field operators) in the Lagrangian | No (each complex field operator already handles both particle and antiparticle) | **15 _fields_** ($e_L, e_R, \nu_L$) + (($u_L, u_R, d_L, d_R$) $\times$ (`Red`, `Green`, `Blue`)) |
+>
+> 🔆🔆 Think of fermion as a coin and its chirality components $L$ & $R$ as the 2 faces $H$ & $T$ of the coin. **The physical particle is a permanent hybrid of two components,
+> only one of which can "see" the $W$ boson**. 🔆🔆
+>
+> The Higgs field acts like a fast-spinning blender, constantly and instantly flipping the electron back and forth between components $L$ & $R$ billions of times a second.
+> When an electron flies through space, it isn't purely left-handed or right-handed; it is a quantum superposition of both. But when a $W$ boson interacts with it,
+> it can _only_ grab hold of the left-handed piece ($e_L$) because the right-handed piece ($e_R$) has no weak-isospin to offer!
 
 #### Core Structural Roles (How the Pieces Interact)
 
@@ -835,7 +933,7 @@ Particles (of all kinds including all fermions, all bosons) are created when the
 - `SU(2)` gauge field + energy + weak-isospin (aka flavor) shift = W/Z boson(s) of type(s) that conserve both charge and flavor (weak-isospin).
 - Quarks & Leptons: Matter Field + Energy + Fermion Number Alignment = Fermion-Antifermion Pairs. Quarks immediately combine and re-arrange to form Hadrons (Baryons/Mesons).
   - Mass barrier & Pauli principle apply; color symmetry determines quark variations.
-  - There are 12 distinct matter fields: 6 distinct quark fields, 6 distinct lepton fields.
+  - There are 12 distinct matter fields: 6 distinct quark fields, 6 distinct lepton fields.[§§](#fermion-chirality)
     - Each matter particle (eg Up-quark, Down-quark, Tauon, Tau-neutrino etc) forms from its own parent matter field.
 - Higgs field + energy = Higgs boson(s)
 
@@ -879,7 +977,8 @@ So the Higgs Field _does_ create a particle—its own particle, the Higgs partic
 > - Each Generation has only a set of 4 Fundamental/Elementary Matter Particles—2 quarks & 2 leptons:
 >   {Up-flavor quark, Down-flavor quark, Up-flavor (neutrino) lepton, Down-flavor (non-neutrino) lepton}
 > - Total distinct fermion/antifermion states per generation = 2 (flavors) * (3 (quark-color-states) + 1 (lepton-colorless-only-state)) * 2 (particle/antiparticle state) = 16.
-> - 16*3 = 48 fermion/antifermion states for all generations.
+> - 16*3 = 48 fermion/antifermion states for all generations. ⚠️ Count of physical Fermion **_states_** not to be confused with count of Fermion **_chiral fields_**.
+>   See: [§§](#fermion-chirality) ⚠️
 > - The 48 states are simply the total number of field components dictated by the symmetry group representations multiplied by 3 repeating templates.
 >   They exist as a blank canvas, without mass and mixing. Mass and mixing are the paint splashed onto that canvas afterward by the Higgs field and weak interactions!
 > - Even if the 48 states are **completely massless and unmixed**, we still multiplied by 3 because nature printed the exact same 16-state structural blueprint three times.
@@ -893,6 +992,12 @@ So the Higgs Field _does_ create a particle—its own particle, the Higgs partic
 >         It is a relationship between the states, not a property baked into the 48 count itself.
 > - All matter particles have mass.
 > - Mass particles = All fundamental matter particles (all fermions) + The massed bosons (ie all bosons except the gluons and the photon).
+
+> [!NOTE]
+> **Neutron**(`udd`), **Proton**(`uud`) vs [Omega-baryons](https://en.wikipedia.org/wiki/Omega_baryon) **$\Omega_c^0$**(`css`), **$\Omega_{cc}^+$**(`ccs`):
+> - Even if `css` & `ccs` look like just Gen-1 → Gen-2 quark replacement in neutron & proton, the $\Omega_c^0$ & $\Omega_{cc}^+$ do not relate and interact with each other just like a
+>   heavy version of neutron & proton. Because, `u` & `d` quarks differ in **[current quark mass](https://en.wikipedia.org/wiki/Current_quark#Current_quark_mass)** by ~2x.
+>   But `s` & `c` quarks differ in **current quark mass** by ~14x. So the `s` & `c` do not relate to each other in an Omega-baryon in the same way as `u` & `d` do in nucleons.
 
 #### Q3: Can the Higgs Boson interact with another Higgs Boson?
 
