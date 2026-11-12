@@ -6,6 +6,15 @@ These are Text and non-YouTube resources.
 
 - [Notices of the American Mathematical Society - Full Issues](https://www.ams.org/cgi-bin/notices/nxgnotices.pl?fm=ful)
 - [Open Access Journals](https://www.ams.org/publications/journals/open-access/open-access)
+- [AMS Journals](https://pubs.ams.org/journals) ❇️ All Journal Issues become 💡 $\color{green}FREE$ 💡 after **$5$** years of their publication. ❇️
+  - [AMS Journal](https://pubs.ams.org/JAMS?active=all)
+  - [AMS Bulletin](https://pubs.ams.org/BULL?active=all)
+  - [AMS Communications](https://pubs.ams.org/CAMS?active=all)
+  - [AMS Proceedings](https://pubs.ams.org/PROC?active=all)
+    - [AMS Proceedings, Series B](https://pubs.ams.org/BPROC?active=all)
+  - [AMS Transactions](https://pubs.ams.org/TRAN?active=all)
+    - [AMS Transactions, Series B](https://pubs.ams.org/BTRAN?active=all)
+  - [AMS Memoirs](https://pubs.ams.org/MEMO?active=all)
 - [Open Math Notes](https://www.ams.org/open-math-notes)
 - [MathSciNet](https://mathscinet.ams.org/mathscinet/publications-search)
 
@@ -31,6 +40,7 @@ These are Text and non-YouTube resources.
 
 ## Type Theory OPLSS
 
+- [OPLSS Archives](https://www.cs.uoregon.edu/research/summerschool/archives.html)
 - [Introduction to Barendregt's Lambda Cube - Silvia Ghilezan — University of Novi Sad OPLSS-2023](https://www.cs.uoregon.edu/research/summerschool/summer23/topics.php#Ghilezan)
 
 ----
@@ -39,7 +49,7 @@ These are Text and non-YouTube resources.
 
 - **[JupyterLite](https://jupyter.org/try-jupyter/lab/)**
 - **[Desmos](https://www.desmos.com/3d)** eg: https://www.desmos.com/3d/9cec4a5lqn
-- **[GeoGebra]https://www.geogebra.org/classic#geometry**
+- **[GeoGebra](https://www.geogebra.org/classic#geometry)**
 - **[Wolfram Alpha](https://www.wolframalpha.com/)**
 - **[Wolfram MathWorld](https://mathworld.wolfram.com/)**
 - [Magma Calculator](https://magma.maths.usyd.edu.au/calc/)
@@ -64,12 +74,21 @@ These are Text and non-YouTube resources.
 - https://www.asiapacific-mathnews.com/
 - https://www.numdam.org/
 - https://searchworks.stanford.edu/
+- [Open Academic Journal Index](https://oaji.net/)
+- [IMU](https://www.mathunion.org/cop/gdml/external-resources)
 
 ## Libraries
 
 - [The European Digital Mathematics Library (EuDML)](https://eudml.org/)
+- [IMU GDML](https://www.mathunion.org/cop/gdml/gdml-global-digital-math-library)
+- [Czech Digital Mathematics Library](https://dml.cz/)
+- https://www.mathdoc.fr/en/realisations/eudml/
+- https://www.mathdoc.fr/en/
 - https://phys.libretexts.org/
 - https://math.libretexts.org/
+- https://hal.science/search/index/?q=domain_t:math
+- https://projecteuclid.org/browse
+- https://github.com/ddosecrets
 
 ----
 
@@ -87,7 +106,6 @@ These are Text and non-YouTube resources.
 - https://encyclopediaofmath.org/
 - https://handwiki.org/wiki/Start
 - https://jiblm.org/
-- https://www.mathdoc.fr/en/realisations/eudml/
 
 ----
 
