@@ -827,7 +827,7 @@ Here is a clean, comprehensive summary tracking how abstract logic, geometric st
 >     
 > | Concept | What It Measures	| Does It Separate Particles & Antiparticles?	| Count per Generation |
 > |----     |----               |----                                           |----                  |
-> | Particle States	| Distinct physical species you can detect and collide in a lab	| Yes (they are separate entries on the ledger)	| **16 _states_** (8 particles + 8 antiparticles) |
+> | Particle States	| Distinct physical species you can detect and collide in a lab	| Yes (they are separate entries on the ledger)	| **16 _states_** (8 particle states + 8 antiparticle states); 4 _particles_ ($e$, $\nu_e$, $u$, $d$) give: ($e$, $\nu_e$) + (($u$, $d$) $\times$ (`Red`, `Green`, `Blue`)) = 8 particle _states_. Similarly 8 antiparticle _states_. |
 > | Chiral Fields   | Independent mathematical building blocks (Weyl field operators) in the Lagrangian | No (each complex field operator already handles both particle and antiparticle) | **15 _fields_** ($e_L, e_R, \nu_L$) + (($u_L, u_R, d_L, d_R$) $\times$ (`Red`, `Green`, `Blue`)) |
 >
 > 🔆🔆 Think of fermion as a coin and its chirality components $L$ & $R$ as the 2 faces $H$ & $T$ of the coin. **The physical particle is a permanent hybrid of two components,
@@ -996,8 +996,15 @@ So the Higgs Field _does_ create a particle—its own particle, the Higgs partic
 > [!NOTE]
 > **Neutron**(`udd`), **Proton**(`uud`) vs [Omega-baryons](https://en.wikipedia.org/wiki/Omega_baryon) **$\Omega_c^0$**(`css`), **$\Omega_{cc}^+$**(`ccs`):
 > - Even if `css` & `ccs` look like just Gen-1 → Gen-2 quark replacement in neutron & proton, the $\Omega_c^0$ & $\Omega_{cc}^+$ do not relate and interact with each other just like a
->   heavy version of neutron & proton. Because, `u` & `d` quarks differ in **[current quark mass](https://en.wikipedia.org/wiki/Current_quark#Current_quark_mass)** by ~2x.
->   But `s` & `c` quarks differ in **current quark mass** by ~14x. So the `s` & `c` do not relate to each other in an Omega-baryon in the same way as `u` & `d` do in nucleons.
+>   heavy version of neutron & proton. Because **[current quark mass](https://en.wikipedia.org/wiki/Current_quark#Current_quark_mass)** ratio of `u`:`d` is ~0.5, 
+>   but of `c`:`s` is ~14. Even with the _constituent quark mass_ (after including the [gluon field covering mass](https://en.wikipedia.org/wiki/QCBE)), the rest masses are:
+>   - **$n^0$**: ~`940 MeV/c²`
+>   - **$p^+$**: ~`938 MeV/c²`
+>   - **$\Omega_c^0$**: ~`2700 MeV/c²`
+>   - **$\Omega_{cc}^+$**: ~`3700 MeV/c²`
+>
+> While masses of **$n^0$** & **$p^+$** are almost equal, mass of **$\Omega_c^0$** is ~73% of **$\Omega_{cc}^+$**. Hence, they cannot act like heavy versions of nucleons.
+> 
 
 #### Q3: Can the Higgs Boson interact with another Higgs Boson?
 
