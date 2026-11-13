@@ -22,7 +22,7 @@ fmap = \f xs -> xs >>= (\x -> return (f x))           -- Defn of >>=
 
 Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+)$ ⟹ Monoid $(+)$ ⟹ Semigroup $(+)$ ⟹ Set
 
-## Summary of [Logic](https://www.rbjones.com/rbjpub/logic/cl/index.htm)
+## Summary of [Logic](https://www.rbjones.com/rbjpub/logic/)
 
 <div align="center">
 
@@ -63,7 +63,7 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 > - 🔆🔆 Domain Characterization & Range Characterization are equivalent.
 > Both conditions are **individually necessary and sufficient** characterizations of a **Recursively Enumerable (RE)** set. 🔆🔆
 
-### Lambda-Cube
+### [Lambda-Cube](https://www.rbjones.com/rbjpub/logic/cl/index.htm)
 
 - λ→  $\\;\qquad$ STLC (**_Terms_** can depend on **_Terms_**. No other dependency allowed.) $(\*, \*)$
 - 2   $\quad \qquad$ Add Parametric Polymorphism (**_Terms_** can depend on **_Types_**.) $(\Box, \*)$
@@ -274,8 +274,9 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 
 | $\underbrace{\text{Arity}}_\downarrow \mid \text{Order} \to$ | Zeroth-order | First-order | Second-order | Higher-order |
 | ----                                                         | ----         | ----        | ----         | ----         |
-| Propositional ($0$-ary Predicate)                            |              |             |              |              |
-| Predicate ($n$-ary Predicate, $n \ge 1$)                     |              |             |              |              |
+| Propositional ($0$-ary Predicate) | λ→ (Simply Typed λ-Calculus) • No quantifiers allowed • Only static propositional constants (e.g., $P \to Q$). | Not Applicable (Requires a Term layer to exist in the syntax for first-order quantification). | λ2 (System F / SOPL) • Quantifies over Type • Binds 0-ary propositional variables: $\forall P : \text{Type}$. | λω (System Fω / HOPL) • Quantifies over $\text{Type} \to \text{Type}$ • Binds logical connectives/boolean functions: $\forall F : \text{Type} \to \text{Type}$. |
+| Predicate ($n$-ary Predicate, $n \ge 1$) | Not Applicable (Requires term variables to saturate the internal $n$-ary predicate functions). | λP (Logical Framework LF) • Quantifies over Term • Binds individual objects: $\forall x : \text{Term}$. • Predicates ($\text{Term} \to \text{Type}$) are static constants. | λP2 (Second-Order Predicate) • Quantifies over $\text{Term} \to \text{Type}$ • Binds unary properties / sets of individuals: $\forall P : \text{Term} \to \text{Type}$. | λPω / CoC (Calculus of Constructions) • Quantifies over Kinds • Binds meta-predicates / properties of predicates: $\forall \mathcal{X} : (\text{Term} \to \text{Type}) \to \text{Type}$. |
+
 
 
 
@@ -349,9 +350,9 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 
 | Type/proposition dependency | Meaning | Typical calculus | Feature added | Main capability |
 |---|---|---|---|---|
-| Non-dependent | No dependence between Types and Terms | **STLC** (**$\lambda \to$**) | None(Baseline) | Terms can depend on terms only $(*, *)$ |
-| Polymorphic | Quantification over types. Terms can be parametrized by types. | **System F** (**$\lambda 2$**) | Type abstraction (∀) | Terms can depend on types/terms $(\Box/\*, \*)$ |
-| Higher-kinded | Types/type operators can be higher-order. Types can be parametrized by types. | **Fω** (**$\lambda 2 + \lambda\underline{\omega}$**) | Type Constructors aka type-level functions | Types can depend on types $(\Box, \Box)$. (In addition to **System F** capability $(\Box/\*, \*)$ ) |
+| Non-dependent | No dependence between Types and Terms | **STLC** (**λ→**) | None(Baseline) | Terms can depend on terms only $(*, *)$ |
+| Polymorphic | Quantification over types. Terms can be parametrized by types. | **System F** (**λ2**) | Type abstraction (∀) | Terms can depend on types/terms $(\Box/\*, \*)$ |
+| Higher-kinded | Types/type operators can be higher-order. Types can be parametrized by types. | **Fω** (**λ2 + λ⍹**) | Type Constructors aka type-level functions | Types can depend on types $(\Box, \Box)$. (In addition to **System F** capability $(\Box/\*, \*)$ ) |
 | Dependent | Types can be parametrized by terms | Dependent λ-calculus (**λP** / LF) | Dependent types (Π-types) | Types/terms can depend on terms $(\*, \Box/\*)$ |
 | Dependent + Polymorphic | Types can be parametrized by terms. Terms can be parametrized by types. | Second-Order (Polymorphic) Dependent λ-calculus (**λP2** / **PRED2**)[^15] | Dependent types (Π-types) & Type abstraction (∀) | Types can depend on terms $(\*, \Box)$. (In addition to **System F** capability $(\Box/\*, \*)$ ) |
 | Higher-order + dependent + inductive | Term-dependent types with native data structures and universes | Martin-Löf Type Theory (MLTT) | In addition to Dependent types (Π-types): Dependent pairs (Σ-types), Identity-types, Inductive trees (W-types) + Predicative Universes | Types can depend on terms + Native mathematical induction. Does not fit the Barendregt $(\text{sort}_1, \text{sort}_2)$ Lambda Cube notation. |
@@ -387,7 +388,7 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 | Logic | Type-theoretic / λ-calculus counterpart |
 |---|---|
 | Intuitionistic propositional logic (aka Zeroth-order Propositional Logic aka Zeroth-order Predicate Logic) | STLC |
-| ~~First-Order intuitionistic propositional logic~~ | No such logic. "Propositional" means there are no quantifiers over **individuals**, whereas "first-order" means there are. |
+| ~~First-Order intuitionistic propositional logic~~ | No such logic. Unlike Predicates (eg $\forall x \text{ Human}(x)$ ) that take **individual/term** (aka first-order) variables (eg $x$) as arguments, Propositions by definition don't take any arguments. Propositions already have truth-values. A Proposition is either an atomic statement that is `T`/`F` to begin with, or is a predicate that is already evaluated to `T`/`F` by supplying values (like a function call) to **individual/term** variables in the predicate. "First-order" quantifies over **individual/term** variables (aka first-order variables), but a Proposition simply does not have them. And Second-order (quantification over second-order variables ie Propositions/Predicates themselves eg $\forall P \\, P(x)$ ), Third & Higher-orders (quantification over third & higher-order variables ie Propositions of Propositions, Predicates of Predicates, and so on) can be achieved for Propositions, just as well as for Predicates. |
 | Second-order intuitionistic propositional logic (Polymorphic) | System F |
 | Higher-order intuitionistic propositional logic (Higher-kinded) | Fω |
 | First-Order (Predicate) Logic (Minimal Fragment) (only $\forall, \to$) | First-Order Dependent λ-calculus (**λP** / LF)[^15]. <br> • **$\Pi$-types** only = **($\forall, \to$)** |
