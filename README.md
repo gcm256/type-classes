@@ -95,12 +95,12 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 | ----                                  | ----                                               | ----     |
 | <a id="l-1"></a>1. Logical foundation / principles	| What notion of validity/reasoning?	             | Classical, Intuitionistic, Minimal |
 | <a id="l-2"></a>2. Structural discipline / rules	     | How may assumptions be used?	                  | Structural, Linear, Affine, Relevant |
-| 3. Logical extensions	               | What additional operators/concepts?	             | Modal, Temporal, etc. |
+| <a id="l-3"></a>3. Logical extensions	               | What additional operators/concepts?	             | Modal, Temporal, etc. |
 | <a id="l-4"></a>4. Logical order / expressiveness	| What can propositions quantify over?	             | Propositional → First-order → Second-order → Higher-order |
 | <a id="l-5"></a>5. Dependent type expressiveness	     | Can types/propositions depend on terms, types etc? | Dependent Type Theory, Simple, polymorphic, higher-kinded |
-| 6. Semantics	                         | What gives the system meaning?	                  | Boolean algebras, Heyting algebras, Kripke models, categorical semantics, etc. |
+| <a id="l-6"></a>6. Semantics	                         | What gives the system meaning?	                  | Boolean algebras, Heyting algebras, Kripke models, categorical semantics, etc. |
 | <a id="l-7"></a>7. Proof calculus	                    | How are proofs derived and presented?	             | Hilbert, Natural Deduction, Sequent Calculus |
-| 8. Computational/proof-term calculus	| What computational objects correspond to proofs?   | [Combinatory logic](https://en.wikipedia.org/wiki/Combinatory_logic#See_also), λ-calculus, dependent λ-calculus |
+| <a id="l-8"></a>8. Computational/proof-term calculus	| What computational objects correspond to proofs?   | [Combinatory logic](https://en.wikipedia.org/wiki/Combinatory_logic#See_also), λ-calculus, dependent λ-calculus, Cut-elimination |
 
 
 ## Specification of a Logic
@@ -113,28 +113,29 @@ where the result can have cardinality: 0, 1, or many.
 
 ## Dimensions of a Logic
 
-### \[Logical foundation\] What kind of reasoning?
+### [1](#l-1). \[Logical foundation\] What kind of reasoning?
 * Classical Logic (Propositional Logic, First Order Logic (FOL), HOL)
 * Intuitionistic Logic (Constructive Logic (Brouwer))
 
-### \[Structural discipline\] How may assumptions be used?
+### [2](#l-2). \[Structural discipline\] How may assumptions be used?
 * Structural (Ordinary Logic)
 * Substructural Logic
   * Linear Logic
   * Affine Logic
   * Relevant Logic
 
-### \[Expressive logical extensions\] What extra concepts/operators?
+### [3](#l-3). \[Expressive logical extensions\] What extra concepts/operators?
 * Modal Logic
 * Temporal Logic (LTL, CTL, CTL*)
 
-### \[Logic Order/Expressiveness/Strength + Type Dependency/Expressiveness/Structure\] What can propositions quantify over? + What can types depend upon?
+### [4](#l-4). \[Logic Order/Expressiveness/Strength\] What can propositions quantify over? & 
+### [5](#l-5). \[Type Dependency/Expressiveness/Structure\] What can types depend upon?
 * Propositional + Simple(Non-dependent) => Simply-typed λ-calculus (STLC)
 * Propositional + Dependent => Not-applicable
 * First Order + Non-dependent => No standard direct Curry–Howard λ-calculus counterpart
-* First Order + Dependent => Π/Σ type systems
+* First Order + Dependent => Π/Σ type systems eg λP
 * Second-Order + Polymorphic(Non-dependent) => System F
-* Second Order + Dependent => Dependent second-order type systems
+* Second Order + Dependent => Dependent second-order type systems eg λP2
 * Higher-Order + Higher-Kinded(Non-dependent-) => Fω / Higher-order λ-calculi
 * Higher-Order + Dependent => CoC (Calculus of Constructions)
 * CoC + Inductive Types/Constructions => CIC (Calculus of Inductive Constructions)
@@ -152,17 +153,18 @@ where the result can have cardinality: 0, 1, or many.
 >
 > But: `(Classical, Second-order, Non-dependent, ND)` has multiple possible classical λ-calculus formulations.
 
-### \[Semantics\] What gives meaning to the logic?
+### [6](#l-6). \[Semantics\] What gives meaning to the logic?
 * Heyting Algebras
 * Boolean Algebras
 * Kripke models
 * Domain Semantics
 * Categorical Semantics
 
-### \[Proof system\] How do we formally derive proofs?
-* Hilbert ↔ Typed Combinatory Logic
-* Natural Deduction ↔ Typed λ-calculus
-* Sequent Calculus (Gentzen) ↔ Cut-elimination / computational calculi
+### [7](#l-7). \[Proof system\] How do we formally derive proofs? & 
+### [8](#l-8). \[Computational calculus\] What computational objects correspond to proofs? 
+* Hilbert $\equiv$ Typed Combinatory Logic
+* Natural Deduction $\equiv$ Typed λ-calculus
+* Sequent Calculus (Gentzen) $\equiv$ Cut-elimination / computational calculi
 
 ----
 ----
@@ -244,19 +246,34 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 
 | Concept | Example | Meaning |
 |---|---|---|
-| Individual | `Alice`, `42` | An object in the domain |
-| Term | `x`, `42`, `f(x)` | Syntactic expression denoting an individual |
-| Function | `f` | Maps individuals to individuals |
+| Individual | `Alice`, `42` | The base (lowest-level) object in the domain. |
+| Function | `cons`, `car`, `cdr`, `S`, `succ`, `λf.λx.x`, `fmap`, `join`, `>>=` `(.)` | An object that maps individuals to individuals. (HOFs map functions/HOFs to functions/HOFs). Term -> Term |
+| Term | `x`, `42`, `f(x)` | Syntactic expression denoting an individual or a function. |
+| Term variable | `x`, `y`, `f` | Variable ranging over terms. Term-variable of individual is aka First-order variable. Term variable of base-function (non-HOF) is Second-order variable. Term variable of HOF is Higher-order variable. |
 | Predicate $\ddagger$ | `Human`, `Even`, `Loves` | Property/relation of individuals. An $n$-ary Predicate is a function from $n$ Terms to a Proposition (or, à la Currying, an $n$-ary Predicate is a function from a Term to a $n-1$-ary Predicate). So a unary Predicate has type (`Term` $\to$ `Proposition`), a binary Proposition has type (`Term` $\to$ `Term` $\to$ `Proposition`) and so on. |
 | Proposition | `Human(Alice)`, `2+2=4` | Something that can be `True` or `False`. Proposition is the result when **all** the specific `Term` arguments are supplied to the Predicate. A Proposition is in fact a $0$-ary Predicate. |
-| Propositional variable | `P`, `Q` | Variable ranging over propositions |
-| Predicate variable | `P`, `R` | Variable ranging over predicates/relations |
-| Type | `Nat`, `Bool`, `A` | Class/category of terms |
-| Type variable | `X`, `Y` | Variable ranging over types |
-| Dependent type | `Vec(A,n)` | A type whose definition depends on a term |
-| Logic Formula | First-order (Predicate): $\forall x \, (\text{Human}(x) \to \text{Mortal}(x))$ <br> Propositional (Zeroth-order): $(P \land (P \to Q)) \to Q$ <br> Second-order Propositional: $\forall P \, (P \lor \neg P)$ <br> Second-Order Predicate: $\forall P \, \Big( (P(0) \land \forall k \, (P(k) \to P(k+1))) \to \forall n \, P(n) \Big)$ <br> Higher-Order Propositional: $\forall F \, \Big( F(p, q) \leftrightarrow F(q, p) \Big)$ <br> Higher-Order Predicate: $\forall x \, \forall y \, \Big( (x = y) \leftrightarrow \forall P \, (P(x) \leftrightarrow P(y)) \Big)$ | A logic expression involving terms (term-variables), propositions, predicates, propositional-variables, predicate-variables, functions/predicates of propositions/predicates, and operators like logic symbols, logical connectors, and quantifiers.
+| Propositional variable | `P`, `Q` | Variable ranging over propositions. |
+| Predicate variable | `P`, `R` | Variable ranging over predicates/relations. Prop/Pred-variables are Second-order variables. |
+| Predicate Function | `&&`, `\|\|` | Maps Predicates to Terms/Predicates. Special cases: <br> Functions-of-Predicates: (Pred...) -> Term. <br> Predicates-of-Predicates: (Pred...) -> Pred. <br> Functions-of-Propositions: (Prop...) -> Term. <br> Predicates-of-Propositions: (Prop...) -> Pred <br> Propositions-of-Props/Preds: No such thing since Propositions don't take arguments/inputs. |
+| Predicate Function variable | `F`, `𝓕`, `𝓟`, `𝓠` , `𝓡`, `𝓢` | Variable ranging over Predicate Functions. Predicate Function variables are Higher-order variables. Order ≥ 3.|
+| Type | `Nat`, `Bool`, `A`, `Int`, `Int -> Int`, `(a -> b) -> [a] -> [b]` | Class/category of terms. |
+| Type variable | `X`, `Y`, `a`, `b`, `M` | Variable ranging over types. |
+| Dependent type | `Vec(A,n)` | A type whose definition depends on a term. |
+| Kind             | `Type`/`Prop`, `Term → Type`, `Type → Type` | A particular class of types, corresponding to predicates of the same arity and order. |
+| Kind variable    | `K` | Variable ranging over Kinds. |
+| Universe or Sort | `*`/`sort1`, `☐`/`sort2`,  `Type0`/`Set`, `Type1`, `Type2`, `Prop` | A classification of Kinds. |
+| Universe variable | `𝒰₀`, `𝒰₁`, `𝒰₂` | Variable ranging over Universes. |
+| Logic Formula | Propositional (Zeroth-order):<br> $(P \land (P \to Q)) \to Q$ <br> ${\color{blue}\text{Modus Ponens}}$ <br><br> First-order (Predicate):<br> $\forall x \\, (\text{Human}(x) \to \text{Mortal}(x))$ <br><br> Second-order Propositional:<br> $\forall P \\, (P \lor \neg P)$ <br> ${\color{blue}\text{Law of Excluded Middle expressed universally}}$ <br><br> Second-Order Predicate:<br> $\forall P \\, \Big( (P(0) \land \forall k \\, (P(k) \Rightarrow P(k+1))) \Rightarrow \forall n \\, P(n) \Big)$ <br> ${\color{blue}\text{Principle of Math Induction}}$ <br> $\forall x \\, \forall y \\, \Big( (x = y) \Leftrightarrow \forall P \\, (P(x) \Leftrightarrow P(y)) \Big)$ <br> ${\color{blue}\text{Leibniz's Law / Identity of Indiscernibles}}$ <br><br> Higher-Order Propositional:<br> $\forall F \\, \Big( F(P, Q) \Leftrightarrow F(Q, P) \Big)$ <br> $F$ is a **truth-function[†](#truth-functions).** <br><br> Higher-Order Predicate:<br> $\forall 𝓠 \\, \Big( 𝓠(P) \Rightarrow 𝓠(R) \Big)$ <br> 𝓠 is a Predicate-Function (more specifically Predicate-of-predicates aka Second-order Predicate) that takes Predicates as input. <br> • Predicate-order = Variable-order - 1. Individuals have predicate-order 0, since their variable-order is 1. <br> • $n$-th order predicate is $(n+1)$-th order variable in $(n+1)$-th order logic. <br> • $n$-th order predicate takes _at least one_ input with variable-order $n$. It _may_ take inputs with variable-order < $n$ but _not_ > $n$. <br> • Logic-order is the maximum variable-order that can be quantified over in that logic. | A Logic Formula is an expression involving terms (term-variables), propositions, predicates, propositional-variables, predicate-variables, predicate-functions (eg functions/predicates of propositions/predicates etc), and operators like logic symbols, logical connectors, and quantifiers.
 
 > [!NOTE]
+> <a id="truth-functions"></a> **†** In Higher-order propositional logic, **truth-functions** are operators that take propositions as inputs
+> and output truth values.
+> - **What the given example means:** _"For every binary truth function F (an operator that takes two propositions and returns True or False), applying it to P and Q
+> is equivalent to applying it to Q and P."_ (This represents commutative propositional operators).
+> - **Why $F$ is higher-order:** $F$ is a variable representing a function that operates on propositions, putting it above standard second-order propositional quantification.
+>
+> ----
+> 
 > $\ddagger$ A unary Predicate is sometimes called a **Property**. Because the (unary) Predicate $P(x)$ is a property of Term $x$.
 >
 > A binary Predicate is sometimes called a **Relation**. Because the (binary) Predicate $P(x,y)$ is a relation between Terms $x$ and $y$.
@@ -265,6 +282,14 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 > 
 > And as we saw, a $0$-ary Predicate is nothing but a **Proposition**.
 >
+> ----
+
+> [!IMPORTANT]
+> $0$-ary Predicate $\equiv$ **Proposition** $\equiv$ **Simple-Type** $\equiv$ **Base-Kind**
+>
+> ----
+
+> [!NOTE]
 > **Kind** decides Arity. **Quantification** decides Order.
 > 
 > **Kinds** (aka "types of types" aka meta-templates or factories used to build predicates, propositions, and functions.) are classified as:
@@ -276,10 +301,13 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 > - `Type` → `Type` → `Type` $\equiv$ Functions of Propositions $\equiv$ Binary Logical Connective $\equiv$ Binary Boolean Function $\equiv$ Binary **Higher-Order Predicate**
 > - `Type` → ... → `Type` → `Type` $\equiv$ Functions of Propositions $\equiv$ $n$-ary Logical Connective $\equiv$ $n$-ary Boolean Function $\equiv$ $n$-ary **Higher-Order Predicate**
 >
+> ----
 > 
 > Distinction between **Dependent Types** (all args not supplied, hence live at the Kind level) &
 > **Dependently Typed Terms** (all args supplied aka fully saturated, hence live at the Term level).
 > 
+> ----
+> ----
 
 | $\underbrace{\text{Arity}}_\downarrow \mid \text{Order} \to$ | Zeroth-order | First-order | Second-order | Higher-order |
 | ----                                                         | ----         | ----        | ----         | ----         |
