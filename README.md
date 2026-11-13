@@ -65,21 +65,21 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 
 ### Lambda-Cube
 
-- λ→  $\\;\qquad$ STLC (Terms can depend on Terms. No other dependency allowed.) $(\*, \*)$
-- 2   $\quad \qquad$ Add Parametric Polymorphism (Terms can depend on Types.) $(\Box, \*)$
-- ⍹   $\quad \qquad$ Add Type Constructor (Types can depend on Types.) $(\Box, \Box)$
-- P   $\quad \qquad$ Add Dependent Types (Types can depend on Terms.) $(\*, \Box)$
+- λ→  $\\;\qquad$ STLC (**_Terms_** can depend on **_Terms_**. No other dependency allowed.) $(\*, \*)$
+- 2   $\quad \qquad$ Add Parametric Polymorphism (**_Terms_** can depend on **_Types_**.) $(\Box, \*)$
+- ⍹   $\quad \qquad$ Add Type Constructors (**_Types_** can depend on **_Types_**.) $(\Box, \Box)$
+- P   $\quad \qquad$ Add Dependent Types (**_Types_** can depend on **_Terms_**.) $(\*, \Box)$
 
-| Logic | Name of Logic                           | Type-System | Type-System Components |
-|----   |----                                     |----         |----                    |
-| PROP  | Propositional Logic                     | λ→          | λ + Types              |
-| PROP2 | Second-order Propositional Logic        | λ2 (F)      | λ→ + 2                 |
-| PROP⍹ | Weakly Higher-order Propositional Logic | λ⍹          | λ→ + ⍹                 |
-| PROPω | Higher-order Propositional Logic        | λω (Fω)     | λ→ + 2 + ⍹             |
-| PRED  | Predicate Logic                         | λP (LF)     | λ→ + P                 |
-| PRED2 | Second-order Predicate Logic.           | λP2         | λ→ + 2 + P             |
-| PRED⍹ | Weakly Higher-order Predicate Logic     | λP⍹         | λ→ + ⍹ + P             |
-| PREDω | Higher-order Predicate Logic            | λPω (CC)    | λ→ + 2 + ⍹ + P         |
+| Logic   | Name of Logic                           | Type-System | Type-System Components |
+|----     |----                                     |----         |----                    |
+| `PROP`  | Propositional Logic                     | λ→          | λ + Types              |
+| `PROP2` | Second-order Propositional Logic        | λ2 (F)      | λ→ + 2                 |
+| `PROP⍹` | Weakly Higher-order Propositional Logic | λ⍹          | λ→ + ⍹                 |
+| `PROPω` | Higher-order Propositional Logic        | λω (Fω)     | λ→ + 2 + ⍹             |
+| `PRED`  | Predicate Logic                         | λP (LF)     | λ→ + P                 |
+| `PRED2` | Second-order Predicate Logic            | λP2         | λ→ + 2 + P             |
+| `PRED⍹` | Weakly Higher-order Predicate Logic     | λP⍹         | λ→ + ⍹ + P             |
+| `PREDω` | Higher-order Predicate Logic            | λPω (CC)    | λ→ + 2 + ⍹ + P         |
 
 ### Taxonomy
 
