@@ -24,40 +24,62 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 
 ## Summary of [Logic](https://www.rbjones.com/rbjpub/logic/cl/index.htm)
 
-[Formal Logic](https://en.wikipedia.org/wiki/Template:Non-classical_logic) & [Proof-Theory / Proof-System](https://en.wikipedia.org/wiki/Template:Mathematical_logic)
-$\cong$ 
-Model of Computation & [Type-Theory / Type-System](https://ncatlab.org/nlab/show/type+theory) 
-$\cong$ 
-Category-Theory
+<div align="center">
 
-𝝺-Calculus $\cong$ Combinatory-Logic $\cong$ Turing-Machine $\cong$ $\mu$-recursive (or partial recursive) functions $\cong$ RE sets 
+**[Formal Logic](https://en.wikipedia.org/wiki/Template:Non-classical_logic) & [Proof-Theory / Proof-System](https://en.wikipedia.org/wiki/Template:Mathematical_logic)** \
+**$\cong$** \
+**Model of Computation & [Type-Theory / Type-System](https://ncatlab.org/nlab/show/type+theory)** \
+**$\cong$** \
+**Category-Theory**
 
-Domain Characterization:
-A set $A \subseteq ℕ$ is RE if and only if there exists a partial recursive function $f$ such that $A = \text{dom}(f)$.
+</div>
 
-Range Characterization:
-A set $A \subseteq ℕ$ is RE if and only if there exists a partial recursive function $g$ such that $A = \text{range}(g)$. 
-(And if $A$ is non-empty, $g$ can always be chosen to be a total recursive function).
+----
 
-Domain Characterization & Range Characterization are equivalent. Both conditions are **individually necessary and sufficient** characterizations of a Recursively Enumerable (RE) set.
+<div align="center">
+
+**𝝺-Calculus** \
+**$\cong$** \
+**Combinatory-Logic** \
+**$\cong$** \
+**Turing-Machine** \
+**$\cong$** \
+**$\mu$-recursive (or partial recursive) functions** \
+**$\cong$** \
+**RE sets** 
+
+</div>
+
+> [!IMPORTANT]
+> **RE sets**  & **partial recursive functions** correspond to each other because:
+> 
+> - **Domain Characterization:**
+>   - A set $A \subseteq ℕ$ is **RE** **_if and only if_** there exists a **partial recursive function** $f$ such that $A = \text{dom}(f)$.
+> 
+> - **Range Characterization:**
+>   - A set $A \subseteq ℕ$ is **RE** **_if and only if_** there exists a **partial recursive function** $g$ such that $A = \text{range}(g)$. 
+> (And if $A$ is non-empty, $g$ can always be chosen to be a **total recursive function**).
+>
+> - 🔆🔆 Domain Characterization & Range Characterization are equivalent.
+> Both conditions are **individually necessary and sufficient** characterizations of a **Recursively Enumerable (RE)** set. 🔆🔆
 
 ### Lambda-Cube
 
-- 𝝺→  $\qquad$ STLC (Terms can depend on Terms. No other dependency allowed.)
-- 2   $\qquad$ Add Parametric Polymorphism (Terms can depend on Types)
-- 𝞈̲   $\qquad$ Add Type Constructor (Types can depend on Types)
-- P   $\qquad$ Add Dependent Types (Types can depend on Terms)
+- λ→  $\\;\qquad$ STLC (Terms can depend on Terms. No other dependency allowed.) $(\*, \*)$
+- 2   $\quad \qquad$ Add Parametric Polymorphism (Terms can depend on Types.) $(\Box, \*)$
+- ⍹   $\quad \qquad$ Add Type Constructor (Types can depend on Types.) $(\Box, \Box)$
+- P   $\quad \qquad$ Add Dependent Types (Types can depend on Terms.) $(\*, \Box)$
 
-| Logic | Name of Logic                         | Type     |
-|----   |----                                   |----      |
-| PROP  | proposition logic                     | λ→       |
-| PROP2 | second-order proposition logic        | λ2 (F)   |
-| PROPω̲ | weakly higher-order proposition logic | λω̲       |
-| PROPω | higher-order proposition logic        | λω (Fω)  |
-| PRED  | predicate logic                       | λP       |
-| PRED2 | second-order predicate logic          | λP2      |
-| PREDω̲ | weakly higher-order predicate logic   | λPω̲      |
-| PREDω | higher-order predicate logic          | λPω (CC) |
+| Logic | Name of Logic                           | Type-System | Type-System Components |
+|----   |----                                     |----         |----                    |
+| PROP  | Propositional Logic                     | λ→          | λ + Types              |
+| PROP2 | Second-order Propositional Logic        | λ2 (F)      | λ→ + 2                 |
+| PROP⍹ | Weakly Higher-order Propositional Logic | λ⍹          | λ→ + ⍹                 |
+| PROPω | Higher-order Propositional Logic        | λω (Fω)     | λ→ + 2 + ⍹             |
+| PRED  | Predicate Logic                         | λP (LF)     | λ→ + P                 |
+| PRED2 | Second-order Predicate Logic.           | λP2         | λ→ + 2 + P             |
+| PRED⍹ | Weakly Higher-order Predicate Logic     | λP⍹         | λ→ + ⍹ + P             |
+| PREDω | Higher-order Predicate Logic            | λPω (CC)    | λ→ + 2 + ⍹ + P         |
 
 ### Taxonomy
 
