@@ -65,21 +65,29 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 
 ### [Lambda-Cube](https://www.rbjones.com/rbjpub/logic/cl/index.htm)
 
-- λ→  $\\;\qquad$ STLC (**_Terms_** can depend on **_Terms_**. No other dependency allowed.) $(\*, \*)$
+- λ➝  $\\;\qquad$ STLC (**_Terms_** can depend on **_Terms_**. No other dependency allowed.) $(\*, \*)$
 - 2   $\quad \qquad$ Add Parametric Polymorphism (**_Terms_** can depend on **_Types_**.) $(\Box, \*)$
 - ⍹   $\quad \qquad$ Add Type Constructors (**_Types_** can depend on **_Types_**.) $(\Box, \Box)$
 - P   $\quad \qquad$ Add Dependent Types (**_Types_** can depend on **_Terms_**.) $(\*, \Box)$
 
 | Logic   | Name of Logic                           | Type-System | Type-System Components |
 |----     |----                                     |----         |----                    |
-| `PROP`  | Propositional Logic                     | λ→          | λ + Types              |
-| `PROP2` | Second-order Propositional Logic        | λ2 (F)      | λ→ + 2                 |
-| `PROP⍹` | Weakly Higher-order Propositional Logic | λ⍹          | λ→ + ⍹                 |
-| `PROPω` | Higher-order Propositional Logic        | λω (Fω)     | λ→ + 2 + ⍹             |
-| `PRED`  | Predicate Logic                         | λP (LF)     | λ→ + P                 |
-| `PRED2` | Second-order Predicate Logic            | λP2         | λ→ + 2 + P             |
-| `PRED⍹` | Weakly Higher-order Predicate Logic     | λP⍹         | λ→ + ⍹ + P             |
-| `PREDω` | Higher-order Predicate Logic            | λPω (CC)    | λ→ + 2 + ⍹ + P         |
+| `PROP`  | Propositional Logic                     | λ➝          | λ + Types              |
+| `PROP2` | Second-order Propositional Logic        | λ2 (F)      | λ➝ + 2                 |
+| `PROP⍹` | Weakly Higher-order Propositional Logic | λ⍹          | λ➝ + ⍹                 |
+| `PROPω` | Higher-order Propositional Logic        | λω (Fω)     | λ➝ + 2 + ⍹             |
+| `PRED`  | Predicate Logic                         | λP (LF)     | λ➝ + P                 |
+| `PRED2` | Second-order Predicate Logic            | λP2         | λ➝ + 2 + P             |
+| `PRED⍹` | Weakly Higher-order Predicate Logic     | λP⍹         | λ➝ + ⍹ + P             |
+| `PREDω` | Higher-order Predicate Logic            | λPω (CC)    | λ➝ + 2 + ⍹ + P         |
+
+> [!IMPORTANT]
+> - 🔆 A **0-ary Predicate** is called as a **Proposition**.
+>   - An $n$-ary Predicate has $n$ term-variables. So a Predicate with no term-variables in it _is_ a Proposition. A Proposition by definition, is a 0-ary Predicate.
+> - ❇️ Predicate (non-Propositional) Logic $\equiv$ Dependent-Type-System
+>   - A Predicate (non-zero-ary Predicate ie which is not a Proposition) in Logic corresponds to a Dependent-Type in Type-Theory.
+>   - In Type Theory, a **Predicate** (of any arity ≥ 1) *is* (nothing but) a **Dependent-Type**. Hence, **Predicate Logic** (of any Order ≥ 1) requires **Dependent-typing**.
+>     Propositional Logic (of any Order) doesn't require Dependent-typing.
 
 ### Taxonomy
 
@@ -246,6 +254,7 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 | Type | `Nat`, `Bool`, `A` | Class/category of terms |
 | Type variable | `X`, `Y` | Variable ranging over types |
 | Dependent type | `Vec(A,n)` | A type whose definition depends on a term |
+| Logic Formula | First-order (Predicate): $\forall x \, (\text{Human}(x) \to \text{Mortal}(x))$ <br> Propositional (Zeroth-order): $(P \land (P \to Q)) \to Q$ <br> Second-order Propositional: $\forall P \, (P \lor \neg P)$ <br> Second-Order Predicate: $\forall P \, \Big( (P(0) \land \forall k \, (P(k) \to P(k+1))) \to \forall n \, P(n) \Big)$ <br> Higher-Order Propositional: $\forall F \, \Big( F(p, q) \leftrightarrow F(q, p) \Big)$ <br> Higher-Order Predicate: $\forall x \, \forall y \, \Big( (x = y) \leftrightarrow \forall P \, (P(x) \leftrightarrow P(y)) \Big)$ | A logic expression involving terms (term-variables), propositions, predicates, propositional-variables, predicate-variables, functions/predicates of propositions/predicates, and operators like logic symbols, logical connectors, and quantifiers.
 
 > [!NOTE]
 > $\ddagger$ A unary Predicate is sometimes called a **Property**. Because the (unary) Predicate $P(x)$ is a property of Term $x$.
@@ -274,7 +283,7 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 
 | $\underbrace{\text{Arity}}_\downarrow \mid \text{Order} \to$ | Zeroth-order | First-order | Second-order | Higher-order |
 | ----                                                         | ----         | ----        | ----         | ----         |
-| Propositional ($0$-ary Predicate) | λ→ (Simply Typed λ-Calculus) • No quantifiers allowed • Only static propositional constants (e.g., $P \to Q$). | Not Applicable (Requires a Term layer to exist in the syntax for first-order quantification). | λ2 (System F / SOPL) • Quantifies over Type • Binds 0-ary propositional variables: $\forall P : \text{Type}$. | λω (System Fω / HOPL) • Quantifies over $\text{Type} \to \text{Type}$ • Binds logical connectives/boolean functions: $\forall F : \text{Type} \to \text{Type}$. |
+| Propositional ($0$-ary Predicate) | λ➝ (Simply Typed λ-Calculus) • No quantifiers allowed • Only static propositional constants (e.g., $P \to Q$). | Not Applicable (Requires a Term layer to exist in the syntax for first-order quantification). | λ2 (System F / SOPL) • Quantifies over Type • Binds 0-ary propositional variables: $\forall P : \text{Type}$. | λω (System Fω / HOPL) • Quantifies over $\text{Type} \to \text{Type}$ • Binds logical connectives/boolean functions: $\forall F : \text{Type} \to \text{Type}$. |
 | Predicate ($n$-ary Predicate, $n \ge 1$) | Not Applicable (Requires term variables to saturate the internal $n$-ary predicate functions). | λP (Logical Framework LF) • Quantifies over Term • Binds individual objects: $\forall x : \text{Term}$. • Predicates ($\text{Term} \to \text{Type}$) are static constants. | λP2 (Second-Order Predicate) • Quantifies over $\text{Term} \to \text{Type}$ • Binds unary properties / sets of individuals: $\forall P : \text{Term} \to \text{Type}$. | λPω / CoC (Calculus of Constructions) • Quantifies over Kinds • Binds meta-predicates / properties of predicates: $\forall \mathcal{X} : (\text{Term} \to \text{Type}) \to \text{Type}$. |
 
 
@@ -350,7 +359,7 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 
 | Type/proposition dependency | Meaning | Typical calculus | Feature added | Main capability |
 |---|---|---|---|---|
-| Non-dependent | No dependence between Types and Terms | **STLC** (**λ→**) | None(Baseline) | Terms can depend on terms only $(*, *)$ |
+| Non-dependent | No dependence between Types and Terms | **STLC** (**λ➝**) | None(Baseline) | Terms can depend on terms only $(*, *)$ |
 | Polymorphic | Quantification over types. Terms can be parametrized by types. | **System F** (**λ2**) | Type abstraction (∀) | Terms can depend on types/terms $(\Box/\*, \*)$ |
 | Higher-kinded | Types/type operators can be higher-order. Types can be parametrized by types. | **Fω** (**λ2 + λ⍹**) | Type Constructors aka type-level functions | Types can depend on types $(\Box, \Box)$. (In addition to **System F** capability $(\Box/\*, \*)$ ) |
 | Dependent | Types can be parametrized by terms | Dependent λ-calculus (**λP** / LF) | Dependent types (Π-types) | Types/terms can depend on terms $(\*, \Box/\*)$ |
