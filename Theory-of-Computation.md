@@ -109,6 +109,10 @@ Therefore, from (1) and (2): $\text{PH} \subseteq \text{P}^{\text{PP}} \implies 
 - https://en.wikipedia.org/wiki/Decision_problem
 - https://en.wikipedia.org/wiki/Decidability_(logic)
 - https://en.wikipedia.org/wiki/Undecidable_problem
+- https://en.wikipedia.org/wiki/Church_encoding
+- https://en.wikipedia.org/wiki/Template:Hyperoperations
+- https://en.wikipedia.org/wiki/Template:Large_numbers
+- https://en.wikipedia.org/wiki/Lambert_W_function
 
 ----
 
