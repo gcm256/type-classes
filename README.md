@@ -28,7 +28,7 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 
 **[Formal Logic](https://en.wikipedia.org/wiki/Template:Non-classical_logic) & [Proof-Theory / Proof-System](https://en.wikipedia.org/wiki/Template:Mathematical_logic)** \
 **$\cong$** \
-**Model of Computation & [Type-Theory / Type-System](https://ncatlab.org/nlab/show/type+theory)** \
+**[Model of Computation](https://en.wikipedia.org/wiki/Model_of_computation) & [Type-Theory / Type-System](https://ncatlab.org/nlab/show/type+theory)** \
 **$\cong$** \
 **Category-Theory**
 
@@ -36,22 +36,31 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 
 ----
 
+Each of the following characterizes the _exact_ same tier of computability (**Turing-completeness**), computing the _exact_ same set of 
+[Computable functions](https://en.wikipedia.org/wiki/Computable_function#Definition) (the partial-recursive (µ-recursive) functions) and recognizing 
+the _exact_ same class of decision problems (the **RE complexity class**).
+
 <div align="center">
 
-**𝝺-Calculus** \
-**$\cong$** \
-**Combinatory-Logic** \
-**$\cong$** \
-**Turing-Machine** \
-**$\cong$** \
-**$\mu$-recursive (or partial recursive) functions** \
-**$\cong$** \
-**RE sets** 
+**Untyped 𝝺-Calculus**(Set of all 𝝺-terms) \
+**$\equiv$**[††](#int-ext-equiv) \
+**Untyped Combinatory-Logic eg [SKI combinator calculus](https://en.wikipedia.org/wiki/SKI_combinator_calculus)**(Set of all SK-terms) \
+**$\equiv$**[††](#int-ext-equiv) \
+**Set of All Turing-Machines** \
+**$\equiv$**[††](#int-ext-equiv) \
+**$\left\\{U_M\right\\}$ (A Parameterized UTM, aka Curried UTM / Specialized UTM / Programmable UTM)** \
+(It first pre-loads the program ie fixes $M$ in the UTM $U(M, x)$ to produce a single-argument UTM $U_M(x)$ ) \
+**$\equiv$**[†](#tm-mu-re) \
+(via computation; many programs $\twoheadrightarrow$ one function) \
+**Set of All [µ-recursive (or partial recursive) functions](https://en.wikipedia.org/wiki/Mu_recursive_function)** \
+**$\equiv$** [†](#tm-mu-re) \
+(via halting domains; many functions $\twoheadrightarrow$ one set) \
+**Set of All [RE sets](https://en.wikipedia.org/wiki/Recursively_enumerable_set)** **$\equiv$** (by definition) **[The RE _complexity class_](https://en.wikipedia.org/wiki/RE_(complexity))**
 
 </div>
 
 > [!IMPORTANT]
-> **RE sets**  & **partial recursive functions** correspond to each other because:
+> **RE sets** & **partial recursive functions** correspond to each other because:
 > 
 > - **Domain Characterization:**
 >   - A set $A \subseteq ℕ$ is **RE** **_if and only if_** there exists a **partial recursive function** $f$ such that $A = \text{dom}(f)$.
@@ -62,6 +71,38 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 >
 > - 🔆🔆 Domain Characterization & Range Characterization are equivalent.
 > Both conditions are **individually necessary and sufficient** characterizations of a **Recursively Enumerable (RE)** set. 🔆🔆
+>
+> ----
+> 
+> <a id="tm-mu-re"></a> † At the individual set element level, the TM-µ-RE relations are many-one onto
+> ie [surjections](https://en.wikipedia.org/wiki/Surjective_function#Definition) ($\twoheadrightarrow$):
+>
+> ${\color{crimson}\text{One TM (or λ-term)} \twoheadrightarrow \text{One μ-recursive / partial-recursive / computable function} \twoheadrightarrow \text{One RE set's domain}}$
+>
+> - Infinitely many different TMs (λ-terms / SK-terms) compute the exact same partial-recursive function, and
+> - Infinitely many different partial-recursive functions can share the exact same halting domain (an RE set).
+>
+> ----
+
+> [!NOTE]
+> <a id="int-ext-equiv"></a> †† There is no natural 1-to-1 bijection between raw syntax of λ⁠-calculus, Combinatory-Logic, and TM.
+> There is only extensional (computational power) equivalence:
+> 
+> - Every λ⁠-term or SK-term can be simulated by a Turing machine, and every Turing machine can be simulated by a λ⁠-term or SK-term.
+> - Similarly, every λ⁠-term can be simulated by a SK-term, and vice versa.
+> - Note: Even if λ⁠-calculus and SKI-Combinatory-Logic are just rewritings (S = λxλyλz.xz(yz) and K = λxλy.x), they are still not intensionally equivalent.
+>   - Because: they differ in variable binding, reduction rules, and step-by-step execution.
+> 
+> **Intensional vs. Extensional Equivalence**
+> * **Intension (The *How* — Mechanism & Syntax):** Refers to internal structure, code, or operational rules.
+>   * *Program vs. Program:* Same algorithm or syntax (e.g., identical λ-terms up to variable renaming).
+>   * *Model vs. Model:* Turing Machines (states & tape) and Untyped λ-Calculus (variables & β-reduction) are **intensionally different**.
+> * **Extension (The *What* — Result & Scope):** Refers strictly to observable input-output behavior.
+>   * *Program vs. Program:* Behavioral/Semantic Equivalence. Two programs compute the exact same mathematical function (e.g., Bubble Sort vs. Merge Sort).
+>   * *Model vs. Model:* Computational Power / Turing Equivalence. Turing Machines and Untyped λ-Calculus are **extensionally equivalent** ($\equiv$) because
+>     they compute the exact same set of partial recursive functions.
+>
+> ----
 
 ### [Lambda-Cube](https://www.rbjones.com/rbjpub/logic/cl/index.htm)
 
