@@ -344,8 +344,9 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 >
 > ----
 > 
-> Distinction between **Dependent Types** (all args not supplied, hence live at the Kind level) &
-> **Dependently Typed Terms** (all args supplied aka fully saturated, hence live at the Term level).
+> **Dependent Types**: If unsaturated (ie all args not supplied), they live at the Kind level. Otherwise (ie if saturated), they live at the Type level.
+> 
+> **Dependently Typed Terms**: Terms, by defn, don't tak args. So all args supplied (fully saturated), hence live at the Term level.
 > 
 > ----
 > ----
@@ -384,11 +385,11 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 | Level | What is allowed to depend/quantify on what? | Typical example |
 |---|---|---|
 | L0️⃣: Propositional Logic | No quantification over individuals or propositions/types; propositions are atomic units. | STLC |
-| L1️⃣: First-order (Predicate) Logic | Quantification over individuals/terms (Dependent typing). | First-Order Dependent type-systems eg λP / LF, λP extended, Martin-Löf Type Theory (MLTT) without Universes |
+| L1️⃣: First-order (Predicate) Logic | Dependent Typing. Quantification over individuals/terms, including dependently-typed terms. But not over types themselves (_any_ type including dependent types that they support). | First-Order Dependent type-systems eg λP / LF, λP extended, Martin-Löf Type Theory (MLTT) without Universes |
 | L1️⃣: Second-order-propositional Logic | Quantification over propositions/types. | System F |
-| L2️⃣: Second-order-predicate Logic | Quantification over individuals/terms (Dependent typing) and over predicates. | Richer/higher-order Dependent type-systems eg Second-Order (Polymorphic) Dependent λ-calculus (λP2 / PRED2) |
+| L2️⃣: Second-order-predicate Logic | Dependent Typing. First-order (Predicate) Logic + Quantification over predicates (ie over types, including dependent-types). | Richer/higher-order Dependent type-systems eg Second-Order (Polymorphic) Dependent λ-calculus (λP2 / PRED2) |
 | L2️⃣: Higher-order-propositional Logic | Quantification over higher-order propositions by abstracting over logical-connectives (aka boolean-functions aka functions-of-propositions aka Higher-order-predicates) using higher-order quantification/type operators. | Fω / higher-order type systems |
-| L3️⃣: Higher-order-predicate Logic | Quantification over Dependently-typed Terms as well as over higher-order/type-level abstractions (kinds). | Calculus of Constructions (CoC) |
+| L3️⃣: Higher-order-predicate Logic | Dependent Typing. Second-order-predicate Logic + Quantification over higher-order/type-level abstractions (kinds, meta-predicates/predicates-of-predicates). | Calculus of Constructions (CoC) |
 | L4️⃣: Full Higher-order Logic with Inductive Definitions | CoC features plus inductive types/constructions. | CIC |
 | L5️⃣: Higher-order Mathematics (Logic + Arithmetic) | Dependent typing + native data-structures for logic and math + Universes. | MLTT |
 
@@ -396,13 +397,39 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 > :sparkle: In Type Theory, a **Predicate** (of any arity ≥ 1) *is* (nothing but) a **Dependent-Type**. Hence, **Predicate Logic** (of any Order ≥ 1) requires **Dependent-typing**.
 > Propositional Logic (of any Order) doesn't require Dependent-typing.
 >
-> :high_brightness: Logics at the same Level are on different axes, hence not comparable. Eg L1️⃣: First-order (Predicate) Logic and L1️⃣: Second-order-propositional Logic are
-> not comparable since the former is along the x-axis and the latter along the y-axis of the Lambda Cube. Similarly, λP2 (λP+λ2) and Fω (λ2+λ⍹) are both L2️⃣.
+> :high_brightness: Logics at the same Level are on different axes, hence not comparable. Eg L1️⃣: First-order (Predicate) Logic (λP) and L1️⃣: Second-order-propositional Logic (System F)
+> are not comparable since the former is along the x-axis and the latter along the y-axis of the Lambda Cube. Similarly, λP2 (λP+λ2) and Fω (λ2+λ⍹) are both L2️⃣.
+>
+> - **Where System F wins**: System F has vastly greater **computational and proof-theoretic strength**. Because of impredicative polymorphism, it can define
+> complex recursive data types and write functions that are impossible to type in STLC or pure λP (such as Ackermann’s function without built-in recursion).
+> - **Where λP wins**: System F has **no dependent types**, meaning types cannot talk about values. You cannot express "vectors of length $n$" or prove correctness properties
+> about specific program inputs in System F, whereas λP is designed specifically for that.
+>
+> ----
 > 
 > Second-order predicate logic and second-order propositional logic are different logical formalisms, not simply successive levels of one hierarchy. However, a dependent type theory
 > capable of representing second-order predicate logic has capabilities that System F lacks, particularly term-dependent types and quantification over predicates of individuals.
 > The type-theoretic counterpart of 2nd-Order predicate logic can be richer than that of 2nd-order propositional logic even though the two source logics aren't naturally ordered by
 > “second-order-ness.”
+> 
+> ----
+>
+> ### Is Second-Order Predicate Logic (λP2 / PRED2) the _lowest_ level type-system logic that can quantify over _dependent_ types, or is there a lower one that can do this?
+>
+> Yes, within the framework of Pure Type Systems (PTS) and the Lambda Cube, λP2 (PRED2) is the absolute lowest/minimal system that can quantify over dependent types.
+>
+> There is no smaller corner of the Lambda Cube that achieves this.
+>
+> **One Nuance: Predicative vs. Impredicative Quantification**
+>
+> While λP2 is the smallest system structurally (in terms of Lambda Cube rules), you can make it logically weaker while retaining this ability:
+> - **Impredicative λP2 (Standard)**: In standard λP2, "`Π (P : A → *).B`" lives in `*` itself. This allows `P` to be instantiated with types that themselves contain quantifiers
+>   over `A → *` (making it full second-order arithmetic).
+> - **Predicative λP2 (MLTT with one Universe `U₀`)**: If you restrict quantification so that "`Π (P : A → U₀).B`" must live in a _higher_ universe `U₁` (as in Martin-Löf Type Theory
+>   with a universe hierarchy), you get a logically weaker, **predicative** system.
+> - **Bottom Line**: Even in this weaker predicative setup, you are still operating at the **second-order level** (quantifying over type families),
+>   just stratified by universe levels rather than impredicative.
+
 
 | System	                                     | Individuals	| Predicates over individuals	| Quantification over propositions/types | Term-dependent types |
 | ----                                         | ----            | ----                        | ----                                   | ----                 |
