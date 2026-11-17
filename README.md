@@ -334,7 +334,7 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 > **Kind** decides Arity. **Quantification** decides Order.
 > 
 > **Kinds** (aka "types of types" aka meta-templates or factories used to build predicates, propositions, and functions.) are classified as:
-> - `Type` / `Prop` $\equiv$ Base-Kind $\equiv$ Simple-Type $\equiv$ $0$-ary Predicate $\equiv$ **Proposition**
+> - `Type` / `Prop` $\equiv$ Base-Kind $\equiv$ Simple-Type $\equiv$ $0$-ary Predicate $\equiv$ **Proposition** (In CIC, `Prop` isn't same as `Type`, but is a **subtype** of `Type`)
 > - `Term` ➝ `Type` $\equiv$ Dependent-Type $\equiv$ Unary Predicate $\equiv$ **Property**
 > - `Term` ➝ `Term` ➝ `Type` $\equiv$ Dependent-Type $\equiv$ Binary Predicate $\equiv$ **Relation**
 > - `Term` ➝ ... ➝ `Term` ➝ `Type` $\equiv$ Dependent-Type $\equiv$ $n$-ary Predicate
@@ -344,20 +344,90 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 >
 > ----
 > 
-> **Dependent Types**: If unsaturated (ie all args not supplied), they live at the Kind level. Otherwise (ie if saturated), they live at the Type level.
+> **Dependent Types**: Live at Kind level if unsaturated (ie all args not supplied, so the type is not fully formed). Live at Type level otherwise (ie if saturated, so the. type is
+> fully formed).
 > 
-> **Dependently Typed Terms**: Terms, by defn, don't tak args. So all args supplied (fully saturated), hence live at the Term level.
+> **Dependently Typed Terms**: Live at Term level. Terms, by definition, don't take args. So terms are always fully formed.
+>
+> - `P:A ➝ Type₀` = Unsaturated dependent type (Type family / Predicate / Type-level Function).
+> - `P(a):Type₀` = Saturated dependent type (Proposition / Indexed type).
+> - `∀x:A, P(x)` is the same as `Π(x:A).P(x)`
+> - `∃x:A, P(x)` is same as `Σ(x:A).P(x)`
+> - `∀P:(A➝*), B(P)` is the same as `Π(P:A➝*).B(P)`
+> - `∃P:(A➝*), B(P)` is the same as `Σ(P:A➝*).B(P)`
+> - **Quantification over Dependent-type (saturated)**: `∀P:*, B(P)` or `Π(P:*).B(P)` (e.g., instantiating `P` with `Vec Nat 5 : *`).
+> - **Quantification over Dependent-type family (unsaturated dependent-type)**: `∀P:(A➝*), B(P)` or `Π(P:A➝*).B(P)` (e.g., instantiating `P` with `Vec Nat : Nat ➝ *`).
+> - **Quantification over Unsaturated Type constructor**: `∀P:(*➝*), B(P)` or `Π(P:*➝*).B(P)` e.g., instantiating `P` with `List : * ➝ *` or `Maybe : * ➝ *`).
+> - **Quantification over Saturated Type constructor**: `∀P:*, B(P)` or `Π(P:*).B(P)` (e.g., instantiating `P` with `List Nat : *`).
+> - **Quantification over Second-order parametric polymorphic type**: `Π(P : *). B(P)` (impredicative) or `Π(P : U₁). B(P)` (predicative).
+>   - **Why**: A polymorphic type itself (eg `idType ≡ Π (X : *). X ➝ X`) is a complete, closed type, not an unsaturated function waiting for an argument:
+>     - In impredicative systems (System F, λP2, CoC), `Π(X : *). X ➝ X` has kind `*`, so `P` is quantified over `*`.
+>     - In predicative systems (MLTT, CIC), `Π (X : U₀). X ➝ X` gets bumped up to `U₁`, so quantifying over a variable `P` that can be instantiated with it requires `P : U₁`.
+> - **Parametric polymorphism eg PROP2 / λ2 / System F**: Quantifies over propositions / base types `∀X:*, B(X)` or `Π(X:*).B(X)`
+> - **Dependent typing feature eg λP**: Quantifies strictly over terms `∀x:A, B(x)` or `Π(x:A).B(x)`
+> - **You _cannot_ distinguish between many of them by looking at the signature `Π(P : *). B(P)` alone, because in type theory, all four of those entities have
+>   the exact same kind (`*`), which is the entire point of parametric polymorphism.**
+> 
+> Here is why they all collapse into `Π(P : *).B(P)` and where the distinction actually lives:
+> ### 1. Why They All Have the Same Signature (`*`)
+>
+> The symbol `*` (or `Type`) is the universal bucket for **all fully formed, saturated types**, regardless of how those types were built internally:
+> - `Nat` (a simple base type) has kind `*`.
+> - `Vec Nat 5` (a saturated dependent type) has kind `*`.
+> - `List Nat` (a saturated type constructor) has kind `*`.
+> - `Π(X : *).X ➝ X` (an impredicative polymorphic type) has kind `*`.
+>
+> Because `Π(P : *).B(P)` quantifies over **all types** in `*`, a single variable `P : *` can simultaneously accept **all** of them as valid arguments!
+> There is no syntactic difference in`Π(P : *).B(P)` because `P` is a single universal variable ranging over the entire universe `*`.
+> 
+> ### 2. The Distinction Actually Lives in Instantiation, Not Declaration
+>
+> You only see the difference at the **call site (application)**—when you actually pass a concrete type into `P`
+> 
+> ----
+>
+> - **Universal Quantification (∀) is a Dependent Function Type (Π-type)**: A proof of `∀x:A, P(x)` or `Π(P:A).B` is a function that takes any term `a:A` (of type `A`) and
+>   returns a proof of `P(a)`).
+> - **Existential Quantification (∃) is a Dependent Pair Type (Σ⁠-type)**: A proof of `∃x:A, P(x)` or `Σ(P:A).B` is a tuple `(a,p)` where `a`⁠ is a witness of type `A`⁠, and
+>   `p`⁠ is a proof of `P(a)`.
 > 
 > ----
 > ----
+
+### Table 1: The Signature & Form of Each Feature Itself
+
+| Feature | Input / Parameter | Exact Signature / Syntax | Resulting Sort | Concrete Example |
+| :--- | :--- | :--- | :--- | :--- |
+| **a) Dependent-type (saturated)** | None (already applied to `a : A`) | `B(a)` | `*` (or `U₀`) | `Vec Bool 5 : *` |
+| **b) Dependent-type family** (unsaturated) | A **term** (`x : A`) | `A → *` (i.e., `Π (x : A). *`) | `□` (or `U₁`) | `Vec Bool : Nat → *` |
+| **c) Type constructor** (unsaturated) | A **type** (`X : *`) | `* → *` (i.e., `Π (X : *). *`) | `□` (or `U₁`) | `List : * → *` |
+| **d) Type constructor (saturated)** | None (already applied to `T : *`) | `F(T)` | `*` (or `U₀`) | `List Bool : *` |
+| **e) 2nd-order polymorphic type** | Quantifies over **all types** (`X : *`) | `Π (X : *). B(X)` | `*` (impredicative) or `U₁` (predicative) | `Π (X : *). X → X : *` |
+
+----
+
+### Table 2: Universal Quantification *Over* Each Feature (`Π (P : _ ). B(P)`)
+
+| Quantifying Over (`P`) | Signature in `Π (P : _ ). B(P)` | Predicative Equivalent (`MLTT` / `CIC`) | Example Instantiation of `P` | Minimal System Required |
+| :--- | :--- | :--- | :--- | :--- |
+| **a) Saturated dependent-type** | `Π (P : *). B(P)` | `Π (P : U₀). B(P)` | `P = Vec Bool 5` | `λ2` / `λP2` |
+| **b) Dependent-type family** (unsaturated) | `Π (P : A → *). B(P)` | `Π (P : A → U₀). B(P)` | `P = Vec Bool` | `λP2` (PRED2) |
+| **c) Unsaturated type constructor** | `Π (P : * → *). B(P)` | `Π (P : U₀ → U₀). B(P)` | `P = List` | `λω` (System Fω) / `CoC` |
+| **d) Saturated type constructor** | `Π (P : *). B(P)` | `Π (P : U₀). B(P)` | `P = List Bool` | `λ2` (System F) |
+| **e) 2nd-order polymorphic type** | `Π (P : *). B(P)` | `Π (P : U₁). B(P)` | `P = Π (X : *). X → X` | `λ2` (System F) |
+
+----
+
+### Table 3: Propositional (0-ary) & Predicate (non-zero-ary) Logics of Different Orders. 
+
+Order is decided by the maximum order of the variable that can be quantified over.
 
 | $\underbrace{\text{Arity}}_\downarrow \mid \text{Order} \to$ | Zeroth-order | First-order | Second-order | Higher-order |
 | ----                                                         | ----         | ----        | ----         | ----         |
 | Propositional ($0$-ary Predicate) | λ➝ (Simply Typed λ-Calculus) • No quantifiers allowed • Only static propositional constants (e.g., $P \to Q$). | Not Applicable (Requires a Term layer to exist in the syntax for first-order quantification). | λ2 (System F / SOPL) • Quantifies over Type • Binds 0-ary propositional variables: $\forall P : \text{Type}$. | λω (System Fω / HOPL) • Quantifies over $\text{Type} \to \text{Type}$ • Binds logical connectives/boolean functions: $\forall F : \text{Type} \to \text{Type}$. |
 | Predicate ($n$-ary Predicate, $n \ge 1$) | Not Applicable (Requires term variables to saturate the internal $n$-ary predicate functions). | λP (Logical Framework LF) • Quantifies over Term • Binds individual objects: $\forall x : \text{Term}$. • Predicates ($\text{Term} \to \text{Type}$) are static constants. | λP2 (Second-Order Predicate) • Quantifies over $\text{Term} \to \text{Type}$ • Binds unary properties / sets of individuals: $\forall P : \text{Term} \to \text{Type}$. | λPω / CoC (Calculus of Constructions) • Quantifies over Kinds • Binds meta-predicates / properties of predicates: $\forall \mathcal{X} : (\text{Term} \to \text{Type}) \to \text{Type}$. |
 
-
-
+----
 
 ```
 What can the system quantify over?
@@ -377,6 +447,9 @@ What can the system quantify over?
 └── Multiple levels simultaneously
       └── Higher-order dependent type theory / CoC
 ```
+
+----
+----
 
 ## Logical-Order & Type-Dependency
 
@@ -436,15 +509,44 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 > **Strength Hierarchy**:
 > 
 > $$
-> {\color{crimson}\text{λP} < \text{λP-extended} < \text{Universe-free MLTT} < \text{Single-universe MLTT} < \text{λP2 (minimal)} = \text{λP2 (simulated)}}
+> {\color{crimson}\text{λP} < \text{λP-extended} < \text{Universe-free MLTT} < \text{Single-universe MLTT} = \text{Single-universe pCIC}  < \text{λP2 (minimal)} = \text{λP2 (simulated)}}
 > $$
 >
-> - In pure λP (with only ∀ and ➝), you cannot simulate ∃, ∧, ∨, ⊤, ⊥, or arithmetic. You must manually add them as extensions, to make **λP-extended**.
+> - In pure λP (with only ∀ and ➝), you cannot simulate ∃, ∧, ∨, ⊤, ⊥, or arithmetic (which require quantification over a proposition variable).
+>   You must manually add them as extensions, to make **λP-extended**.
 > - But λP2 is impredicative. So having just ∀ and ➝ gives you (via _simulation_) the exact same logical power as having all the connectives, inductive data types and arithmetic.
 > - Logic Order (Quantification-level):
 >   - First-order: λP, λP-extended, Universe-free MLT
->   - Predicative Second-order: Single-universe MLTT
+>   - Predicative Second-order: Single-universe MLTT, Single-Universe pCIC (CIC with only `Type0` universe. After removing `Prop` and all universes above `Type0`)
 >   - Full (Impredicative) Second-order: λP2 _(The minimal λP2 with only ∀ and ➝ is sufficient to get all features of λP2, via simulation)_
+>
+> Because CIC's Type hierarchy is strictly predicative, truncating CIC to a single predicative universe (`Type₀`, with `Type₀ : Type₁` as its top sort) gives you
+> the **exact same Predicative Second-Order Logic** as Single-Universe MLTT.
+> 
+> pCIC (Predicative-CIC) is achieved by not using `Prop` in Coq/Rocq directly or indirectly. Single-universe pCIC is achieved by additionally capping the universe to only `Type0`.
+> - CIC/Coq universe tower structure: `Prop` ≤ `Type0` (aka `Set`) ≤ `Type1` ≤ `Type2` ≤ ...
+> - Each is a **subtype** (denoted by ≤) of all the others to its right. In Coq (Rocq), this subtyping chain is called **universe cumulativity**.
+>   - A term/type/object/anything living in one universe, also lives in all the universes to the right. Eg `nat:Prop` also means `nat:Type0`, `nat:Type1`, `nat:Type2` and so on.
+>   - A universe itself has the type of any universe to its right: `Prop:Type0`, `Type0:Type1`, `Type1:Type2`, `Type2:Type3` and so on. We can put any higher universe to the right of
+>     the `:` ie `Prop:Type1`, `Prop:Type2`, ..., `Type0:Type2`, `Type0:Type3`, ..., `Type1:Type3`, `Type1:Type4`, and so on.
+> - `Prop` is the _only_ **impredicative** Universe. All the rest are **predicative** Universes. But with `Prop` present, the entire system become impredicative.
+> - `Type` (written without a subscript number) is **not a single fixed sort—it is syntactic sugar (an alias) for `Typeᵢ` with an automatically inferred universe level `i`**.
+>   Whenever you type `Type` in your code, the proof assistant silently attaches a hidden universe variable behind the scenes.
+>   - **In Pure Type Systems / Lambda Cube**: `Type` and `Prop` are **synonyms** for the single base sort `*` (0-ary predicate / base kind).
+>   - **In CIC (Coq/Rocq, Lean)**: The system **splits** that single conceptual role into two separate universes—an impredicative `Prop` (for erased logic) and
+>     a predicative `Type₀ : Type₁ : ...` tower (for computational data). `Type` is syntactic-sugar auto-assigned to one of the `Typeᵢ`
+> - To restrict your own code to only ever use `Type₀` (which automatically means you never write `Prop`, never climb to `Type₂`, the truncated tower is `Type₀ : Type₁`):
+>   - Use `Type` instead of `Prop`. In Coq, `Prop` is subtype of `Type`. But still they are distinct universes with different typing rules. `Prop` is impredicative, `Type` is predicative.
+>   - **Predicative Logic:**: Instead of defining predicates as `A -> Prop`, define them as `A -> Type`.
+>   - **Predicative Connectives**: Instead of `and` / `or` / `ex` (which live in `Prop`), use their Type-level counterparts: prod (`*`), sum (`+`), and `sigT` (`{ x : A & P x }`).
+>   - **Predicative Universes**: Whenever you write `forall (P : A -> Type@{i}), B`, Coq's universe checker automatically enforces predicativity by bumping the resulting type
+>     to `Type@{i+1}`.
+>   - **Avoid built-in Equality (=)**: Coq's standard equality `a = b (eq)` is defined in `Prop`. To stay 100% predicative, you must define your own identity type in `Type`
+>     (e.g., `Inductive Id {A : Type} (x : A) : A -> Type := refl : Id x x.`), which is exactly what **Homotopy Type Theory (HoTT)** libraries in Coq do.
+>   - **Avoid built-in False/True (`False`, `True`)**: Standard `False` and `True` live in `Prop`. You use `Empty_set` and `unit` that live in `Type` instead.
+>   - **Avoid Standard Library & Tactics**: Many standard library lemmas and automated tactics expect `Prop` (specifically `eq` and `False`).
+>     Libraries like **Coq-HoTT** work around this by compiling Coq with `-noinit` (disabling the standard prelude) and building a completely predicative library from scratch in `Type`.
+
 
 
 
@@ -517,7 +619,7 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 | Full First-Order Intuitionistic Logic (All connectives, no native arithmetic/induction) | **λP-extended** (Must manually/explicitly add `T`/`F` and the other connectives. $\Pi$-types / ($\forall, \to$) cannot simulate them). <br> • **$\Pi$-types** (already in λP), <br> • **$\Sigma$-types** = ($\land$, $\exists$), <br> • **Sum-types**(**$+$**) = ($\lor$), <br> • **$\mathbf{0}$** = ($\bot$ / **`False`**), <br> • **$\mathbf{1}$** = ($\top$ / **`True`**) |
 | Full First-Order Intuitionistic Logic with Native Induction and Arithmetic (∀, ∃) | Martin-Löf Type Theory (MLTT) **without Universes (Universe-free MLTT)** **$\dagger$** |
 | Predicative (Ramified) Second-Order Intuitionistic Logic with Native Induction and Arithmetic | Martin-Löf Type Theory (MLTT) **with one Universe `U₀` (Single-universe MLTT)** **$\ddagger$**  | 
-| Second-Order Intuitionistic Predicate Logic with inductive data types and arithmetic | Second-Order (Polymorphic) Dependent λ-calculus (**λP2** / **PRED2**)[^15] <br> • Syntactically, it only has `Π`-types (`∀` and `➝`) as primitives, just like λP. However, because its second-order quantification is _impredicative_, it can internally encode all remaining logical connectives (`∃`, `∧`, `∨`, `⊤`, `⊥`) as well as inductive data types and arithmetic (unlike λP, which needed manual extensions for them). |
+| Second-Order Intuitionistic Predicate Logic with inductive data types and arithmetic | Second-Order (Polymorphic) Dependent λ-calculus (**λP2** / **PRED2**)[^15] <br> • Syntactically, it only has `Π`-types (`∀` and `➝`) as primitives, just like λP. However, because its second-order quantification is _impredicative_, it can internally encode all remaining logical connectives (`∃`, `∧`, `∨`, `⊤`, `⊥`) as well as inductive data types and arithmetic (unlike λP, which needed manual extensions for them).**$\S\S$** |
 | Higher-Order Intuitionistic Predicate Logic (All Second-order quantifications + Quantification over predicates-of-predicates and predicate functions up to any finite higher-order level, though it cannot quantify over □ (the sort of kinds) itself.) | Calculus of Constructions (CoC). <br> • It can construct and quantify over predicates-of-predicates, type operators, and higher-order functions to any arbitrary finite level, stopping just short of kind polymorphism (`Π(K:□)`). |
 | Full Higher-Order Intuitionistic Logic with Inductive Definitions | Calculus of Inductive Constructions (CIC). CIC _can_ quantify over □ (and much higher), because it replaces the single top sort □ with an **infinite hierarchy of universes** (`Type₀ : Type₁ : Type₂ : ...`).**$\S$**   |
 | Higher-Order Intuitionistic (Constructive) Mathematics (Heyting Arithmetic) with Universes | Standard Martin-Löf Type Theory (MLTT) |
@@ -533,6 +635,22 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 > **$\S$**
 > Both CIC and MLTT have **infinite hierarchy of (predicative) universes**. CIC has an **impredicative `Prop`** at the bottom for logic but MLTT is purely Predicative
 > without anything like `Prop`.
+> - **MLTT**: Purely predicative (`U₀ : U₁ : U₂ : ...`), with no impredicative `Prop`.
+> - **CIC**: Hybrid—an **impredicative** `Prop` at the bottom for logic, paired with a **strictly predicative** `Type₀ : Type₁ : Type₂ : ...` tower above it for data and mathematics.
+>
+> **$\S\S$**
+> ### Full Second-Order Intuitionistic Logic (via Impredicative Encodings)
+> Because λP2 allows impredicative quantification over all propositions (`*`) and predicates (`A → *`), you **do not** need to add `Σ`-types, sum types,
+> `⊤`, or `⊥` as primitive extensions.
+> You can define all of them natively using second-order `Π`-types (the **Russell-Prawitz encodings**):
+> - **Falsehood (`⊥`)**: `Π (X : *). X`
+> - **Truth (`⊤`)**: `Π (X : *). X → X`
+> - **Conjunction (`A ∧ B`)**: `Π (X : *). (A → B → X) → X`
+> - **Disjunction (`A ∨ B`)**: `Π (X : *). (A → X) → (B → X) → X`
+> - **First-Order Existential (`∃ x : A. P(x)`)**: `Π (X : *). (Π (x : A). P(x) → X) → X`
+> - **Second-Order Existential (`∃ P : A → *. Φ(P)`)**: `Π (X : *). (Π (P : A → *). Φ(P) → X) → X`
+
+
 
 
 ## Decidability / Computability
