@@ -300,7 +300,7 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 | Type | `Nat`, `Bool`, `A`, `Int`, `Int -> Int`, `(a -> b) -> [a] -> [b]` | Class/category of terms. |
 | Type variable | `X`, `Y`, `a`, `b`, `M` | Variable ranging over types. |
 | Dependent type | `Vec(A,n)` | A type whose definition depends on a term. |
-| Kind             | `Type`/`Prop`, `Term → Type`, `Type → Type` | A particular class of types, corresponding to predicates of the same arity and order. |
+| Kind             | `Type`/`Prop`, `Term ➝ Type`, `Type ➝ Type` | A particular class of types, corresponding to predicates of the same arity and order. |
 | Kind variable    | `K` | Variable ranging over Kinds. |
 | Universe or Sort | `*`/`sort1`, `☐`/`sort2`,  `Type0`/`Set`, `Type1`, `Type2`, `Prop` | A classification of Kinds. |
 | Universe variable | `𝒰₀`, `𝒰₁`, `𝒰₂` | Variable ranging over Universes. |
@@ -335,12 +335,12 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 > 
 > **Kinds** (aka "types of types" aka meta-templates or factories used to build predicates, propositions, and functions.) are classified as:
 > - `Type` / `Prop` $\equiv$ Base-Kind $\equiv$ Simple-Type $\equiv$ $0$-ary Predicate $\equiv$ **Proposition**
-> - `Term` → `Type` $\equiv$ Dependent-Type $\equiv$ Unary Predicate $\equiv$ **Property**
-> - `Term` → `Term` → `Type` $\equiv$ Dependent-Type $\equiv$ Binary Predicate $\equiv$ **Relation**
-> - `Term` → ... → `Term` → `Type` $\equiv$ Dependent-Type $\equiv$ $n$-ary Predicate
-> - `Type` → `Type` $\equiv$ Functions of Propositions $\equiv$ Unary Logical Connective $\equiv$ Unary Boolean Function $\equiv$ Unary **Higher-Order Predicate**
-> - `Type` → `Type` → `Type` $\equiv$ Functions of Propositions $\equiv$ Binary Logical Connective $\equiv$ Binary Boolean Function $\equiv$ Binary **Higher-Order Predicate**
-> - `Type` → ... → `Type` → `Type` $\equiv$ Functions of Propositions $\equiv$ $n$-ary Logical Connective $\equiv$ $n$-ary Boolean Function $\equiv$ $n$-ary **Higher-Order Predicate**
+> - `Term` ➝ `Type` $\equiv$ Dependent-Type $\equiv$ Unary Predicate $\equiv$ **Property**
+> - `Term` ➝ `Term` ➝ `Type` $\equiv$ Dependent-Type $\equiv$ Binary Predicate $\equiv$ **Relation**
+> - `Term` ➝ ... ➝ `Term` ➝ `Type` $\equiv$ Dependent-Type $\equiv$ $n$-ary Predicate
+> - `Type` ➝ `Type` $\equiv$ Functions of Propositions $\equiv$ Unary Logical Connective $\equiv$ Unary Boolean Function $\equiv$ Unary **Higher-Order Predicate**
+> - `Type` ➝ `Type` ➝ `Type` $\equiv$ Functions of Propositions $\equiv$ Binary Logical Connective $\equiv$ Binary Boolean Function $\equiv$ Binary **Higher-Order Predicate**
+> - `Type` ➝ ... ➝ `Type` ➝ `Type` $\equiv$ Functions of Propositions $\equiv$ $n$-ary Logical Connective $\equiv$ $n$-ary Boolean Function $\equiv$ $n$-ary **Higher-Order Predicate**
 >
 > ----
 > 
@@ -385,8 +385,8 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 | Level | What is allowed to depend/quantify on what? | Typical example |
 |---|---|---|
 | L0️⃣: Propositional Logic | No quantification over individuals or propositions/types; propositions are atomic units. | STLC |
-| L1️⃣: First-order (Predicate) Logic | Dependent Typing. Quantification over individuals/terms, including dependently-typed terms. But not over types themselves (_any_ type including dependent types that they support). | First-Order Dependent type-systems eg λP / LF, λP extended, Martin-Löf Type Theory (MLTT) without Universes |
-| L1️⃣: Second-order-propositional Logic | Quantification over propositions/types. | System F |
+| L1️⃣: First-order (Predicate) Logic | Dependent Typing. Quantification over individuals/terms, including dependently-typed terms. But not over types themselves (_any_ type including dependent types that they support). | First-Order Dependent type-systems eg λP / LF, λP-extended, Martin-Löf Type Theory (MLTT) without Universes |
+| L1️⃣: Second-order-propositional Logic | Quantification over propositions/types. Only over simple-types, not over any other higher types eg dependent-types etc. | System F |
 | L2️⃣: Second-order-predicate Logic | Dependent Typing. First-order (Predicate) Logic + Quantification over predicates (ie over types, including dependent-types). | Richer/higher-order Dependent type-systems eg Second-Order (Polymorphic) Dependent λ-calculus (λP2 / PRED2) |
 | L2️⃣: Higher-order-propositional Logic | Quantification over higher-order propositions by abstracting over logical-connectives (aka boolean-functions aka functions-of-propositions aka Higher-order-predicates) using higher-order quantification/type operators. | Fω / higher-order type systems |
 | L3️⃣: Higher-order-predicate Logic | Dependent Typing. Second-order-predicate Logic + Quantification over higher-order/type-level abstractions (kinds, meta-predicates/predicates-of-predicates). | Calculus of Constructions (CoC) |
@@ -422,13 +422,30 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 >
 > **One Nuance: Predicative vs. Impredicative Quantification**
 >
-> While λP2 is the smallest system structurally (in terms of Lambda Cube rules), you can make it logically weaker while retaining this ability:
-> - **Impredicative λP2 (Standard)**: In standard λP2, "`Π (P : A → *).B`" lives in `*` itself. This allows `P` to be instantiated with types that themselves contain quantifiers
->   over `A → *` (making it full second-order arithmetic).
-> - **Predicative λP2 (MLTT with one Universe `U₀`)**: If you restrict quantification so that "`Π (P : A → U₀).B`" must live in a _higher_ universe `U₁` (as in Martin-Löf Type Theory
->   with a universe hierarchy), you get a logically weaker, **predicative** system.
-> - **Bottom Line**: Even in this weaker predicative setup, you are still operating at the **second-order level** (quantifying over type families),
+> While λP2 is the smallest system structurally (in terms of Lambda Cube rules), you can make it logically (Proof-Theoretically) weaker while retaining second-orderness
+> (the ability to quantify over type families/predicates):
+> - **Impredicative λP2 (Standard)**: In standard λP2, "`Π(P:A ➝ *).B`" lives in `*` itself. This allows `P` to be instantiated with types that themselves contain quantifiers
+>   over `A ➝ *` (making it full second-order arithmetic).
+> - **Predicative λP2 (MLTT with one Universe `U₀`)**: If you restrict quantification so that "`Π(P:A ➝ U₀).B`" must live in a _higher_ universe `U₁` (as in Martin-Löf Type Theory
+>   with a universe hierarchy), you get a logically weaker, **predicative** system. This is called Predicative Second-Order Logic (often called Ramified Second-Order Logic).
+> - **Bottom Line**: Even in this weaker (by proof-theoretic strength/power) predicative setup, you are still operating at the **second-order level** (quantifying over type families),
 >   just stratified by universe levels rather than impredicative.
+>
+> ----
+> 
+> **Strength Hierarchy**:
+> 
+> $$
+> {\color{crimson}\text{λP} < \text{λP-extended} < \text{Universe-free MLTT} < \text{Single-universe MLTT} < \text{λP2 (minimal)} = \text{λP2 (simulated)}}
+> $$
+>
+> - In pure λP (with only ∀ and ➝), you cannot simulate ∃, ∧, ∨, ⊤, ⊥, or arithmetic. You must manually add them as extensions, to make **λP-extended**.
+> - But λP2 is impredicative. So having just ∀ and ➝ gives you (via _simulation_) the exact same logical power as having all the connectives, inductive data types and arithmetic.
+> - Logic Order (Quantification-level):
+>   - First-order: λP, λP-extended, Universe-free MLT
+>   - Predicative Second-order: Single-universe MLTT
+>   - Full (Impredicative) Second-order: λP2 _(The minimal λP2 with only ∀ and ➝ is sufficient to get all features of λP2, via simulation)_
+
 
 
 | System	                                     | Individuals	| Predicates over individuals	| Quantification over propositions/types | Term-dependent types |
@@ -492,21 +509,31 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 
 | Logic | Type-theoretic / λ-calculus counterpart |
 |---|---|
-| Intuitionistic propositional logic (aka Zeroth-order Propositional Logic aka Zeroth-order Predicate Logic) | STLC |
+| Intuitionistic Propositional Logic (aka Zeroth-order Propositional Logic aka Zeroth-order Predicate Logic) | STLC |
 | ~~First-Order intuitionistic propositional logic~~ | No such logic. Unlike Predicates (eg $\forall x \text{ Human}(x)$ ) that take **individual/term** (aka first-order) variables (eg $x$) as arguments, Propositions by definition don't take any arguments. Propositions already have truth-values. A Proposition is either an atomic statement that is `T`/`F` to begin with, or is a predicate that is already evaluated to `T`/`F` by supplying values (like a function call) to **individual/term** variables in the predicate. "First-order" quantifies over **individual/term** variables (aka first-order variables), but a Proposition simply does not have them. And Second-order (quantification over second-order variables ie Propositions/Predicates themselves eg $\forall P \\, P(x)$ ), Third & Higher-orders (quantification over third & higher-order variables ie Propositions of Propositions, Predicates of Predicates, and so on) can be achieved for Propositions, just as well as for Predicates. |
-| Second-order intuitionistic propositional logic (Polymorphic) | System F |
-| Higher-order intuitionistic propositional logic (Higher-kinded) | Fω |
-| First-Order (Predicate) Logic (Minimal Fragment) (only $\forall, \to$) | First-Order Dependent λ-calculus (**λP** / LF)[^15]. <br> • **$\Pi$-types** only = **($\forall, \to$)** |
-| Full First-Order Intuitionistic Logic (All connectives, no native arithmetic/induction) | **λP extended** <br> • **$\Pi$-types** (already in λP), <br> • **$\Sigma$-types** = ($\land$, $\exists$), <br> • **Sum-types**(**$+$**) = ($\lor$), <br> • **$\mathbf{0}$** = ($\bot$ / **`False`**), <br> • **$\mathbf{1}$** = ($\top$ / **`True`**) |
-| Full First-Order Intuitionistic Logic with Native Induction and Arithmetic (∀, ∃) | Martin-Löf Type Theory (MLTT) **without Universes** **$\dagger$** |
-| Second-Order Predicate Logic | Second-Order (Polymorphic) Dependent λ-calculus (**λP2** / **PRED2**)[^15] |
-| Higher-Order Predicate Logic (∀ over types and predicates) | Calculus of Constructions (CoC) |
-| Full Higher-Order Intuitionistic Logic with Inductive Definitions | Calculus of Inductive Constructions (CIC) |
+| Second-order Intuitionistic Propositional Logic (Polymorphic) | System F |
+| Higher-order Intuitionistic Propositional Logic (Higher-kinded) | Fω |
+| First-Order (Predicate) Intuitionistic Logic (Minimal Fragment) (only $\forall, \to$) | First-Order Dependent λ-calculus (**λP** / LF)[^15]. <br> • **$\Pi$-types** only = **($\forall, \to$)** |
+| Full First-Order Intuitionistic Logic (All connectives, no native arithmetic/induction) | **λP-extended** (Must manually/explicitly add `T`/`F` and the other connectives. $\Pi$-types / ($\forall, \to$) cannot simulate them). <br> • **$\Pi$-types** (already in λP), <br> • **$\Sigma$-types** = ($\land$, $\exists$), <br> • **Sum-types**(**$+$**) = ($\lor$), <br> • **$\mathbf{0}$** = ($\bot$ / **`False`**), <br> • **$\mathbf{1}$** = ($\top$ / **`True`**) |
+| Full First-Order Intuitionistic Logic with Native Induction and Arithmetic (∀, ∃) | Martin-Löf Type Theory (MLTT) **without Universes (Universe-free MLTT)** **$\dagger$** |
+| Predicative (Ramified) Second-Order Intuitionistic Logic with Native Induction and Arithmetic | Martin-Löf Type Theory (MLTT) **with one Universe `U₀` (Single-universe MLTT)** **$\ddagger$**  | 
+| Second-Order Intuitionistic Predicate Logic with inductive data types and arithmetic | Second-Order (Polymorphic) Dependent λ-calculus (**λP2** / **PRED2**)[^15] <br> • Syntactically, it only has `Π`-types (`∀` and `➝`) as primitives, just like λP. However, because its second-order quantification is _impredicative_, it can internally encode all remaining logical connectives (`∃`, `∧`, `∨`, `⊤`, `⊥`) as well as inductive data types and arithmetic (unlike λP, which needed manual extensions for them). |
+| Higher-Order Intuitionistic Predicate Logic (All Second-order quantifications + Quantification over predicates-of-predicates and predicate functions up to any finite higher-order level, though it cannot quantify over □ (the sort of kinds) itself.) | Calculus of Constructions (CoC). <br> • It can construct and quantify over predicates-of-predicates, type operators, and higher-order functions to any arbitrary finite level, stopping just short of kind polymorphism (`Π(K:□)`). |
+| Full Higher-Order Intuitionistic Logic with Inductive Definitions | Calculus of Inductive Constructions (CIC). CIC _can_ quantify over □ (and much higher), because it replaces the single top sort □ with an **infinite hierarchy of universes** (`Type₀ : Type₁ : Type₂ : ...`).**$\S$**   |
 | Higher-Order Intuitionistic (Constructive) Mathematics (Heyting Arithmetic) with Universes | Standard Martin-Löf Type Theory (MLTT) |
 
 > [!IMPORTANT]
 > **$\dagger$** 
 > Restricting Martin-Löf Type Theory (MLTT) by removing all type universes does not introduce impredicativity. The resulting system remains strictly predicative.
+>
+> **$\ddagger$** 
+> **The Predicative Caveat**: Because "`Π(P:A➝U₀).B`" gets bumped up to `U₁` (or a judgmental large type), you can quantify over all "small" predicates in `U₀`,
+> but you cannot quantify over _all_ predicates in the entire system (including the `U₁` predicate you just defined).
+>
+> **$\S$**
+> Both CIC and MLTT have **infinite hierarchy of (predicative) universes**. CIC has an **impredicative `Prop`** at the bottom for logic but MLTT is purely Predicative
+> without anything like `Prop`.
+
 
 ## Decidability / Computability
 
