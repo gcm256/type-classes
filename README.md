@@ -650,7 +650,7 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 > - **First-Order Existential (`∃ x : A. P(x)`)**: `Π (X : *). (Π (x : A). P(x) → X) → X`
 > - **Second-Order Existential (`∃ P : A → *. Φ(P)`)**: `Π (X : *). (Π (P : A → *). Φ(P) → X) → X`
 
-### Correspondence between Logic - Type Theory - Category Theory
+### Correspondence between Logic ⟺ Type Theory ⟺ Category Theory
 
 | Formal Logic (Proof Theory) | Computation (Type Theory) | Category Theory |
 | :--- | :--- | :--- |
@@ -662,23 +662,37 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 | **Conjunction ($A \land B$)** | **Product Type ($A \times B$)** | **Categorical Product** |
 | **Disjunction ($A \lor B$)** | **Sum / Union Type ($A + B$)** | **Coproduct** |
 | **Implication ($A \implies B$)** | **Function Type ($A \to B$)** | **Exponential Object ($B^A$)** |
-| **Universal Quantifier ($\forall x:A.\\, B(x)$ )** | **Dependent Product / Function ($\Pi_{x:A} B(x)$ )** | **Right Adjoint to Pullback ($\Pi_f$ )** |
-| **Existential Quantifier ($\exists x:A.\\, B(x)$ )** | **Dependent Sum / Pair ($\Sigma_{x:A} B(x)$ )** | **Left Adjoint to Pullback ($\Sigma_f$ )** |
+| **Universal Quantifier ($\forall x:A.\\, B(x)$ )** | **Dependent Product / Function ($\Pi_{x:A} B(x)$ )** | **$\Pi_f$ (Right Adjoint to Pullback Functor $`f^*`$)** |
+| **Existential Quantifier ($\exists x:A.\\, B(x)$ )** | **Dependent Sum / Pair ($\Sigma_{x:A} B(x)$ )** | **$\Sigma_f$ (Left Adjoint to Pullback Functor $`f^*`$)** |
 | **Propositional Equality ($a =_A b$)** | **Identity Type ($\text{Id}_A(a, b)$ )** | **Diagonal Morphism ($\Delta_A : A \to A \times A$ )** |
 | **Proof Normalization** | **Program Evaluation** | **Composition of Morphisms** |
 
 > [!NOTE]
-> #### Quick Intuition on th Adjoints ($\Sigma_f \dashv f^* \dashv \Pi_f$):
+> #### Quick Intuition on the Adjoints ($\Sigma_f \dashv f^* \dashv \Pi_f$):
 >
-> - **Π/∀ generalizes ➝/⇒ and $`\times`$ / $`\land`$**: If B(x) doesn't actually depend on x, $\Pi_{x:A} B$ collapses into the standard function type A ➝ B. 
-> - **Σ/∃ generalizes $`\times`$ / $`\land`$ and $`+`$ / $`\lor`$⁠**: A term of $\Sigma_{x:A} B(x)$ is a pair (a, b) where a : A is a witness and b : B(a) is a proof that a satisfies B.
->   - If B(x) doesn't depend on x, it collapses into the standard product A × B. 
-> - **Substitution as Pullback Functor ($`f^{*}`$)**: Substituting a term into a predicate corresponds to pulling back along a morphism f, and quantification is literally
->   the left and right adjoints to that substitution ($`\Sigma_f \dashv f^* \dashv \Pi_f`$).
+> - **$\forall$ generalizes $\implies$ and $\land$ (just as $\Pi$ generalizes $\to$ and $\times$)**:
+>   - **To $\implies$**: If P(x) doesn't depend on x, then ∀ x:A. P reduces to A $`\implies`$ P (you just need an inhabitant of A to conclude P).
+>   - **To $\land$**: Over a finite domain like $`\{0, 1\}`$, $`\forall x \in \{0, 1\}.\, P(x)`$ is equivalent to $`P(0) \land P(1)`$ (it holds for _every_ index).
+> - **$\exists$ generalizes $\land$ and $\lor$ (just as $\Sigma$ generalizes $\times$ and $+$)**:
+>   - **To $\land$**: If P(x) doesn't depend on x, then ∃ x:A. P reduces to A $`\land`$ P (there exists an x:A, _and_ P holds).
+>   - **To $\lor$**: Over a finite domain like $`\{0, 1\}`$, $`\exists x \in \{0, 1\}.\, P(x)`$ is equivalent to $`P(0) \lor P(1)`$ (it holds for _at least one_ index).
+>   -  A term of $\Sigma_{x:A} B(x)$ is a pair (a, b) where a : A is a witness and b : B(a) is a proof that a satisfies B.
+> - **Substitution as Pullback Functor ($`f^{*}`$)**: Substituting a term into a predicate (dependent type) corresponds to pulling back along a morphism $f : X \to Y$,
+>   forming the adjoint triple $\Sigma_f \dashv f^* \dashv \Pi_f$ (also written $f_! \dashv f^* \dashv f_*$).
+>   - And quantification is literally the left and right adjoints to that substitution ($`\Sigma_f \dashv f^* \dashv \Pi_f`$).
 >
 > #### Hyperdoctrine vs Slice-Category:
 > _(Note: If you are working in a **Hyperdoctrine** rather than a slice category, the single unifying term for any n-ary predicate is an **Object
 > in the Fiber Category** 𝓟(Γ) over the context Γ.)_
+
+### How Dependent Types & Quantifiers Generalize Connectives
+
+| Dependent / Predicate Form | Condition | Collapses To (Type Theory) | Collapses To (Logic) |
+| :--- | :--- | :--- | :--- |
+| **$\Pi_{x:A} B(x)$** / **$\forall x:A.\\, B(x)$** | $B(x)$ does not depend on $x$ | $A \to B$ *(Function Type)* | $A \implies B$ *(Implication)* |
+| **$\Pi_{x:A} B(x)$** / **$\forall x:A.\\, B(x)$** | $A = \mathbf{2}$ *(e.g., $`\{0, 1\}`$ )* | $B(0) \times B(1)$ *(Product Type)* | $B(0) \land B(1)$ *(Conjunction)* |
+| **$\Sigma_{x:A} B(x)$** / **$\exists x:A.\\, B(x)$** | $B(x)$ does not depend on $x$ | $A \times B$ *(Product Type)* | $A \land B$ *(Conjunction)* |
+| **$\Sigma_{x:A} B(x)$** / **$\exists x:A.\\, B(x)$** | $A = \mathbf{2}$ *(e.g., $`\{0, 1\}`$ )* | $B(0) + B(1)$ *(Sum Type)* | $B(0) \lor B(1)$ *(Disjunction)* |
 
 ----
 ----
