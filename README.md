@@ -42,18 +42,20 @@ the _exact_ same class of decision problems (the **RE complexity class**).
 
 <div align="center">
 
+**Inconsistent Recursive Logic** (Set of all proofs) \
+**$\equiv$**[§](#ext-equiv-only) \
 **Untyped 𝝺-Calculus**(Set of all 𝝺-terms) \
-**$\equiv$**[††](#int-ext-equiv) \
+**$\equiv$**[§](#ext-equiv-only) \
 **Untyped Combinatory-Logic eg [SKI combinator calculus](https://en.wikipedia.org/wiki/SKI_combinator_calculus)**(Set of all SK-terms) \
-**$\equiv$**[††](#int-ext-equiv) \
+**$\equiv$**[§](#ext-equiv-only) \
 **Set of All Turing-Machines** \
-**$\equiv$**[††](#int-ext-equiv) \
+**$\equiv$**[§](#ext-equiv-only) \
 **$\left\\{U_M\right\\}$ (A Parameterized UTM, aka Curried UTM / Specialized UTM / Programmable UTM)** \
 (It first pre-loads the program ie fixes $M$ in the UTM $U(M, x)$ to produce a single-argument UTM $U_M(x)$ ) \
-**$\equiv$**[†](#tm-mu-re) \
+**$\equiv$**[§§](#tm-mu-re) \
 (via computation; many programs $\twoheadrightarrow$ one function) \
 **Set of All [µ-recursive (or partial recursive) functions](https://en.wikipedia.org/wiki/Mu_recursive_function)** \
-**$\equiv$** [†](#tm-mu-re) \
+**$\equiv$** [§§](#tm-mu-re) \
 (via halting domains; many functions $\twoheadrightarrow$ one set) \
 **Set of All [RE sets](https://en.wikipedia.org/wiki/Recursively_enumerable_set)** **$\equiv$** (by definition) **[The RE _complexity class_](https://en.wikipedia.org/wiki/RE_(complexity))**
 
@@ -73,8 +75,28 @@ the _exact_ same class of decision problems (the **RE complexity class**).
 > Both conditions are **individually necessary and sufficient** characterizations of a **Recursively Enumerable (RE)** set. 🔆🔆
 >
 > ----
+>
+> ### Untyped λ-Calculus (ULC) $\equiv$ Inconsistent Recursive Logic (IRL)
 > 
-> <a id="tm-mu-re"></a> † At the individual set element level, the TM-µ-RE relations are many-one onto
+> In IRL, there is only **one proposition** ($D$, where $D \cong D \to D$), governed by two domain rules:
+> - **Unfold:** $D \vdash D \implies D$ (treating a proof as a function)
+> - **Fold:** $D \implies D \vdash D$ (packaging a function back into a proof)
+> 
+> In ULC, there's only one Type, ie only one Type, the Universal Type $D$, corresponding to the Universal Proposition $D$.
+>
+> Every ULC λ-term corresponds 1-to-1 to a distinct proof tree of $D$:
+>
+> | ULC Term | Logical Meaning | IRL Proof Steps (Natural Deduction) | Proof Behavior (Normalization) |
+> |--- |--- |--- |--- |
+> | **`x`** | Variable assumption | 1. Assume $D$ (Hypothesis) | **Normal Form:** Already a direct atomic assumption. |
+> | **`λx. x`** | Identity function | 1. Assume $D$ (`x`)<br>2. Conclude $D \implies D$ ($\implies\text{I}$)<br>3. Conclude $D$ ($\text{fold}$) | **Normal Form:** A valid, finite, direct > proof of $D$. |
+> | **`λx. (x x)`** | Self-application | 1. Assume $D$ (`x`)<br>2. Unfold step 1 to $D \implies D$ ($\text{unfold}$)<br>3. Apply Modus Ponens to (2) & (1) $\to D$ ($\implies\text{E}$ <br>4. Discharge assumption $\to D \implies D$ ($\implies\text{I}$)<br>5. Conclude $D$ ($\text{fold}$) | **Normal Form:** Terminates, though contains a self-referential unfold. |
+> | **`(λx. x x)(λx. x x)`** ($\Omega$) | Non-terminating loop | 1. Build proof of `λx. (x x)` concluding $D$<br>2. Unfold step 1 to $D \implies D$ ($\text{unfold}$)<br>3. Build second copy of `λx. (x x)` concluding $D$<br>4. Apply Modus Ponens to (2) & (3) $\to D$ ($\implies\text{E}$) | **Circular / Non-Normalizing:** Cut-elimination ($\beta$-reduction) loops infinitely into itself. |
+> | **`Y = λf. (λx. f(x x))(λx. f(x x))`** | Fixed-point combinator (Curry's Paradox) | 1. Assume $D$ (`f`), unfold to $D \implies D$<br>2. Construct self-applying sub-proofs that apply `f` at each step<br>3. Conclude $D$ ($\text{fold}$) | **Paradox Generator:** Produces an infinite proof tree for *any* arbitrary proposition encoded in $D$. |
+>
+> ----
+> 
+> <a id="tm-mu-re"></a> §§ At the individual set element level, the TM-µ-RE relations are many-one onto
 > ie [surjections](https://en.wikipedia.org/wiki/Surjective_function#Definition) ($\twoheadrightarrow$):
 >
 > ${\color{crimson}\text{One TM (or λ-term)} \twoheadrightarrow \text{One μ-recursive / partial-recursive / computable function} \twoheadrightarrow \text{One RE set's domain}}$
@@ -85,8 +107,9 @@ the _exact_ same class of decision problems (the **RE complexity class**).
 > ----
 
 > [!NOTE]
-> <a id="int-ext-equiv"></a> †† There is no natural 1-to-1 bijection between raw syntax of λ⁠-calculus, Combinatory-Logic, and TM.
-> There is only extensional (computational power) equivalence:
+> <a id="ext-equiv-only"></a> § There is no natural 1-to-1 bijection between raw syntax of λ⁠-calculus, Combinatory-Logic, and TM.
+> 
+> 🔆🔆 There is only **extensional (computational power) equivalence**:
 > 
 > - Every λ⁠-term or SK-term can be simulated by a Turing machine, and every Turing machine can be simulated by a λ⁠-term or SK-term.
 > - Similarly, every λ⁠-term can be simulated by a SK-term, and vice versa.
@@ -106,21 +129,21 @@ the _exact_ same class of decision problems (the **RE complexity class**).
 
 ### [Lambda-Cube](https://www.rbjones.com/rbjpub/logic/cl/index.htm)
 
-- λ➝  $\\;\qquad$ STLC (**_Terms_** can depend on **_Terms_**. No other dependency allowed.) $(\*, \*)$
+- λ<sub>➝</sub>  $\\;\qquad$ STLC (**_Terms_** can depend on **_Terms_**. No other dependency allowed.) $(\*, \*)$
 - 2   $\quad \qquad$ Add Parametric Polymorphism (**_Terms_** can depend on **_Types_**.) $(\Box, \*)$
 - ⍹   $\quad \qquad$ Add Type Constructors (**_Types_** can depend on **_Types_**.) $(\Box, \Box)$
 - P   $\quad \qquad$ Add Dependent Types (**_Types_** can depend on **_Terms_**.) $(\*, \Box)$
 
-| Logic   | Name of Logic                           | Type-System | Type-System Components | Categorical Correspondence |
-|----     |----                                     |----         |----                    |----  |
-| `PROP`  | Propositional Logic                     | λ➝          | λ + Types              | **Cartesian Closed Category (CCC)** |
-| `PROP2` | Second-order Propositional Logic        | λ2 (F)      | λ➝ + 2           | **Polymorphic / Seely Hyperdoctrine** (Indexed CCC with products over a base category of types) |
-| `PROP⍹` | Weakly Higher-order Propositional Logic | λ⍹          | λ➝ + ⍹                 | **Indexed CCC** over a CCC base category (for type operators) |
-| `PROPω` | Higher-order Propositional Logic        | λω (Fω)     | λ➝ + 2 + ⍹             | **Higher-Order Hyperdoctrine** (Indexed CCC over a CCC base with internal quantification) |
-| `PRED`  | Predicate Logic                         | λP (LF)     | λ➝ + P                 | **Locally Cartesian Closed Category (LCCC)** (or First-Order Hyperdoctrine) |
-| `PRED2` | Second-order Predicate Logic            | λP2         | λ➝ + 2 + P             | **Second-Order Comprehension Category** (LCCC + impredicative polymorphism) |
-| `PRED⍹` | Weakly Higher-order Predicate Logic     | λP⍹         | λ➝ + ⍹ + P             | **Comprehension Category** with dependent products and higher-kinded type constructors |
-| `PREDω` | Higher-order Predicate Logic   | λPω (CC)  | λ➝ + 2 + ⍹ + P | **Calculus of Constructions (CC) Category** (Impredicative Comprehension Category / Topos-like Fibration) |
+| Logic   | Name of Logic (all are Intuitionistic)  | Type-System   | Type-System Components | Categorical Correspondence |
+|----     |----                                     |----           |----                    |----  |
+| `PROP`  | Propositional Logic                     | λ<sub>➝</sub> | λ + Types              | **Cartesian Closed Category (CCC)** |
+| `PROP2` | Second-order Propositional Logic        | λ2 (F)        | λ<sub>➝</sub> + 2 | **Polymorphic / Seely Hyperdoctrine** (Indexed CCC with products over a base category of types) |
+| `PROP⍹` | Weakly Higher-order Propositional Logic | λ⍹            | λ<sub>➝</sub> + ⍹      | **Indexed CCC** over a CCC base category (for type operators) |
+| `PROPω` | Higher-order Propositional Logic        | λω (Fω)       | λ<sub>➝</sub> + 2 + ⍹  | **Higher-Order Hyperdoctrine** (Indexed CCC over a CCC base with internal quantification) |
+| `PRED`  | Predicate Logic                         | λP (LF)       | λ<sub>➝</sub> + P      | **Locally Cartesian Closed Category (LCCC)** (or First-Order Hyperdoctrine) |
+| `PRED2` | Second-order Predicate Logic            | λP2           | λ<sub>➝</sub> + 2 + P  | **Second-Order Comprehension Category** (LCCC + impredicative polymorphism) |
+| `PRED⍹` | Weakly Higher-order Predicate Logic     | λP⍹           | λ<sub>➝</sub> + ⍹ + P  | **Comprehension Category** with dependent products and higher-kinded type constructors |
+| `PREDω` | Higher-order Predicate Logic   | λPω (CoC or λC) | λ<sub>➝</sub> + 2 + ⍹ + P | **Calculus of Constructions (CoC) Category** (Impredicative Comprehension Category / Topos-like Fibration) |
 
 > [!IMPORTANT]
 > - 🔆 A **0-ary Predicate** is called as a **Proposition**.
@@ -129,6 +152,30 @@ the _exact_ same class of decision problems (the **RE complexity class**).
 >   - A Predicate (non-zero-ary Predicate ie which is not a Proposition) in Logic corresponds to a Dependent-Type in Type-Theory.
 >   - In Type Theory, a **Predicate** (of any arity ≥ 1) *is* (nothing but) a **Dependent-Type**. Hence, **Predicate Logic** (of any Order ≥ 1) requires **Dependent-typing**.
 >     Propositional Logic (of any Order) doesn't require Dependent-typing.
+>
+> ----
+> 
+> ✨✨ **Classical Propositional Logic** corresponds to **λμ-calculus** (STLC + **`call/cc`**) ✨✨
+> 
+> ----
+
+### The Classical λμ-Cube (Curry–Howard–Lambek Correspondence)
+
+| Intuitionistic λ-Cube | Classical λμ-Cube | λ-Calculus + Control Breakdown | Corresponding Classical Logic | Category Theory Correspondence |
+|--- |--- |--- |--- |--- |
+| **λ<sub>➝</sub>** (STLC) | **λμ** | **STLC + `call/cc`** | Classical Propositional Logic | **Control Category** (Selinger) / Kleisli category of Continuation Monad R<sup>(R<sup>−</sup>)</sup> over a CCC |
+| **λ2** (System F) | **λμ2** | **System F + `call/cc`** | Classical Second-Order Propositional Logic | **Polymorphic Control Category** / Indexed Control Category (with impredicative products) |
+| **λ⍹** (Weak ω) | **λμ⍹** | **λ⍹ + `call/cc`** | Classical Weakly Higher-Order Propositional Logic | **Control Category** enriched with higher-kinded type-operator functors |
+| **λω** (System Fω) | **λμω** | **System Fω + `call/cc`** | Classical Higher-Order Propositional Logic | **Higher-Order Polymorphic Control Category** (CPS-transformed into a Cartesian Closed Hyperdoctrine) |
+| **λP** (LF) | **λμP** | **λP + restricted `call/cc`** *(types cannot depend on control jumps)* | Classical First-Order Predicate Logic | **Locally Indexed Control Category** / Comprehension Category with a classical dualizing object |
+| **λP2** | **λμP2** | **λP2 + restricted `call/cc`** | Classical Second-Order Predicate Logic | **Classical Hyperdoctrine** / Polymorphic Locally Indexed Control Category |
+| **λP⍹** | **λμP⍹** | **λP⍹ + restricted `call/cc`** | Classical Weakly Higher-Order Predicate Logic | **Higher-Kinded Comprehension Control Category** |
+| **λPω** (CoC or λC) | **λμPω** / **λμC** | **Calculus of Constructions + restricted `call/cc`** *(e.g., Curry-style or `Prop`-isolated)* | Classical Higher-Order Predicate Logic | **Classical Tripos / Control Hyperdoctrine** (via double-negation / CPS sheaf models) |
+
+> **Caveat on Dependent Types (λμP – λμC):** Unrestricted `call/cc` combined with dependent types causes logical collapse (**Herbelin's Paradox**). Consistency requires restricting type dependency to pure terms or isolating classical reasoning inside a proof-irrelevant universe (like `Prop` in Lean/Coq).
+
+----
+----
 
 ### Taxonomy
 
@@ -304,10 +351,10 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 | Kind variable    | `K` | Variable ranging over Kinds. |
 | Universe or Sort | `*`/`sort1`, `☐`/`sort2`,  `Type0`/`Set`, `Type1`, `Type2`, `Prop` | A classification of Kinds. |
 | Universe variable | `𝒰₀`, `𝒰₁`, `𝒰₂` | Variable ranging over Universes. |
-| Logic Formula | Propositional (Zeroth-order):<br> $(P \land (P \to Q)) \to Q$ <br> ${\color{blue}\text{Modus Ponens}}$ <br><br> First-order (Predicate):<br> $\forall x \\, (\text{Human}(x) \to \text{Mortal}(x))$ <br><br> Second-order Propositional:<br> $\forall P \\, (P \lor \neg P)$ <br> ${\color{blue}\text{Law of Excluded Middle expressed universally}}$ <br><br> Second-Order Predicate:<br> $\forall P \\, \Big( (P(0) \land \forall k \\, (P(k) \Rightarrow P(k+1))) \Rightarrow \forall n \\, P(n) \Big)$ <br> ${\color{blue}\text{Principle of Math Induction}}$ <br> $\forall x \\, \forall y \\, \Big( (x = y) \Leftrightarrow \forall P \\, (P(x) \Leftrightarrow P(y)) \Big)$ <br> ${\color{blue}\text{Leibniz's Law / Identity of Indiscernibles}}$ <br><br> Higher-Order Propositional:<br> $\forall F \\, \Big( F(P, Q) \Leftrightarrow F(Q, P) \Big)$ <br> $F$ is a **truth-function[†](#truth-functions).** <br><br> Higher-Order Predicate:<br> $\forall 𝓠 \\, \Big( 𝓠(P) \Rightarrow 𝓠(R) \Big)$ <br> 𝓠 is a Predicate-Function (more specifically Predicate-of-predicates aka Second-order Predicate) that takes Predicates as input. <br> • Predicate-order = Variable-order - 1. Individuals have predicate-order 0, since their variable-order is 1. <br> • $n$-th order predicate is $(n+1)$-th order variable in $(n+1)$-th order logic. <br> • $n$-th order predicate takes _at least one_ input with variable-order $n$. It _may_ take inputs with variable-order < $n$ but _not_ > $n$. <br> • Logic-order is the maximum variable-order that can be quantified over in that logic. | A Logic Formula is an expression involving terms (term-variables), propositions, predicates, propositional-variables, predicate-variables, predicate-functions (eg functions/predicates of propositions/predicates etc), and operators like logic symbols, logical connectors, and quantifiers.
+| Logic Formula | Propositional (Zeroth-order):<br> $(P \land (P \to Q)) \to Q$ <br> ${\color{blue}\text{Modus Ponens}}$ <br><br> First-order (Predicate):<br> $\forall x \\, (\text{Human}(x) \to \text{Mortal}(x))$ <br><br> Second-order Propositional:<br> $\forall P \\, (P \lor \neg P)$ <br> ${\color{blue}\text{Law of Excluded Middle expressed universally}}$ <br><br> Second-Order Predicate:<br> $\forall P \\, \Big( (P(0) \land \forall k \\, (P(k) \Rightarrow P(k+1))) \Rightarrow \forall n \\, P(n) \Big)$ <br> ${\color{blue}\text{Principle of Math Induction}}$ <br> $\forall x \\, \forall y \\, \Big( (x = y) \Leftrightarrow \forall P \\, (P(x) \Leftrightarrow P(y)) \Big)$ <br> ${\color{blue}\text{Leibniz's Law / Identity of Indiscernibles}}$ <br><br> Higher-Order Propositional:<br> $\forall F \\, \Big( F(P, Q) \Leftrightarrow F(Q, P) \Big)$ <br> $F$ is a **truth-function[§§](#truth-functions).** <br><br> Higher-Order Predicate:<br> $\forall 𝓠 \\, \Big( 𝓠(P) \Rightarrow 𝓠(R) \Big)$ <br> 𝓠 is a Predicate-Function (more specifically Predicate-of-predicates aka Second-order Predicate) that takes Predicates as input. <br> • Predicate-order = Variable-order - 1. Individuals have predicate-order 0, since their variable-order is 1. <br> • $n$-th order predicate is $(n+1)$-th order variable in $(n+1)$-th order logic. <br> • $n$-th order predicate takes _at least one_ input with variable-order $n$. It _may_ take inputs with variable-order < $n$ but _not_ > $n$. <br> • Logic-order is the maximum variable-order that can be quantified over in that logic. | A Logic Formula is an expression involving terms (term-variables), propositions, predicates, propositional-variables, predicate-variables, predicate-functions (eg functions/predicates of propositions/predicates etc), and operators like logic symbols, logical connectors, and quantifiers.
 
 > [!NOTE]
-> <a id="truth-functions"></a> **†** In Higher-order propositional logic, **truth-functions** are operators that take propositions as inputs
+> <a id="truth-functions"></a> **§§** In Higher-order propositional logic, **truth-functions** are operators that take propositions as inputs
 > and output truth values.
 > - **What the given example means:** _"For every binary truth function F (an operator that takes two propositions and returns True or False), applying it to P and Q
 > is equivalent to applying it to Q and P."_ (This represents commutative propositional operators).
@@ -397,7 +444,7 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 ### Table 1: The Signature & Form of Each Feature Itself
 
 | Feature | Input / Parameter | Exact Signature / Syntax | Resulting Sort | Concrete Example |
-| :--- | :--- | :--- | :--- | :--- |
+|--- |--- |--- |--- |--- |
 | **a) Dependent-type (saturated)** | None (already applied to `a : A`) | `B(a)` | `*` (or `U₀`) | `Vec Bool 5 : *` |
 | **b) Dependent-type family** (unsaturated) | A **term** (`x : A`) | `A → *` (i.e., `Π (x : A). *`) | `□` (or `U₁`) | `Vec Bool : Nat → *` |
 | **c) Type constructor** (unsaturated) | A **type** (`X : *`) | `* → *` (i.e., `Π (X : *). *`) | `□` (or `U₁`) | `List : * → *` |
@@ -409,7 +456,7 @@ So for each set of elements where the Algebra rules operate, the resulting Algeb
 ### Table 2: Universal Quantification *Over* Each Feature (`Π (P : _ ). B(P)`)
 
 | Quantifying Over (`P`) | Signature in `Π (P : _ ). B(P)` | Predicative Equivalent (`MLTT` / `CIC`) | Example Instantiation of `P` | Minimal System Required |
-| :--- | :--- | :--- | :--- | :--- |
+|--- |--- |--- |--- |--- |
 | **a) Saturated dependent-type** | `Π (P : *). B(P)` | `Π (P : U₀). B(P)` | `P = Vec Bool 5` | `λ2` / `λP2` |
 | **b) Dependent-type family** (unsaturated) | `Π (P : A → *). B(P)` | `Π (P : A → U₀). B(P)` | `P = Vec Bool` | `λP2` (PRED2) |
 | **c) Unsaturated type constructor** | `Π (P : * → *). B(P)` | `Π (P : U₀ → U₀). B(P)` | `P = List` | `λω` (System Fω) / `CoC` |
@@ -424,7 +471,7 @@ Order is decided by the maximum order of the variable that can be quantified ove
 
 | $\underbrace{\text{Arity}}_\downarrow \mid \text{Order} \to$ | Zeroth-order | First-order | Second-order | Higher-order |
 | ----                                                         | ----         | ----        | ----         | ----         |
-| Propositional ($0$-ary Predicate) | λ➝ (Simply Typed λ-Calculus) • No quantifiers allowed • Only static propositional constants (e.g., $P \to Q$). | Not Applicable (Requires a Term layer to exist in the syntax for first-order quantification). | λ2 (System F / SOPL) • Quantifies over Type • Binds 0-ary propositional variables: $\forall P : \text{Type}$. | λω (System Fω / HOPL) • Quantifies over $\text{Type} \to \text{Type}$ • Binds logical connectives/boolean functions: $\forall F : \text{Type} \to \text{Type}$. |
+| Propositional ($0$-ary Predicate) | λ<sub>➝</sub> (Simply Typed λ-Calculus) • No quantifiers allowed • Only static propositional constants (e.g., $P \to Q$). | Not Applicable (Requires a Term layer to exist in the syntax for first-order quantification). | λ2 (System F / SOPL) • Quantifies over Type • Binds 0-ary propositional variables: $\forall P : \text{Type}$. | λω (System Fω / HOPL) • Quantifies over $\text{Type} \to \text{Type}$ • Binds logical connectives/boolean functions: $\forall F : \text{Type} \to \text{Type}$. |
 | Predicate ($n$-ary Predicate, $n \ge 1$) | Not Applicable (Requires term variables to saturate the internal $n$-ary predicate functions). | λP (Logical Framework LF) • Quantifies over Term • Binds individual objects: $\forall x : \text{Term}$. • Predicates ($\text{Term} \to \text{Type}$) are static constants. | λP2 (Second-Order Predicate) • Quantifies over $\text{Term} \to \text{Type}$ • Binds unary properties / sets of individuals: $\forall P : \text{Term} \to \text{Type}$. | λPω / CoC (Calculus of Constructions) • Quantifies over Kinds • Binds meta-predicates / properties of predicates: $\forall \mathcal{X} : (\text{Term} \to \text{Type}) \to \text{Type}$. |
 
 ----
@@ -574,7 +621,7 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 
 | Type/proposition dependency | Meaning | Typical calculus | Feature added | Main capability |
 |---|---|---|---|---|
-| Non-dependent | No dependence between Types and Terms | **STLC** (**λ➝**) | None(Baseline) | Terms can depend on terms only $(*, *)$ |
+| Non-dependent | No dependence between Types and Terms | **STLC** (**λ<sub>➝</sub>**) | None(Baseline) | Terms can depend on terms only $(*, *)$ |
 | Polymorphic | Quantification over types. Terms can be parametrized by types. | **System F** (**λ2**) | Type abstraction (∀) | Terms can depend on types/terms $(\Box/\*, \*)$ |
 | Higher-kinded | Types/type operators can be higher-order. Types can be parametrized by types. | **Fω** (**λ2 + λ⍹**) | Type Constructors aka type-level functions | Types can depend on types $(\Box, \Box)$. (In addition to **System F** capability $(\Box/\*, \*)$ ) |
 | Dependent | Types can be parametrized by terms | Dependent λ-calculus (**λP** / LF) | Dependent types (Π-types) | Types/terms can depend on terms $(\*, \Box/\*)$ |
@@ -625,21 +672,24 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 | Higher-Order Intuitionistic (Constructive) Mathematics (Heyting Arithmetic) with Universes | Standard Martin-Löf Type Theory (MLTT) |
 
 > [!IMPORTANT]
-> **$\dagger$** 
-> Restricting Martin-Löf Type Theory (MLTT) by removing all type universes does not introduce impredicativity. The resulting system remains strictly predicative.
+> ### $\dagger$ Restricting Martin-Löf Type Theory (MLTT) by removing all type universes does not introduce impredicativity. The resulting system remains strictly predicative.
 >
-> **$\ddagger$** 
-> **The Predicative Caveat**: Because "`Π(P:A→U₀).B`" gets bumped up to `U₁` (or a judgmental large type), you can quantify over all "small" predicates in `U₀`,
+> ----
+> 
+> ### $\ddagger$ The Predicative Caveat:
+> Because "`Π(P:A→U₀).B`" gets bumped up to `U₁` (or a judgmental large type), you can quantify over all "small" predicates in `U₀`,
 > but you cannot quantify over _all_ predicates in the entire system (including the `U₁` predicate you just defined).
 >
-> **$\S$**
-> Both CIC and MLTT have **infinite hierarchy of (predicative) universes**. CIC has an **impredicative `Prop`** at the bottom for logic but MLTT is purely Predicative
-> without anything like `Prop`.
+> ----
+> 
+> ### $\S$ Both CIC and MLTT have **infinite hierarchy of (predicative) universes**:
+> CIC has an **impredicative `Prop`** at the bottom for logic but MLTT is purely Predicative without anything like `Prop`.
 > - **MLTT**: Purely predicative (`U₀ : U₁ : U₂ : ...`), with no impredicative `Prop`.
 > - **CIC**: Hybrid—an **impredicative** `Prop` at the bottom for logic, paired with a **strictly predicative** `Type₀ : Type₁ : Type₂ : ...` tower above it for data and mathematics.
 >
-> **$\S\S$**
-> ### Full Second-Order Intuitionistic Logic (via Impredicative Encodings)
+> ----
+> 
+> ### $\S\S$ Full Second-Order Intuitionistic Logic (via Impredicative Encodings):
 > Because λP2 allows impredicative quantification over all propositions (`*`) and predicates (`A → *`), you **do not** need to add `Σ`-types, sum types,
 > `⊤`, or `⊥` as primitive extensions.
 > You can define all of them natively using second-order `Π`-types (the **Russell-Prawitz encodings**):
@@ -649,23 +699,26 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 > - **Disjunction (`A ∨ B`)**: `Π (X : *). (A → X) → (B → X) → X`
 > - **First-Order Existential (`∃ x : A. P(x)`)**: `Π (X : *). (Π (x : A). P(x) → X) → X`
 > - **Second-Order Existential (`∃ P : A → *. Φ(P)`)**: `Π (X : *). (Π (P : A → *). Φ(P) → X) → X`
+>
+> ----
+> ----
 
-### Correspondence between Logic ⟺ Type Theory ⟺ Category Theory
+### Correspondence between components of: Logic, Type Theory, Category Theory:
 
-| Formal Logic (Proof Theory) | Computation (Type Theory) | Category Theory |
-| :--- | :--- | :--- |
-| **Proposition** (0-ary predicate) | **Type** | **Object** |
-| **Predicate** (non-0-ary predicate) | **Type Family** / **Type-Level Function** | **Object in Slice-Category** 𝓒/Γ <br> _aka_ **Display-Map** / **Bundle**: ($p:E\to$ Γ in 𝓒) |
-| **Proof** | **Program / Term** | **Morphism (Arrow)** |
-| **True ($\top$)** | **Unit Type ($1$)** | **Terminal Object** |
-| **False ($\bot$)** | **Empty / Void Type ($0$)** | **Initial Object** |
-| **Conjunction ($A \land B$)** | **Product Type ($A \times B$)** | **Categorical Product** |
-| **Disjunction ($A \lor B$)** | **Sum / Union Type ($A + B$)** | **Coproduct** |
-| **Implication ($A \implies B$)** | **Function Type ($A \to B$)** | **Exponential Object ($B^A$)** |
-| **Universal Quantifier ($\forall x:A.\\, B(x)$ )** | **Dependent Product / Function ($\Pi_{x:A} B(x)$ )** | **$\Pi_f$ (Right Adjoint to Pullback Functor $`f^*`$)** |
-| **Existential Quantifier ($\exists x:A.\\, B(x)$ )** | **Dependent Sum / Pair ($\Sigma_{x:A} B(x)$ )** | **$\Sigma_f$ (Left Adjoint to Pullback Functor $`f^*`$)** |
-| **Propositional Equality ($a =_A b$)** | **Identity Type ($\text{Id}_A(a, b)$ )** | **Diagonal Morphism ($\Delta_A : A \to A \times A$ )** |
-| **Proof Normalization** | **Program Evaluation** | **Composition of Morphisms** |
+| Formal Logic (Proof Theory) | Computation (Type Theory) | Abstract Algebra (Category Theory) |
+|--- |--- |--- |
+| Propositions (0-ary predicates) ($A, B$) | Types ($A, B$) | Objects ($A, B$) |
+| A Predicate (non-0-ary predicate) | Type Family / Type-Level Function | Object in Slice-Category 𝓒/Γ <br> _aka_ **Display-Map** / **Bundle**: ($p:E\to$ Γ in 𝓒) |
+| **Constructions**: Proofs ($p$ of $A$) | Programs / Terms ($t: A$) | Morphisms / Arrows ($f: A \to B$) |
+| True ($\top$) | Unit Type (`()` or `void`) | Terminal Object ($1$) |
+| False ($\bot$) | Empty Type / Bottom Type (`Never`) | Initial Object ($0$) |
+| Conjunction ($A \land B$) | Product Type ($A \times B$) | Categorical Product |
+| Disjunction ($A \lor B$) | Sum Type / Tagged-Union Type ($A + B$) | Coproduct |
+| Implication ($A \implies B$) | Function Type ($A \to B$) | Exponential Object ($B^A$) |
+| Universal Quantifier ($\forall x:A.\\, B(x)$ ) | Dependent Product Type / Dependent Function Type ($\Pi_{x:A} B(x)$ ) | $\Pi_f$ (Right Adjoint to Pullback Functor $`f^*`$) |
+| Existential Quantifier ($\exists x:A.\\, B(x)$ ) | Dependent Sum Type / Dependent Pair Type ($\Sigma_{x:A} B(x)$ ) | $\Sigma_f$ (Left Adjoint to Pullback Functor $`f^*`$) |
+| Propositional Equality ($a =_A b$) | Identity Type ($\text{Id}_A(a, b)$ ) | Diagonal Morphism ($\Delta_A : A \to A \times A$ ) |
+| **Execution**: Proof Normalization / Cut-Elimination | Program Evaluation / β-reduction | Composition of Morphisms |
 
 > [!NOTE]
 > #### Quick Intuition on the Adjoints ($\Sigma_f \dashv f^* \dashv \Pi_f$):
@@ -688,7 +741,7 @@ See also: [Curry-Howard Mapping](#curryhoward-mapping)
 ### How Dependent Types & Quantifiers Generalize Connectives
 
 | Dependent / Predicate Form | Condition | Collapses To (Type Theory) | Collapses To (Logic) |
-| :--- | :--- | :--- | :--- |
+|--- |--- |--- |--- |
 | **$\Pi_{x:A} B(x)$** / **$\forall x:A.\\, B(x)$** | $B(x)$ does not depend on $x$ | $A \to B$ *(Function Type)* | $A \implies B$ *(Implication)* |
 | **$\Pi_{x:A} B(x)$** / **$\forall x:A.\\, B(x)$** | $A = \mathbf{2}$ *(e.g., $`\{0, 1\}`$ )* | $B(0) \times B(1)$ *(Product Type)* | $B(0) \land B(1)$ *(Conjunction)* |
 | **$\Sigma_{x:A} B(x)$** / **$\exists x:A.\\, B(x)$** | $B(x)$ does not depend on $x$ | $A \times B$ *(Product Type)* | $A \land B$ *(Conjunction)* |
