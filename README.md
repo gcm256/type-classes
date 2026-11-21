@@ -43,19 +43,19 @@ the _exact_ same class of decision problems (the **RE complexity class**).
 <div align="center">
 
 **Inconsistent Recursive Logic** (Set of all proofs) \
-**$\equiv$**[§](#ext-equiv-only) \
+**$\cong$** (Structural Isomorphism)[§](#ext-equiv-only) \
 **Untyped 𝝺-Calculus**(Set of all 𝝺-terms) \
-**$\equiv$**[§](#ext-equiv-only) \
+**$\equiv$** (Extensional Equivalence)[§](#ext-equiv-only) \
 **Untyped Combinatory-Logic eg [SKI combinator calculus](https://en.wikipedia.org/wiki/SKI_combinator_calculus)**(Set of all SK-terms) \
-**$\equiv$**[§](#ext-equiv-only) \
+**$\equiv$** (Extensional Equivalence)[§](#ext-equiv-only) \
 **Set of All Turing-Machines** \
-**$\equiv$**[§](#ext-equiv-only) \
+**$\equiv$** (Extensional Equivalence)[§](#ext-equiv-only) \
 **$\left\\{U_M\right\\}$ (A Parameterized UTM, aka Curried UTM / Specialized UTM / Programmable UTM)** \
 (It first pre-loads the program ie fixes $M$ in the UTM $U(M, x)$ to produce a single-argument UTM $U_M(x)$ ) \
-**$\equiv$**[§§](#tm-mu-re) \
+**$\equiv$** (Extensional Equivalence)[§§](#tm-mu-re) \
 (via computation; many programs $\twoheadrightarrow$ one function) \
 **Set of All [µ-recursive (or partial recursive) functions](https://en.wikipedia.org/wiki/Mu_recursive_function)** \
-**$\equiv$** [§§](#tm-mu-re) \
+**$\equiv$** (Extensional Equivalence)[§§](#tm-mu-re) \
 (via halting domains; many functions $\twoheadrightarrow$ one set) \
 **Set of All [RE sets](https://en.wikipedia.org/wiki/Recursively_enumerable_set)** **$\equiv$** (by definition) **[The RE _complexity class_](https://en.wikipedia.org/wiki/RE_(complexity))**
 
@@ -76,7 +76,7 @@ the _exact_ same class of decision problems (the **RE complexity class**).
 >
 > ----
 >
-> ### Untyped λ-Calculus (ULC) $\equiv$ Inconsistent Recursive Logic (IRL)
+> ### Untyped λ-Calculus (ULC) $\cong$ Inconsistent Recursive Logic (IRL)
 > 
 > In IRL, there is only **one proposition** ($D$, where $D \cong D \to D$), governed by two domain rules:
 > - **Unfold:** $D \vdash D \implies D$ (treating a proof as a function)
@@ -107,25 +107,144 @@ the _exact_ same class of decision problems (the **RE complexity class**).
 > ----
 
 > [!NOTE]
-> <a id="ext-equiv-only"></a> § There is no natural 1-to-1 bijection between raw syntax of λ⁠-calculus, Combinatory-Logic, and TM.
-> 
-> 🔆🔆 There is only **extensional (computational power) equivalence**:
+> <a id="ext-equiv-only"></a> § 🔆🔆 There is a 1-to-1 correspondence between ULC and IRL
+> (every single λ-term in the Untyped λ-Calculus is literally a distinct proof tree in IRL). They have **structural isomorphism**:
+> - Every function abstraction maps to an implication introduction,
+> - Every application maps to Modus Ponens, and,
+> - Every single step of β⁠-reduction maps 1-to-1 to a step of proof normalization
+>
+> 🔆🔆 But, There is no natural 1-to-1 bijection between raw syntax of λ⁠-calculus, Combinatory-Logic, and TM. They have **extensional (computational power) equivalence**:
 > 
 > - Every λ⁠-term or SK-term can be simulated by a Turing machine, and every Turing machine can be simulated by a λ⁠-term or SK-term.
 > - Similarly, every λ⁠-term can be simulated by a SK-term, and vice versa.
 > - Note: Even if λ⁠-calculus and SKI-Combinatory-Logic are just rewritings (S = λxλyλz.xz(yz) and K = λxλy.x), they are still not intensionally equivalent.
 >   - Because: they differ in variable binding, reduction rules, and step-by-step execution.
 > 
-> **Intensional vs. Extensional Equivalence**
-> * **Intension (The *How* — Mechanism & Syntax):** Refers to internal structure, code, or operational rules.
->   * *Program vs. Program:* Same algorithm or syntax (e.g., identical λ-terms up to variable renaming).
->   * *Model vs. Model:* Turing Machines (states & tape) and Untyped λ-Calculus (variables & β-reduction) are **intensionally different**.
-> * **Extension (The *What* — Result & Scope):** Refers strictly to observable input-output behavior.
->   * *Program vs. Program:* Behavioral/Semantic Equivalence. Two programs compute the exact same mathematical function (e.g., Bubble Sort vs. Merge Sort).
->   * *Model vs. Model:* Computational Power / Turing Equivalence. Turing Machines and Untyped λ-Calculus are **extensionally equivalent** ($\equiv$) because
+> **Structural Isomorphism vs Intensional Equivalence vs. Extensional Equivalence**
+> - **Structural Isomorphism (Cross-system translation)**: (Strongest — System-to-System Bijection). Refers to **1-to-1 structure-preserving map** between
+>   the rules, terms, and step-by-step evaluation rules of System A and System B. Untyped λ-Calculus (ULC) and Inconsistent Recursive Logic (IRL) are **tructurally isomorphic**
+>   ($\cong$) because there's a bijective mapping between these two entire formal systems that preserves their grammar, construction rules, and step-by-step reduction mechanics.
+>
+> - **Intension (White-box implementation: The *How* — Mechanism & Syntax)**: (Intermediate — White-Box Equality). Refers to internal structure, code, or operational rules.
+>   - _Program vs. Program_: Same algorithm or syntax (e.g., identical λ-terms up to variable renaming).
+>   - _Model vs. Model_: Turing Machines (states & tape) and Untyped λ-Calculus (variables & β-reduction) are **intensionally different**.
+> - **Extension (Black-box behavior: The *What* — Result & Scope)**: (Weakest — Black-Box Equality). Refers strictly to observable input-output behavior.
+>   - _Program vs. Program_: Behavioral/Semantic Equivalence. Two programs compute the exact same mathematical function (e.g., Bubble Sort vs. Merge Sort).
+>   - _Model vs. Model_: Computational Power / Turing Equivalence. Turing Machines and Untyped λ-Calculus are **extensionally equivalent** ($\equiv$) because
 >     they compute the exact same set of partial recursive functions.
 >
 > ----
+
+### Why Type Systems Rather Than "Machines" Model Consistent Logics
+
+Even if Logics, Models of Computation, and Type-Systems all correspond to each other, **not every logic system corresponds to a useful or Turing-complete model of computation**, 
+though every _constructive_ logic corresponds to _some_ restricted computational system (often sub-Turing).
+
+To see why, we have to separate **Turing completeness** (computing all Recursively Enumerable / RE sets) from **logical** consistency (not being able to prove `False`).
+
+#### The Fundamental Trade-Off: Consistency vs. Turing Completeness
+
+In the Curry–Howard correspondence, **non-termination is equivalent to logical inconsistency**.
+- **Untyped λ-calculus (Turing-complete)**: Because you can write infinite loops (via the Y-combinator), you can construct a "proof" for any arbitrary type/proposition.
+  Logically, this corresponds to an **inconsistent logic** (like IRL) where every statement is provable (the Principle of Explosion).
+- **Consistent Logics (Strongly Normalizing)**: For a logic to be sound and consistent, every proof must simplify down to a finite, concrete value—meaning every program in its corresponding type system must **terminate**.
+
+By **Gödel’s Incompleteness Theorems** and **Rice's Theorem**, no consistent formal system can capture all computable functions while guaranteeing termination. 
+Therefore, consistent logics correspond to **sub-Turing** models of computation (they compute only _total_ recursive functions, not all RE sets ie not partial recursive functions).
+
+#### Why do we name Type Systems instead of "Machines" for Consistent Logics?
+
+Because no physical or tape-based machine naturally enforces "you may only loop in ways provable by second-order induction," the **typed λ-calculus itself is 
+the cleanest model of computation** for those logics.
+
+Automata/machine models (like Turing Machines or Pushdown Automata) are fundamentally the wrong abstraction for capturing the fine-grained computational power of logical systems.
+- Tape/State Machines (Finite Automata, Pushdown Automata, Turing Machines) classify computation by **space and memory limits** (Chomsky hierarchy). A Turing Machine is an 
+imperative state-transition system (moving a tape head and mutating symbols). It does not have the syntactic structure of proofs, propositions, or function abstraction.
+- Type Systems / λ-Calculi classify computation by **termination guarantees and recursion strength** (logical consistency hierarchy).
+
+- **Automata are too coarse:** Traditional machine models (Finite Automata, Pushdown Automata, Turing Machines) classify computation by **memory architecture**
+  (finite state → stack → linear bounded tape → infinite tape).
+  Once a machine has an infinite tape and unbounded loops, it jumps immediately to full Turing-completeness (computing all RE sets), skipping over intermediate sub-Turing classes.
+  For example, there is no natural "hardware machine" with a special kind of tape that computes _only_ System F functions without accidentally becoming Turing-complete.
+- **Logic restricts growth rate, not memory:** Consistent logics correspond to **total** (guaranteed-to-terminate) computation.
+  Their computational power differs by **how fast functions are allowed to grow** (recursion strength / proof-theoretic ordinals) rather than tape size / _memory hardware_.
+- **Type systems enforce termination:** Because no physical tape-based hardware naturally enforces "only loop in ways provable by second-order induction,"
+  **typed λ-calculi** (STLC, System T, System F, CoC) serve directly as the exact computational models for those logics.
+- **Closest machine analogues:** While we primarily name type systems, these total systems do map to **sub-Turing function classes** (e.g., extended polynomials,
+  primitive/ε₀-recursive functions) and **restricted abstract evaluators** (e.g., loop-free circuits, bounded `LOOP` machines,
+  or total Krivine/SECD machines without fixed-point instructions).
+
+#### Closest "Machine" & Function Class Equivalents
+
+Even though we usually classify consistent logics by function classes or abstract machines rather than tape-based automata, 
+computer scientists _do_ have non-type-system names for their computational power:
+
+| Logic / Type System | Computational Function Class | Closest Abstract Machine / Execution Model |
+|--- |--- |--- |
+| **Propositional Logic (STLC)** | **Extended Polynomials** (functions built only from `+`, `*`, and `if-then-else` over finite types; cannot even write subtraction or general loops) | **Loop-free Combinational Circuits** (evaluated via the **Krivine Machine** or **CEK Machine** with no recursion). |
+| **First-Order Arithmetic (System T)** | **ε<sub>0</sub>-Recursive Functions** (strictly larger than **Primitive Recursive Functions**; includes the Ackermann function) | **Bounded-Loop Register Machines** (like Meyer & Ritchie's **LOOP language**, extended with higher-order function pointers). |
+| **Second-Order Logic (System F)** | **Provably Total Functions of Second-Order Arithmetic** (vastly faster-growing than Ackermann; cannot be bounded by any standard hierarchy) | **Polymorphic Abstract Machines** (e.g., **SECD** or **Krivine machine** restricted to impredicative polymorphism without fixed-point instructions). |
+| **Higher-Order Logic (CoC)** | **Provably Total Functions of Higher-Order Constructive Type Theory** (almost everything in standard mathematics) | **Total Functional Evaluators** (evaluators that forbid general `while` loops and restrict recursion strictly to structural induction). |
+
+#### What About Logics _Without_ a Clean Computational Model?
+
+1. **Non-Constructive / Arbitrary Classical Axioms**: If you take a logic and arbitrarily add non-constructive axioms (like the full Axiom of Choice without computational content),
+   you can prove an object exists without giving an algorithm to construct it. The Curry–Howard correspondence breaks down unless you use advanced techniques like
+   _realizability_ or _forcing_ to extract programs.
+2. **Paraconsistent or Substructural Quirks**: Many exotic philosophical logics are designed purely to study truth tables or linguistic paradoxes. While you can technically turn their inference rules into a term-rewriting system, the resulting "computation model" often has no practical programming meaning.
+
+If you want **all RE sets** (Turing machines / untyped λ-calculus / class RE / partial recursive functions), you must give up logical consistency 
+(or explicitly separate _partial_ computation into a type like `IO` or `Partial a` in languages like Haskell/Idris). Otherwise, each consistent logic corresponds to a **total**, **terminating** subset of computation (a **_strict_ subset** of [total recursive functions](https://en.wikipedia.org/wiki/General_recursive_function#Total_recursive_function) / class R, **never all of R**).
+
+Different logics correspond to different, increasingly large subsets of R. But no single consistent Logic / formal system can capture all of R.
+
+----
+
+#### Sub-Recursive & Computability Hierarchy (From STLC to RE)
+
+**Inclusion Chain:**
+
+`STLC ⊂ Primitive Recursive ⊂ System T ⊂ Predicative MLTT ⊂ System F ⊂ CoC ⊂ Full MLTT ⊂ CIC (Coq/Lean) ⊂ R ⊂ RE`
+
+Only STLC has a simple, standalone algebraic name ("Extended Polynomials"). For stronger systems like MLTT, CoC, and CIC, their subsets of R are too vast 
+to have simple algebraic names—instead, logicians classify them by provably total functions of equivalent set/arithmetic theories or by their proof-theoretic ordinals (sub-recursive hierarchies).
+
+MLTT + W-types, CoC, and CIC grow so fast that their ordinals require **ordinal collapsing functions** (like the Bachmann–Howard ordinal and far beyond). 
+At that point, they are simply named after the set theory they match (e.g., "the provably total functions of ZFC + inaccessible cardinals").
+
+| System / Class | Core Features | Subset of Computable Functions Covered | Standard Name / Proof-Theoretic Strength |
+|---- |---- |---- |---- |
+| **STLC** (λ<sub>➝</sub>) | Simple function types (`A -> B`) over Church numerals; no primitive recursion | Functions built strictly from `0`, `1`, `+`, `*`, and `if n = 0` (cannot define general subtraction `n - 1` or loops) | **Extended Polynomials** (Schwichtenberg–Statman theorem) |
+| **Primitive Recursive** (`FLOOP`) | Bounded `for` loops; first-order primitive recursion | Addition, multiplication, exponentiation, tetration (excludes Ackermann) | **ω-Recursive Functions** (Grzegorczyk hierarchy) |
+| **System T** (Gödel) | STLC + `Nat` + higher-order primitive recursion (`rec`) | Includes Ackermann and tower-of-exponential functions; strictly total | **ε<sub>0</sub>-Recursive Functions** (Heyting / Peano Arithmetic) |
+| **Predicative MLTT** *(no W-types)* | Dependent types + infinite predicative universes (`U₀ : U₁ : ...`), no W-types | Transfinite recursion up to the Feferman–Schütte ordinal | **Γ<sub>0</sub>-Recursive Functions** (Predicative Analysis) |
+| **System F** (λ2) | Impredicative second-order polymorphism (`∀α. T`) | Vastly faster-growing than any predicative hierarchy; strictly total | **Provably Total Functions of Second-Order Arithmetic (Z<sub>2</sub>)** |
+| **CoC** (λC) | Dependent types + impredicative `Prop` + type operators (no inductive types or universe hierarchy) | Matches full Higher-Order Arithmetic; strictly total | **Provably Total Functions of Higher-Order Arithmetic (Z<sub>ω</sub>)** |
+| **Full MLTT** *(with W-types)* | Dependent types + primitive inductive W-types + infinite predicative universes | Surpasses plain CoC via transfinite well-founded trees; strictly total | **Provably Total Functions of CZF + ω Inaccessible Sets** |
+| **CIC** (Coq / Lean) | CoC + inductive types + infinite predicative universe hierarchy (`Type 0 : Type 1 : ...`) | Surpasses standard ZFC set theory; strictly total | **Provably Total Functions of ZFC + ω Inaccessible Cardinals** |
+| **Class R** *(Total Computable)* | **Every** algorithm guaranteed to halt on all inputs | **All total computable functions** (cannot be captured by any single consistent formal logic) | **Recursive Functions** (Undecidable whether an arbitrary program is in R) |
+| **Class RE** *(Turing-Complete)* | Untyped λ-calculus (ULC), Turing Machines, Haskell (`System FC + fix`) | **All partial & total computable functions** (includes infinite loops; logically inconsistent) | **Recursively Enumerable Sets** (Church–Turing Thesis) |
+
+----
+
+#### How Haskell, Coq, Lean Bridge the Gap (Infinite Loops vs. Consistency)
+
+Because R cannot be captured by any total language, practical languages must choose between **logical soundness** (Lean and Coq) and **Turing-completeness** (Haskell), 
+and then build bridges to the other side:
+
+- **Lean (Logic-First: Strict Termination + Escape Hatches)**: Built on CIC. So by default, every function in Lean must terminate (making Lean a sound theorem prover).
+  To allow general recursion and infinite loops without breaking the logic, Lean splits computation into two worlds: `def` and `partial def`.
+- **Coq/Rocq (Logic-First: Strict Termination + Escape Hatches)**: Similar to Lean. Provides Coinductive Types, Partiality / Delay Monad, Program Extraction to allow Turing-complete
+  computation without breaking logical soundness.
+- **Haskell (Computation-First: Turing-Complete + Simulated Logic)**: Haskell takes the opposite approach. It is Turing-complete by default, which means Haskell is logically inconsistent.
+  In Haskell, you can write `loop :: a; loop = loop` (or `undefined`) for _any_ type `a`, including `Void (False)`. In practice, Haskell programmers write most functions
+  using structural recursion over algebraic data types (which _would_ terminate in System F) and isolate real-world infinite loops and side effects inside the **`IO monad`**.
+  Haskell's Type-System is called System FC which is Fω + Explicit Type Equality Coercions + Open Type-Level Axioms. It then also allows unrestricted fixed-point
+  value-level recursion / infinite loops via `fix` / `undefined`. Even without value-level infinite loops (`fix` / `undefined`), GHC's type-level equality axioms in
+  System FC are already Turing-complete and logically inconsistent (you can write a non-terminating type family or coerce `Int` into `Bool` if axioms aren't checked for termination,
+  which is why GHC has flags like `UndecidableInstances`).
+
+----
 
 ### [Lambda-Cube](https://www.rbjones.com/rbjpub/logic/cl/index.htm)
 
@@ -161,13 +280,18 @@ the _exact_ same class of decision problems (the **RE complexity class**).
 
 ### The Classical λμ-Cube (Curry–Howard–Lambek Correspondence)
 
+- Classical Logic = Intuitionistic Logic + Law of Excluded Middle.
+  - Adding the Law of Excluded Middle ($A \lor \neg A$) requires adding advanced computational features like control operators (`call/cc` or continuations).
+- Untyped models of computation (like raw Turing Machines or Untyped λ-calculus) correspond to _inconsistent_ logics, like Inconsistent Recursive Logic (IRL),
+  where every proposition can be proven (via non-terminating loops).
+
 | Intuitionistic λ-Cube | Classical λμ-Cube | λ-Calculus + Control Breakdown | Corresponding Classical Logic | Category Theory Correspondence |
 |--- |--- |--- |--- |--- |
-| **λ<sub>➝</sub>** (STLC) | **λμ** | **STLC + `call/cc`** | Classical Propositional Logic | **Control Category** (Selinger) / Kleisli category of Continuation Monad R<sup>(R<sup>−</sup>)</sup> over a CCC |
+| **λ<sub>➝</sub>** (STLC) | **λμ** | **STLC + `call/cc`** <br> `call/cc` means first-class **continuations** (time-travel/jumps in control flow) | Classical Propositional Logic | **Control Category** (Selinger) / Kleisli category of Continuation Monad R<sup>(R<sup>−</sup>)</sup> over a CCC |
 | **λ2** (System F) | **λμ2** | **System F + `call/cc`** | Classical Second-Order Propositional Logic | **Polymorphic Control Category** / Indexed Control Category (with impredicative products) |
 | **λ⍹** (Weak ω) | **λμ⍹** | **λ⍹ + `call/cc`** | Classical Weakly Higher-Order Propositional Logic | **Control Category** enriched with higher-kinded type-operator functors |
 | **λω** (System Fω) | **λμω** | **System Fω + `call/cc`** | Classical Higher-Order Propositional Logic | **Higher-Order Polymorphic Control Category** (CPS-transformed into a Cartesian Closed Hyperdoctrine) |
-| **λP** (LF) | **λμP** | **λP + restricted `call/cc`** *(types cannot depend on control jumps)* | Classical First-Order Predicate Logic | **Locally Indexed Control Category** / Comprehension Category with a classical dualizing object |
+| **λP** (LF) | **λμP** | **λP + restricted `call/cc`** <br> restricted `call/cc` means _types cannot depend on control jumps_ | Classical First-Order Predicate Logic | **Locally Indexed Control Category** / Comprehension Category with a classical dualizing object |
 | **λP2** | **λμP2** | **λP2 + restricted `call/cc`** | Classical Second-Order Predicate Logic | **Classical Hyperdoctrine** / Polymorphic Locally Indexed Control Category |
 | **λP⍹** | **λμP⍹** | **λP⍹ + restricted `call/cc`** | Classical Weakly Higher-Order Predicate Logic | **Higher-Kinded Comprehension Control Category** |
 | **λPω** (CoC or λC) | **λμPω** / **λμC** | **Calculus of Constructions + restricted `call/cc`** *(e.g., Curry-style or `Prop`-isolated)* | Classical Higher-Order Predicate Logic | **Classical Tripos / Control Hyperdoctrine** (via double-negation / CPS sheaf models) |
