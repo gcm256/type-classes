@@ -44,12 +44,17 @@
       [Hasse–Weil zeta function](https://en.wikipedia.org/wiki/Hasse-Weil_zeta_function) $Z_{E/ℚ}(s)$
       - [Arithmetic Zeta Function](https://en.wikipedia.org/wiki/Arithmetic_zeta_function)
     - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
+      - [RH for Curves over Finite Fields](https://en.wikipedia.org/wiki/Riemann_hypothesis_for_curves_over_finite_fields)
+        (For any smooth, projective algebraic curve, including Elliptic Curves)
+      - [GRH](https://mathworld.wolfram.com/GeneralizedRiemannHypothesis.html) (https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis)
+      - [ERH](https://mathworld.wolfram.com/ExtendedRiemannHypothesis.html) (https://en.wikipedia.org/wiki/Extended_Riemann_hypothesis)
 
-3. **Type Theory** $\underbrace{\text{Curry-Howard Isomorphism}}_\equiv$ [**Category Theory**](https://en.wikipedia.org/wiki/Template:Category_theory):
+3. **Logic (Proof Theory)** $\underbrace{\text{Curry-Howard Isomorphism}}_\equiv$ **Type Theory (Models of Computation)** $\equiv$
+   [**Category Theory**](https://en.wikipedia.org/wiki/Template:Category_theory):
     - [Boolean Algebras](https://ncatlab.org/nlab/show/Boolean+algebra)
     - [Heyting Algebras](https://ncatlab.org/nlab/show/Heyting+algebra)
 
-4. **QFT**, **Particle Physics**[^5], **Symmetry Groups**[^4] (Abstract Algebra, Group Theory), **Astronomy/Cosmology**, **Special & General Relativity**:
+5. **QFT**, **Particle Physics**[^5], **Symmetry Groups**[^4] (Abstract Algebra, Group Theory), **Astronomy/Cosmology**, **Special & General Relativity**:
     - [Lie Algebras](https://ncatlab.org/nlab/show/Lie+algebra) & Lie [Groups](https://ncatlab.org/nlab/show/Lie+group)
       - They are different:
         - A **Lie Group** is a Group.
