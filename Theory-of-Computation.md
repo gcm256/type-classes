@@ -95,6 +95,8 @@ Therefore, from (1) and (2): $\text{PH} \subseteq \text{P}^{\text{PP}} \implies 
 
 ## Appendix and References
 
+- https://en.wikipedia.org/wiki/Template:Data_types
+- https://en.wikipedia.org/wiki/Type_class
 - https://en.wikipedia.org/wiki/List_of_data_structures
 - https://en.wikipedia.org/wiki/List_of_algorithms
 - https://en.wikipedia.org/wiki/List_of_complexity_classes
