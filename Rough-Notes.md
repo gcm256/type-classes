@@ -108,27 +108,49 @@ Symmetry and mathematical structures are built up like layers of an onion.
 We move down the primary hierarchy by forgetting rules ([**forgetful functors**](https://en.wikipedia.org/wiki/Forgetful_functor)) 
 and up by specializing with stricter axioms eg sometimes using [**(Left) Adjoint Functors**](https://en.wikipedia.org/wiki/Adjoint_functors) of the forgetful functors.
 
-### Relationship between Field, Ring, Abelian Group, Group, Monoid, Semi-group, Set:
+### Relationship between Field, Ring, Abelian Group, Group, Monoid, Semi-group, Magma, Set:
 
-Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+)$ ⟹ Monoid $(+)$ ⟹ Semigroup $(+)$ ⟹ Set
+Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+)$ ⟹ Monoid $(+)$ ⟹ Semigroup $(+)$ ⟹ Magma $(+)$ ⟹ Set
 
 - To go from Field to Set, we essentially use two Forgetful Functors: Property Strippers and Structure Strippers.
   - We apply only one of them for each step, as needed (shown below):
 ```
-[Field] ──(Property)──> [Ring] ──(Structure)──> [Abelian Group] ──(Property)──> [Group] 
-                                                                                   │
-[Set] <──(Structure)── [Semigroup] <──(Structure)── [Monoid] <──(Structure)────────┘
+[Field] ──(Property)──> [Ring] ────(Structure)──> [Abelian Group] ──(Property)──> [Group] ──(Structure)──┐ 
+                                                                                                         |
+[Set] <───(Structure)── [Magma] <──(Property)──── [Semigroup] <─────(Structure)── [Monoid] <─────────────┘
 ```
 - To go back (from Set to Field), we again use two Functors: [Reflector Functors](https://en.wikipedia.org/wiki/Reflective_subcategory) and [Free Functors](https://en.wikipedia.org/wiki/Free_object#Free_functor).
   - They are the [Left Adjoint Functors](https://en.wikipedia.org/wiki/Adjoint_functors#Adjunctions_in_full), respectively,
     of (the Forgetful Functors) Property Strippers and Structure Strippers.
   - To go back also, we apply only one of them for each step, as needed (shown below): 
 ```
-[Set] ──(Free)──> [Semigroup] ──(Free)──> [Monoid] ──(Free)──> [Group] 
-                                                                  │
-                                                             (Reflector)
-[Field] <──(Reflector)── [Ring] <──(Free)── [Abelian Group] <─────┘
+[Field] <──(Reflector)── [Ring] <──(Free)──────── [Abelian Group] <──(Reflector)── [Group] <──(Free)──┐ 
+                                                                                                      |
+[Set] ─────(Free)──────> [Magma] ──(Reflector)──> [Semigroup] ───────(Free)──────> [Monoid] ──────────┘
 ```
+
+| <sub>Structure</sub> | <sub>Total</sub> | <sub>Associative</sub> | <sub>Identity (0)</sub> | <sub>Inverse</sub> | <sub>Commutative</sub> | <sub>2nd-operation (.)</sub> | <sub><sub>Distributive <br> <!-- $`a.(b+c)=a.b+a.c`$ --> </sub></sub> | <sub>(.)-Associative</sub> | <sub>(.)-Identity (1)</sub> | <sub>(.)-Inverse</sub> | <sub>(.)-Commutative</sub> |
+|----               |----   |----         |----      |----     |----             |---- |---- |---- |---- |---- |---- |
+| Set               | ➖    | ➖           | ➖       | ➖       | ➖              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+| Partial-Magma     | ❌    | ❌           | ❌       | ❌       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+| Magma             | ✅    | ❌           | ❌       | ❌       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+| Semigroup         | ✅    | ✅           | ❌       | ❌       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+| Monoid            | ✅    | ✅           | ✅       | ❌       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+| Group             | ✅    | ✅           | ✅       | ✅       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+| Abelian Group     | ✅    | ✅           | ✅       | ✅       | ✅              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+| Ring              | ✅    | ✅           | ✅       | ✅       | ✅              | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Field             | ✅    | ✅           | ✅       | ✅       | ✅              | ✅ | ✅ | ✅ | ✅ | ✅ <br> <sub>(1 ≠ 0)</sub>| ✅ <br> <sub>(∀ _a_ ≠ 0)</sub> |
+| Groupoid          | ❌    | ✅           | ✅       | ✅       | ✅              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+| Semigroupoid      | ❌    | ✅           | ❌       | ❌       | ✅              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+| Loop              | ✅    | ❌           | ✅       | ✅       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
+
+> [!NOTE]
+> - Magma = Semigroup w/o Associativity
+> - Loop =  Group w/o Associativity) = Semigroupoid with all structure/properties inverted.
+> - Groupoid = Magma with all structure/properties inverted.
+> - Semigroup = Group w/o (Identity & Inverse)
+> - [Semigroupoid](https://en.wikipedia.org/wiki/Semigroupoid) = Groupoid w/o (Identity & Inverse)
+
 
 ### Vector Space
 
@@ -154,6 +176,9 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
           │
           ▼
       Semigroup
+          │
+          ▼
+        Magma
           │
           ▼
          Set
