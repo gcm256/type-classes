@@ -36,18 +36,31 @@
         [Inversion in Geometry](https://en.wikipedia.org/wiki/Inversive_geometry)
       - [Involution in Geometry](https://en.wikipedia.org/wiki/Involution_(mathematics)#Projective_geometry)
       - [Reciprocation](https://mathworld.wolfram.com/Reciprocation.html) & [Duality Principle](https://mathworld.wolfram.com/DualityPrinciple.html)
-    - [L-function](https://mathworld.wolfram.com/L-Function.html)[^6] / [L-function Topics](https://en.wikipedia.org/wiki/Template:L-functions-footer)
-      - [Examples of L-functions](https://en.wikipedia.org/wiki/L-function#Examples)
+    - [L-Function](https://mathworld.wolfram.com/L-Function.html)[^6] / [L-Function Topics](https://en.wikipedia.org/wiki/Template:L-functions-footer)
+      - [Examples of L-Functions](https://en.wikipedia.org/wiki/L-function#Examples)
       - [General Zeta Functions](https://mathworld.wolfram.com/ZetaFunction.html)
       - [Examples of Zeta Functions](https://en.wikipedia.org/wiki/Zeta_function)
-      - [The Hasse-Weil L-function L(E,s) of an Elliptic Curve](https://mathworld.wolfram.com/Hasse-WeilL-Function.html) &
-      [Hasse–Weil zeta function](https://en.wikipedia.org/wiki/Hasse-Weil_zeta_function) $Z_{E/ℚ}(s)$
+      - [Hecke L-Function Lᴋ(s,𝜓)](https://mathworld.wolfram.com/HeckeL-Function.html)
+        - Generalizes the analytic / archimedean structure (only 1-dimensional representation, only 1-D geometry, can be infinite order)
+      - [Artin L-Function L(s,ρ)](https://mathworld.wolfram.com/ArtinL-Function.html) (https://en.wikipedia.org/wiki/Artin_L-function)
+        - Generalizes the algebraic / non-abelian structure (can be higher dimensional representation, only 0-D geometry, only finite order)
+      - [The Hasse-Weil L-Function L(E,s) of an Elliptic Curve](https://mathworld.wolfram.com/Hasse-WeilL-Function.html) &
+      [Hasse–Weil Zeta Function](https://en.wikipedia.org/wiki/Hasse-Weil_zeta_function) $Z_{E/ℚ}(s)$
+        - Generalizes the geometric structure (any representation dimension, any geometric dimension, any (usually infinite) order)
       - [Arithmetic Zeta Function](https://en.wikipedia.org/wiki/Arithmetic_zeta_function)
+    - [Automorphic L-function L(s,π)](https://www.cimpa.info/en/ecoles/automorphic-l-functions) (https://en.wikipedia.org/wiki/Automorphic_L-function)
+        (https://www.claymath.org/library/cw/arthur/pdf/automorphic-L.pdf)
+      - Generalizes all.
+      - Lᴋ(s,𝜓), L(s,ρ) & L(E,s) are all independent/sibling special cases of L(s,π)
+      - [Motivic L-Function L(M,s)](https://en.wikipedia.org/wiki/Motivic_L-function)
+      - {Lᴋ(s,𝜓), L(s,ρ), L(E,s)} ⊂ L(M,s) ⊂ L(s,π)
+    - [Langlands Reciprocity](https://mathworld.wolfram.com/LanglandsReciprocity.html)
     - [Riemann Hypothesis](https://mathworld.wolfram.com/RiemannHypothesis.html) & [Particular Values of Riemann Zeta Function](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)[^1][^2]
       - [RH for Curves over Finite Fields](https://en.wikipedia.org/wiki/Riemann_hypothesis_for_curves_over_finite_fields)
         (For any smooth, projective algebraic curve, including Elliptic Curves)
-      - [GRH](https://mathworld.wolfram.com/GeneralizedRiemannHypothesis.html) (https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis)
-      - [ERH](https://mathworld.wolfram.com/ExtendedRiemannHypothesis.html) (https://en.wikipedia.org/wiki/Extended_Riemann_hypothesis)
+      - [Generalized RH](https://mathworld.wolfram.com/GeneralizedRiemannHypothesis.html) (https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis)
+      - [Extended RH](https://mathworld.wolfram.com/ExtendedRiemannHypothesis.html) (https://en.wikipedia.org/wiki/Extended_Riemann_hypothesis)
+      - [Grand RH](https://en.wikipedia.org/wiki/Grand_Riemann_hypothesis) (https://alozanoroble.github.io/riemann-hypothesis-explorer/)
 
 3. **Logic (Proof Theory)** $\underbrace{\text{Curry-Howard Isomorphism}}_\equiv$ **Type Theory (Models of Computation)** $\equiv$
    [**Category Theory**](https://en.wikipedia.org/wiki/Template:Category_theory):
@@ -129,7 +142,7 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 [Set] ─────(Free)──────> [Magma] ──(Reflector)──> [Semigroup] ───────(Free)──────> [Monoid] ──────────┘
 ```
 
-| <sub>Structure</sub> | <sub>Total</sub> | <sub>Associative</sub> | <sub>Identity (0)</sub> | <sub>Inverse</sub> | <sub>Commutative</sub> | <sub>2nd-operation (.)</sub> | <sub><sub>Distributive <br> <!-- $`a.(b+c)=a.b+a.c`$ --> </sub></sub> | <sub>(.)-Associative</sub> | <sub>(.)-Identity (1)</sub> | <sub>(.)-Inverse</sub> | <sub>(.)-Commutative</sub> |
+| <sub>Structure</sub> | <sub>Total</sub> | <sub>Associative</sub> | <sub>Identity (0)</sub> | <sub>Inverse</sub> | <sub>Commutative</sub> | <sub>2nd-operation (.) w/ Closure</sub> | <sub><sub>Distributive <br> <!-- $`a.(b+c)=a.b+a.c`$ --> </sub></sub> | <sub>(.)-Associative</sub> | <sub>(.)-Identity (1)</sub> | <sub>(.)-Inverse</sub> | <sub>(.)-Commutative</sub> |
 |----               |----   |----         |----      |----     |----             |---- |---- |---- |---- |---- |---- |
 | Set               | ➖    | ➖           | ➖       | ➖       | ➖              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
 | Partial-Magma     | ❌    | ❌           | ❌       | ❌       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
@@ -138,15 +151,17 @@ Field $(+, \times)$ ⟹ Ring $(+, \times)$ ⟹ Abelian Group $(+)$ ⟹ Group $(+
 | Monoid            | ✅    | ✅           | ✅       | ❌       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
 | Group             | ✅    | ✅           | ✅       | ✅       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
 | Abelian Group     | ✅    | ✅           | ✅       | ✅       | ✅              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
-| Ring              | ✅    | ✅           | ✅       | ✅       | ✅              | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
-| Field             | ✅    | ✅           | ✅       | ✅       | ✅              | ✅ | ✅ | ✅ | ✅ | ✅ <br> <sub>(1 ≠ 0)</sub>| ✅ <br> <sub>(∀ _a_ ≠ 0)</sub> |
+| Ring              | ✅    | ✅           | ✅       | ✅       | ✅              | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Field             | ✅    | ✅           | ✅       | ✅       | ✅              | ✅ | ✅ | ✅ | ✅ <br> <sub> . 1 ≠ 0</sub> <br> <sub> . ∀ _a_ ≠ 0</sub> | ✅ | ✅ |
 | Groupoid          | ❌    | ✅           | ✅       | ✅       | ✅              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
 | Semigroupoid      | ❌    | ✅           | ❌       | ❌       | ✅              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
 | Loop              | ✅    | ❌           | ✅       | ✅       | ❌              | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
 
 > [!NOTE]
 > - Magma = Semigroup w/o Associativity
-> - Loop =  Group w/o Associativity) = Semigroupoid with all structure/properties inverted.
+> - Loop =  Group w/o Associativity = Semigroupoid with all structure/properties inverted.
+>   - Caveat: Since Loop lacks Associativity, it needs Direct Divisibility for unique solns of $`a.x = b`$ & $`y.a = b`$. The 2 solns $x$ & $y$ needn't be equal.
+>     They'll be equal **iff** commutativity holds.
 > - Groupoid = Magma with all structure/properties inverted.
 > - Semigroup = Group w/o (Identity & Inverse)
 > - [Semigroupoid](https://en.wikipedia.org/wiki/Semigroupoid) = Groupoid w/o (Identity & Inverse)
