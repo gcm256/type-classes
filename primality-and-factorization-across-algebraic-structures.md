@@ -23,9 +23,13 @@
 
 ## Generalization of [Reciprocity Laws](https://en.wikipedia.org/wiki/Reciprocity_law)
 
-[Langlands Reciprocity](https://mathworld.wolfram.com/LanglandsProgram.html) ⊃ [Artin's Reciprocity Theorem](https://mathworld.wolfram.com/ArtinsReciprocityTheorem.html) 
-⊃ [Hasse Eisenstein-Kummer Reciprocity](https://en.wikipedia.org/wiki/Eisenstein_reciprocity) ⊃ [Rational Reciprocity Law](https://en.wikipedia.org/wiki/Rational_reciprocity_law) 
-⊃ [Quadratic Reciprocity Theorem](https://mathworld.wolfram.com/QuadraticReciprocity.html)
+<div align="center">
+  
+###### [Langlands Reciprocity](https://mathworld.wolfram.com/LanglandsReciprocity.html) ⊃ [Artin's Reciprocity Theorem](https://mathworld.wolfram.com/ArtinsReciprocityTheorem.html) ⊃ [Hasse Eisenstein-Kummer Reciprocity](https://en.wikipedia.org/wiki/Eisenstein_reciprocity) ⊃ [Rational Reciprocity Law](https://en.wikipedia.org/wiki/Rational_reciprocity_law) ⊃ [Quadratic Reciprocity Theorem](https://mathworld.wolfram.com/QuadraticReciprocity.html)
+
+</div>
+
+----
 
 - **[Quadratic Reciprocity Theorem](https://mathworld.wolfram.com/QuadraticReciprocityTheorem.html)**: States solvability conditions of $x^2 \equiv p \pmod{q}$
   and $x^2 \equiv q \pmod{p}$ _only_ when $p$ and $q$ are **_distinct odd primes_**.
@@ -41,10 +45,36 @@
 - **Artin's Reciprocity Theorem**: Extends reciprocity laws to _all_ **abelian** extensions of _any_ number field (which covers all power residue laws for any $n$)
   eg General Galois groups of extension fields.
 - **[Langlands Reciprocity](https://en.wikipedia.org/wiki/Langlands_program#Reciprocity)**: Generalization of Artin reciprocity to **non-Abelian** Galois extensions of number fields.
-  - A set of conjectures (many are proven, some are active research areas) about deep connections between:
-    - Abstract Algebra (Galois Theory, Field Theory, Group Theory, Number Theory),
-    - Analysis (Automorphic Forms), and
-    - [Geometry](https://en.wikipedia.org/wiki/Langlands_program#Geometric_conjectures) (See [Geometric Langlands Program](https://handwiki.org/wiki/Geometric_Langlands_correspondence))
+
+----
+
+## Langlands Program 
+
+To Meta-Generalize the General-Algebraic, General-Analytic, General-Geometric structures of L-Functions to 
+[Automorphic L-function](https://en.wikipedia.org/wiki/Automorphic_L-function) **[L(s,π)](https://www.cimpa.info/en/ecoles/automorphic-l-functions)**
+
+- **Artin L-Function L(s,ρ)**: Generalizes the algebraic / non-abelian structure (can be higher dimensional representation, only 0-D geometry, only finite order)
+- **Hecke L-Function Lᴋ(s,𝜓)**: Generalizes the analytic / archimedean structure (only 1-dimensional representation, only 1-D geometry, can be infinite order)
+- **Hasse-Weil L-Function L(E,s) & Motivic L-Function L(M,s)**: Generalize the geometric structure (any representation dimension, any geometric dimension, any (usually infinite) order)
+
+<div align="center">
+  
+## 🔆✨ {Lᴋ(s,𝜓), L(s,ρ), L(E,s)} ⊂ L(M,s) ⊂ L(s,π) ✨🔆
+
+</div>
+
+> [!NOTE]
+> [Langlands Program](https://mathworld.wolfram.com/LanglandsProgram.html) includes a set of conjectures (many are proven, some are active research areas) about deep connections between:
+>
+> - Abstract Algebra (Galois Theory, Field Theory, Group Theory, Number Theory) eg [Artin L-Function L(s,ρ)](https://mathworld.wolfram.com/ArtinL-Function.html)
+>   (https://en.wikipedia.org/wiki/Artin_L-function),
+> - Analysis (Automorphic Forms) eg [Hecke L-Function Lᴋ(s,𝜓)](https://mathworld.wolfram.com/HeckeL-Function.html), and
+> - [Geometry](https://en.wikipedia.org/wiki/Langlands_program#Geometric_conjectures) eg [Motivic L-Function L(M,s)](https://en.wikipedia.org/wiki/Motivic_L-function), 
+>  [The Hasse-Weil L-Function L(E,s) of an Elliptic Curve](https://mathworld.wolfram.com/Hasse-WeilL-Function.html) 
+>  - (See [Geometric Langlands Program](https://handwiki.org/wiki/Geometric_Langlands_program) aka
+>    [Geometric Langlands Correspondence](https://mathworld.wolfram.com/GeometricLanglandsCorrespondence.html))
+
+----
 
 ## Appendix and References
 
