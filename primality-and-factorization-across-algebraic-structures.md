@@ -78,6 +78,9 @@ To Meta-Generalize the General-Algebraic, General-Analytic, General-Geometric st
 
 ## Appendix and References
 
+- ⏯️ [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/playlist?list=PL300nJOfVNKZH3H-2J_g1bZRYOx-dQUp3)
+   [RH Saga Season 1: Cosmology of L-functions](https://www.youtube.com/playlist?list=PL300nJOfVNKZH3H-2J_g1bZRYOx-dQUp3)
+- [The LMFDB universe](https://www.lmfdb.org/universe)
 - [Reciprocity Laws](https://link.springer.com/chapter/10.1007/978-3-662-12893-0_11)
 - [Classical Reciprocity Laws](https://www.asiapacific-mathnews.com/04/0404/0005_0009.pdf)
 - https://www.sciencedirect.com/topics/mathematics/reciprocity-law
