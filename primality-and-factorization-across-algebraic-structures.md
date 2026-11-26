@@ -49,7 +49,7 @@
 
 ----
 
-## Langlands Program (Main Branch)
+## Langlands Program (Main Branch)[^1]
 
 Langlands Program has many branches today. But the original _main branch_ (which is directly relevant for L-functions) can be called **Global Langlands over Number Fields**.
 This main branch consists of **two major themes**:
@@ -111,3 +111,9 @@ Langlands Main Branch attempts to Meta-Generalize the General-Algebraic, General
 ### Directed Reading Programs
 - [Columbia University Math Directed Reading Program (DRP)](https://www.math.columbia.edu/programs-math/undergraduate-program/undergraduate-research/drp/)
 - [Stanford Math Directed Reading Program](https://mathdrp.stanford.edu/)
+
+[^1]: Langlands reciprocity: L-functions, automorphic forms, and Diophantine equations \
+Appeared in The genesis of the Langlands program \
+(Julia Mueller, Freydoon Shahidi eds.), \
+London Mathematical Society Lecture Notes Series, vol. 467, 2021, 301-386. \
+https://www.math.uchicago.edu/~emerton/pdffiles/reciprocity.pdf
