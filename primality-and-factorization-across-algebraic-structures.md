@@ -55,6 +55,10 @@ To Meta-Generalize the General-Algebraic, General-Analytic, General-Geometric st
 
 - **Artin L-Function L(s,ρ)**: Generalizes the algebraic / non-abelian structure (can be higher dimensional representation, only 0-D geometry, only finite order)
 - **Hecke L-Function Lᴋ(s,𝜓)**: Generalizes the analytic / archimedean structure (only 1-dimensional representation, only 1-D geometry, can be infinite order)
+  - In Hecke L-function Lᴋ(s,𝜓):
+    - Set K = ℚ and 𝜓 = trivial (essentially 1 with caveats): Riemann zeta function 𝜁(s)
+    - Set K = ℚ and 𝜓 = 𝜒: Dirichlet L-function L(s, 𝜒)
+    - Set K = any number field and  𝜓 = trivial (essentially 1 with caveats): Dedekind zeta function 𝜁ᴋ(s)
 - **Hasse-Weil L-Function L(E,s) & Motivic L-Function L(M,s)**: Generalize the geometric structure (any representation dimension, any geometric dimension, any (usually infinite) order)
 
 <div align="center">
