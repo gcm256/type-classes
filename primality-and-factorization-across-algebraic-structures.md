@@ -45,12 +45,18 @@
 - **Artin's Reciprocity Theorem**: Extends reciprocity laws to _all_ **abelian** extensions of _any_ number field (which covers all power residue laws for any $n$)
   eg General Galois groups of extension fields.
 - **[Langlands Reciprocity](https://en.wikipedia.org/wiki/Langlands_program#Reciprocity)**: Generalization of Artin reciprocity to **non-Abelian** Galois extensions of number fields.
+  - Expresses the idea that any **motivic object** has a corresponding **automorphic object** with the same L-function. See [The LMFDB universe](https://www.lmfdb.org/universe).
 
 ----
 
-## Langlands Program 
+## Langlands Program (Main Branch)
 
-To Meta-Generalize the General-Algebraic, General-Analytic, General-Geometric structures of L-Functions to 
+Langlands Program has many branches today. But the original _main branch_ (which is directly relevant for L-functions) can be called **Global Langlands over Number Fields**.
+This main branch consists of **two major themes**:
+- Langlands Functoriality
+- Langlands Reciprocity
+
+Langlands Main Branch attempts to Meta-Generalize the General-Algebraic, General-Analytic, General-Geometric structures of L-Functions to 
 [Automorphic L-function](https://en.wikipedia.org/wiki/Automorphic_L-function) **[L(s,π)](https://www.cimpa.info/en/ecoles/automorphic-l-functions)**
 
 - **Artin L-Function L(s,ρ)**: Generalizes the algebraic / non-abelian structure (can be higher dimensional representation, only 0-D geometry, only finite order)
