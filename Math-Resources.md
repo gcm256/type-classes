@@ -53,6 +53,7 @@ These are Text and non-YouTube resources.
 - **[Wolfram Alpha](https://www.wolframalpha.com/)**
 - **[Wolfram MathWorld](https://mathworld.wolfram.com/)**
 - [Magma Calculator](https://magma.maths.usyd.edu.au/calc/)
+- [![SageMathCel](https://sagecell.sagemath.org/static/sagemathcell-logo.png)](https://sagecell.sagemath.org/)(https://sagecell.sagemath.org/) [SageMathCell](https://sagecell.sagemath.org/)
 
 ----
 
