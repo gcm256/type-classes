@@ -47,13 +47,22 @@ These are Text and non-YouTube resources.
 
 ## Hands On
 
-- **[JupyterLite](https://jupyter.org/try-jupyter/lab/)**
-- **[Desmos](https://www.desmos.com/3d)** eg: https://www.desmos.com/3d/9cec4a5lqn
-- **[GeoGebra](https://www.geogebra.org/classic#geometry)**
-- **[Wolfram Alpha](https://www.wolframalpha.com/)**
-- **[Wolfram MathWorld](https://mathworld.wolfram.com/)**
-- [Magma Calculator](https://magma.maths.usyd.edu.au/calc/)
-- [![SageMathCel](https://sagecell.sagemath.org/static/sagemathcell-logo.png)](https://sagecell.sagemath.org/)(https://sagecell.sagemath.org/) [SageMathCell](https://sagecell.sagemath.org/)
+- [![JupyterLite](https://img.shields.io/badge/JupyterLite-F37626?style=flat&logo=jupyter&logoColor=white)](https://jupyter.org/try-jupyter/lab/)**[JupyterLite](https://jupyter.org/try-jupyter/lab/)**
+- [![Desmos](https://img.shields.io/badge/Desmos-187A3D?style=flat)](https://www.desmos.com/calculator) **[Desmos](https://www.desmos.com/3d)** eg: https://www.desmos.com/3d/9cec4a5lqn
+- [![GeoGebra](https://img.shields.io/badge/GeoGebra-6557D2?style=flat)](https://www.geogebra.org/calculator) **[GeoGebra](https://www.geogebra.org/classic#geometry)**
+- [![Wolfram|Alpha](https://img.shields.io/badge/Wolfram%7CAlpha-dd1100?style=flat&logo=wolfram&logoColor=white)](https://www.wolframalpha.com/) **[Wolfram Alpha](https://www.wolframalpha.com/)**
+- [![Wolfram MathWorld](https://img.shields.io/badge/Wolfram-MathWorld-DD1100?style=flat&logo=wolfram&logoColor=white)](https://mathworld.wolfram.com/) **[Wolfram MathWorld](https://mathworld.wolfram.com/)**
+- [![Magma Calculator](https://img.shields.io/badge/Magma%20Calculator-8B1A1A?style=flat)](http://magma.maths.usyd.edu.au/calc/) [Magma Calculator](https://magma.maths.usyd.edu.au/calc/)
+- [![SageMathCell](https://img.shields.io/badge/SageMathCell-5d73b8?style=flat&logo=python&logoColor=white)](https://sagecell.sagemath.org/) [SageMathCell](https://sagecell.sagemath.org/)
+
+<!--
+# svg logo
+[![Open in GeoGebra](https://img.shields.io/badge/Open%20in-GeoGebra-6557D2?style=flat&logo=data:image/svg%2Bxml;base64,YOUR_URL_ENCODED_BASE64_HERE)](https://www.geogebra.org/calculator)
+# png logo 
+[![Open in GeoGebra](https://img.shields.io/badge/Open%20in-GeoGebra-6557D2?style=flat&logo=data:image/png;base64,YOUR_URL_ENCODED_BASE64_HERE)](https://www.geogebra.org/calculator)
+[![Open in Desmos](https://img.shields.io/badge/Open%20in-Desmos-187A3D?style=flat&logo=data:image/png;base64,YOUR_URL_ENCODED_BASE64_HERE)](https://www.desmos.com/calculator)
+[![Run in Magma Calculator](https://img.shields.io/badge/Run%20in-Magma%20Calculator-8B1A1A?style=flat&logo=data:image/png;base64,YOUR_URL_ENCODED_BASE64_HERE)](http://magma.maths.usyd.edu.au/calc/)
+-->
 
 ----
 
