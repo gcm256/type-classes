@@ -56,6 +56,14 @@ This main branch consists of **two major themes**:
 - Langlands Functoriality
 - Langlands Reciprocity
 
+----
+<img width="1005" height="558" alt="Langlands Program" src="https://github.com/user-attachments/assets/d1769b3b-6de6-4b7d-ac3e-9077d9580f6f" />
+
+See [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat&logo=youtube&logoColor=white)](https://youtu.be/4bzSFNCiKrk?list=PL300nJOfVNKZH3H-2J_g1bZRYOx-dQUp3&t=2800)
+https://youtu.be/4bzSFNCiKrk?list=PL300nJOfVNKZH3H-2J_g1bZRYOx-dQUp3&t=2800
+
+----
+
 Langlands Main Branch attempts to Meta-Generalize the General-Algebraic, General-Analytic, General-Geometric structures of L-Functions to 
 [Automorphic L-function](https://en.wikipedia.org/wiki/Automorphic_L-function) **[L(s,π)](https://www.cimpa.info/en/ecoles/automorphic-l-functions)**
 
