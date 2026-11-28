@@ -70,6 +70,15 @@ Deep Indigo (2B2D8F)
 
 ----
 
+## Classrooms:
+
+- [MathWorld Introduces New Interactive Features for Teachers and Students](https://mathworld.wolfram.com/news/2005-07-06/mathworld/)
+- [MathWorld classroom](https://mathworld.wolfram.com/classroom/)
+  - [MathWorld Classroom (Q141203067)](https://www.wikidata.org/wiki/Q141203067)
+- ["Making MathWorld", The Mathematica Journal Volume 10, Issue 3, Published August 6, 2007](https://www.mathematica-journal.com/2007/08/06/making-mathworld/)
+
+----
+
 ## Journals
 
 > [!NOTE]
@@ -90,6 +99,7 @@ Deep Indigo (2B2D8F)
 - https://searchworks.stanford.edu/
 - [Open Academic Journal Index](https://oaji.net/)
 - [IMU](https://www.mathunion.org/cop/gdml/external-resources)
+- [The Mathematica Journal](https://www.mathematica-journal.com/back-issues/)
 
 ## Libraries
 
@@ -110,6 +120,65 @@ Deep Indigo (2B2D8F)
 
 - [Sigmundur Gudmundsson - Publications](https://www.matematik.lu.se/matematiklu/personal/sigma/publications.html)
 
+### Geometry
+
+- https://en.wikipedia.org/wiki/Steiner_inellipse#References
+  - ["Triangles, Ellipses, and Cubic Polynomials", D. Minda, S. Phelps, The American Mathematical Monthly Volume 115, 2008 - Issue 8](https://www.tandfonline.com/doi/abs/10.1080/00029890.2008.11920581)
+    - [The American Mathematical Monthly, Volume 115, Issue 8 (2008)](https://www.tandfonline.com/toc/uamm20/115/8)
+  - ["A Distorted View of Geometry", G. Chakerian, Published 1979](https://www.semanticscholar.org/paper/A-Distorted-View-of-Geometry-Chakerian/f67c9d7f757086e5ccc22f67b24f19423da49aff)
+    - ["Dolciani Mathematical Expositions", Mathematical Plums, Edited by: Ross Honsberger](https://pubs.ams.org/ebooks/dol/004/)
+- ["Finding Ellipses and Hyperbolas Tangent to Two, Three, or Four Given Lines", Alan Horwitz](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3137683)
+- https://collegegeometry430.weebly.com/resources.html
+- ["Geometry", ALAIN MATTHES](https://altermundus.fr/files/papers/euclidean-geometry.pdf)
+  - https://altermundus.fr/includes/papers.php
+- ["GOLDEN SECTIONS IN AN ISOSCELES TRIANGLE AND ITS CIRCUMCIRCLE", DAO THANH OAI, NGO QUANG DUONG, PAUL YIU, Global Journal of Advanced Research on Classical and Modern Geometries
+  ISSN: 2284-5569, Vol.5, (2016), Issue 2, pp.93-97](https://geometry-math-journal.ro/pdf/Volume5-Issue2/4.pdf)
+  - [GLOBAL JOURNAL OF ADVANCED RESEARCH ON CLASSICAL AND MODERN GEOMETRIES” (GJARCMG)](https://geometry-math-journal.ro/)
+- ["On Emelyanov’s Circle Theorem", , P. Yiu](https://www.heldermann-verlag.de/jgg/jgg09/j9h2yiu.pdf)
+- ["Introduction to the Geometry of the Triangle", P. Yiu](https://users.math.uoc.gr/~pamfilos/Yiu.pdf)
+- ["Forum Geometricorum", (All Volumes)](https://mathematicalolympiads.wordpress.com/wp-content/uploads/2012/08/forum-geometricorum-all-volumes.pdf)
+- ["On some extensions of Morley's trisector theorem", Nikos Dergiades, Tran Quang Hung](https://arxiv.org/abs/2005.08723)
+  - [Morley's trisector theorem](https://en.wikipedia.org/wiki/Morley%27s_trisector_theorem)
+- ["Rational points on curves", Michael Stoll](https://arxiv.org/abs/1008.1905)
+
+### L-Functions
+
+- L-functions
+- Riemann Hypothesis
+- Langlands Program
+- Functoriality
+- Reciprocity
+- F1-Geometry
+- Group
+- Functor
+- Category
+- Scheme, Variety
+
+> [!TIP]
+> L-functions always have symmetry. Mostly about a vertical line, but the symmetry can be some other kind eg rotational symmetry about a point or some other kind.
+
+- ["Numbers as functions", Yuri I. Manin](https://arxiv.org/abs/1312.5160)
+- ["Analytic L-functions: Definitions, Theorems, and Connections", David W. Farmer, Ameya Pitale, Nathan C. Ryan, Ralf Schmidt](https://arxiv.org/abs/1711.10375)
+- ["A history of L-functions (reviewed)"](https://www.lmfdb.org/knowledge/show/lfunction.history)
+- "Elliptic Tales: Curves, Counting, and Number Theory" by Avner Ash (Author), Robert Gross (Author)
+- https://mathworld.wolfram.com/Rabin-MillerStrongPseudoprimeTest.html
+- https://mathworld.wolfram.com/ModularCurve.html
+- https://mathworld.wolfram.com/topics/L-Series.html
+- https://mathworld.wolfram.com/topics/PrimeNumbers.html
+- https://mathworld.wolfram.com/topics/EllipticCurves.html
+- https://mathworld.wolfram.com/AlgebraicGeometry.html
+- https://mathworld.wolfram.com/NilGeometry.html
+- https://mathworld.wolfram.com/HeisenbergGroup.html
+- [𝔽₁-Geometry](https://en.wikipedia.org/wiki/Field_with_one_element#Arakelov_geometry)
+- ["The 𝔽₁ Seminars" at Ghent University](https://thefunseminarsghent.wordpress.com/tag/yuri-i-manin/)
+- ["𝔽₁ for everyone", Oliver Lorscheid](https://arxiv.org/abs/1801.05337)
+- ["On the metaphysics of 𝔽₁", Alain Connes, Caterina Consani](https://arxiv.org/html/2307.06748v1)
+- ["𝔽₁: THE MATHEMATICAL OBJECT IN SEARCH OF A DEFINITION", Yuri I. Manin](https://www.maths.tcd.ie/~vdots/HMI2017Manin1.pdf)
+  - [Homepage of Vladimir DOTSENKO](https://vladimirdotsenko.github.io/)
+- ["A Course in Mathematical Logic for Mathematicians", Yuri I. Manin](https://math.uchicago.edu/~shmuel/lg-readings/Manin,%20Logic%20for%20Mathematicians.pdf)
+- ["Arithmetic and Algebraic Geometry - A Mathematical Tribute to Yuri Manin", Editors: Yuri Tschinkel](https://link.springer.com/book/10.1007/978-3-031-74134-0)
+- [Borger's absolute geometry - nLab](https://ncatlab.org/nlab/show/Borger%27s+absolute+geometry)
+
 ----
 
 ## Encyclopedias
@@ -119,6 +188,7 @@ Deep Indigo (2B2D8F)
 - [PlanetMath Subject Index](https://planetmath.org/msc.html)
 - https://encyclopediaofmath.org/
 - https://handwiki.org/wiki/Start
+- https://www.wikidata.org/
 - https://jiblm.org/
 
 ----
