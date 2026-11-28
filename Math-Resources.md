@@ -155,19 +155,26 @@ Deep Indigo (2B2D8F)
 
 ### L-Functions
 
-- L-functions
-- Riemann Hypothesis
-- Langlands Program
-- Functoriality
-- Reciprocity
-- F1-Geometry
-- Group
-- Functor
-- Category
-- Scheme, Variety
+- L-functions, Riemann Hypothesis (RH), (FunctionField/𝔽<sub>q</sub>)-Curve-RH, Generalized-RH, Extended-RH, Grand-RH
+  
+- Langlands Program (Analytic <-> Algebraic <-> Geometric)
+  - Functoriality
+  - Reciprocity
 
+- F1-Geometry
+- Scheme, Variety, Ideal, Bundle
+- Spinor, Tensor
+- QFT, Field, Functor
+- Symmetry, Group
+
+- Category, Set, Type, Prop, Pred, Logic, Computation-Model
+- Computable (partial-recursive) Functions (**RE**), Decidable (total-recursive) Functions (**R**)
+  - LL(1), LR(0), SLR, LALR(1), LR(1), LR(k), DCFL/DCFG, GLR, CFL/CFG
+
+----
 > [!TIP]
-> L-functions always have symmetry. Mostly about a vertical line, but the symmetry can be some other kind eg rotational symmetry about a point or some other kind.
+> L-functions always have symmetry. Mostly about a vertical line, but the symmetry can be some other kind eg rotational symmetry about a point etc.
+----
 
 - [Numbers as functions](https://arxiv.org/abs/1312.5160), Yuri I. Manin
 - [Analytic L-functions: Definitions, Theorems, and Connections](https://arxiv.org/abs/1711.10375), David W. Farmer, Ameya Pitale, Nathan C. Ryan, Ralf Schmidt
