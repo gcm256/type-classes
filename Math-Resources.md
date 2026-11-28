@@ -100,6 +100,9 @@ Deep Indigo (2B2D8F)
 - [Open Academic Journal Index](https://oaji.net/)
 - [IMU](https://www.mathunion.org/cop/gdml/external-resources)
 - [The Mathematica Journal](https://www.mathematica-journal.com/back-issues/)
+- [The American Mathematical Monthly](https://maa.org/publications/)
+- [WSEAS TRANSACTIONS on MATHEMATICS](https://www.worldses.org/journals/mathematics/old.htm)
+  - [List of WSEAS Journals](https://wseas.com/journals.php)
 
 ## Libraries
 
@@ -123,23 +126,32 @@ Deep Indigo (2B2D8F)
 ### Geometry
 
 - https://en.wikipedia.org/wiki/Steiner_inellipse#References
-  - ["Triangles, Ellipses, and Cubic Polynomials", D. Minda, S. Phelps, The American Mathematical Monthly Volume 115, 2008 - Issue 8](https://www.tandfonline.com/doi/abs/10.1080/00029890.2008.11920581)
-    - [The American Mathematical Monthly, Volume 115, Issue 8 (2008)](https://www.tandfonline.com/toc/uamm20/115/8)
-  - ["A Distorted View of Geometry", G. Chakerian, Published 1979](https://www.semanticscholar.org/paper/A-Distorted-View-of-Geometry-Chakerian/f67c9d7f757086e5ccc22f67b24f19423da49aff)
-    - ["Dolciani Mathematical Expositions", Mathematical Plums, Edited by: Ross Honsberger](https://pubs.ams.org/ebooks/dol/004/)
-- ["Finding Ellipses and Hyperbolas Tangent to Two, Three, or Four Given Lines", Alan Horwitz](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3137683)
+  - ["Triangles, Ellipses, and Cubic Polynomials"](https://www.tandfonline.com/doi/abs/10.1080/00029890.2008.11920581),
+    D. Minda, S. Phelps, The American Mathematical Monthly Volume 115, 2008 - Issue 8
+    - [The American Mathematical Monthly](https://www.tandfonline.com/toc/uamm20/115/8), Volume 115, Issue 8 (2008)
+  - ["A Distorted View of Geometry"](https://www.semanticscholar.org/paper/A-Distorted-View-of-Geometry-Chakerian/f67c9d7f757086e5ccc22f67b24f19423da49aff),
+    G. Chakerian, Published 1979
+    - ["Dolciani Mathematical Expositions"](https://pubs.ams.org/ebooks/dol/004/), Mathematical Plums, Edited by: Ross Honsberger
+- ["Cubic Polynomials Revisited"](https://www.awesomemath.org/wp-pdf-files/math-reflections/mr-2021-03/mr_3_2021_cubic_polynomials_revisited.pdf), Maitreyo Bhattacharjee, IACS, Kolkata
+- ["AN AREA INEQUALITY FOR ELLIPSES INSCRIBED IN QUADRILATERALS"](https://scispace.com/pdf/an-area-inequality-for-ellipses-inscribed-in-quadrilaterals-4deruqnwfj.pdf), ALAN HORWITZ,
+  Journal of Mathematical Inequalities Volume 4, Number 3 (2010), 431–443. (https://arxiv.org/abs/0907.1647)
+- ["Finding Ellipses and Hyperbolas Tangent to Two, Three, or Four Given Lines"](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3137683), Alan Horwitz
 - https://collegegeometry430.weebly.com/resources.html
 - ["Geometry", ALAIN MATTHES](https://altermundus.fr/files/papers/euclidean-geometry.pdf)
   - https://altermundus.fr/includes/papers.php
-- ["GOLDEN SECTIONS IN AN ISOSCELES TRIANGLE AND ITS CIRCUMCIRCLE", DAO THANH OAI, NGO QUANG DUONG, PAUL YIU, Global Journal of Advanced Research on Classical and Modern Geometries
-  ISSN: 2284-5569, Vol.5, (2016), Issue 2, pp.93-97](https://geometry-math-journal.ro/pdf/Volume5-Issue2/4.pdf)
+- ["GOLDEN SECTIONS IN AN ISOSCELES TRIANGLE AND ITS CIRCUMCIRCLE"](https://geometry-math-journal.ro/pdf/Volume5-Issue2/4.pdf),
+  DAO THANH OAI, NGO QUANG DUONG, PAUL YIU, Global Journal of Advanced Research on Classical and Modern Geometries ISSN: 2284-5569, Vol.5, (2016), Issue 2, pp.93-97.
+- ["CUBIC POLYNOMIALS WHOSE ROOTS FORM A TRIANGLE IN WHICH THE SIEBECK-MARDEN AND EULER LINES COINCIDE OR ARE PERPENDICULAR"](https://geometry-math-journal.ro/pdf/Volume11-Issue1/8.pdf),
+  JOSE MANUEL VALDOVINOS BARRERA, AUREL IULIAN STAN, Global Journal of Advanced Research on Classical and Modern Geometries ISSN: 2284-5569, Vol.9, (2022), Issue 2, pp.100-122.
   - [GLOBAL JOURNAL OF ADVANCED RESEARCH ON CLASSICAL AND MODERN GEOMETRIES” (GJARCMG)](https://geometry-math-journal.ro/)
-- ["On Emelyanov’s Circle Theorem", , P. Yiu](https://www.heldermann-verlag.de/jgg/jgg09/j9h2yiu.pdf)
+- ["On Emelyanov’s Circle Theorem", P. Yiu](https://www.heldermann-verlag.de/jgg/jgg09/j9h2yiu.pdf)
 - ["Introduction to the Geometry of the Triangle", P. Yiu](https://users.math.uoc.gr/~pamfilos/Yiu.pdf)
 - ["Forum Geometricorum", (All Volumes)](https://mathematicalolympiads.wordpress.com/wp-content/uploads/2012/08/forum-geometricorum-all-volumes.pdf)
 - ["On some extensions of Morley's trisector theorem", Nikos Dergiades, Tran Quang Hung](https://arxiv.org/abs/2005.08723)
   - [Morley's trisector theorem](https://en.wikipedia.org/wiki/Morley%27s_trisector_theorem)
 - ["Rational points on curves", Michael Stoll](https://arxiv.org/abs/1008.1905)
+- ["Steiner conics and quadratic Bézier curves with control mass points"](https://wseas.com/journals/mathematics/2026/a865106-019(2026).pdf),
+  LIONEL GARNIER, LUCIE DRUOTON, JEAN-PAUL BÉCAR, WSEAS TRANSACTIONS on MATHEMATICS DOI: 10.37394/23206.2026.25.43
 
 ### L-Functions
 
